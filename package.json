@@ -1,0 +1,35 @@
+{
+  "name": "helios-ah-frontend",
+  "version": "1.0.0",
+  "description": "A social platform for the creative at heart ",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela/helios-ah-frontend.git"
+  },
+  "author": "Andela Simulations Programme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela/helios-ah-frontend/issues"
+  },
+  "homepage": "https://github.com/andela/helios-ah-frontend#readme",
+  "dependencies": {
+    "react": "16.7.0",
+    "react-dom": "16.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "4.28.1",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "3.1.14"
+  }
+}
