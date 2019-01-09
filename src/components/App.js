@@ -1,13 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class App extends Component {
+import { exampleAction } from '../actions/actions'
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+
+    }
+  }
+
   render() {
     return (
-      <div>
-        <h3>Authors Haven</h3>
-      </div>
-    );
+      <h1>Hello World, this is a Redux, baby!</h1>
+    )
   }
 }
+  const mapStateToProps = (state) => {
+    return {
+      examplePropOne: state.examplePropOne,
+      examplePropTwo: state.examplePropTwo
+    }
+  }
 
-export default App;
+
+export default connect(mapStateToProps, {exampleAction})(App)
