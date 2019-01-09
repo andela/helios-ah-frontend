@@ -1,0 +1,9 @@
+sudo: required
+language: node_js
+node_js:
+  - "stable"
+script:
+  - npm test
+env: 
+  global:
+    - NODE_ENV=test
