@@ -1,13 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
+import { Provider } from 'react-redux';
+import { store } from './store';
 import 'normalize.css/normalize.css';
-import styles from '../src/styles/styles.scss';
+import '../src/styles/styles.scss';
+import App from './components/App'
+import Routes from './routes'
 
-import App from './components/App';
-import routes from './routes';
+render(
+  <Provider store={store}>
+  <App>
+    {Routes}
+  </App>
+  </Provider>,
+  document.getElementById('app')
+)
 
-ReactDOM.render((
-      <App>
-          {routes}
-      </App>
-  ), document.getElementById('app'));
