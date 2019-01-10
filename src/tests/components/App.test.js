@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import App from '../../components/App';
 
-describe('<App />', () => {
+describe('Test to successfully render <App />', () => {
   it('renders three <App /> components', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.length).toBe(1);
