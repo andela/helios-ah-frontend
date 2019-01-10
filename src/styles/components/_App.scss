@@ -1,0 +1,25 @@
+// Demo Component/App  SCSS file
+.test1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
+.test2{
+  animation: slidein infinite 5s linear;
+  padding-top: $large-space;
+  font-size: $medium-Space;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: $large-ratio;
+    width: $Xlarge-ratio;
+  }
+
+  to {
+    margin-left: 0%;
+    width: $large-ratio;
+  }
+}

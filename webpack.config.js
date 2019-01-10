@@ -15,7 +15,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
-      },
+      },{
+        test: /\.s?css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
     ]
   },
   plugins: [
@@ -23,4 +30,7 @@ module.exports = {
       template: './src/index.html'
     })
   ],
+  devServer: {
+    historyApiFallback: true
+  }
 }
