@@ -1,0 +1,115 @@
+
+.login-img {
+  width: 50vw;
+  height: 100vh
+}
+
+.login-body {
+  font-family: $font-family;
+}
+
+.right-login {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.right-login {
+  h3, h5{
+    color: $purple;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+  }
+  h5{
+    margin-top: 7%;
+  }
+  input {
+    width: 400px;
+    height: 50px;
+    border: 1px solid $purple;
+    border-radius: 30.5px;
+    padding-left: 10%;
+    font-size: 130%;
+  }
+  
+  .form-group {
+    margin-top: 5%;
+    display: inline-block;
+  }
+  p {
+    color: $purple;
+    text-align: right;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.forgot-password {
+  margin-right: 23%;
+  margin-bottom: 5%;
+}
+
+.social-media-icons {
+  img {
+    display: inline-block;
+    width: 7%;
+    margin-right: 5%;
+  }
+  
+  .twitter  {
+    border-radius: 100%;
+  }
+}
+
+.login-buttons > button { 
+  border-radius: 15%;
+  border: 1px solid $purple;
+  border-radius: 37.5px;
+  width: 200px;
+  height: 50px;
+  margin: 8% 1% 0 1%;
+  display: inline-block
+}
+
+.login-btn {
+  background-color: $purple;
+  color: $white
+}
+
+.login-btn:disabled{
+  cursor: not-allowed;
+}
+
+.signup-btn {
+  background-color: $white;
+  color: $purple
+}
+
+.valid-feedback, .invalid-feedback {
+  padding-right: 55%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 80%;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  padding-left: 10% 
+}
+:-ms-input-placeholder { /* IE 10+ */
+  padding-left: 10% 
+}
+:-moz-placeholder { /* Firefox 18- */
+  padding-left: 10% 
+}
+
+
+
+
+
+
+
+
+
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */

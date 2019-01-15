@@ -9,9 +9,7 @@ import Routes from './routes'
 
 render(
   <Provider store={store}>
-  <App>
     {Routes}
-  </App>
   </Provider>,
   document.getElementById('app')
 )
