@@ -1,2 +1,4 @@
+import './signupActionTypes';
+
 export const EXAMPLE = 'EXAMPLE';
-export const EXAMPLETWO = 'EXAMPLE-TWO'
+export const EXAMPLE_TWO = 'EXAMPLE-TWO';

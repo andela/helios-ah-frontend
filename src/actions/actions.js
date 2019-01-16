@@ -1,16 +1,9 @@
-import { EXAMPLE, EXAMPLETWO } from '../actionTypes';
+import { EXAMPLE, EXAMPLE_TWO } from '../actionTypes';
 
 
-export const exampleAction = () => {
-  return {
-    type: EXAMPLE
-  }
-}
+export const exampleAction = () => ({ type: EXAMPLE });
 
-export const exampleActionTwo = (sampleData) => {
-  return {
-    type : EXAMPLETWO,
-    payload: sampleData
-  }
-}
-
+export const exampleActionTwo = sampleData => ({
+  type: EXAMPLE_TWO,
+  payload: sampleData
+});

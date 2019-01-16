@@ -1,0 +1,79 @@
+
+body {
+  background-color: $white;
+  width: 90%;
+  margin: auto;
+  margin-top: 4em;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+#welcome-text-container {
+  color: $purple;
+  margin: 2em auto;
+}
+#welcome-container{
+  margin-top: 2em;
+}
+#signup-image {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: url('./images/signupImage.svg') no-repeat;
+  background-size: contain;
+}
+
+.signup-form-input::placeholder { /* Chrome/Opera/Safari */
+  color: $purple;
+}
+.signup-form-input::-moz-placeholder { /* Firefox 19+ */
+  color: $purple;
+}
+.signup-form-input:-ms-input-placeholder { /* IE 10+ */
+  color: $purple;
+}
+.signup-form-input:-moz-placeholder { /* Firefox 18- */
+  color: $purple;
+}
+
+#form-container {
+  width: 70%;
+  margin: 2em auto;
+}
+
+.signup-form-input {
+  background: #FFFFFF;
+  border: 1px solid $purple;
+  border-radius: 1.9em;
+  color: $purple;
+  height: 3em;
+  margin: 0.4em auto;
+  padding: 1.5em;
+  font-size: 1.5em;
+}
+
+#signup-page-button {
+  background-color: $purple;
+  border: 1px solid $purple;
+  border-radius: 2.344em;
+  color: $white;
+  width: 80%;
+  padding: 0.8em;
+  font-size: 1.4em;
+  margin: 0.4em;
+  outline: none;
+}
+
+#signup-page-login-button {
+  background-color: $white;
+  border: 1px solid $purple;
+  border-radius: 2.344em;
+  color: $purple;
+  width: 80%;
+  padding: 0.8em;
+  font-size: 1.4em;
+  margin: 0.4em;
+  outline: none;
+}
