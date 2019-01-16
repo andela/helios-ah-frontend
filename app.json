@@ -1,0 +1,21 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs#v104"
+    }
+  ],
+  "env": {
+    "baseUrl": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "name": "helios-ah-frontend",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
