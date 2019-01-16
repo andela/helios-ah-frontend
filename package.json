@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
-    "test": "jest --watch --coverage"
+    "test:watch": "jest --watch --coverage",
+    "test": "jest --coverage"
   },
   "jest": {
     "snapshotSerializers": [
