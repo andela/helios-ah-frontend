@@ -16,10 +16,12 @@ class FlashMessage extends React.Component {
     const { type, text } = this.props.message
    if (type === 'error') alertType = 'alert alert-danger'
    else if (type === 'success') alertType = 'alert alert-success'
+   else if (type === 'warning') alertType = 'alert alert-warning'
+
     return (
-      <div class={`${alertType}`} role="alert">
+      <div className={`${alertType}  alert-dismissible`} role="alert">
         {text}
-        <button  onClick={this.onClick} type="button" class="close" aria-label="Close">
+        <button  onClick={this.onClick} type="button" className="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

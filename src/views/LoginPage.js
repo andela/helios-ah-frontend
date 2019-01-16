@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import TextFieldGroup from '../components/TextFieldGroup.jsx';
 import frontendValidation from '../utils/frontendValidation';
 import FlashMessagesList from '../components/FlashMessagesList.jsx'
+import SubmitButton from '../components/SubmitButton.jsx';
+
 class LoginPage extends Component {
   constructor(props) {
     super(props)
@@ -32,24 +34,29 @@ class LoginPage extends Component {
 
   async onSubmit(e) {
     e.preventDefault();
-
+    this.props.clearFlashMessages();
     if (this.isValid()) {
       await this.setState({ errors: {}, isLoading: true })
       try {
         const loginResponse = await this.props.loginRequest(this.state)
         if (loginResponse) {
           this.setState({ isLoading: false })
-          console.log(loginResponse.status)
           if (loginResponse.status===200) {
             this.props.addFlashMessage({
               type: 'success',
-              text: 'You are now logged in'
+              text: `${loginResponse.data.message}`
             })
-          } else {
-            console.log("Login failed")
+          } 
+          else if (loginResponse.data.message === "Email or password does not exist") {
             this.props.addFlashMessage({
               type: 'error',
-              text: `Invalid Email or Password`
+              text: 'Incorrect email or password'
+            })
+          } 
+          else {
+            this.props.addFlashMessage({
+              type: 'warning',
+              text: `${loginResponse.data.message}`
             })
           }
         }
@@ -62,12 +69,13 @@ class LoginPage extends Component {
   render() {
     const { errors } = this.state
     return (
-      <div className="container-fluid login-body">
-        <div className="form-row">
-          <div className="col-lg-6 col-md-6 left-login">
-            <img src="../Images/undraw_directions_x53j.svg" className="login-img" />
+      <div className="container login-body">
+        <div className="row">
+          <div className="col-sm-6">
+            <span className="login-image-container">
+            </span>
           </div>
-          <div className="col-lg-6 col-md-6 col-xs-12 right-login">
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-login">
             <h3>WELCOME BACK.....</h3>
             <h5>LOGIN TO AUTHOR'S HAVEN</h5>
             <FlashMessagesList/>
@@ -90,15 +98,23 @@ class LoginPage extends Component {
               <div className="forgot-password">
                 <a href="#"><p>FORGOT PASSWORD?</p></a>
               </div>
-
-              <div className="social-media-icons">
-                <a href=''><img src="../Images/facebook.svg" className="facebook" /></a>
-                <a href=""><img src="../Images/twitter.svg" className="twitter" /></a>
-                <a href=""><img src="../Images/google-plus.svg" className="google-plus" /></a>
-              </div>
               <div className="login-buttons">
-                <button type="submit" className="login-btn" disabled={this.state.isLoading}>LOGIN</button>
-                <button className="signup-btn">SIGNUP</button>
+                <SubmitButton
+                buttonClass="login-btn"
+                isRequestSent={this.state.isLoading}
+                buttonValue="LOGIN"
+                columnAttribute="login-col"
+                />
+                <SubmitButton
+                buttonClass="signup-btn"
+                buttonValue="SIGNUP"
+                columnAttribute="signup-col"
+                />
+              </div>
+              <div className="social-media-icons">
+                <span className="facebook"></span>
+                <span className="twitter"></span>
+                <span className="google"></span>
               </div>
             </form>
           </div>

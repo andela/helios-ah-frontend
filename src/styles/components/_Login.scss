@@ -1,7 +1,15 @@
+.login-image-container {
+  display: block;
+  margin: 25% auto;
+  height: 50vh;
+  background: url("./images/undraw_directions_x53j.svg") no-repeat ;
+  background-size: contain;
+}
 
 .login-img {
-  width: 50vw;
-  height: 100vh
+  display: block;
+  height: 45vh;
+  margin: 25% auto;
 }
 
 .login-body {
@@ -10,7 +18,7 @@
 
 .right-login {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 8%;
 }
 
 .right-login {
@@ -24,16 +32,16 @@
     margin-top: 7%;
   }
   input {
-    width: 400px;
-    height: 50px;
+    width: 20em;
+    height: 2.5em;
     border: 1px solid $purple;
-    border-radius: 30.5px;
+    border-radius: 1.90625em;
     padding-left: 10%;
     font-size: 130%;
   }
   
   .form-group {
-    margin-top: 5%;
+    margin-top: 4%;
     display: inline-block;
   }
   p {
@@ -48,13 +56,16 @@
 .forgot-password {
   margin-right: 23%;
   margin-bottom: 5%;
+  font-size: 80%;
 }
 
 .social-media-icons {
-  img {
+  .twitter, .google, .facebook{
     display: inline-block;
-    width: 7%;
+    width: 50px;
+    height: 50px;
     margin-right: 5%;
+    margin-top: 5%;
   }
   
   .twitter  {
@@ -62,14 +73,45 @@
   }
 }
 
-.login-buttons > button { 
-  border-radius: 15%;
+
+.facebook {
+  background: url("./images/facebook.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.twitter {
+  background: url("./images/twitter.svg") no-repeat;
+}
+
+.google {
+  background: url("./images/google-plus.svg") no-repeat;
+}
+
+.facebook, .twitter, .google {
+  display: block;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.login-buttons {
+  margin: 0 auto;
+  width: 100%;
+
+  .login-col,
+  .signup-col {
+    display: inline-block;
+    width: 30%;
+    margin-right: 6%;
+  }
+}
+
+.login-btn, .signup-btn{ 
   border: 1px solid $purple;
-  border-radius: 37.5px;
-  width: 200px;
-  height: 50px;
-  margin: 8% 1% 0 1%;
-  display: inline-block
+  border-radius: 2.34375em;
+  width: 10.625em;
+  height: 3.125em;
+  outline: none; 
 }
 
 .login-btn {
@@ -91,16 +133,16 @@
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  font-size: 80%;
+  font-size: 70%;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  padding-left: 10% 
+  font-size: 70%;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  padding-left: 10% 
+  font-size: 70%;
 }
 :-moz-placeholder { /* Firefox 18- */
-  padding-left: 10% 
+  font-size: 70%;
 }
 
 

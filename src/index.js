@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import 'normalize.css/normalize.css';
 import '../src/styles/styles.scss';
-import App from './components/App'
 import Routes from './routes'
 
 render(

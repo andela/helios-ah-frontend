@@ -30,9 +30,9 @@ export const loginRequest = userData => {
       localStorage.setItem('jwtToken', token);
       setAuthorizationToken(token);
       dispatch(setCurrentUser(decodedToken))
+      return loginResponse
     } catch (error) {
-      return error;
+      return error.response
     }
-    return loginResponse;
   }
 }
