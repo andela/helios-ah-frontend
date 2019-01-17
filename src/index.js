@@ -6,6 +6,8 @@ import 'normalize.css/normalize.css';
 import '../src/styles/styles.scss';
 import App from './components/App'
 import Routes from './routes'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'babel-polyfill';
 
 render(
   <Provider store={store}>
