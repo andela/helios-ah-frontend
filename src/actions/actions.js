@@ -1,4 +1,4 @@
-import { EXAMPLE, EXAMPLETWO } from '../actionTypes';
+import { EXAMPLE, EXAMPLETWO, GET_BOOKMARK } from '../actionTypes';
 
 
 export const exampleAction = () => {
@@ -14,3 +14,14 @@ export const exampleActionTwo = (sampleData) => {
   }
 }
 
+export const getbookmarks = () => dispatch => {
+  console.log('action call');
+  fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .then(bookmarks => 
+      dispatch({
+        type: GET_BOOKMARK,
+        payload: bookmarks,
+      })
+    );
+}

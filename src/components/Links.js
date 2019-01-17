@@ -7,6 +7,8 @@ class Links extends Component {
       <ul>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
+        <li><NavLink to="/start">Start</NavLink></li>
+        <li><NavLink to="/bookmark">Bookmarked Articles</NavLink></li>
       </ul>
     );
   }
