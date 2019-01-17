@@ -1,6 +1,6 @@
 import { Post } from '../utilities/apiRequests';
 
-const signupUser = userDetails => () => Post('/auth/signup', userDetails)
+const signupUser = userDetails => () => Post('/signup', userDetails)
   .then(response => response).catch((error) => {
     if (error.message === 'Network Error') {
       return {

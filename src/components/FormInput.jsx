@@ -2,28 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FormInput = ({
-  idAttribute, inputValue, inputPlaceHolder, onChange, inputType, classAttribute
+  id, value, placeHolder, onChange, type, className
 }) => (
   <div className="form-group">
     <input
-      type={inputType}
-      className={classAttribute}
-      id={idAttribute}
+      type={type}
+      className={className}
+      id={id}
       required
-      value={inputValue}
+      value={value}
       onChange={onChange}
-      placeholder={inputPlaceHolder}
+      placeholder={placeHolder}
     />
   </div>
 );
 
 FormInput.propTypes = {
-  idAttribute: PropTypes.string.isRequired,
-  inputValue: PropTypes.string.isRequired,
-  inputPlaceHolder: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  placeHolder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  inputType: PropTypes.string.isRequired,
-  classAttribute: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default FormInput;
