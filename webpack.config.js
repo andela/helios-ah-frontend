@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/build'),
-    filename: 'index_bundle.js'
+    filename: 'index_bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -15,7 +16,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
-      },{
+      }, {
         test: /\.s?css$/,
         use: [
           'style-loader',
@@ -26,11 +27,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlwebpackPlugin ({
+    new HtmlwebpackPlugin({
       template: './src/index.html'
     })
   ],
   devServer: {
     historyApiFallback: true
   }
-}
+};
