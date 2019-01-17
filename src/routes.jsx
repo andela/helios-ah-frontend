@@ -3,7 +3,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import HomePage from './views/HomePage';
 import LoginPage from './views/LoginPage';
 import StartPage from './components/StartPage';
-import SignupPage from './views/SignupPage';
+import SignupRoutes from './components/SignupRoutes';
 
 
 const routes = (
@@ -12,7 +12,7 @@ const routes = (
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/start" component={StartPage} />
-      <Route path="/signup" component={SignupPage} />
+      <Route path="/signup" component={SignupRoutes} />
     </Switch>
   </BrowserRouter>
 );
