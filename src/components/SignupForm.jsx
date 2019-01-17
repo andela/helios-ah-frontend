@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  SubmitButton,
-  Button,
-  FormInput,
-} from './index';
+import SubmitButton from './SubmitButton';
+import Button from './Button';
+import FormInput from './FormInput';
 
 const SignupForm = ({
   onChange,
