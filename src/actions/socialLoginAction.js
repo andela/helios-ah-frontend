@@ -1,22 +1,36 @@
 import { Get } from '../utilities/apiRequests';
-import { FACEBOOK_LOGIN, GOOGLE_LOGIN, TWITTER_LOGIN } from '../actionTypes/index';
+import {
+  FACEBOOK_LOGIN,
+  GOOGLE_LOGIN,
+  TWITTER_LOGIN,
+  LOGIN_FAIL
+} from '../actionTypes/index';
 
-const googleLogin = token => ({
+export const googleLogin = (token, authenticated = false) => ({
   type: GOOGLE_LOGIN,
   platform: 'google',
-  token
+  token,
+  authenticated
 });
 
-const twitterLogin = token => ({
+const twitterLogin = (token, authenticated = false) => ({
   type: TWITTER_LOGIN,
   platform: 'twitter',
-  token
+  token,
+  authenticated
 });
 
-const facebookLogin = token => ({
+const facebookLogin = (token, authenticated = false) => ({
   type: FACEBOOK_LOGIN,
   platform: 'facebook',
-  token
+  token,
+  authenticated
+});
+
+const loginFail = () => ({
+  type: LOGIN_FAIL,
+  platform: null,
+  error: 'user not found'
 });
 
 /**
@@ -26,17 +40,21 @@ const facebookLogin = token => ({
  */
 export const socialLogin = platform => async (dispatch) => {
   try {
-    const res = await Get(`/auth/${platform}/callback${window.location.search}`);    
+    const res = await Get(`/auth/${platform}/callback${window.location.search}`);
     localStorage.setItem('x-access-token', res.token);
-    if (platform === 'social_ggl') {
-      await dispatch(googleLogin(res.token));
-    } else if (platform === 'social_tw') {
-      await dispatch(twitterLogin(res.token));
-    } else if (platform === 'social_fb') {
-      await dispatch(facebookLogin(res.token));
+    const authenticated = res.token ? true : false;
+    if (platform === 'social_ggl' && res.token) {
+      await dispatch(googleLogin(res.token, authenticated));
+    } else if (platform === 'social_tw' && res.token) {
+      await dispatch(twitterLogin(res.token, authenticated));
+    } else if (platform === 'social_fb' && res.token) {
+      await dispatch(facebookLogin(res.token, authenticated));
+    } else {
+      await dispatch(loginFail());
     }
   } catch (error) {
     Promise.reject(error);
+    await dispatch(loginFail());
     console.error(error);
   }
 };

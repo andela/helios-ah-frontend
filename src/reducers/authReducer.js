@@ -1,7 +1,8 @@
 import {
   GOOGLE_LOGIN,
   FACEBOOK_LOGIN,
-  TWITTER_LOGIN
+  TWITTER_LOGIN,
+  LOGIN_FAIL
 } from '../actionTypes/index';
 
 const initState = {
@@ -11,29 +12,34 @@ const initState = {
 };
 
 export default (state = initState, action) => {
-  const authenticated = action.token ? true : false;
   switch (action.type) {
     case FACEBOOK_LOGIN:
       return {
         ...state,
-        authenticated,
+        authenticated: action.authenticated,
         platform: 'facebook',
         token: action.token
       };
     case TWITTER_LOGIN:
       return {
         ...state,
-        user: action.user,
-        authenticated,
+        authenticated: action.authenticated,
         platform: 'twitter',
         token: action.token
       };
     case GOOGLE_LOGIN:
       return {
         ...state,
-        authenticated,
+        authenticated: action.authenticated,
         token: action.token,
         platform: 'google'
+      };
+    case LOGIN_FAIL:
+      return {
+        ...state,
+        authenticated: false,
+        token: null,
+        platform: null
       };
     default:
       return state;

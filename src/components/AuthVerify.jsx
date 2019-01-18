@@ -11,22 +11,14 @@ import { socialLogin } from '../actions/socialLoginAction';
 
 class AuthVerify extends Component {
   async componentWillMount() {
-    const {
-      socialLogin: socialAction,
-      authenticated,
-      history
-    } = this.props;
+    const { socialLogin: socialAction } = this.props;
     if (window.location.pathname.includes('social_ggl')) {
       await socialAction('social_ggl');
     } else if (window.location.pathname.includes('social_tw')) {
       await socialAction('social_tw');
     } else if (window.location.pathname.includes('social_fb')) {
       await socialAction('social_fb');
-    } else {
-      history.push('/login');
     }
-
-    return authenticated ? history.push('/') : history.push('/login');
   }
 
   /**
@@ -34,12 +26,8 @@ class AuthVerify extends Component {
    */
   render() {
     const { history, authenticated } = this.props;
-    return (
-      <div>
-        <h6>Redirecting... please wait</h6>
-        {authenticated === true ? history.push('/') : history.push('/login')}
-      </div>
-    );
+    authenticated ? history.push('/') : null;
+    return <h5>Redirecting...</h5>;
   }
 }
 const mapStateToProps = state => ({
