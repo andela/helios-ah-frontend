@@ -4,6 +4,7 @@ import HomePage from './views/HomePage';
 import LoginPage from './views/LoginPage';
 import StartPage from './components/StartPage';
 import SignupRoutes from './components/SignupRoutes';
+import CompleteRegistration from './components/CompleteRegistration';
 
 
 const routes = (
@@ -12,6 +13,7 @@ const routes = (
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/start" component={StartPage} />
+      <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupRoutes} />
     </Switch>
   </BrowserRouter>

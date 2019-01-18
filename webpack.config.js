@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, '/build'),
-    filename: 'index_bundle.js'
+    filename: 'index_bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [

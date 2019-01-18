@@ -4,19 +4,19 @@ import propTypes from 'prop-types';
 import SignupPage from '../views/SignupPage';
 import CompleteRegistration from './CompleteRegistration';
 
-const SignupRoutes = ({ match, location }) => {
-  console.log('match is ==> ', match);
-  console.log('location is ==> ', location.search);
-  return (
-    <Switch>
-      <Route exact path={match} component={SignupPage} />
-      <Route exact path={match.params} component={CompleteRegistration} />
-    </Switch>
-  );
-};
+const SignupRoutes = ({ match }) => (
+  <Switch>
+    <Route
+      exact
+      path={`${match.path}/verify}`}
+      component={CompleteRegistration}
+    />
+    <Route path={match.path} component={SignupPage} />
+  </Switch>
+);
 
 SignupRoutes.propTypes = {
-  match: propTypes.objectOf(propTypes.string).isRequired,
+  match: propTypes.objectOf(propTypes.any).isRequired,
 };
 
 export default SignupRoutes;
