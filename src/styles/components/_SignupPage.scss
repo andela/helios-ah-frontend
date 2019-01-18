@@ -26,7 +26,7 @@ h2 {
 }
 
 .signup-form-input::placeholder { /* Chrome/Opera/Safari */
-  color: $purple;
+  color: #c4c4c4;
 }
 .signup-form-input::-moz-placeholder { /* Firefox 19+ */
   color: $purple;
@@ -50,8 +50,8 @@ h2 {
   color: $purple;
   height: 3em;
   margin: 0.4em auto;
-  padding: 1.5em;
-  font-size: 1.5em;
+  padding: 1em;
+  font-size: 1em;
 }
 
 #signup-page-button {
@@ -60,9 +60,10 @@ h2 {
   border-radius: 2.344em;
   color: $white;
   width: 80%;
-  padding: 0.8em;
+  padding: 0.2em;
   font-size: 1.4em;
   margin: 0.4em;
+  margin-right: 0;
   outline: none;
 }
 
@@ -72,8 +73,9 @@ h2 {
   border-radius: 2.344em;
   color: $purple;
   width: 80%;
-  padding: 0.8em;
+  padding: 0.2em;
   font-size: 1.4em;
   margin: 0.4em;
+  margin-left: 0;
   outline: none;
 }
