@@ -1,37 +1,43 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { socialLogin } from "../actions/socialLoginAction";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { socialLogin } from '../actions/socialLoginAction';
 
 /**
- * @class AuthVerify - component 
- * @description - contains the logic that redirects user based on the 
- * social login status 
+ * @class AuthVerify - component
+ * @description - contains the logic that redirects user based on the
+ * social login status
  */
+
 class AuthVerify extends Component {
   async componentWillMount() {
-    if (window.location.pathname.includes("social_ggl")) {
-      await this.props.socialLogin(
-        "https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/social_ggl"
-      );
-    } else if (window.location.pathname.includes("social_tw")) {
-      await this.props.socialLogin("https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/social_tw");
-    } else if (window.location.pathname.includes("social_fb")) {
-      await this.props.socialLogin("https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/social_fb");
+    const {
+      socialLogin: socialAction,
+      authenticated,
+      history
+    } = this.props;
+    if (window.location.pathname.includes('social_ggl')) {
+      await socialAction('social_ggl');
+    } else if (window.location.pathname.includes('social_tw')) {
+      await socialAction('social_tw');
+    } else if (window.location.pathname.includes('social_fb')) {
+      await socialAction('social_fb');
     } else {
-      console.error("platform not supported");
+      history.push('/login');
     }
-    const { authenticated, history } = this.props;
-    authenticated ? history.push("/") : history.push("/login")
+
+    return authenticated ? history.push('/') : history.push('/login');
   }
 
   /**
    * @returns {JSX}
    */
   render() {
+    const { history, authenticated } = this.props;
     return (
       <div>
-        <h1>Redirecting...</h1>
+        <h6>Redirecting... please wait</h6>
+        {authenticated === true ? history.push('/') : history.push('/login')}
       </div>
     );
   }
@@ -43,8 +49,8 @@ const mapStateToProps = state => ({
 });
 AuthVerify.propTypes = {
   socialLogin: PropTypes.func.isRequired,
-  authenticated: PropTypes.bool,
-  platform: PropTypes.string.isRequired
+  authenticated: PropTypes.bool.isRequired,
+  history: PropTypes.func.isRequired
 };
 
 export default connect(
