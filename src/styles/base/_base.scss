@@ -1,5 +1,11 @@
 //Demo Base Settings
 body {
-  background-color: $light-purple;
   font-family: $reem-kufi;
+  background-color: white;
+}
+#body {
+  margin-top: 0px;
+}
+.major-color {
+  color: $purple;
 }

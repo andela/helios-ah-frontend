@@ -1,0 +1,59 @@
+.fa:hover, input[type=button] {
+  cursor: pointer;
+}
+input[type=button]:hover {
+  // filter: blur(1px);
+  opacity: 0.5;
+}
+#header {
+  padding: 10px;
+  font-size: 25px;
+  border: 0px;
+  border-bottom: 1px solid;
+  border-color: rgba(90, 90, 90, 0.22);
+}
+#header-title {
+  font-weight: bold;
+}
+#contain {
+  width: 100%;
+  margin: auto;
+}
+#puplish, #draft {
+  background: $purple;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 13px;
+  width: 80px;
+}
+#draft {
+  background: #fcfcfc;
+  border: 1px solid $purple;
+  color: $purple;
+  margin-left: 10px;
+}
+#header-button {
+  text-align: center;
+}
+#search {
+  display: none;
+  font-size: 15px;
+  padding-left: 7px;
+  width: 70%;
+  border: 0px;
+  border-bottom: 1px solid;
+  border-color: rgba(90, 90, 90, 0.22);
+}
+#search-col {
+  text-align: right;
+}
+#img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#img:hover {
+  cursor: pointer;
+}

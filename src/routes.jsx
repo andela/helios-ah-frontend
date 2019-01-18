@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { LoginPage, HomePage, SignupPage } from './views';
+import { LoginPage, HomePage, SignupPage, Article } from './views';
 import { StartPage } from './components';
 
 
@@ -11,6 +11,7 @@ const routes = (
       <Route path="/login" component={LoginPage} />
       <Route path="/start" component={StartPage} />
       <Route path="/signup" component={SignupPage} />
+      <Route path="/article" component={Article} />
     </Switch>
   </BrowserRouter>
 );
