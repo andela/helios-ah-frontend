@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
 import { 
     GET_A_USER, 
@@ -24,8 +24,10 @@ export const editFields = (name, value) => {
     }
 };
 
-export const toggleButton =  {
-    type: TOGGLE_BUTTON,
+export const toggleButton = () => {
+   return {
+       type: TOGGLE_BUTTON
+    }
 }
 
 export const clearEdit = (status) => {
@@ -64,6 +66,9 @@ export const updateProfile = (editFields) => async (dispatch) => {
             editFields.image = await uploadImageCloudinary(editFields.image);
         }
         const user = await axios.put(`${baseUrl}/users/5`, editFields);
+        const follow = await getFollowDetails();
+        user.data['following'] = follow.followingCount;
+        user.data['followers'] = follow.followersCount;
         dispatch(clearEdit(true));
         dispatch(fetchAUser(user.data));
     }

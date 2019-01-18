@@ -28,6 +28,7 @@
 .profile-image img {
     border-radius: 50%;
     width:230px;
+    height: 230px;
 }
 .name-and-bio textarea, .name-and-bio input {
     width: 100%;
@@ -38,6 +39,10 @@
     box-shadow: none;
     resize: none;
     text-align: center;
+}
+.name-and-bio .edit-border {
+    border-bottom: 1px solid $brand-color;
+    background-color: rgb(248, 246, 246);
 }
 .name-and-bio .form-control {
     background-color: #ffffff;
