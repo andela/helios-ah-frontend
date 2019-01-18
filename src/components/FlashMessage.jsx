@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 class FlashMessage extends React.Component {
   constructor(props) {
     super(props)

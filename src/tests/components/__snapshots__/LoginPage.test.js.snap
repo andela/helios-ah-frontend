@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Login Page render Login Page renders the login page component 1`] = `
+<div
+  className="container login-body"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-6"
+    >
+      <span
+        className="login-image-container"
+      />
+    </div>
+    <div
+      className="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-login"
+    >
+      <h3>
+        WELCOME BACK.....
+      </h3>
+      <h5>
+        LOGIN TO AUTHOR'S HAVEN
+      </h5>
+      <Connect(FlashMessageList) />
+      <form
+        onSubmit={[Function]}
+      >
+        <TextFieldGroup
+          field="email"
+          onChange={[Function]}
+          placeholder="Email Address"
+          type="text"
+          value=""
+        />
+        <TextFieldGroup
+          field="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <div
+          className="forgot-password"
+        >
+          <a
+            href="#"
+          >
+            <p>
+              FORGOT PASSWORD?
+            </p>
+          </a>
+        </div>
+        <div
+          className="login-buttons"
+        >
+          <SubmitButton
+            buttonClass="login-btn"
+            buttonValue="LOGIN"
+            columnAttribute="login-col"
+            isRequestSent={false}
+          />
+          <SubmitButton
+            buttonClass="signup-btn"
+            buttonValue="SIGNUP"
+            columnAttribute="signup-col"
+          />
+        </div>
+        <div
+          className="social-media-icons"
+        >
+          <span
+            className="facebook"
+          />
+          <span
+            className="twitter"
+          />
+          <span
+            className="google"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render Login Page render Login Page renders the login page component 2`] = `
+<div
+  className="container login-body"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-6"
+    >
+      <span
+        className="login-image-container"
+      />
+    </div>
+    <div
+      className="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-login"
+    >
+      <h3>
+        WELCOME BACK.....
+      </h3>
+      <h5>
+        LOGIN TO AUTHOR'S HAVEN
+      </h5>
+      <Connect(FlashMessageList) />
+      <form
+        onSubmit={[Function]}
+      >
+        <TextFieldGroup
+          field="email"
+          onChange={[Function]}
+          placeholder="Email Address"
+          type="text"
+          value=""
+        />
+        <TextFieldGroup
+          field="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <div
+          className="forgot-password"
+        >
+          <a
+            href="#"
+          >
+            <p>
+              FORGOT PASSWORD?
+            </p>
+          </a>
+        </div>
+        <div
+          className="login-buttons"
+        >
+          <SubmitButton
+            buttonClass="login-btn"
+            buttonValue="LOGIN"
+            columnAttribute="login-col"
+            isRequestSent={false}
+          />
+          <SubmitButton
+            buttonClass="signup-btn"
+            buttonValue="SIGNUP"
+            columnAttribute="signup-col"
+          />
+        </div>
+        <div
+          className="social-media-icons"
+        >
+          <span
+            className="facebook"
+          />
+          <span
+            className="twitter"
+          />
+          <span
+            className="google"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

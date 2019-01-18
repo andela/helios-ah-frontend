@@ -21,12 +21,12 @@ const SubmitButton = ({
 );
 
 SubmitButton.propTypes = {
-  submitDetails: PropTypes.func.isRequired,
+  submitDetails: PropTypes.func,
   isRequestSent: PropTypes.bool.isRequired,
   buttonValue: PropTypes.string.isRequired,
   idAttribute: PropTypes.string.isRequired,
   buttonClass: PropTypes.string.isRequired,
-  columnAttribute: PropTypes.string.isRequired,
+  columnAttribute: PropTypes.string,
 };
 
 export default SubmitButton;

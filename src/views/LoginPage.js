@@ -82,14 +82,14 @@ class LoginPage extends Component {
             <form onSubmit={this.onSubmit}>
               <TextFieldGroup
                 error={errors && errors.email}
-                placeholder="EMAIL  ADDRESS"
+                placeholder="Email Address"
                 field="email"
                 onChange={this.onChange}
                 value={this.state.email}
               />
               <TextFieldGroup
                 error={errors && errors.password}
-                placeholder="PASSWORD"
+                placeholder="Password"
                 field="password"
                 type="password"
                 onChange={this.onChange}
