@@ -23,22 +23,28 @@ exports[`Render Login Page render Login Page renders the login page component 1`
       <h5>
         LOGIN TO AUTHOR'S HAVEN
       </h5>
-      <Connect(FlashMessageList) />
+      <Connect(FlashMessageList)
+        customAlertClass="custom-alert"
+      />
       <form
         onSubmit={[Function]}
       >
         <TextFieldGroup
+          errorFeedbackClass="login-invalid-feedback"
           field="email"
           onChange={[Function]}
           placeholder="Email Address"
           type="text"
+          validFeedbackClass="login-valid-feedback"
           value=""
         />
         <TextFieldGroup
+          errorFeedbackClass="login-invalid-feedback"
           field="password"
           onChange={[Function]}
           placeholder="Password"
           type="password"
+          validFeedbackClass="login-valid-feedback"
           value=""
         />
         <div
@@ -109,22 +115,28 @@ exports[`Render Login Page render Login Page renders the login page component 2`
       <h5>
         LOGIN TO AUTHOR'S HAVEN
       </h5>
-      <Connect(FlashMessageList) />
+      <Connect(FlashMessageList)
+        customAlertClass="custom-alert"
+      />
       <form
         onSubmit={[Function]}
       >
         <TextFieldGroup
+          errorFeedbackClass="login-invalid-feedback"
           field="email"
           onChange={[Function]}
           placeholder="Email Address"
           type="text"
+          validFeedbackClass="login-valid-feedback"
           value=""
         />
         <TextFieldGroup
+          errorFeedbackClass="login-invalid-feedback"
           field="password"
           onChange={[Function]}
           placeholder="Password"
           type="password"
+          validFeedbackClass="login-valid-feedback"
           value=""
         />
         <div

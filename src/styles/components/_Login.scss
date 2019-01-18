@@ -21,7 +21,7 @@
   margin-top: 10%;
 }
 
-.alert {
+.custom-alert {
   position: absolute;
   right: 2%;
   top: -15%;
@@ -151,7 +151,7 @@
   color: $purple
 }
 
-.valid-feedback, .invalid-feedback {
+.login-valid-feedback, .login-invalid-feedback {
   padding-right: 55%;
 }
 

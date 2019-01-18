@@ -3,13 +3,25 @@ import propTypes from 'prop-types';
 
 
 
-const TextFieldGroup = ({ field, value, error, type, onChange, onBlur, id, placeholder }) => {
+const TextFieldGroup = ({
+  field,
+  value,
+  error,
+  type,
+  onChange,
+  onBlur,
+  id,
+  placeholder,
+  errorFeedbackClass,
+  validFeedbackClass
+}) => {
+
   let checkValidity;
   let feedbackClass;
-  if (error) feedbackClass = 'invalid-feedback'
-  else feedbackClass = 'valid-feedback'
-  if (error) checkValidity = "form-control is-invalid"
-  else if (value && !error) checkValidity = "form-control is-valid"
+  if (error) feedbackClass = `${errorFeedbackClass} invalid-feedback`
+  else feedbackClass = `${validFeedbackClass}  valid-feedback`
+  if (error) checkValidity = `form-control is-invalid`
+  else if (value && !error) checkValidity = `form-control is-valid`
   return (
     <div className="form-group">
       <input
@@ -40,7 +52,9 @@ TextFieldGroup.propTypes = {
   id: propTypes.string,
   onBlur: propTypes.func,
   checkValidity: propTypes.string,
-  placeholder: propTypes.string
+  placeholder: propTypes.string,
+  errorFeedbackClass: propTypes.string,
+  validFeedbackClass: propTypes.string,
 }
 
 TextFieldGroup.defaultProps = {

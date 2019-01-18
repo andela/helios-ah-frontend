@@ -1,14 +1,20 @@
 import React from 'React';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import LoginPage from '../../views/LoginPage';
 import TextFieldGroup from '../../components/TextFieldGroup';
-import frontEndValidation from '../../utils/frontendValidation';
+import SubmitButton from '../../components/SubmitButton';
 
 describe('Render Login Page', () => {
   let wrapper;
+  let props;
+  let event;
 
   beforeAll(() => {
     wrapper = shallow(<LoginPage />)
+    props = {
+      clearFlashMessages: jest.fn(),
+      loginRequest: jest.fn()
+    }
   });
   describe('render Login Page', () => {
     it('renders the login page component', () => {
@@ -35,7 +41,8 @@ describe('Render Login Page', () => {
     });
   });
   it('it should setstate of input password when input password value is changed', () => {
-    const event = {
+    event = {
+      preventDefault() { },
       target: {
         name: 'password',
         value: 'password'
@@ -47,13 +54,35 @@ describe('Render Login Page', () => {
   });
   it('it should call the isValid function which should return true if there are no errors', () => {
     const instance = wrapper.instance()
-    instance.setState({ email: 'teejay2k4@yahoo.com', password: 'testpassword'})
-    expect (instance.isValid()).toEqual(true)
+    instance.setState({ email: 'teejay2k4@yahoo.com', password: 'testpassword' })
+    expect(instance.isValid()).toEqual(true)
   });
-  it('it should call the isValid function which should return false if there are errors', () => {
+  it('it should call the isValid function which should return false if there are twp errors', () => {
     const instance = wrapper.instance()
-    instance.setState({ email: '', password: ''})
-    expect (instance.isValid()).toEqual(false)
+    instance.setState({ email: '', password: '' })
+    expect(instance.isValid()).toEqual(false)
+  });
+  it('it should call the isValid function which should return false if there is only one error', () => {
+    const instance = wrapper.instance()
+    instance.setState({ email: 'tee', password: 'anthony' })
+    expect(instance.isValid()).toEqual(false)
+  });
+  it('it should call clearFlashMessages props if input fields are valid', () => {
+    wrapper = shallow(<LoginPage  {...props} />)
+    wrapper.find('form').simulate('submit', event)
+    expect(props.clearFlashMessages).toHaveBeenCalled();
+  });
+  it('it should call setError state to null object if there are no errors on submit', () => {
+    const instance = wrapper.instance()
+    instance.setState({ email: 'teejay2k4@yahoo.com', password: 'testpassword' })
+    wrapper.find('form').simulate('submit', event)
+    expect(wrapper.state().errors).toEqual({});
+  });
+  it('it should call loginRequest props', () => {
+    const instance = wrapper.instance()
+    instance.setState({ email: 'chinemelunwosu@gmail.com', password: 'testpassword' })
+    wrapper.find('form').simulate('submit', event)
+    expect(props.loginRequest).toHaveBeenCalled();
   });
 });
 
