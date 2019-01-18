@@ -13,7 +13,8 @@ describe('Test for image upload to cloudinary', () => {
         secure_url: 'imaginaryimageurl.com/theimage.png'
       }
     };
-    const stubUploadImageCloudinary = sinon.stub(axios, 'post').returns(response);
+    const stubUploadImageCloudinary = sinon.stub(axios, 'post')
+      .returns(response);
     const expectedImageUrl = await uploadImageCloudinary('64bitImageUrl');
     expect(expectedImageUrl).to.equal('imaginaryimageurl.com/theimage.png');
     stubUploadImageCloudinary.restore();

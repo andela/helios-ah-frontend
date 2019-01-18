@@ -1,78 +1,70 @@
 import axios from 'axios';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
-import { 
-    GET_A_USER, 
-    TOGGLE_BUTTON, 
-    UPDATE_FIELD, 
-    CLEAR_EDIT
+import { Put, Get } from '../utilities/apiRequests';
+import {
+  GET_A_USER,
+  TOGGLE_BUTTON,
+  UPDATE_FIELD,
+  CLEAR_EDIT
 } from '../actionTypes';
 
-const baseUrl = 'http://5c3dabf3a9d04f0014a98a5e.mockapi.io/api/v1'
+const token = '4djnn7vW_In_EBIQEOr4wu7g6XjjYezzcn6COdC-2dj.9VDO1ITM5cDN1EjOiAHelJCL1gTM2IDO3QTNxojI0FWaiwiIplXYqFWZklmaiojIl1WYuJXZzVnIsIjOiUGbvJnIsISY1IGOjJGZjNmM4QWL4MWM40iMxcDNtEDZhZWL2UjYkNWNxMjI6ICZpJye.9JCVXpkI6ICc5RnIsIiN1IzUIJiOicGbhJye';
+const userId = '315cdb56-fad1-4712-81c8-d82ccdbc8b5a';
 
-const fetchAUser = (user) => {
-    return {
-        type: GET_A_USER,
-        user
-    }
-};
 
-export const editFields = (name, value) => {
-    return {
-        type: UPDATE_FIELD,
-        name, 
-        value
-    }
-};
+const fetchAUser = user => ({
+  type: GET_A_USER,
+  user
+});
 
-export const toggleButton = () => {
-   return {
-       type: TOGGLE_BUTTON
-    }
-}
+export const editFields = (name, value) => ({
+  type: UPDATE_FIELD,
+  name,
+  value
+});
 
-export const clearEdit = (status) => {
-    return {
-        type: CLEAR_EDIT,
-        status
-    }
-};
+export const toggleButton = () => ({
+  type: TOGGLE_BUTTON
+});
+
+export const clearEdit = status => ({
+  type: CLEAR_EDIT,
+  status
+});
 
 const getFollowDetails = async () => {
-    try {
-        const followDetails = await axios.get(`${baseUrl}/follow/5`);
-        return followDetails.data;
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
+  try {
+    const followDetails = await Get(`/users/${userId}/follow`);
+    return followDetails.data;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const getUserInfo = () => async (dispatch) => {
-    try {
-        const user = await axios.get(`${baseUrl}/users/5`);
-        const follow = await getFollowDetails();
-        user.data['following'] = follow.followingCount;
-        user.data['followers'] = follow.followersCount;
-        dispatch(fetchAUser(user.data));
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
+  try {
+    const user = await axios.Get(`/users/${userId}`);
+    const follow = await getFollowDetails();
+    user.data.following = follow.followingCount;
+    user.data.followers = follow.followersCount;
+    dispatch(fetchAUser(user.data));
+  } catch (error) {
+    return error;
+  }
+};
 
-export const updateProfile = (editFields) => async (dispatch) => {
-    try {
-        if (editFields.image) {
-            editFields.image = await uploadImageCloudinary(editFields.image);
-        }
-        const user = await axios.put(`${baseUrl}/users/5`, editFields);
-        const follow = await getFollowDetails();
-        user.data['following'] = follow.followingCount;
-        user.data['followers'] = follow.followersCount;
-        dispatch(clearEdit(true));
-        dispatch(fetchAUser(user.data));
+export const updateProfile = editedFields => async (dispatch) => {
+  try {
+    if (editedFields.image) {
+      editedFields.image = await uploadImageCloudinary(editedFields.image);
     }
-    catch (error) {
-        console.log(error.response)
-    }
-}
+    const user = await Put('/users', token);
+    const follow = await getFollowDetails();
+    user.data.following = follow.followingCount;
+    user.data.followers = follow.followersCount;
+    dispatch(clearEdit(true));
+    dispatch(fetchAUser(user.data));
+  } catch (error) {
+    return error;
+  }
+};
