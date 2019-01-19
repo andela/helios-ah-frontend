@@ -7,6 +7,6 @@ const { expect } = chai;
 describe('Test to successfully render <App />', () => {
   it('renders the <App /> components', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.length).toBe(1);
+    expect(wrapper.length).to.equal(1);
   });
 });

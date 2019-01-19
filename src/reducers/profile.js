@@ -27,7 +27,6 @@ export const userReducer = (state = defaultUserState, action) => {
 };
 
 export const buttonReducer = (state = defaultButtonValueState, action) => {
-  console.log(action)
   switch (action.type) {
     case TOGGLE_BUTTON:
       return {

@@ -1,7 +1,7 @@
 import attachAuthToken from './attachAuth';
 
-const baseUrl = (process.env.NODE_ENV === 'development')
-  ? 'http://localhost:4001/api/v1' : process.env.PRODUCTION_URL;
+const baseUrl = (process.env.NODE_ENV === 'production')
+  ? process.env.PRODUCTION_URL : 'http://localhost:4001/api/v1';
 
 export const Get = async (route, token) => {
   try {

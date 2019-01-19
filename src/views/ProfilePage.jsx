@@ -17,11 +17,6 @@ class ProfilePage extends Component {
   constructor(props) {
     super(props);
     this.uploadImageRef = React.createRef();
-    this.displayFile = this.displayFile.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this);
-    this.handleUpdateCancel = this.handleUpdateCancel.bind(this);
-    this.upLoadImage = this.upLoadImage.bind(this);
   }
 
   componentDidMount() {
@@ -29,23 +24,23 @@ class ProfilePage extends Component {
     getUserInfoAction();
   }
 
-  setStateImage(url) {
+  setStateImage = (url) => {
     const { editFieldsAction } = this.props;
     editFieldsAction('image', url);
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     const name = event.target.attributes.name.value;
     const { editFieldsAction } = this.props;
     editFieldsAction(name, event.target.value);
   }
 
-  upLoadImage() {
+  upLoadImage = () => {
     const fileInput = this.uploadImageRef;
     fileInput.current.click();
   }
 
-  handleUpdateSubmit() {
+  handleUpdateSubmit = () => {
     const {
       buttonValue,
       editedFields,
@@ -62,7 +57,7 @@ class ProfilePage extends Component {
     }
   }
 
-  handleUpdateCancel() {
+  handleUpdateCancel = () => {
     const {
       toggleButtonAction,
       clearEditAction
@@ -71,7 +66,7 @@ class ProfilePage extends Component {
     clearEditAction(false);
   }
 
-  displayFile(event) {
+  displayFile = (event) => {
     const { editFieldsAction } = this.props;
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
