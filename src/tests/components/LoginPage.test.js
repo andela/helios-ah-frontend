@@ -1,8 +1,8 @@
 import React from 'React';
 import { shallow } from 'enzyme';
+import axios from 'axios';
 import LoginPage from '../../views/LoginPage';
 import TextFieldGroup from '../../components/TextFieldGroup';
-import SubmitButton from '../../components/SubmitButton';
 
 describe('Render Login Page', () => {
   let wrapper;
@@ -13,12 +13,13 @@ describe('Render Login Page', () => {
     wrapper = shallow(<LoginPage />)
     props = {
       clearFlashMessages: jest.fn(),
-      loginRequest: jest.fn()
+      loginRequest: jest.fn(),
+      addFlashMessage: jest.fn()
     }
   });
   describe('render Login Page', () => {
     it('renders the login page component', () => {
-      expect(wrapper.find('div').length).toEqual(7);
+      expect(wrapper.find('div').length).toEqual(9);
       expect(wrapper.find('div').find('span').length).toEqual(4);
       expect(wrapper).toMatchSnapshot();
       expect(wrapper.find('h3').length).toEqual(1);
@@ -83,6 +84,72 @@ describe('Render Login Page', () => {
     instance.setState({ email: 'chinemelunwosu@gmail.com', password: 'testpassword' })
     wrapper.find('form').simulate('submit', event)
     expect(props.loginRequest).toHaveBeenCalled();
+  });
+  it('it should set state of field on input and return an error for an invalid field', () => {
+    event = {
+      preventDefault() { },
+      target: {
+        name: 'password',
+        value: 'password'
+      }
+    }
+    const instance = wrapper.instance()
+    wrapper.find(TextFieldGroup).at(1).simulate('input', event)
+    expect(wrapper.state().password).toEqual('password');
+  });
+  it('it should set state of error if wrong value is added on input', () => {
+    event = {
+      preventDefault() { },
+      target: {
+        name: 'password',
+        value: ''
+      }
+    }
+    const instance = wrapper.instance()
+    instance.setState({ email: '', password: '' })
+    wrapper.find(TextFieldGroup).at(1).simulate('input', event)
+    expect(wrapper.state().errors).toEqual({
+      password: 'Password field is required'
+    });
+  });
+  it('it should set state of field on blur and return an error for an invalid field', () => {
+    event = {
+      preventDefault() { },
+      target: {
+        name: 'password',
+        value: ''
+      }
+    }
+    const instance = wrapper.instance()
+    instance.setState({ email: '', password: '' })
+    wrapper.find(TextFieldGroup).at(1).simulate('blur', event)
+    expect(wrapper.state().errors).toEqual({
+      password: 'Password field is required'
+    });
+  });
+  it('Errors state should be deleted on blur if the former error is removed from input form', () => {
+    event = {
+      preventDefault() { },
+      target: {
+        name: 'password',
+      }
+    }
+    const updatedEvent = {
+      preventDefault() { },
+      target: {
+        name: 'password',
+      }
+    }
+    const instance = wrapper.instance();
+    instance.setState({ password: '' }, () => {
+      wrapper.find(TextFieldGroup).at(1).simulate('blur', event);
+      expect(wrapper.state().errors).toEqual({
+        password: 'Password field is required'
+      });
+    });
+    instance.setState({ password: 'myPassword' });
+    wrapper.find(TextFieldGroup).at(1).simulate('blur', updatedEvent);
+    expect(wrapper.state().errors).toEqual({});
   });
 });
 

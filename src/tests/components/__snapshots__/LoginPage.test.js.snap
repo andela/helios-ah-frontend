@@ -8,14 +8,14 @@ exports[`Render Login Page render Login Page renders the login page component 1`
     className="row"
   >
     <div
-      className="col-sm-6"
+      className="col-md-6"
     >
       <span
         className="login-image-container"
       />
     </div>
     <div
-      className="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-login"
+      className="col-md-6 col-xs-12 right-login"
     >
       <h3>
         WELCOME BACK.....
@@ -27,12 +27,15 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         customAlertClass="custom-alert"
       />
       <form
+        autoComplete="off"
         onSubmit={[Function]}
       >
         <TextFieldGroup
           errorFeedbackClass="login-invalid-feedback"
           field="email"
+          onBlur={[Function]}
           onChange={[Function]}
+          onInput={[Function]}
           placeholder="Email Address"
           type="text"
           validFeedbackClass="login-valid-feedback"
@@ -41,7 +44,9 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         <TextFieldGroup
           errorFeedbackClass="login-invalid-feedback"
           field="password"
+          onBlur={[Function]}
           onChange={[Function]}
+          onInput={[Function]}
           placeholder="Password"
           type="password"
           validFeedbackClass="login-valid-feedback"
@@ -50,13 +55,14 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         <div
           className="forgot-password"
         >
-          <a
-            href="#"
+          <Link
+            replace={false}
+            to="/reset-password"
           >
             <p>
               FORGOT PASSWORD?
             </p>
-          </a>
+          </Link>
         </div>
         <div
           className="login-buttons"
@@ -65,13 +71,24 @@ exports[`Render Login Page render Login Page renders the login page component 1`
             buttonClass="login-btn"
             buttonValue="LOGIN"
             columnAttribute="login-col"
+            idAttribute=""
             isRequestSent={false}
           />
-          <SubmitButton
-            buttonClass="signup-btn"
-            buttonValue="SIGNUP"
-            columnAttribute="signup-col"
-          />
+          <div
+            className="signup-col"
+          >
+            <div
+              className="form-group text-center"
+            >
+              <Link
+                className="signup-btn"
+                replace={false}
+                to="/signup"
+              >
+                SIGNUP
+              </Link>
+            </div>
+          </div>
         </div>
         <div
           className="social-media-icons"
@@ -100,14 +117,14 @@ exports[`Render Login Page render Login Page renders the login page component 2`
     className="row"
   >
     <div
-      className="col-sm-6"
+      className="col-md-6"
     >
       <span
         className="login-image-container"
       />
     </div>
     <div
-      className="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-login"
+      className="col-md-6 col-xs-12 right-login"
     >
       <h3>
         WELCOME BACK.....
@@ -119,12 +136,15 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         customAlertClass="custom-alert"
       />
       <form
+        autoComplete="off"
         onSubmit={[Function]}
       >
         <TextFieldGroup
           errorFeedbackClass="login-invalid-feedback"
           field="email"
+          onBlur={[Function]}
           onChange={[Function]}
+          onInput={[Function]}
           placeholder="Email Address"
           type="text"
           validFeedbackClass="login-valid-feedback"
@@ -133,7 +153,9 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         <TextFieldGroup
           errorFeedbackClass="login-invalid-feedback"
           field="password"
+          onBlur={[Function]}
           onChange={[Function]}
+          onInput={[Function]}
           placeholder="Password"
           type="password"
           validFeedbackClass="login-valid-feedback"
@@ -142,13 +164,14 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         <div
           className="forgot-password"
         >
-          <a
-            href="#"
+          <Link
+            replace={false}
+            to="/reset-password"
           >
             <p>
               FORGOT PASSWORD?
             </p>
-          </a>
+          </Link>
         </div>
         <div
           className="login-buttons"
@@ -157,13 +180,24 @@ exports[`Render Login Page render Login Page renders the login page component 2`
             buttonClass="login-btn"
             buttonValue="LOGIN"
             columnAttribute="login-col"
+            idAttribute=""
             isRequestSent={false}
           />
-          <SubmitButton
-            buttonClass="signup-btn"
-            buttonValue="SIGNUP"
-            columnAttribute="signup-col"
-          />
+          <div
+            className="signup-col"
+          >
+            <div
+              className="form-group text-center"
+            >
+              <Link
+                className="signup-btn"
+                replace={false}
+                to="/signup"
+              >
+                SIGNUP
+              </Link>
+            </div>
+          </div>
         </div>
         <div
           className="social-media-icons"

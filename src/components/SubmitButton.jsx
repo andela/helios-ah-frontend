@@ -24,9 +24,14 @@ SubmitButton.propTypes = {
   submitDetails: PropTypes.func,
   isRequestSent: PropTypes.bool.isRequired,
   buttonValue: PropTypes.string.isRequired,
-  idAttribute: PropTypes.string.isRequired,
+  idAttribute: PropTypes.string,
   buttonClass: PropTypes.string.isRequired,
   columnAttribute: PropTypes.string,
 };
+
+SubmitButton.defaultProps = {
+  idAttribute: '',
+  columnAttribute: ''
+}
 
 export default SubmitButton;

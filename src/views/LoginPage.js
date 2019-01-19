@@ -59,9 +59,7 @@ class LoginPage extends Component {
     if (errors[field]) {
       this.onBlurError[field] = errors[field]
       this.setState({ errors: this.onBlurError[field] })
-      console.log(errors[field])
     } else {
-      console.log("success", errors[field])
       delete (this.onBlurError[field])
     }
     this.setState({ errors: this.onBlurError })
@@ -72,31 +70,27 @@ class LoginPage extends Component {
     this.props.clearFlashMessages();
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true })
-      try {
-        const loginResponse = await this.props.loginRequest(this.state)
-        if (loginResponse) {
-          this.setState({ isLoading: false })
-          if (loginResponse.status === 200) {
-            this.props.addFlashMessage({
-              type: 'success',
-              text: `${loginResponse.data.message}`
-            })
-          }
-          else if (loginResponse.data.message === "Email or password does not exist") {
-            this.props.addFlashMessage({
-              type: 'error',
-              text: 'Incorrect email or password'
-            })
-          }
-          else {
-            this.props.addFlashMessage({
-              type: 'warning',
-              text: `${loginResponse.data.message}`
-            })
-          }
+      const loginResponse = await this.props.loginRequest(this.state)
+      if (loginResponse) {
+        this.setState({ isLoading: false })
+        if (loginResponse.status === 200) {
+          this.props.addFlashMessage({
+            type: 'success',
+            text: `${loginResponse.data.message}`
+          })
         }
-      } catch (error) {
-        return error;
+        else if (loginResponse.data.message === "Email or password does not exist") {
+          this.props.addFlashMessage({
+            type: 'error',
+            text: 'Incorrect email or password'
+          })
+        }
+        else {
+          this.props.addFlashMessage({
+            type: 'warning',
+            text: `${loginResponse.data.message}`
+          })
+        }
       }
     }
   }
@@ -106,11 +100,11 @@ class LoginPage extends Component {
     return (
       <div className="container login-body">
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-md-6">
             <span className="login-image-container">
             </span>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-login">
+          <div className="col-md-6 col-xs-12 right-login">
             <h3>WELCOME BACK.....</h3>
             <h5>LOGIN TO AUTHOR'S HAVEN</h5>
 
@@ -143,7 +137,7 @@ class LoginPage extends Component {
                 onInput={this.onInput}
               />
               <div className="forgot-password">
-                <a href="#"><p>FORGOT PASSWORD?</p></a>
+                <Link to="/reset-password"><p>FORGOT PASSWORD?</p></Link>
               </div>
               <div className="login-buttons">
                 <SubmitButton
@@ -152,11 +146,13 @@ class LoginPage extends Component {
                   buttonValue="LOGIN"
                   columnAttribute="login-col"
                 />
-                <SubmitButton
-                  buttonClass="signup-btn"
-                  buttonValue="SIGNUP"
-                  columnAttribute="signup-col"
-                />
+                <div className='signup-col'>
+                  <div className="form-group text-center">
+                    <Link to='/signup' className="signup-btn">
+                      SIGNUP
+                </Link>
+                  </div>
+                </div>
               </div>
               <div className="social-media-icons">
                 <span className="facebook"></span>
@@ -165,8 +161,8 @@ class LoginPage extends Component {
               </div>
             </form>
           </div>
-        </div>
-      </div>
+        </div >
+      </div >
     );
   }
 }
