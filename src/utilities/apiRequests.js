@@ -4,7 +4,6 @@ const baseUrl = (process.env.NODE_ENV === 'development')
   ? 'http://localhost:4001/api/v1' : process.env.PRODUCTION_URL;
 
 export const Get = async (route) => {
-  console.log('route is ==> ', baseUrl, ' == ', route);
   try {
     const response = await axios.get(baseUrl + route);
     return response.data;

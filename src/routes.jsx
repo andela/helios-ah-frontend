@@ -1,10 +1,16 @@
 import React from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import HomePage from './views/HomePage';
-import LoginPage from './views/LoginPage';
-import StartPage from './components/StartPage';
-import SignupRoutes from './components/SignupRoutes';
-import CompleteRegistration from './components/CompleteRegistration';
+import {
+  Route,
+  BrowserRouter,
+  Switch
+} from 'react-router-dom';
+import {
+  LoginPage,
+  HomePage,
+  SignupPage,
+  CompleteRegistration
+} from './views';
+import { StartPage } from './components';
 
 
 const routes = (
@@ -14,7 +20,7 @@ const routes = (
       <Route path="/login" component={LoginPage} />
       <Route path="/start" component={StartPage} />
       <Route path="/signup/verify" component={CompleteRegistration} />
-      <Route path="/signup" component={SignupRoutes} />
+      <Route path="/signup" component={SignupPage} />
     </Switch>
   </BrowserRouter>
 );

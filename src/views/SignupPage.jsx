@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import toastr from 'toastr';
+import { toastr } from '../utilities';
 import SignupForm from '../components/SignupForm';
 import userSignupAction from '../actions/signupActions';
 
 class SignupPage extends Component {
   constructor(props) {
     super(props);
-    this.InitialState = {
+    this.initialState = {
       username: '',
       firstName: '',
       lastName: '',
@@ -16,38 +16,36 @@ class SignupPage extends Component {
       confirmPassword: '',
       email: '',
     };
-    this.state = { ...this.InitialState, isRequestSent: false };
+    this.state = { ...this.initialState, isRequestSent: false };
     this.isRequestSent = false;
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
-  handleOnChange(event) {
+  handleOnChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = (event) => {
     event.preventDefault();
     const {
       username, email, firstName, lastName, password, confirmPassword
     } = this.state;
     const { userSignup } = this.props;
     if (confirmPassword !== password) {
-      return toastr.error('Passwords must match', { timeOut: 3000 });
+      return toastr('error', 'Passwords must match', 3000);
     }
     this.setState({ isRequestSent: true });
     userSignup({
       username, email, firstName, lastName, password
     }).then((response) => {
       if (response.success) {
-        toastr.success(response.message, { timeOut: 4000 });
-        return this.setState({ ...this.InitialState, isRequestSent: false });
+        toastr('success', response.message, 4000);
+        return this.setState({ ...this.initialState, isRequestSent: false });
       }
       this.setState({ isRequestSent: false });
-      return toastr.error(response.message, { timeOut: 3000 });
+      return toastr('error', response.message, 3000);
     }).catch((error) => {
       this.setState({ isRequestSent: false });
-      return toastr.error(error.message, { timeOut: 3000 });
+      return toastr('error', error.message, 3000);
     });
   }
 

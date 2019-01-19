@@ -13,7 +13,7 @@ describe('Unit test for Signup Form component', () => {
     isRequestSent: true,
     confirmPassword: 'password',
     firstName: 'firstName',
-    lastName: 'lastName',
+    lastName: 'Shola',
     submitDetails: () => {},
   };
   it('should render a form with 6 form input fields and 2 buttons', () => {

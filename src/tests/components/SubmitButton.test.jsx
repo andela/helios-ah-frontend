@@ -7,11 +7,11 @@ const { expect } = chai;
 describe('Unit test for the submit button component. ', () => {
   it('should render an html with a button tag', () => {
     const propObj = {
-      submitDetails: () => {},
+      onClick: () => {},
       isRequestSent: true,
-      buttonValue: 'buttonValue',
-      idAttribute: 'login-button',
-      buttonClass: 'someClassProperty',
+      value: 'buttonValue',
+      id: 'login-button',
+      className: 'someClassProperty',
       columnAttribute: 'col-md-4'
     };
     const wrapper = shallow(<SubmitButton {...propObj} />);

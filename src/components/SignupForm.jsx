@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SignupButton from './SubmitButton';
-import LoginButton from './Button';
-import SignupInputForm from './FormInput';
+import SubmitButton from './SubmitButton';
+import Button from './Button';
+import FormInput from './FormInput';
 
 const SignupForm = ({
-  onChange, username, password, email, isRequestSent,
-  confirmPassword, firstName, lastName, submitDetails,
+  onChange,
+  username,
+  password,
+  email,
+  isRequestSent,
+  confirmPassword,
+  firstName,
+  lastName,
+  submitDetails,
 }) => (
   <div className="container">
     <div className="row">
@@ -20,72 +27,72 @@ const SignupForm = ({
       <div className="col-sm-6 col-xs-12">
         <div id="form-container">
           <form className="form-horizontal">
-            <SignupInputForm
-              idAttribute="username"
-              inputValue={username}
-              inputPlaceHolder="Username"
+            <FormInput
+              id="username"
+              value={username}
+              placeHolder="Username"
               onChange={onChange}
-              inputType="text"
-              classAttribute="form-control signup-form-input"
+              type="text"
+              className="form-control signup-form-input"
             />
-            <SignupInputForm
-              idAttribute="firstName"
-              inputValue={firstName}
-              inputPlaceHolder="First Name"
+            <FormInput
+              id="firstName"
+              value={firstName}
+              placeHolder="First Name"
               onChange={onChange}
-              inputType="text"
-              classAttribute="form-control signup-form-input"
+              type="text"
+              className="form-control signup-form-input"
             />
-            <SignupInputForm
-              idAttribute="lastName"
-              inputValue={lastName}
-              inputPlaceHolder="Last Name"
+            <FormInput
+              id="lastName"
+              value={lastName}
+              placeHolder="Last Name"
               onChange={onChange}
-              inputType="text"
-              classAttribute="form-control signup-form-input"
+              type="text"
+              className="form-control signup-form-input"
             />
-            <SignupInputForm
-              idAttribute="email"
-              inputValue={email}
-              inputPlaceHolder="Email"
+            <FormInput
+              id="email"
+              value={email}
+              placeHolder="Email"
               onChange={onChange}
-              inputType="text"
-              classAttribute="form-control signup-form-input"
+              type="text"
+              className="form-control signup-form-input"
             />
-            <SignupInputForm
-              idAttribute="password"
-              inputValue={password}
-              inputPlaceHolder="Password"
+            <FormInput
+              id="password"
+              value={password}
+              placeHolder="Password"
               onChange={onChange}
-              inputType="password"
-              classAttribute="form-control signup-form-input"
+              type="password"
+              className="form-control signup-form-input"
             />
-            <SignupInputForm
-              idAttribute="confirmPassword"
-              inputValue={confirmPassword}
-              inputPlaceHolder="Confirm Password"
+            <FormInput
+              id="confirmPassword"
+              value={confirmPassword}
+              placeHolder="Confirm Password"
               onChange={onChange}
-              inputType="password"
-              classAttribute="form-control signup-form-input"
+              type="password"
+              className="form-control signup-form-input"
             />
 
             <div className="row">
 
-              <LoginButton
-                submitDetails={submitDetails}
+              <SubmitButton
+                onClick={submitDetails}
                 isRequestSent={isRequestSent}
-                buttonValue="Login"
-                idAttribute="signup-page-login-button"
-                buttonClass="btn"
+                id="signup-page-button"
+                value="Signup"
+                className="btn"
                 columnAttribute="col-sm-6 col-xs-12"
               />
 
-              <SignupButton
-                submitDetails={submitDetails}
+              <Button
+                onClick={submitDetails}
                 isRequestSent={isRequestSent}
-                idAttribute="signup-page-button"
-                buttonValue="Signup"
-                buttonClass="btn"
+                value="Login"
+                id="signup-page-login-button"
+                className="btn"
                 columnAttribute="col-sm-6 col-xs-12"
               />
 

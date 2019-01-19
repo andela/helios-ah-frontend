@@ -2,30 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SubmitButton = ({
-  submitDetails, isRequestSent, buttonValue,
-  idAttribute, buttonClass, columnAttribute
+  onClick,
+  isRequestSent,
+  value,
+  id,
+  className,
+  columnAttribute
 }) => (
   <div className={columnAttribute}>
     <div className="form-group text-center">
       <button
         type="submit"
-        className={buttonClass}
-        id={idAttribute}
-        onClick={submitDetails}
+        className={className}
+        id={id}
+        onClick={onClick}
         disabled={isRequestSent}
       >
-        {buttonValue}
+        {value}
       </button>
     </div>
   </div>
 );
 
 SubmitButton.propTypes = {
-  submitDetails: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   isRequestSent: PropTypes.bool.isRequired,
-  buttonValue: PropTypes.string.isRequired,
-  idAttribute: PropTypes.string.isRequired,
-  buttonClass: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
   columnAttribute: PropTypes.string.isRequired,
 };
 
