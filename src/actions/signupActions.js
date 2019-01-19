@@ -1,6 +1,11 @@
 import { Post } from '../utilities/apiRequests';
+import { USER_SIGNUP_SUCCESS } from '../actionTypes';
 
-const signupUser = userDetails => () => Post('/signup', userDetails)
+export const signupSuccess = userInfo => ({
+  type: USER_SIGNUP_SUCCESS,
+  userInfo,
+});
+export const signupUser = userDetails => () => Post('/auth/signup', userDetails)
   .then(response => response).catch((error) => {
     if (error.message === 'Network Error') {
       return {
@@ -10,5 +15,3 @@ const signupUser = userDetails => () => Post('/signup', userDetails)
     }
     return error;
   });
-
-export default signupUser;
