@@ -10,6 +10,7 @@ const TextFieldGroup = ({
   type,
   onChange,
   onBlur,
+  onInput,
   id,
   placeholder,
   errorFeedbackClass,
@@ -27,6 +28,7 @@ const TextFieldGroup = ({
       <input
         type={type}
         name={field}
+        onInput={onInput}
         className={checkValidity}
         id={id}
         placeholder={placeholder}
@@ -49,6 +51,7 @@ TextFieldGroup.propTypes = {
   error: propTypes.string,
   type: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
+  onInput: propTypes.func.isRequired,
   id: propTypes.string,
   onBlur: propTypes.func,
   checkValidity: propTypes.string,

@@ -18,11 +18,29 @@ class LoginPage extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onBlur = this.onBlur.bind(this);
+    this.onInput = this.onInput.bind(this);
+    this.onBlurError = {}
+    this.onInputError = {}
   }
 
   onChange(e) {
     this.setState({
       [e.target.name]: e.target.value
+    })
+  }
+
+  onInput(e) {
+    const field = e.target.name;
+    const value = e.target.value;
+    this.setState({ [field]: value }, () => {
+      const errors = frontendValidation(this.state)
+      if (errors[field]) {
+        this.onInputError[field] = errors[field]
+        this.setState({ errors: this.onInputError[field] })
+      } else {
+        delete (this.onInputError[field])
+      }
+      this.setState({ errors: this.onInputError })
     })
   }
 
@@ -36,17 +54,17 @@ class LoginPage extends Component {
   }
 
   onBlur(e) {
-    console.log(e, "event")
-    const field = e.target.name.trim();
+    const field = e.target.name;
     const errors = frontendValidation(this.state)
     if (errors[field]) {
-      this.thisError[field] = errors[field]
-      this.setState({ errors: this.thisError })
+      this.onBlurError[field] = errors[field]
+      this.setState({ errors: this.onBlurError[field] })
       console.log(errors[field])
     } else {
-      console.log(errors[field])
-      this.setState({ errors: {} });
+      console.log("success", errors[field])
+      delete (this.onBlurError[field])
     }
+    this.setState({ errors: this.onBlurError })
   }
 
   async onSubmit(e) {
@@ -100,7 +118,7 @@ class LoginPage extends Component {
               customAlertClass='custom-alert'
             />
 
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} autoComplete="off">
               <TextFieldGroup
                 error={errors && errors.email}
                 placeholder="Email Address"
@@ -110,6 +128,7 @@ class LoginPage extends Component {
                 value={this.state.email}
                 errorFeedbackClass='login-invalid-feedback'
                 validFeedbackClass='login-valid-feedback'
+                onInput={this.onInput}
               />
               <TextFieldGroup
                 error={errors && errors.password}
@@ -121,6 +140,7 @@ class LoginPage extends Component {
                 value={this.state.password}
                 errorFeedbackClass='login-invalid-feedback'
                 validFeedbackClass='login-valid-feedback'
+                onInput={this.onInput}
               />
               <div className="forgot-password">
                 <a href="#"><p>FORGOT PASSWORD?</p></a>
