@@ -1,5 +1,14 @@
 //Demo Base Settings
-body {
+html, body {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: $light-purple;
+  background-color: $white;
+  height: 100%;
+  width: 100%;
+  top:0;
+  bottom:0;
+}
+
+#app, #app > div{
+  height:100%;
+  width: 100%;
 }

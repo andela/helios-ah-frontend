@@ -6,6 +6,7 @@ class HomePage extends Component {
       <div>
         <Links/>
         <h2> This is the Home Page</h2>
+        <h3 className="test2">Authors Haven</h3>
       </div>
     );
   }

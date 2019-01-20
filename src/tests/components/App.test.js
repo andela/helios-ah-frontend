@@ -6,6 +6,6 @@ import App from '../../components/App';
 describe('Test to successfully render <App />', () => {
   it('renders the <App /> components', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.length).toBe(1);
+    expect(wrapper.length).toBe(1); 
   });
 });

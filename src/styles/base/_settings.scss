@@ -1,5 +1,6 @@
 //Demo Colors
-$purple: #8357c5;
+$white: #ffffff;
+$purple: #800080;
 $light-purple: lighten($purple, 30%);
 
 //sDemo pacing in pixels
@@ -8,5 +9,9 @@ $medium-Space: 50px;
 $large-space: 100px;
 
 //Demo spacing in percentage
+$small-ratio: 5%;
 $large-ratio: 100%;
 $Xlarge-ratio: 300%;
+
+$font-family:'Reem Kufi', sans-serif;
+$red: red;
