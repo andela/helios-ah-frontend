@@ -8,7 +8,7 @@ export const Get = async (route) => {
     const response = await axios.get(baseUrl + route);
     return response.data;
   } catch (error) {
-    return error.response.data ? error.response.data : error;
+    return error.response ? error.response.data : error;
   }
 };
 
@@ -17,8 +17,7 @@ export const Post = async (route, data) => {
     const response = await axios.post(`${baseUrl}${route}`, data);
     return response.data;
   } catch (error) {
-    console.log('error in api request is ==> ', error);
-    return error.response.data ? error.response.data : error;
+    return error.response ? error.response.data : error;
   }
 };
 
@@ -27,7 +26,7 @@ export const Put = async (route, data) => {
     const response = await axios.put(`${baseUrl}${route}`, data);
     return response.data;
   } catch (error) {
-    return error.response.data ? error.response.data : error;
+    return error.response ? error.response.data : error;
   }
 };
 
@@ -36,6 +35,6 @@ export const Delete = async (route, data) => {
     const response = await axios.delete(`${baseUrl}${route}`, data);
     return response.data;
   } catch (error) {
-    return error.response.data ? error.response.data : error;
+    return error.response ? error.response.data : error;
   }
 };

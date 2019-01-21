@@ -10,7 +10,6 @@ export const signupUser = userDetails => async () => {
     const response = await Post('/auth/signup', userDetails);
     return response;
   } catch (error) {
-    console.log('am in error ==> ', error);
     if (error.message === 'Network Error') {
       return {
         message: 'Could not connect to the internet. '

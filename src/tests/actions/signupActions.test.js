@@ -37,19 +37,16 @@ describe('Unit tests fro the signup actions', () => {
       const stubPostMethod = sinon.stub(axios, 'post').returns(userInfo);
       const expectedActions = [];
       const store = mockStore({ user: {} });
-      const response = await store.dispatch(actions.signupUser(userDetails));
-      console.log('respinse 1 is ==> ', response);
+      await store.dispatch(actions.signupUser(userDetails));
       expect(store.getActions()).toEqual(expectedActions);
       stubPostMethod.restore();
     });
     it('should let user know when there is no internet network', async () => {
       const stubPostMethod = sinon.stub(axios, 'post')
         .throws({ message: 'Network Error' });
-      const expectedActions = [];
       const store = mockStore({ user: {} });
       const response = await store.dispatch(actions.signupUser(userDetails));
-      console.log('respinse 2 is ==> ', response);
-      expect(store.getActions()).toEqual(expectedActions);
+      expect(response.message).toEqual('Network Error');
       stubPostMethod.restore();
     });
   });
