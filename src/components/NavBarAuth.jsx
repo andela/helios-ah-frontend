@@ -13,14 +13,14 @@ const NavBarAuth = () => (
       <div className="navbar-collapse collapse" id="navb">
         <form className="form-inline ml-auto">
           <input className="search-input hide" type="text" placeholder="Search" />
-          <i className="fa fa-search major-color mr-sm-5 mr-5" />
+          <i className="fa fa-search mr-sm-5 mr-5" />
         </form>
         <ul className="navbar-nav">
           <li className="nav-item">
             <button className="btn add-article-btn mr-5 ml-5 mt-2" type="button">Add new Article</button>
           </li>
           <li className="nav-item">
-            <i className="fa fa-bell-o major-color mr-5 ml-5" data-toggle="modal" data-target="#exampleModalLong" />
+            <i className="fas fa-bell major-color mr-5 ml-5" data-toggle="modal" data-target="#exampleModalLong" />
           </li>
           <li className="nav-item dropdown">
             <img
@@ -39,7 +39,8 @@ const NavBarAuth = () => (
               <a className="dropdown-item" href="/">Profile</a>
               <a className="dropdown-item" href="/">
                 Sign out&nbsp;&nbsp;&nbsp;
-                <i className="fa fa-sign-out" />
+                <i className="fas fa-sign-out-alt" />
+
               </a>
             </div>
           </li>

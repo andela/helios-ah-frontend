@@ -1,0 +1,16 @@
+#card {
+  img {
+    height: 50%;
+  }
+  .footer-container{
+    display: flex;
+    justify-content: space-between;
+    background: $white;
+  }
+  .card-icons{
+    margin: auto 0.4em;
+  }
+  .fas{
+    color: $placeholderText;
+  }
+};

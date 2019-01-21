@@ -3,8 +3,8 @@ import Button from './Button';
 import FormInput from './FormInput';
 import Links from './Links';
 import SignupForm from './SignupForm';
-import StartPage from './StartPage';
 import SubmitButton from './SubmitButton';
+import Card from './card';
 
 export {
   App,
@@ -12,6 +12,6 @@ export {
   FormInput,
   Links,
   SignupForm,
-  StartPage,
   SubmitButton,
+  Card,
 };
