@@ -35,10 +35,9 @@ describe('Unit tests fro the signup actions', () => {
     };
     it('should complete user signup registration', async () => {
       const stubPostMethod = sinon.stub(axios, 'post').returns(userInfo);
-      const expectedActions = [];
       const store = mockStore({ user: {} });
       await store.dispatch(actions.signupUser(userDetails));
-      expect(store.getActions()).toEqual(expectedActions);
+      expect(store.getActions()).toEqual([]);
       stubPostMethod.restore();
     });
     it('should let user know when there is no internet network', async () => {

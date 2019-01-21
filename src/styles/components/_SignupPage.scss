@@ -26,16 +26,16 @@ h2 {
 }
 
 .signup-form-input::placeholder { /* Chrome/Opera/Safari */
-  color: #c4c4c4;
+  color: $placeholderText;
 }
 .signup-form-input::-moz-placeholder { /* Firefox 19+ */
-  color: #c4c4c4;
+  color: $placeholderText;
 }
 .signup-form-input:-ms-input-placeholder { /* IE 10+ */
-  color: #c4c4c4;
+  color: $placeholderText;
 }
 .signup-form-input:-moz-placeholder { /* Firefox 18- */
-  color: #c4c4c4;
+  color: $placeholderText;
 }
 
 #form-container {
