@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toastr } from '../utilities';
 import SignupForm from '../components/SignupForm';
-import userSignupAction from '../actions/signupActions';
+import { signupUser } from '../actions/signupActions';
 
 class SignupPage extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ SignupPage.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  userSignup: userDetails => dispatch(userSignupAction(userDetails)),
+  userSignup: userDetails => dispatch(signupUser(userDetails)),
 });
 
 export default connect(null, mapDispatchToProps)(SignupPage);

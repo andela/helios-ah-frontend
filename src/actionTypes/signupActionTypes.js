@@ -1,2 +1,0 @@
-export const USER_SIGNUP = 'USER_SIGNUP';
-export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS';

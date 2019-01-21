@@ -1,7 +1,15 @@
 import React from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { LoginPage, HomePage, SignupPage } from './views';
-import { StartPage } from './components';
+import {
+  Route,
+  BrowserRouter,
+  Switch
+} from 'react-router-dom';
+import {
+  LoginPage,
+  HomePage,
+  SignupPage,
+  CompleteRegistration
+} from './views';
 
 
 const routes = (
@@ -9,7 +17,7 @@ const routes = (
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPage} />
-      <Route path="/start" component={StartPage} />
+      <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
     </Switch>
   </BrowserRouter>

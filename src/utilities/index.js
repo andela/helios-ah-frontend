@@ -3,5 +3,5 @@ import attachAuthToken from './attachAuth';
 
 export {
   toastr,
-  attachAuthToken
+  attachAuthToken,
 };
