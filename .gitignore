@@ -3,3 +3,4 @@ build/
 .env
 .vscode/
 coverage/
+.DS_Store

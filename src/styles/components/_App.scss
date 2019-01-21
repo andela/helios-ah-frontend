@@ -1,3 +1,34 @@
+//Bookmark Card
+.bookmarkCard {
+  background-color: $white;
+  border-radius: $card-radius;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 6px 14px 0 rgba(0, 0, 0, 0.2);
+  height: 150px;
+}
+.bookmarkCard .cardFoot {
+  font-size: 12px;
+}
+.bookmarkCard .cardText {
+  overflow: hidden;
+  height: 70px;
+}
+.bookmarkCard .cardTitle {
+  font-size: 18px;
+}
+.bookmarkCard .details {
+  border-radius: $card-radius 0 0 $card-radius;
+}
+.bookmarkCard .image {
+  background-color: $white;
+  border-radius: 0 $card-radius $card-radius 0;
+}
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+.text-hover:hover {
+  color: $purple;
+}
+
 // Demo Component/App  SCSS file
 .test1 {
   display: flex;
@@ -22,39 +53,4 @@
     margin-left: 0%;
     width: $large-ratio;
   }
-}
-
-//Bookmark Card
-.bookmarkCard {
-  background-color: $white;
-  border-radius: $card-radius;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 6px 14px 0 rgba(0, 0, 0, 0.2);
-  height: 150px;
-}
-.bookmarkCard .details {
-  border-radius: $card-radius 0 0 $card-radius;
-}
-.bookmarkCard .image {
-  background-color: $white;
-  border-radius: 0 $card-radius $card-radius 0;
-}
-.bookmarkCard .cardText {
-  overflow: hidden;
-  height: 70px;
-}
-.bookmarkCard .cardFoot {
-  font-size: 12px;
-}
-.bookmarkCard .cardTitle {
-  font-size: 18px;
-}
-.bookmarkCard img {
-  height: 100%;
-  width: 100%;
-}
-.cursor-pointer:hover {
-  cursor: pointer;
-}
-.text-hover:hover {
-  color: $purple;
 }

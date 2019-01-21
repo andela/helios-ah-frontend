@@ -1,16 +1,17 @@
+import '@babel/polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './components/App';
 import 'normalize.css/normalize.css';
-import '../src/styles/styles.scss';
-import Routes from './routes';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/toastr/build/toastr.min.css';
+import './styles/styles.scss';
 
 render(
   <Provider store={store}>
-    {Routes}
+    <App />
   </Provider>,
   document.getElementById('app')
-)
-
+);
