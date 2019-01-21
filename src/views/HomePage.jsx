@@ -6,7 +6,11 @@ const HomePage = () => (
   <div>
     <Links />
     <h2> This is the Home Page</h2>
-    <Card />
+    <div className="row">
+      <Card />
+      <Card />
+      <Card />
+    </div>
   </div>
 );
 
