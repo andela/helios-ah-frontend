@@ -5,13 +5,18 @@ export const signupSuccess = userInfo => ({
   type: USER_SIGNUP_SUCCESS,
   userInfo,
 });
-export const signupUser = userDetails => () => Post('/auth/signup', userDetails)
-  .then(response => response).catch((error) => {
+export const signupUser = userDetails => async () => {
+  try {
+    const response = await Post('/auth/signup', userDetails);
+    return response;
+  } catch (error) {
+    console.log('am in error ==> ', error);
     if (error.message === 'Network Error') {
       return {
         message: 'Could not connect to the internet. '
-        + 'Please check your internet connection.'
+          + 'Please check your internet connection.'
       };
     }
     return error;
-  });
+  }
+};

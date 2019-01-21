@@ -6,7 +6,6 @@ import { signupSuccess } from '../actions/signupActions';
 
 class CompleteRegistrationPage extends Component {
   state = {
-    isLoggedIn: false,
     pageStatus: 'Redirecting... ',
   };
 
@@ -15,6 +14,7 @@ class CompleteRegistrationPage extends Component {
     if (currentUser.isAuthenticated) {
       return history.push('/');
     }
+    this.CompleteRegistration();
   }
 
   CompleteRegistration = () => {
@@ -24,26 +24,30 @@ class CompleteRegistrationPage extends Component {
       if (userInfo.success) {
         localStorage.setItem('token', userInfo.token);
         signupUserSuccess(userInfo);
-        this.setState({ isLoggedIn: true });
+        return history.push('/');
+      }
+      if (userInfo.code === 401) {
+        this.setState({
+          pageStatus: 'The link we sent tot you has expired. '
+        + 'Please start the signup process again.'
+        });
+        return setTimeout(() => { history.push('/signup'); }, 3000);
       }
     })
-      .catch((error) => {
-        console.log('err is ==> ', error);
-        this.setState({ pageStatus: 'Could not authenticate ' });
-        setTimeout(() => history.push('/signup'), 3000);
+      .catch(() => {
+        this.setState({
+          pageStatus: 'We could not verify you. Please try '
+        + 'again or start the signup process again.'
+        });
+        return setTimeout(() => { history.push('/signup'); }, 3000);
       });
   };
 
   render() {
-    const { isLoggedIn, pageStatus } = this.state;
-    const { history } = this.props;
-    if (isLoggedIn) {
-      return history.push('/');
-    }
-    this.CompleteRegistration();
+    const { pageStatus } = this.state;
     return (
       <div>
-        <h1>{pageStatus}</h1>
+        <h1 style={{ fontSize: '1em' }}>{pageStatus}</h1>
       </div>
     );
   }
