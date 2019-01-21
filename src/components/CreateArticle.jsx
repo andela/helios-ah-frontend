@@ -23,8 +23,9 @@ class CreateArticle extends Component {
     };
   }
 
-  async componentWillReceiveProps(newProps) {
-    if (newProps.publish === true || newProps.draft === true) {
+  async componentDidUpdate(prevProps, prevState) {
+    if ((this.props.publish && prevProps.publish === false)
+    || (this.props.draft && prevProps.draft === false)) {
       let uploaded = true;
       const { onSave, createArticle } = this.props;
       const {
@@ -33,7 +34,7 @@ class CreateArticle extends Component {
         id,
         title,
         body
-      } = this.state;
+      } = prevState;
       if (title.trim().length < 3 || body.trim().length < 3) {
         onSave();
         this.props.addFlashMessage({
@@ -46,6 +47,7 @@ class CreateArticle extends Component {
         }
         if (uploaded) {
           uploaded = ((typeof uploaded) === 'string') ? uploaded : null;
+          // eslint-disable-next-line react/no-did-update-set-state
           this.setState({ image: uploaded }, async () => {
             if (id) {
             //
@@ -196,6 +198,8 @@ class CreateArticle extends Component {
   }
 }
 CreateArticle.propTypes = {
+  draft: PropTypes.bool,
+  publish: PropTypes.bool,
   onSave: PropTypes.func.isRequired,
   cache: PropTypes.objectOf(PropTypes.any).isRequired,
   createArticle: PropTypes.func.isRequired,

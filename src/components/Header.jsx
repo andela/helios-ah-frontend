@@ -24,11 +24,11 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="row" id="header">
+      <div className="row fixed-top" id="header">
         <div className="col-lg-1" id="hamburger">
           <i className="fa fa-bars major-color" />
         </div>
-        <div className="col-lg-4" id="head-title">
+        <div className="col-lg-3" id="head-title">
           <span id="header-title">{this.state.title}</span>
         </div>
         <div className="col-lg-3" id="search-col">
@@ -44,9 +44,9 @@ class Header extends Component {
             onClick={this.onSearchClick}
           />
         </div>
-        <div className="col-lg-2" id="header-button">
+        <div className="col-lg-3" id="header-button">
           <input
-            id="puplish"
+            id="publish"
             type="button"
             name="publish"
             onClick={this.props.onPublish}
