@@ -1,6 +1,7 @@
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import mockStoreConfig from 'redux-mock-store';
+import { baseUrl } from '../../utilities/apiRequests';
 import {
   googleLogin, facebookLogin, loginFail, twitterLogin
 } from '../../actions/socialLoginAction';
@@ -59,7 +60,7 @@ describe('actions for social login', () => {
     expect(loginFail()).toEqual(expectedAction);
   });
   it('should return an action if social login platform is facebook(social_fb)', async () => {
-    const url = 'http://localhost:4001/api/v1/auth/social_fb/callback?4ygd774geiugugr78';
+    const url = `${baseUrl}/auth/social_fb/callback?4ygd774geiugugr78`;
     const fakeResponse = {
       data: {
         message: 'Social login via facebook was successful',
@@ -87,7 +88,7 @@ describe('actions for social login', () => {
     );
   });
   it('should return an action if social login platform is google(social_ggl)', async () => {
-    const url = 'http://localhost:4001/api/v1/auth/social_ggl/callback?4ygd774geiugugr78';
+    const url = `${baseUrl}/auth/social_ggl/callback?4ygd774geiugugr78`;
     const fakeResponse = {
       data: {
         message: 'Social login via gmail was successful',
