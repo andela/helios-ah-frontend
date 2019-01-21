@@ -1,5 +1,8 @@
 // Demo Index SCSS File
 @import './base/settings';
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
+
 @import './base/base';
 @import './components/Login';
-@import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
+@import './components/SignupPage';
+

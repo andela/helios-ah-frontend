@@ -21,36 +21,35 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         WELCOME BACK.....
       </h3>
       <h5>
-        LOGIN TO AUTHOR'S HAVEN
+        LOGIN TO AUTHOR\`S HAVEN
       </h5>
       <Connect(FlashMessageList)
         customAlertClass="custom-alert"
       />
       <form
         autoComplete="off"
-        onSubmit={[Function]}
       >
         <TextFieldGroup
+          error=""
           errorFeedbackClass="login-invalid-feedback"
           field="email"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onInput={[Function]}
+          id={null}
+          onBlur={null}
+          onInput={null}
           placeholder="Email Address"
           type="text"
           validFeedbackClass="login-valid-feedback"
-          value=""
         />
         <TextFieldGroup
+          error=""
           errorFeedbackClass="login-invalid-feedback"
           field="password"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onInput={[Function]}
+          id={null}
+          onBlur={null}
+          onInput={null}
           placeholder="Password"
           type="password"
           validFeedbackClass="login-valid-feedback"
-          value=""
         />
         <div
           className="forgot-password"
@@ -68,27 +67,17 @@ exports[`Render Login Page render Login Page renders the login page component 1`
           className="login-buttons"
         >
           <SubmitButton
-            buttonClass="login-btn"
-            buttonValue="LOGIN"
+            className="login-btn"
             columnAttribute="login-col"
-            idAttribute=""
-            isRequestSent={false}
+            id={null}
+            value="LOGIN"
           />
-          <div
-            className="signup-col"
-          >
-            <div
-              className="form-group text-center"
-            >
-              <Link
-                className="signup-btn"
-                replace={false}
-                to="/signup"
-              >
-                SIGNUP
-              </Link>
-            </div>
-          </div>
+          <SubmitButton
+            className="signup-btn"
+            columnAttribute="signup-col"
+            id={null}
+            value="SIGNUP"
+          />
         </div>
         <div
           className="social-media-icons"
@@ -130,36 +119,35 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         WELCOME BACK.....
       </h3>
       <h5>
-        LOGIN TO AUTHOR'S HAVEN
+        LOGIN TO AUTHOR\`S HAVEN
       </h5>
       <Connect(FlashMessageList)
         customAlertClass="custom-alert"
       />
       <form
         autoComplete="off"
-        onSubmit={[Function]}
       >
         <TextFieldGroup
+          error=""
           errorFeedbackClass="login-invalid-feedback"
           field="email"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onInput={[Function]}
+          id={null}
+          onBlur={null}
+          onInput={null}
           placeholder="Email Address"
           type="text"
           validFeedbackClass="login-valid-feedback"
-          value=""
         />
         <TextFieldGroup
+          error=""
           errorFeedbackClass="login-invalid-feedback"
           field="password"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onInput={[Function]}
+          id={null}
+          onBlur={null}
+          onInput={null}
           placeholder="Password"
           type="password"
           validFeedbackClass="login-valid-feedback"
-          value=""
         />
         <div
           className="forgot-password"
@@ -177,27 +165,17 @@ exports[`Render Login Page render Login Page renders the login page component 2`
           className="login-buttons"
         >
           <SubmitButton
-            buttonClass="login-btn"
-            buttonValue="LOGIN"
+            className="login-btn"
             columnAttribute="login-col"
-            idAttribute=""
-            isRequestSent={false}
+            id={null}
+            value="LOGIN"
           />
-          <div
-            className="signup-col"
-          >
-            <div
-              className="form-group text-center"
-            >
-              <Link
-                className="signup-btn"
-                replace={false}
-                to="/signup"
-              >
-                SIGNUP
-              </Link>
-            </div>
-          </div>
+          <SubmitButton
+            className="signup-btn"
+            columnAttribute="signup-col"
+            id={null}
+            value="SIGNUP"
+          />
         </div>
         <div
           className="social-media-icons"

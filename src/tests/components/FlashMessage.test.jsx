@@ -1,38 +1,41 @@
-import React from 'React';
-import { shallow, mount } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 import FlashMessage from '../../components/FlashMessage';
+
 describe('Render Flash Messages', () => {
   let wrapper;
   let props;
+
   beforeAll(() => {
     props = {
       message:
       {
-        id: 0.4,
         type: 'error',
         message: 'Invalid email'
       },
-      deleteFlashMessage: jest.fn()
-    }
+      deleteBannerhMessage: jest.fn(),
+      customAlertClass: 'mycustomclass',
+      bannerAlertClass: jest.fn()
+    };
     wrapper = shallow(<FlashMessage {...props} />);
-  })
+  });
   describe('Flash error classes when type props are changed', () => {
     props = {
       message:
       {
         id: 0.4,
         type: 'error',
-        message: 'Invalid email'
+        text: 'Invalid email'
       },
-      deleteFlashMessage: jest.fn()
-    }
+      deleteBannerMessage: jest.fn()
+    };
     it('it calls danger flash message class', () => {
       wrapper.setProps({
         message:
         {
           type: 'error'
         }
-      })
+      });
       expect(wrapper.find('.alert-danger').length).toEqual(1);
     });
     it('it calls warning flash message class', () => {
@@ -41,7 +44,7 @@ describe('Render Flash Messages', () => {
         {
           type: 'warning',
         },
-      })
+      });
       expect(wrapper.find('.alert-warning').length).toEqual(1);
     });
     it('it calls warning flash message class', () => {
@@ -50,7 +53,7 @@ describe('Render Flash Messages', () => {
         {
           type: 'success',
         },
-      })
+      });
       expect(wrapper.find('.alert-success').length).toEqual(1);
     });
   });
@@ -62,12 +65,21 @@ describe('Render Flash Messages', () => {
     });
   });
   describe('methods that are called', () => {
-    it('it calls the onclick deleteFlashMessages props', () => {
-      const component = shallow(<FlashMessage onClick={props.deleteFlashMessage} {...props} />);
-      component
-        .find('button.close')
-        .simulate('click');
-      expect(props.deleteFlashMessage).toHaveBeenCalled();
+    it('it calls the onclick deleteBannerMessages props', () => {
+      props = {
+        message:
+        {
+          type: 'error',
+          message: 'Invalid email'
+        },
+        deleteBannerMessage: jest.fn(),
+        customAlertClass: 'mycustomclass',
+        bannerAlertClass: jest.fn()
+      };
+      wrapper = shallow(<FlashMessage {...props} />);
+      const instance = wrapper.instance();
+      instance.handleOnClick();
+      expect(props.deleteBannerMessage).toHaveBeenCalled();
     });
   });
 });

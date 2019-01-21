@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/14</span>
+        <span class='fraction'>13/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">83.33% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>12/13</span>
       </div>
     </div>
   </div>
@@ -91,34 +91,50 @@
 46
 47
 48
-49</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,43 +144,62 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 &nbsp;
 class FlashMessage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.onClick = this.onClick.bind(this);
+  handleOnClick = () =&gt; {
+    const {
+      deleteBannerMessage,
+      message: {
+        id
+      }
+    } = this.props;
+    deleteBannerMessage(id);
   }
 &nbsp;
-  onClick() {
-    this.props.deleteFlashMessage(this.props.message.id);
-  }
- 
   render() {
     let alertType;
-    const { type, text } = this.props.message;
+    const {
+      message: {
+        type,
+        text
+      }
+    } = this.props;
     const { customAlertClass } = this.props;
     if (type === 'error') alertType = `alert alert-danger ${customAlertClass}`;
-    else if (type === 'success') alertType = `alert alert-success ${customAlertClass}`;
-    else <span class="missing-if-branch" title="else path not taken" >E</span>if (type === 'warning') alertType = `alert alert-warning ${customAlertClass}`;
- 
+    else if (type === 'success') {
+      alertType = `alert alert-success ${customAlertClass}`;
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (type === 'warning') {
+      alertType = `alert alert-warning ${customAlertClass}`;
+    }
+&nbsp;
     return (
       &lt;div className={`${alertType}  alert-dismissible`} role="alert"&gt;
         {text}
         &lt;button
-          onClick={this.onClick}
+          onClick={this.handleOnClick}
           type="button"
           className="close"
           aria-label="Close"
@@ -174,26 +209,30 @@ class FlashMessage extends React.Component {
       &lt;/div&gt;
     );
   }
- }
- 
- FlashMessage.propTypes = {
-  message: propTypes.object.isRequired,
-  deleteFlashMessage: propTypes.func.isRequired,
-  customAlertClass: propTypes.string
- };
- 
- FlashMessage.defaultProps = {
-  customAlertClass: ''
- };
+}
 &nbsp;
- export default FlashMessage;
- </pre></td></tr>
+FlashMessage.propTypes = {
+  message: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ])).isRequired,
+  deleteBannerMessage: PropTypes.func,
+  customAlertClass: PropTypes.string
+};
+&nbsp;
+FlashMessage.defaultProps = {
+  customAlertClass: '',
+  deleteBannerMessage: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >null</span>
+};
+&nbsp;
+export default FlashMessage;
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jan 19 2019 22:11:44 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 21 2019 20:12:27 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -1,8 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-
-
 const TextFieldGroup = ({
   field,
   value,
@@ -16,13 +14,12 @@ const TextFieldGroup = ({
   errorFeedbackClass,
   validFeedbackClass
 }) => {
-
   let checkValidity;
   let feedbackClass;
-  if (error) feedbackClass = `${errorFeedbackClass} invalid-feedback`
-  else feedbackClass = `${validFeedbackClass}  valid-feedback`
-  if (error) checkValidity = `form-control is-invalid`
-  else if (value && !error) checkValidity = `form-control is-valid`
+  if (error) feedbackClass = `${errorFeedbackClass} invalid-feedback`;
+  else feedbackClass = `${validFeedbackClass}  valid-feedback`;
+  if (error) checkValidity = 'form-control is-invalid';
+  else if (value && !error) checkValidity = 'form-control is-valid';
   return (
     <div className="form-group">
       <input
@@ -34,13 +31,14 @@ const TextFieldGroup = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        onBlur={onBlur} />
+        onBlur={onBlur}
+      />
       <div className={feedbackClass}>
         {error && error}
       </div>
     </div>
-  )
-}
+  );
+};
 
 TextFieldGroup.propTypes = {
   field: propTypes.string.isRequired,
@@ -49,19 +47,25 @@ TextFieldGroup.propTypes = {
     propTypes.number,
   ]).isRequired,
   error: propTypes.string,
-  type: propTypes.string.isRequired,
+  type: propTypes.string,
   onChange: propTypes.func.isRequired,
-  onInput: propTypes.func.isRequired,
+  onInput: propTypes.func,
   id: propTypes.string,
   onBlur: propTypes.func,
-  checkValidity: propTypes.string,
   placeholder: propTypes.string,
   errorFeedbackClass: propTypes.string,
   validFeedbackClass: propTypes.string,
-}
+};
 
 TextFieldGroup.defaultProps = {
   type: 'text',
+  error: '',
+  id: null,
+  errorFeedbackClass: null,
+  validFeedbackClass: null,
+  onInput: null,
+  onBlur: null,
+  placeholder: ''
 };
 
 export default TextFieldGroup;

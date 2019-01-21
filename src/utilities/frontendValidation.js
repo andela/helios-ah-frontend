@@ -8,15 +8,15 @@ const frontendValidation = (data) => {
   }
 
   if (!data.email) {
-    errors.email = 'Email field is required'
+    errors.email = 'Email field is required';
   }
   if (data.email && !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(data.email)) {
-    errors.email = 'Invalid email'
+    errors.email = 'Invalid email';
   }
   if (!data.password) {
-    errors.password = 'Password field is required'
+    errors.password = 'Password field is required';
   }
   return errors;
-}
+};
 
 export default frontendValidation;

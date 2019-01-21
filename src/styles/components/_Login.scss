@@ -7,16 +7,17 @@
  }
  
  .right-login {
-   text-align: center;
    margin-top: 40%;
+   text-align: center;
+   position: relative;
  }
  
  .custom-alert {
-   position: absolute;
-   right: 0%;
-   left: 0%;
-   top: -30%;
-   width: 100%;
+  left: 0%;
+  position: absolute;
+  right: 0%;
+  top: -45%;
+  width: 100%;
  }
  
  .right-login {
@@ -34,13 +35,13 @@
      margin-top: 8%;
    }
    input {
-     width: 12em;
-     height: 1.8em;
      border: 1px solid $purple;
      border-radius: 1.90625em;
-     padding-left: 10%;
      font-size: 130%;
-     position: relative
+     padding-left: 10%;
+     position: relative;
+     width: 12em;
+     height: 1.8em;
    }
  
    input:focus {
@@ -48,9 +49,9 @@
    }
    
    .form-group {
-     margin-top: 4%;
      display: inline-block;
      margin-bottom: 0;
+     margin-top: 4%;
    }
    p {
      color: $purple;
@@ -63,19 +64,19 @@
  
  .forgot-password {
    display: inline-block;
-   text-align: right;
-   margin-bottom: 5%;
    font-size: 80%;
+   margin-bottom: 5%;
+   text-align: right;
    width: 70%;
  }
  
  .social-media-icons {
    .twitter, .google, .facebook{
      display: inline-block;
-     width: 40px;
      height: 40px;
      margin-right: 5%;
      margin-top: 15%;
+     width: 40px;
    }
    
    .twitter  {
@@ -99,9 +100,9 @@
  }
  
  .facebook, .twitter, .google {
+   cursor: pointer;
    display: block;
    height: 5vh;
-   cursor: pointer;
  }
  
  .login-buttons {
@@ -109,8 +110,8 @@
  
    .login-col,
    .signup-col {
-     width: 48%;
      display: inline-block;
+     width: 48%;
    }
    .login-col{
      margin-right: 2%;
@@ -123,21 +124,19 @@
  .login-btn { 
    border: 1px solid $purple;
    border-radius: 2.34375em;
-   width: 6em;
+   cursor: pointer; 
    height: 2em;
    outline: none;
-   cursor: pointer; 
+   width: 6em;
  }
  
  .signup-btn {
-   text-decoration: none;
-   display: inline-block;
-   width: 6em;
-   height: 2em;
-   border: 1px solid $purple;
-   border-radius: 2em;
-   line-height: 2em;
-   cursor: pointer;
+    border: 1px solid $purple;
+    border-radius: 2.34375em;
+    cursor: pointer; 
+    height: 2em;
+    outline: none;
+    width: 6em;
  }
  
  .signup-btn:hover {
@@ -163,8 +162,8 @@
  }
  
  .login-valid-feedback, .login-invalid-feedback {
-   text-align: left;
    padding-left: 8%;
+   text-align: left;
  }
  
  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -180,17 +179,14 @@
    font-size: 70%;
  }
 
-
-
-
  
 @media (min-width: 734px) and (max-width: 768px) {
   .login-image-container {
+    background: url("./images/undraw_directions_x53j.svg") no-repeat ;
+    background-size: contain;
     display: block;
-     margin: 40% auto;
-     height: 50vh;
-     background: url("./images/undraw_directions_x53j.svg") no-repeat ;
-     background-size: contain;
+    height: 50vh;
+    margin: 40% auto;
    }
    .login-img {
     display: block;
@@ -208,49 +204,47 @@
       font-size: 20px;
     }
     h5{
-      margin-top: 9%;
       font-size: 15px;
+      margin-top: 9%;
     }
-    input {
-      width: 0.5em;
-      height: 0.5em;
+    input {      
       border: 1px solid $purple;
       border-radius: 1.90625em;
-      padding-left: 10%;
       font-size: 130%;
-      position: relative
+      height: 0.5em;
+      padding-left: 10%;
+      width: 0.5em;
     }
   }  
   .login-btn { 
     border: 1px solid $purple;
     border-radius: 2.34375em;
-    width: 10.625em;
+    cursor: pointer; 
     height: 3.125em;
     outline: none;
-    cursor: pointer; 
+    width: 10.625em;
   }
   
   .signup-btn {
-    display: inline-block;
-    width: 6em;
-    height: 2em;
     border: 1px solid $purple;
-    border-radius: 2.3em;
-    line-height: 2em;
-    cursor: pointer;
+    border-radius: 2.34375em;
+    cursor: pointer; 
+    height: 3.125em;
+    outline: none;
+    width: 10.625em;
   }
 }
 
 
-@media(min-width: 576px) {
+@media (min-width: 576px) {
      .login-body {
        font-family: $font-family;
      }
      
      .right-login {
-       text-align: center;
-       margin-top: 10%;
        display: inline-block;
+       margin-top: 10%;
+       text-align: center;
      }
      
      .custom-alert {
@@ -271,13 +265,13 @@
          margin-top: 7%;
        }
        input {
-         width: 20em;
-         height: 2.5em;
          border: 1px solid $purple;
          border-radius: 1.90625em;
-         padding-left: 10%;
          font-size: 130%;
-         position: relative
+         height: 2.5em;
+         padding-left: 10%;
+         position: relative;
+         width: 20em;
        }
      
        input:focus {
@@ -285,10 +279,10 @@
        }
        
        .form-group {
-         margin-top: 4%;
          display: inline-block;
          margin-bottom: 0;
-       }
+         margin-top: 4%;
+        }
        p {
          color: $purple;
          text-align: right;
@@ -300,19 +294,19 @@
      
      .forgot-password {
        display: inline-block;
-       text-align: right;
-       margin-bottom: 5%;
        font-size: 80%;
+       margin-bottom: 5%;
+       text-align: right;
        width: 70%;
      }
      
      .social-media-icons {
        .twitter, .google, .facebook{
          display: inline-block;
-         width: 50px;
          height: 50px;
          margin-right: 5%;
          margin-top: 5%;
+         width: 50px;
        }
        
        .twitter  {
@@ -336,9 +330,9 @@
      }
      
      .facebook, .twitter, .google {
-       display: block;
-       height: 5vh;
-       cursor: pointer;
+      cursor: pointer;
+      display: block;
+      height: 5vh;
      }
      
      .login-buttons {
@@ -346,8 +340,8 @@
      
        .login-col,
        .signup-col {
-         width: 48%;
-         display: inline-block;
+        display: inline-block;
+        width: 48%;
        }
        .login-col{
          margin-right: 2%;
@@ -367,14 +361,12 @@
      }
      
      .signup-btn {
-       text-decoration: none;
-       display: inline-block;
-       width: 10.625em;
-       height: 3.125em;
        border: 1px solid $purple;
        border-radius: 2.34375em;
-       line-height: 3.125em;
-       cursor: pointer;
+       width: 10.625em;
+       height: 3.125em;
+       outline: none;
+       cursor: pointer; 
      }
      
      .signup-btn:hover {
@@ -404,31 +396,31 @@
      }
      
      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-       font-size: 90%;
        color: #c4c4c4;
+       font-size: 90%;
      }
      ::-moz-placeholder { /* Firefox 19+ */
+       color: #c4c4c4;
        font-size: 90%;
-       color: #c4c4c4
      }
      :-ms-input-placeholder { /* IE 10+ */
+       color: #c4c4c4;
        font-size: 90%;
-       color: #c4c4c4
      }
      :-moz-placeholder { /* Firefox 18- */
+       color: #c4c4c4;
        font-size: 90%;
-       color: #c4c4c4
      }
 }
 
 
 @media(min-width: 992px) {
   .login-image-container {
+    background: url("./images/undraw_directions_x53j.svg") no-repeat ;
+    background-size: contain;
     display: block;
-     margin: 25% auto;
-     height: 50vh;
-     background: url("./images/undraw_directions_x53j.svg") no-repeat ;
-     background-size: contain;
+    height: 50vh;
+    margin: 25% auto;
    }
    
    .login-img {
@@ -442,8 +434,8 @@
    }
    
    .right-login {
+     margin-top: 5%;
      text-align: center;
-     margin-top: 10%;
    }
    
    .custom-alert {
@@ -542,8 +534,8 @@
    
      .login-col,
      .signup-col {
-       width: 48%;
-       display: inline-block;
+      display: inline-block;
+       width: 47%;
      }
      .login-col{
        margin-right: 2%;
@@ -554,23 +546,21 @@
    }
    
    .login-btn { 
-     border: 1px solid $purple;
-     border-radius: 2.34375em;
-     width: 10.625em;
-     height: 3.125em;
-     outline: none;
-     cursor: pointer; 
+      border: 1px solid $purple;
+      border-radius: 2.34375em;
+      cursor: pointer; 
+      height: 3.125em;
+      outline: none;
+      width: 10.625em;
    }
    
    .signup-btn {
-     text-decoration: none;
-     display: inline-block;
-     width: 10.625em;
-     height: 3.125em;
-     border: 1px solid $purple;
-     border-radius: 2.34375em;
-     line-height: 3.125em;
-     cursor: pointer;
+      border: 1px solid $purple;
+      border-radius: 2.34375em;
+      cursor: pointer; 
+      height: 3.125em;
+      outline: none;
+      width: 10.625em;
    }
    
    .signup-btn:hover {

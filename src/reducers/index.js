@@ -1,7 +1,6 @@
-
 import { combineReducers } from 'redux';
 import flashMessages from './flashReducer';
-import auth from './authReducer'
+import auth from './loginReducer'
 
 
 const rootReducers = combineReducers({

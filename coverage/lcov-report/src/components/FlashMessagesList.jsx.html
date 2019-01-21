@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>6/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>1/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">55.56% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>5/9</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -81,89 +81,119 @@
 36
 37
 38
-39</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { connect } from 'react-redux';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { deleteFlashMessage } from '../actions/flashActions';
-import FlashMessage from './FlashMessage.jsx';
+import FlashMessage from './FlashMessage';
 &nbsp;
 &nbsp;
-export const FlashMessageList = (props) =&gt; {
- const {
-   deleteFlashMessage,
-   customAlertClass
- } = props;
- return (
-   props.messages.map(message =&gt; (
-     &lt;FlashMessage
-       key={message.id}
-       message={message}
-       deleteFlashMessage={deleteFlashMessage}
-       customAlertClass={customAlertClass}
-     /&gt;
-   ))
- );
+export const FlashMessageList = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {
+  const { messages, deleteBannerMessage, customAlertClass } = <span class="cstat-no" title="statement not covered" >props;</span>
+  const renderedMessage = <span class="cstat-no" title="statement not covered" >messages.map(<span class="fstat-no" title="function not covered" >me</span>ssage =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;FlashMessage</span>
+      key={message.id}
+      message={message}
+      customAlertClass={customAlertClass}
+      deleteBannerMessage={deleteBannerMessage}
+    /&gt;
+  ));
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;div&gt;
+      {renderedMessage}
+    &lt;/div&gt;
+&nbsp;
+  );
 };
 &nbsp;
 FlashMessageList.propTypes = {
- messages: propTypes.array.isRequired,
- deleteFlashMessage: propTypes.func.isRequired
+  messages: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]))).isRequired,
+  deleteBannerMessage: PropTypes.func.isRequired,
+  customAlertClass: PropTypes.string
+};
+&nbsp;
+FlashMessageList.defaultProps = {
+  customAlertClass: ''
 };
 &nbsp;
 export const mapStateToProps = state =&gt; ({
- messages: state.flashMessages
+  messages: state.flashMessages
 });
 &nbsp;
-export const mapDispatchToProps = {
- deleteFlashMessage
+const mapDispatchToProps = {
+  deleteBannerMessage: deleteFlashMessage
 };
 &nbsp;
 &nbsp;
-export default connect(mapStateToProps, mapDispatchToProps)(FlashMessageList);</pre></td></tr>
+export default connect(mapStateToProps, mapDispatchToProps)(FlashMessageList);
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jan 19 2019 22:11:44 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 21 2019 20:12:27 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
