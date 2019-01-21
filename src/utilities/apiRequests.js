@@ -26,7 +26,7 @@ export const Get = async (route) => {
     const response = await request.get(route);
     return response.data;
   } catch (error) {
-    return error.response.data;
+    return error.response ? error.response.data : error;
   }
 };
 
@@ -35,7 +35,7 @@ export const Post = async (route, data) => {
     const response = await request.post(route, data);
     return response.data;
   } catch (error) {
-    return error.response.data;
+    return error.response ? error.response.data : error;
   }
 };
 
@@ -44,7 +44,7 @@ export const Put = async (route, data) => {
     const response = await request.put(route, data);
     return response.data;
   } catch (error) {
-    return error.response.data;
+    return error.response ? error.response.data : error;
   }
 };
 
@@ -65,6 +65,6 @@ export const CloudImage = async (formData) => {
     );
     return response.data;
   } catch (error) {
-    return error.response.data;
+    return error.response ? error.response.data : error;
   }
 };
