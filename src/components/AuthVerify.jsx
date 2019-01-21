@@ -10,7 +10,7 @@ import { socialLogin } from '../actions/socialLoginAction';
  */
 
 class AuthVerify extends Component {
-  async componentWillMount() {
+  async componentDidMount() {
     const { socialLogin: socialAction } = this.props;
     if (window.location.pathname.includes('social_ggl')) {
       await socialAction('social_ggl');
@@ -19,15 +19,17 @@ class AuthVerify extends Component {
     } else if (window.location.pathname.includes('social_fb')) {
       await socialAction('social_fb');
     }
+    const { history, authenticated } = await this.props;
+    return authenticated ? history.push('/') : history.push('/login');
   }
 
   /**
    * @returns {JSX}
    */
   render() {
-    const { history, authenticated } = this.props;
-    authenticated ? history.push('/') : null;
-    return <h5>Redirecting...</h5>;
+    return (
+      <h5>Redirecting...</h5>
+    );
   }
 }
 const mapStateToProps = state => ({
@@ -37,8 +39,6 @@ const mapStateToProps = state => ({
 });
 AuthVerify.propTypes = {
   socialLogin: PropTypes.func.isRequired,
-  authenticated: PropTypes.bool.isRequired,
-  history: PropTypes.func.isRequired
 };
 
 export default connect(

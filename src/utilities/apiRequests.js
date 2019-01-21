@@ -5,7 +5,7 @@ export const baseUrl = (process.env.NODE_ENV === 'development')
 export const Get = async (route) => {
   try {
     const response = await axios.get(baseUrl + route);
-    return response.data;
+    return response;
   } catch (error) {
     return error.response.data;
   }

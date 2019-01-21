@@ -22,6 +22,9 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node,
+};
+Login.defaultProps = {
+  children: <div />
 };
 export default Login;

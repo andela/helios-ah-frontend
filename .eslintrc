@@ -15,7 +15,8 @@
   "env": {
     "node": true,
     "es6": true,
-    "mocha": true
+    "mocha": true,
+    "jest": true
   },
   "rules": {
     "max-len": [1, 200, 2],
@@ -30,6 +31,7 @@
     "comma-dangle": 0,
     "curly": ["error", "multi-line"],
     "react/jsx-uses-vars": "error",
+    "no-unused-expressions": 0,
     "react/jsx-uses-react": "error",
     "import/no-unresolved": [2, { "commonjs": true , "amd": true}],
     "import/named": 2,

@@ -13,24 +13,24 @@ export const googleLogin = (token, authenticated = false) => ({
   authenticated
 });
 
-const twitterLogin = (token, authenticated = false) => ({
+export const twitterLogin = (token, authenticated = false) => ({
   type: TWITTER_LOGIN,
   platform: 'twitter',
   token,
   authenticated
 });
 
-const facebookLogin = (token, authenticated = false) => ({
+export const facebookLogin = (token, authenticated = false) => ({
   type: FACEBOOK_LOGIN,
   platform: 'facebook',
   token,
   authenticated
 });
 
-const loginFail = () => ({
+export const loginFail = () => ({
   type: LOGIN_FAIL,
   platform: null,
-  error: 'user not found'
+  error: 'error'
 });
 
 /**
@@ -41,20 +41,19 @@ const loginFail = () => ({
 export const socialLogin = platform => async (dispatch) => {
   try {
     const res = await Get(`/auth/${platform}/callback${window.location.search}`);
-    localStorage.setItem('x-access-token', res.token);
-    const authenticated = res.token ? true : false;
-    if (platform === 'social_ggl' && res.token) {
-      await dispatch(googleLogin(res.token, authenticated));
-    } else if (platform === 'social_tw' && res.token) {
-      await dispatch(twitterLogin(res.token, authenticated));
-    } else if (platform === 'social_fb' && res.token) {
-      await dispatch(facebookLogin(res.token, authenticated));
-    } else {
-      await dispatch(loginFail());
+    localStorage.setItem('x-access-token', res.data.token);
+    const authenticated = res.data.token ? true : false;
+    if (platform === 'social_ggl' && res.data.token) {
+      return dispatch(googleLogin(res.data.token, authenticated));
     }
+    if (platform === 'social_tw' && res.data.token) {
+      return dispatch(twitterLogin(res.data.token, authenticated));
+    }
+    if (platform === 'social_fb' && res.data.token) {
+      return dispatch(facebookLogin(res.data.token, authenticated));
+    }
+    return dispatch(loginFail());
   } catch (error) {
-    Promise.reject(error);
-    await dispatch(loginFail());
-    console.error(error);
+    return dispatch(loginFail());
   }
 };
