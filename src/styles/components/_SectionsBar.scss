@@ -1,0 +1,11 @@
+.nav a{
+    color: black;
+}
+
+.nav a:hover, .nav .active {
+    color: lighten(purple, 10%);
+}
+
+.nav {
+    border-bottom: 1px solid #c4c4c4;
+}

@@ -1,11 +1,8 @@
 import React from 'react';
-import Links from '../components/Links';
+import NavBarAuth from '../components/NavBarAuth';
 
 const HomePage = () => (
-  <div>
-    <Links />
-    <h2> This is the Home Page</h2>
-  </div>
+  <NavBarAuth />
 );
 
 export default HomePage;
