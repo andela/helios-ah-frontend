@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <div className="row fixed-top" id="header">
         <div className="col-lg-1" id="hamburger">
-          <i className="fa fa-bars major-color" />
+          <span className="major-color"><i className="fa fa-bars" /></span>
         </div>
         <div className="col-lg-3" id="head-title">
           <span id="header-title">{this.state.title}</span>
@@ -39,10 +39,12 @@ class Header extends Component {
             onBlur={this.onSearchBlur}
             placeholder="Search.."
           />
-          <i
-            className="fa fa-search major-color"
-            onClick={this.onSearchClick}
-          />
+          <span className="major-color">
+            <i
+              className="fa fa-search"
+              onClick={this.onSearchClick}
+            />
+          </span>
         </div>
         <div className="col-lg-3" id="header-button">
           <input

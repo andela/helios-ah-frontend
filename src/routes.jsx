@@ -4,11 +4,13 @@ import {
   BrowserRouter,
   Switch
 } from 'react-router-dom';
+
 import {
   LoginPage,
   SignupPage,
   CompleteRegistration,
-  Article
+  Article,
+  ResetPassword,
 } from './views';
 
 const routes = (
@@ -18,9 +20,9 @@ const routes = (
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
       <Route path="/article" component={Article} />
+      <Route path="/reset-password" component={ResetPassword} />
     </Switch>
   </BrowserRouter>
 );
-
 
 export default routes;

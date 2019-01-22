@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FormInput = ({
-  id, value, placeHolder, onChange, type, className
+  id, placeHolder, onChange, type, className, Ref
 }) => (
   <div className="form-group">
     <input
@@ -10,20 +10,24 @@ const FormInput = ({
       className={className}
       id={id}
       required
-      value={value}
       onChange={onChange}
       placeholder={placeHolder}
+      ref={Ref}
     />
   </div>
 );
 
 FormInput.propTypes = {
   id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   placeHolder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
+  Ref: PropTypes.objectOf(PropTypes.any)
+};
+
+FormInput.defaultProps = {
+  Ref: React.createRef(),
 };
 
 export default FormInput;

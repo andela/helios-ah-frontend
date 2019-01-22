@@ -25,12 +25,16 @@ const Button = ({
 );
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   isRequestSent: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   columnAttribute: PropTypes.string.isRequired,
+};
+
+Button.defaultProps = {
+  onClick: '',
 };
 
 export default Button;
