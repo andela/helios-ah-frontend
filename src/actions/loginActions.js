@@ -20,8 +20,8 @@ export const loginRequest = (userData) => {
     try {
       loginResponse = await axios({
         method: 'post',
-        url: `https://helios-ah-backend-staging.herokuapp.com/api/v1${
-          '/auth/login'}`,
+        url:
+        'https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/login',
         data: sentData
       });
       const { token } = loginResponse.data.userDetails;
