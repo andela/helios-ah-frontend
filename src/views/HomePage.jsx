@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBarAuth from '../components/NavBarAuth';
+import NavBar from '../components/NavBarNoAuth';
 import { Card } from '../components';
 
 const HomePage = () => (
   <div>
-    <NavBarAuth />
+    <NavBar />
     <div className="row">
       <Card />
       <Card />
