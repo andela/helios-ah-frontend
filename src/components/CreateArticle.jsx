@@ -21,6 +21,7 @@ class CreateArticle extends Component {
       body,
       image,
     };
+    this.imageRef = React.createRef();
   }
 
   async componentDidUpdate(prevProps, prevState) {
@@ -47,10 +48,9 @@ class CreateArticle extends Component {
         }
         if (uploaded) {
           uploaded = ((typeof uploaded) === 'string') ? uploaded : null;
-          // eslint-disable-next-line react/no-did-update-set-state
           this.setState({ image: uploaded }, async () => {
             if (id) {
-            //
+            // check if article is already created and has ID then update if true.
             } else {
               onSave();
               const article = await createArticle(this.state);
@@ -107,26 +107,13 @@ class CreateArticle extends Component {
     this.setState({
       [event.target.name]: event.target.files[0]
     });
-    this.readFile(file);
-  }
-
-  readFile = (file) => {
-    if (file) {
-      // eslint-disable-next-line no-undef
-      const FR = new FileReader();
-
-      FR.addEventListener('load', (event) => {
-        this.setState({
-          image: event.target.result
-        });
-      });
-
-      FR.readAsDataURL(file);
-    }
+    this.setState({
+      image: URL.createObjectURL(file)
+    });
   }
 
   onImageClick = () => {
-    document.getElementById('add-image').click();
+    this.imageRef.current.click();
   }
 
   onClose = () => {
@@ -159,7 +146,7 @@ class CreateArticle extends Component {
           <div className="col-lg-11" id="article-column">
             <div id="img-wraper">
               <img src={this.state.image} id="image-holder" />
-              {(this.state.image !== null)
+              {(this.state.image)
                 ? (
                   <a
                     href="#"
@@ -189,6 +176,7 @@ class CreateArticle extends Component {
                 onChange={this.fileChange}
                 name="photo"
                 id="add-image"
+                ref={this.imageRef}
               />
             </div>
           </div>
@@ -201,7 +189,7 @@ CreateArticle.propTypes = {
   draft: PropTypes.bool,
   publish: PropTypes.bool,
   onSave: PropTypes.func.isRequired,
-  cache: PropTypes.objectOf(PropTypes.any).isRequired,
+  cache: PropTypes.object.isRequired,
   createArticle: PropTypes.func.isRequired,
   addFlashMessage: PropTypes.func.isRequired,
 };

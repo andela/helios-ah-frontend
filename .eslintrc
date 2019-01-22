@@ -30,6 +30,8 @@
     "curly": ["error", "multi-line"],
     "react/jsx-uses-vars": "error",
     "react/jsx-uses-react": "error",
+    "react/no-did-update-set-state": [0, 0],
+    "react/forbid-prop-types": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "react/destructuring-assignment": 0,
     "jsx-a11y/alt-text": 0,
