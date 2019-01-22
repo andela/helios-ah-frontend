@@ -1,5 +1,20 @@
+//Demo Base Settings
+html, body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: $white;
+  height: 100%;
+  width: 100%;
+  top:0;
+  bottom:0;
+}
+
 body {
-  font-family: $reem-kufi;
+  font-family: $font-family;
   margin: 0;
   padding: 0;
+}
+
+#app, #app > div{
+  height:100%;
+  width: 100%;
 }
