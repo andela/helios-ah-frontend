@@ -9,17 +9,16 @@ class Header extends Component {
     this.state = {
       title: 'Author\'s Haven'
     };
+    this.search = React.createRef();
   }
 
   onSearchClick = () => {
-    const search = document.getElementById('search');
-    search.style.display = 'inline';
-    search.focus();
+    this.search.current.style.display = 'inline';
+    this.search.current.focus();
   }
 
   onSearchBlur = () => {
-    const search = document.getElementById('search');
-    search.style.display = 'none';
+    this.search.current.style.display = 'none';
   }
 
   render() {
@@ -35,6 +34,7 @@ class Header extends Component {
           <input
             type="text"
             id="search"
+            ref={this.search}
             name="search"
             onBlur={this.onSearchBlur}
             placeholder="Search.."
