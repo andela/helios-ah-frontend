@@ -13,7 +13,7 @@ describe('Render Flash Messages', () => {
         type: 'error',
         message: 'Invalid email'
       },
-      deleteBannerhMessage: jest.fn(),
+      deleteBannerMessage: jest.fn(),
       customAlertClass: 'mycustomclass',
       bannerAlertClass: jest.fn()
     };
@@ -66,20 +66,15 @@ describe('Render Flash Messages', () => {
   });
   describe('methods that are called', () => {
     it('it calls the onclick deleteBannerMessages props', () => {
-      props = {
-        message:
-        {
-          type: 'error',
-          message: 'Invalid email'
-        },
-        deleteBannerMessage: jest.fn(),
-        customAlertClass: 'mycustomclass',
-        bannerAlertClass: jest.fn()
-      };
-      wrapper = shallow(<FlashMessage {...props} />);
       const instance = wrapper.instance();
       instance.handleOnClick();
       expect(props.deleteBannerMessage).toHaveBeenCalled();
+    });
+  });
+  describe('type of props on render', () => {
+    it('deleteBannerMessage props is null on render', () => {
+      expect(FlashMessage.defaultProps.deleteBannerMessage).toBeDefined();
+      expect(FlashMessage.defaultProps.deleteBannerMessage()).toEqual(null);
     });
   });
 });

@@ -12,9 +12,9 @@ export default (state = [], action = {}) => {
         }
       ];
     case DELETE_FLASH_MESSAGE:
-        return [
-          ...state.filter(message => message.id !== action.id)
-        ];
+      return [
+        ...state.filter(message => message.id !== action.id)
+      ];
     case CLEAR_FLASH_MESSAGES:
       return [];
     default: return state;

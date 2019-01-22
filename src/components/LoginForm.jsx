@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import TextFieldGroup from './TextFieldGroup';
 import FlashMessageList from './FlashMessagesList';
 import SubmitButton from './SubmitButton';
+import LinkButton from './LinkButton';
 
 
 const LoginForm = ({
@@ -64,20 +65,14 @@ const LoginForm = ({
               value="LOGIN"
               columnAttribute="login-col"
             />
-            <SubmitButton
+            <LinkButton
               onClick={submitDetails}
               isRequestSent={isRequestSent}
               className="signup-btn"
               value="SIGNUP"
               columnAttribute="signup-col"
+              to="/signup"
             />
-            {/* <div className="signup-col">
-              <div className="form-group text-center">
-                <Link to="/signup" className="signup-btn">
-                    SIGNUP
-                </Link>
-              </div>
-            </div> */}
           </div>
           <div className="social-media-icons">
             <span className="facebook" />
@@ -94,7 +89,8 @@ LoginForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   onInput: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  errors: PropTypes.objectOf(PropTypes.string).isRequired,
+  errors: PropTypes.oneOf([
+    PropTypes.string, PropTypes.objectOf(PropTypes.string)]).isRequired,
   submitDetails: PropTypes.func.isRequired,
   isRequestSent: PropTypes.bool.isRequired,
   email: PropTypes.string.isRequired,

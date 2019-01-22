@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SubmitButton = ({
-  isRequestSent, 
+  isRequestSent,
   columnAttribute,
   onClick,
   value,
@@ -36,6 +36,6 @@ SubmitButton.propTypes = {
 SubmitButton.defaultProps = {
   id: null,
   columnAttribute: null
-}
+};
 
 export default SubmitButton;

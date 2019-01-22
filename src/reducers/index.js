@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import flashMessages from './flashReducer';
-import auth from './loginReducer'
+import auth from './loginReducer';
 
 
 const rootReducers = combineReducers({
@@ -8,4 +8,4 @@ const rootReducers = combineReducers({
   flashMessages
 });
 
-export default rootReducers; 
+export default rootReducers;

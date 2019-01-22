@@ -27,9 +27,9 @@ describe('Unit test for the submit button component. ', () => {
       props = {
         submitDetails: jest.fn(),
         isRequestSent: true,
-        buttonValue: 'SIGNUP',
+        value: 'SIGNUP',
         idAttribute: 'btn-test',
-        buttonClass: 'btn',
+        className: 'btn',
         columnAttribute: 'signup-col'
       };
       wrapper = shallow(<SubmitButton {...props} />);
