@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SubmitButton = ({
-  onClick,
   isRequestSent,
+  columnAttribute,
+  onClick,
   value,
   id,
   className,
-  columnAttribute
 }) => (
   <div className={columnAttribute}>
     <div className="form-group text-center">
@@ -25,12 +25,18 @@ const SubmitButton = ({
 );
 
 SubmitButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   isRequestSent: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   className: PropTypes.string.isRequired,
-  columnAttribute: PropTypes.string.isRequired,
+  columnAttribute: PropTypes.string,
+};
+
+SubmitButton.defaultProps = {
+  id: null,
+  columnAttribute: null,
+  onClick: () => {}
 };
 
 export default SubmitButton;
