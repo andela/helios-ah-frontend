@@ -13,7 +13,6 @@ const routes = (
     <Switch>
       <Route path="/login" component={Login} />
       <Route path={socialLoginRe} component={AuthVerify} />
-      <Route path="/login" component={Login} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
     </Switch>

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import TextFieldGroup from './TextFieldGroup';
 import FlashMessageList from './FlashMessagesList';
 import openLink from '../utilities/openLink';
+import { baseUrl } from '../utilities/apiRequests';
 import SubmitButton from './SubmitButton';
 import LinkButton from './LinkButton';
-import { baseUrl } from '../utilities/apiRequests';
 
 
 const LoginForm = ({
