@@ -1,8 +1,13 @@
 import React from 'react';
-// import cardImage from '../styles/images/DeadpoolSilence.jpg';
+import PropTypes from 'prop-types';
 
-const Card = () => (
-  <div className="col-sm-12 col-lg-4">
+const Card = ({
+  id,
+  bookmark,
+  like,
+  rate
+}) => (
+  <div className="col-sm-12 col-lg-4 card-container" id={id}>
     <div className="card w-30" id="card">
       <img
         className="card-img-top"
@@ -20,21 +25,28 @@ const Card = () => (
       </div>
       <div className="card-footer footer-container">
         <div>
-          <span className="card-icons"><i className="fas fa-bookmark" /></span>
-          <span className="card-icons"><i className="fas fa-heart" /></span>
+          <span className="card-icons" onClick={event => bookmark(event)}><i className="fas fa-bookmark" /></span>
+          <span className="card-icons" onClick={event => like(event)}><i className="fas fa-heart" /></span>
         </div>
         <div>
-          <span className="card-icons"><i className="fas fa-star" /></span>
-          <span className="card-icons"><i className="fas fa-star" /></span>
-          <span className="card-icons"><i className="fas fa-star" /></span>
-          <span className="card-icons"><i className="fas fa-star" /></span>
-          <span className="card-icons"><i className="fas fa-star" /></span>
+          <span onClick={event => rate(event, 1)} className="card-icons">
+            <i className="fas fa-star" />
+          </span>
+          <span onClick={event => rate(event, 2)} className="card-icons"><i className="fas fa-star" /></span>
+          <span onClick={event => rate(event, 3)} className="card-icons"><i className="fas fa-star" /></span>
+          <span onClick={event => rate(event, 4)} className="card-icons"><i className="fas fa-star" /></span>
+          <span onClick={event => rate(event, 5)} className="card-icons"><i className="fas fa-star" /></span>
         </div>
       </div>
     </div>
   </div>
 );
 
-Card.propTypes = {};
+Card.propTypes = {
+  id: PropTypes.string.isRequired,
+  bookmark: PropTypes.func.isRequired,
+  like: PropTypes.func.isRequired,
+  rate: PropTypes.func.isRequired,
+};
 
 export default Card;
