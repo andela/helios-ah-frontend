@@ -24,10 +24,10 @@ describe('Unit test for Signup Form component', () => {
     const signupButtons = wrapper.find('SubmitButton');
     expect(signupButtons.length).toEqual(1);
   });
-  it('should render a form with a button of type button', () => {
+  it('should render a form with two buttons of class btn', () => {
     const wrapper = shallow(<SignupForm {...propsObject} />);
-    const loginButton = wrapper.find('Button');
-    expect(loginButton.length).toEqual(1);
+    const loginButton = wrapper.find('.btn');
+    expect(loginButton.length).toEqual(2);
   });
   it('should display a welcome message to the user', () => {
     const wrapper = shallow(<SignupForm {...propsObject} />);
