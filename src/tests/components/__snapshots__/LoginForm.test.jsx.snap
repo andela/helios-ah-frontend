@@ -70,12 +70,13 @@ exports[`Render Login Page render Login Page renders the login page component 1`
             className="login-btn"
             columnAttribute="login-col"
             id={null}
+            onClick={[Function]}
             value="LOGIN"
           />
-          <SubmitButton
+          <withRouter(LinkButton)
             className="signup-btn"
             columnAttribute="signup-col"
-            id={null}
+            to="/signup"
             value="SIGNUP"
           />
         </div>
@@ -168,12 +169,13 @@ exports[`Render Login Page render Login Page renders the login page component 2`
             className="login-btn"
             columnAttribute="login-col"
             id={null}
+            onClick={[Function]}
             value="LOGIN"
           />
-          <SubmitButton
+          <withRouter(LinkButton)
             className="signup-btn"
             columnAttribute="signup-col"
-            id={null}
+            to="/signup"
             value="SIGNUP"
           />
         </div>

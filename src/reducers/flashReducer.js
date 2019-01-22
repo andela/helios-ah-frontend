@@ -1,4 +1,8 @@
-import { ADD_FLASH_MESSAGE, DELETE_FLASH_MESSAGE, CLEAR_FLASH_MESSAGES } from '../actionTypes';
+import {
+  ADD_FLASH_MESSAGE,
+  DELETE_FLASH_MESSAGE,
+  CLEAR_FLASH_MESSAGES
+} from '../actionTypes/index';
 
 export default (state = [], action = {}) => {
   switch (action.type) {

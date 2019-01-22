@@ -35,7 +35,8 @@ SubmitButton.propTypes = {
 
 SubmitButton.defaultProps = {
   id: null,
-  columnAttribute: null
+  columnAttribute: null,
+  onClick: () => {}
 };
 
 export default SubmitButton;

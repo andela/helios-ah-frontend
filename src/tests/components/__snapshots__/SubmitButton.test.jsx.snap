@@ -8,10 +8,14 @@ exports[`Unit test for the submit button component.  Render Submit button it sho
     className="form-group text-center"
   >
     <button
+      className="btn"
       disabled={true}
       id={null}
+      onClick={[Function]}
       type="submit"
-    />
+    >
+      SIGNUP
+    </button>
   </div>
 </div>
 `;

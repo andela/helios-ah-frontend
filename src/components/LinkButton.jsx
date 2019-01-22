@@ -26,7 +26,6 @@ const LinkButton = (props) => {
 
 LinkButton.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
   history: PropTypes.objectOf(PropTypes.string).isRequired,
   location: PropTypes.objectOf(PropTypes.string).isRequired,
   match: PropTypes.objectOf(PropTypes.string).isRequired,

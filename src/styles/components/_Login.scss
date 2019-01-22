@@ -453,15 +453,15 @@
        letter-spacing: 0.1em;
      }
      h3 {
-       font-size: 130%;
+       font-size: 200%;
      }
      h5{
        margin-top: 7%;
-       font-size: 90%;
+       font-size: 100%;
      }
      input {
        width: 20em;
-       height: 2.5em;
+       height: 2em;
        border: 1px solid $purple;
        border-radius: 1.90625em;
        padding-left: 10%;
@@ -549,7 +549,7 @@
       border: 1px solid $purple;
       border-radius: 2.34375em;
       cursor: pointer; 
-      height: 3.125em;
+      height: 2.5em;
       outline: none;
       width: 10.625em;
    }
@@ -558,7 +558,7 @@
       border: 1px solid $purple;
       border-radius: 2.34375em;
       cursor: pointer; 
-      height: 3.125em;
+      height: 2.5em;
       outline: none;
       width: 10.625em;
    }
