@@ -44,7 +44,7 @@ class CreateArticle extends Component {
         });
       } else {
         if (photo && image) {
-          uploaded = await uploadImageCloudinary(image);
+          uploaded = await uploadImageCloudinary(photo);
         }
         if (uploaded) {
           uploaded = ((typeof uploaded) === 'string') ? uploaded : null;
