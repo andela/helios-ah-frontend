@@ -18,7 +18,7 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
             ${bookmark.bookmark.User.lastName}`}
           </span>
           <span className="mx-2">|</span>
-          <span>{bookmark.bookmark.createdAt}</span>
+          <span>{bookmark.bookmark.createdAt.match(/^\d\d\d\d-\d\d-\d\d/)}</span>
           <span className="mx-2">|</span>
           <span>
             {`${bookmark.bookmark.readTime} read`}

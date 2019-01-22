@@ -11,6 +11,7 @@ describe('Unit test for the Bookmark Card component.', () => {
       bookmark: {
         title: 'articleTitle',
         User: { firstName: 'jide', lastName: 'ajayi' },
+        createdAt: '2019-01-16T12:37:58.550Z',
       },
     };
     const wrapper = shallow(<Bookmark bookmark={bookmark} />);
