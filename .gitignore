@@ -2,3 +2,5 @@ node_modules/
 build/
 .env
 .vscode/
+coverage/
+__snapshots__/

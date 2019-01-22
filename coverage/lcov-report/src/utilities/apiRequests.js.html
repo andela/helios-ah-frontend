@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">32% </span>
+        <span class="strong">23.81% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/25</span>
+        <span class='fraction'>5/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">32% </span>
+        <span class="strong">23.81% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/25</span>
+        <span class='fraction'>5/21</span>
       </div>
     </div>
   </div>
@@ -83,14 +83,12 @@
 38
 39
 40
-41
-42
-43</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -99,18 +97,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -119,63 +106,70 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from 'axios';
 &nbsp;
-const baseUrl = 'https://helios-ah-backend-staging.herokuapp.com/api/v1';
+const baseUrl = (process.env.NODE_ENV === 'development')
+  ? <span class="branch-0 cbranch-no" title="branch not covered" >'http://localhost:4001/api/v1' </span>: process.env.PRODUCTION_URL;
 &nbsp;
-export const Get = <span class="fstat-no" title="function not covered" >as</span>ync(route) =&gt; {
-  const getUrl = <span class="cstat-no" title="statement not covered" >baseUrl + route;</span>
+export const Get = <span class="fstat-no" title="function not covered" >as</span>ync (route) =&gt; {
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(getUrl);</span>
+    const response = <span class="cstat-no" title="statement not covered" >await axios.get(baseUrl + route);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
   }
-}
+};
 &nbsp;
-export const Post = async (route, data) =&gt; {
-  const postUrl = baseUrl + route;
-  try {
-    const response = await axios.post(postUrl, data);
+export const Post = <span class="fstat-no" title="function not covered" >as</span>ync (route, data) =&gt; {
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const response = <span class="cstat-no" title="statement not covered" >await axios.post(`${baseUrl}${route}`, data);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
   }
-}
+};
 &nbsp;
 export const Put = <span class="fstat-no" title="function not covered" >as</span>ync (route, data) =&gt; {
-  const puUrl = <span class="cstat-no" title="statement not covered" >baseUrl + route;</span>
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const response = <span class="cstat-no" title="statement not covered" >await axios.put(putUrl, data);</span>
+    const response = <span class="cstat-no" title="statement not covered" >await axios.put(`${baseUrl}${route}`, data);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
   }
-}
+};
 &nbsp;
 export const Delete = <span class="fstat-no" title="function not covered" >as</span>ync (route, data) =&gt; {
-  const deleteUrl = <span class="cstat-no" title="statement not covered" >baseUrl + route;</span>
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const response = <span class="cstat-no" title="statement not covered" >await axios.delete(deleteUrl, data);</span>
+    const response = <span class="cstat-no" title="statement not covered" >await axios.delete(`${baseUrl}${route}`, data);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
   }
-}</pre></td></tr>
+};
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jan 20 2019 09:56:30 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 22 2019 12:03:45 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

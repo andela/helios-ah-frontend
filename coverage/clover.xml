@@ -1,66 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1547974590839" clover="3.2.0">
-  <project timestamp="1547974590839" name="All files">
-    <metrics statements="40" coveredstatements="21" conditionals="5" coveredconditionals="2" methods="11" coveredmethods="8" elements="56" coveredelements="31" complexity="0" loc="40" ncloc="40" packages="3" files="4" classes="4">
+<coverage generated="1548155025251" clover="3.2.0">
+  <project timestamp="1548155025251" name="All files">
+    <metrics statements="115" coveredstatements="55" conditionals="25" coveredconditionals="2" methods="39" coveredmethods="13" elements="179" coveredelements="70" complexity="0" loc="115" ncloc="115" packages="6" files="24" classes="24">
       <package name="src">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="routes.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/routes.jsx">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="13" count="1" type="stmt"/>
+        </file>
         <file name="setupTests.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/setupTests.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="4" count="2" type="stmt"/>
+          <line num="4" count="6" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.actionTypes">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/actionTypes/index.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+        </file>
+        <file name="signupActionTypes.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/actionTypes/signupActionTypes.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.actions">
+        <metrics statements="7" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <file name="actions.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/actions/actions.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+        </file>
+        <file name="signupActions.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/actions/signupActions.js">
+          <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
         </file>
       </package>
       <package name="src.components">
-        <metrics statements="14" coveredstatements="12" conditionals="5" coveredconditionals="2" methods="7" coveredmethods="7"/>
-        <file name="App.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/App.js">
-          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="26" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
+        <file name="App.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/App.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="1" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
         </file>
-        <file name="ResetPassword.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/ResetPassword.jsx">
-          <metrics statements="13" coveredstatements="11" conditionals="5" coveredconditionals="2" methods="6" coveredmethods="6"/>
+        <file name="Button.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/Button.jsx">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="3" type="stmt"/>
           <line num="12" count="1" type="stmt"/>
-          <line num="13" count="1" type="stmt"/>
-          <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="20" count="0" type="stmt"/>
-          <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="28" count="1" type="stmt"/>
-          <line num="29" count="1" type="stmt"/>
-          <line num="30" count="1" type="stmt"/>
-          <line num="34" count="2" type="stmt"/>
-          <line num="35" count="2" type="stmt"/>
-          <line num="38" count="3" type="stmt"/>
-          <line num="41" count="4" type="stmt"/>
-          <line num="44" count="10" type="stmt"/>
+          <line num="27" count="3" type="stmt"/>
+          <line num="36" count="3" type="stmt"/>
+        </file>
+        <file name="FormInput.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/FormInput.jsx">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="4" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="20" count="4" type="stmt"/>
+          <line num="29" count="4" type="stmt"/>
+        </file>
+        <file name="Links.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/Links.jsx">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+        <file name="ResetPasswordForm.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/ResetPasswordForm.jsx">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="13" count="7" type="stmt"/>
+          <line num="53" count="3" type="stmt"/>
+        </file>
+        <file name="SignupForm.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/SignupForm.jsx">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="18" count="4" type="stmt"/>
+          <line num="107" count="2" type="stmt"/>
+        </file>
+        <file name="StartPage.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/StartPage.jsx">
+          <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="21" count="1" type="stmt"/>
+        </file>
+        <file name="SubmitButton.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/SubmitButton.jsx">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="5" type="stmt"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="27" count="5" type="stmt"/>
+          <line num="36" count="5" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/components/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="src.utilities">
-        <metrics statements="25" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <metrics statements="30" coveredstatements="7" conditionals="8" coveredconditionals="1" methods="6" coveredmethods="0"/>
         <file name="apiRequests.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/utilities/apiRequests.js">
-          <metrics statements="25" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="0" type="stmt"/>
+          <metrics statements="21" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="0"/>
+          <line num="3" count="2" type="cond" truecount="1" falsecount="1"/>
+          <line num="6" count="2" type="stmt"/>
           <line num="7" count="0" type="stmt"/>
           <line num="8" count="0" type="stmt"/>
           <line num="9" count="0" type="stmt"/>
           <line num="11" count="0" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="17" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-          <line num="19" count="0" type="stmt"/>
-          <line num="21" count="0" type="stmt"/>
-          <line num="25" count="1" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="24" count="2" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
           <line num="26" count="0" type="stmt"/>
           <line num="27" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="33" count="2" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+        </file>
+        <file name="attachAuth.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/utilities/attachAuth.js">
+          <metrics statements="7" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/utilities/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+        <file name="toastrUtil.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/utilities/toastrUtil.js">
+          <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        </file>
+      </package>
+      <package name="src.views">
+        <metrics statements="46" coveredstatements="17" conditionals="15" coveredconditionals="1" methods="17" coveredmethods="7"/>
+        <file name="HomePage.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/views/HomePage.jsx">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+        <file name="LoginPage.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/views/LoginPage.jsx">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+        <file name="ResetPassword.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/views/ResetPassword.jsx">
+          <metrics statements="19" coveredstatements="13" conditionals="11" coveredconditionals="1" methods="7" coveredmethods="7"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="10" count="3" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="28" count="0" type="stmt"/>
           <line num="29" count="0" type="stmt"/>
+          <line num="31" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="40" count="1" type="stmt"/>
+          <line num="41" count="1" type="stmt"/>
+          <line num="45" count="1" type="stmt"/>
+          <line num="46" count="1" type="stmt"/>
+          <line num="50" count="2" type="stmt"/>
+          <line num="54" count="2" type="stmt"/>
+          <line num="58" count="4" type="stmt"/>
+        </file>
+        <file name="SignupPage.jsx" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/views/SignupPage.jsx">
+          <metrics statements="23" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
           <line num="31" count="0" type="stmt"/>
-          <line num="35" count="1" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="34" count="0" type="stmt"/>
           <line num="36" count="0" type="stmt"/>
           <line num="37" count="0" type="stmt"/>
-          <line num="38" count="0" type="stmt"/>
-          <line num="39" count="0" type="stmt"/>
+          <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+          <line num="63" count="1" type="stmt"/>
+          <line num="67" count="1" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/oluwasegunadepoju/Desktop/vsc/git/helios-ah-frontend/src/views/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
     </metrics>

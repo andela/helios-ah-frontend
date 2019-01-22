@@ -1,11 +1,19 @@
 const path = require('path');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
+  const envVariable = dotenv.config().parsed;
+  
+  const envKeys = Object.keys(envVariable).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(envVariable[next]);
+    return prev;
+  }, {});
 
   return {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
       path: path.join(__dirname, '/build'),
       filename: 'index_bundle.js'
@@ -27,33 +35,14 @@ module.exports = (env) => {
           ]
         },
         {
-          test: /\.(jpe?g|png|gif|svg|ico)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                query: {
-                  name: 'assets/[name].[ext]'
-                }
-              }
-            },
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                query: {
-                  mozjpeg: {
-                    progressive: true,
-                  },
-                  gifsicle: {
-                    interlaced: true,
-                  },
-                  optipng: {
-                    optimizationLevel: 7,
-                  }
-                }
-              }
+          test: /\.(png|jp(e*)g|svg)$/,
+          use: [{
+            loader: 'url-loader',
+            options: {
+              limit: 25000, // Convert images < 8kb to base64 strings
+              name: 'images/[name].[ext]'
             }
-          ]
+          }]
         }
       ]
     },
@@ -61,10 +50,14 @@ module.exports = (env) => {
     plugins: [
       new HtmlwebpackPlugin({
         template: './src/index.html'
-      })
+      }),
+      new webpack.DefinePlugin(envKeys)
     ],
     devServer: {
       historyApiFallback: true
+    },
+    resolve: {
+      extensions: ['.jsx', '.js', 'png']
     }
   }
 }

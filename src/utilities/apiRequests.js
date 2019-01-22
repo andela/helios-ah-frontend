@@ -1,43 +1,40 @@
 import axios from 'axios';
 
-const baseUrl = 'https://helios-ah-backend-staging.herokuapp.com/api/v1';
+const baseUrl = (process.env.NODE_ENV === 'development')
+  ? 'http://localhost:4001/api/v1' : process.env.PRODUCTION_URL;
 
-export const Get = async(route) => {
-  const getUrl = baseUrl + route;
+export const Get = async (route) => {
   try {
-    const response = await axios.get(getUrl);
+    const response = await axios.get(baseUrl + route);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
-}
+};
 
 export const Post = async (route, data) => {
-  const postUrl = baseUrl + route;
   try {
-    const response = await axios.post(postUrl, data);
+    const response = await axios.post(`${baseUrl}${route}`, data);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
-}
+};
 
 export const Put = async (route, data) => {
-  const puUrl = baseUrl + route;
   try {
-    const response = await axios.put(putUrl, data);
+    const response = await axios.put(`${baseUrl}${route}`, data);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
-}
+};
 
 export const Delete = async (route, data) => {
-  const deleteUrl = baseUrl + route;
   try {
-    const response = await axios.delete(deleteUrl, data);
+    const response = await axios.delete(`${baseUrl}${route}`, data);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
-}
+};
