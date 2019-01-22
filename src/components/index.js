@@ -5,7 +5,7 @@ import Links from './Links';
 import SignupForm from './SignupForm';
 import SubmitButton from './SubmitButton';
 import Card from './card';
-import Card2 from './card2';
+import BuzzSection from './BuzzSection';
 
 export {
   App,
@@ -15,5 +15,5 @@ export {
   SignupForm,
   SubmitButton,
   Card,
-  Card2
+  BuzzSection
 };
