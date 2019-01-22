@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import NavBarAuth from '../components/NavBarNoAuth';
 import { Card } from '../components';
+import { getArticles } from '../actions/homeActions';
 
-const bookmark = (event) => {
+class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      articles: []
+    };
+  }
+
+componentWillMount = async () => {
+  const { props } = this;
+  const articles = await props.getArticles();
+  this.setState({ articles: articles.data });
+  console.log(articles);
+};
+
+bookmark = (event) => {
   event.target.classList.add('bookmark-clicked');
 };
-const like = (event) => {
+
+like = (event) => {
   event.target.classList.add('like-clicked');
 };
-const rate = (event, value) => {
+
+rate = (event, value) => {
   let index = 0, item = 0;
   const element = event.target.parentNode.parentNode.children;
   while (index < 5) {
@@ -22,30 +42,47 @@ const rate = (event, value) => {
   }
 };
 
-const HomePage = () => (
-  <div>
-    <NavBarAuth />
-    <div className="row card-row">
-      <Card
-        id="1"
-        bookmark={bookmark}
-        like={like}
-        rate={rate}
-      />
-      <Card
-        id="2"
-        bookmark={bookmark}
-        like={like}
-        rate={rate}
-      />
-      <Card
-        id="3"
-        bookmark={bookmark}
-        like={like}
-        rate={rate}
-      />
+render() {
+  const { articles } = this.state;
+  return (
+    <div>
+      <NavBarAuth />
+      {(articles.length > 0)
+        ? (
+          <div className="row card-row">
+            <Card
+              id={articles[0].id}
+              bookmark={this.bookmark}
+              like={this.like}
+              rate={this.rate}
+              title={articles[0].title}
+              body={articles[0].body}
+            />
+            <Card
+              id={articles[1].id}
+              bookmark={this.bookmark}
+              like={this.like}
+              rate={this.rate}
+              title={articles[1].title}
+              body={articles[1].body}
+            />
+            <Card
+              id={articles[2].id}
+              bookmark={this.bookmark}
+              like={this.like}
+              rate={this.rate}
+              title={articles[2].title}
+              body={articles[3].body}
+            />
+          </div>
+        ) : ''}
     </div>
-  </div>
-);
+  );
+}
+}
+HomePage.propTypes = {
+  getArticles: PropTypes.func.isRequired,
+};
 
-export default HomePage;
+export default connect(null,
+  { getArticles })(HomePage);

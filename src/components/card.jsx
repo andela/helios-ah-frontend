@@ -5,6 +5,8 @@ const Card = ({
   id,
   bookmark,
   like,
+  title,
+  body,
   rate
 }) => (
   <div className="col-sm-12 col-lg-4 card-container" id={id}>
@@ -15,11 +17,9 @@ const Card = ({
         alt="card"
       />
       <div className="card-body text-center">
-        <h5 className="card-title">Article title</h5>
+        <h5 className="card-title">{title}</h5>
         <p className="card-text">
-          This is a wider card with supporting
-          text below as a natural lead-in to additional content.
-          This content is a little bit longer.
+          {`${body.substring(0, 125)}...`}
 
         </p>
       </div>
@@ -44,6 +44,8 @@ const Card = ({
 
 Card.propTypes = {
   id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
   bookmark: PropTypes.func.isRequired,
   like: PropTypes.func.isRequired,
   rate: PropTypes.func.isRequired,
