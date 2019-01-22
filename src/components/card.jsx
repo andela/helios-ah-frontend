@@ -7,20 +7,20 @@ const Card = ({
   like,
   title,
   body,
+  image,
   rate
 }) => (
   <div className="col-sm-12 col-lg-4 card-container" id={id}>
     <div className="card w-30" id="card">
       <img
         className="card-img-top"
-        src="https://images.unsplash.com/photo-1547894233-3b986939e29c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        src={image || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'}
         alt="card"
       />
       <div className="card-body text-center">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">
           {`${body.substring(0, 125)}...`}
-
         </p>
       </div>
       <div className="card-footer footer-container">
@@ -45,6 +45,7 @@ const Card = ({
 Card.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   bookmark: PropTypes.func.isRequired,
   like: PropTypes.func.isRequired,

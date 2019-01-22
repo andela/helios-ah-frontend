@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NavBarAuth from '../components/NavBarNoAuth';
-import { Card } from '../components';
+import { Card, BuzzSection } from '../components';
 import { getArticles } from '../actions/homeActions';
 
 class HomePage extends Component {
@@ -47,35 +47,43 @@ render() {
   return (
     <div>
       <NavBarAuth />
-      {(articles.length > 0)
-        ? (
-          <div className="row card-row">
-            <Card
-              id={articles[0].id}
-              bookmark={this.bookmark}
-              like={this.like}
-              rate={this.rate}
-              title={articles[0].title}
-              body={articles[0].body}
-            />
-            <Card
-              id={articles[1].id}
-              bookmark={this.bookmark}
-              like={this.like}
-              rate={this.rate}
-              title={articles[1].title}
-              body={articles[1].body}
-            />
-            <Card
-              id={articles[2].id}
-              bookmark={this.bookmark}
-              like={this.like}
-              rate={this.rate}
-              title={articles[2].title}
-              body={articles[3].body}
-            />
-          </div>
-        ) : ''}
+      <div className="row mr-4 ml-4">
+        <BuzzSection />
+      </div>
+      <div className="container-fluid">
+        {(articles.length > 0)
+          ? (
+            <div className="row card-row">
+              <Card
+                id={articles[0].id}
+                bookmark={this.bookmark}
+                like={this.like}
+                rate={this.rate}
+                title={articles[0].title}
+                body={articles[0].body}
+                image={articles[0].image}
+              />
+              <Card
+                id={articles[1].id}
+                bookmark={this.bookmark}
+                like={this.like}
+                rate={this.rate}
+                title={articles[1].title}
+                body={articles[1].body}
+                image={articles[1].image}
+              />
+              <Card
+                id={articles[2].id}
+                bookmark={this.bookmark}
+                like={this.like}
+                rate={this.rate}
+                title={articles[2].title}
+                body={articles[2].body}
+                image={articles[2].image}
+              />
+            </div>
+          ) : ''}
+      </div>
     </div>
   );
 }

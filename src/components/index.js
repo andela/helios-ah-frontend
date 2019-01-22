@@ -4,7 +4,8 @@ import FormInput from './FormInput';
 import Links from './Links';
 import SignupForm from './SignupForm';
 import SubmitButton from './SubmitButton';
-import Card from './Card';
+import Card from './card';
+import BuzzSection from './BuzzSection';
 
 export {
   App,
@@ -14,4 +15,5 @@ export {
   SignupForm,
   SubmitButton,
   Card,
+  BuzzSection
 };
