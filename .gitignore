@@ -2,5 +2,9 @@ node_modules/
 build/
 .env
 .vscode/
-coverage/
 __snapshots__/
+bootstrap/
+.DS_Store
+.vscode
+coverage/
+yarn.lock

@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Login Page render Login Page renders the login page component 1`] = `
+<div
+  className="container login-body"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-6"
+    >
+      <span
+        className="login-image-container"
+      />
+    </div>
+    <div
+      className="col-md-6 col-xs-12 right-login"
+    >
+      <h3>
+        WELCOME BACK.....
+      </h3>
+      <h5>
+        LOGIN TO AUTHOR\`S HAVEN
+      </h5>
+      <Connect(FlashMessageList)
+        customAlertClass="custom-alert"
+      />
+      <form
+        autoComplete="off"
+      >
+        <TextFieldGroup
+          error=""
+          errorFeedbackClass="login-invalid-feedback"
+          field="email"
+          id={null}
+          onBlur={null}
+          onInput={null}
+          placeholder="Email Address"
+          type="text"
+          validFeedbackClass="login-valid-feedback"
+        />
+        <TextFieldGroup
+          error=""
+          errorFeedbackClass="login-invalid-feedback"
+          field="password"
+          id={null}
+          onBlur={null}
+          onInput={null}
+          placeholder="Password"
+          type="password"
+          validFeedbackClass="login-valid-feedback"
+        />
+        <div
+          className="forgot-password"
+        >
+          <Link
+            replace={false}
+            to="/reset-password"
+          >
+            <p>
+              FORGOT PASSWORD?
+            </p>
+          </Link>
+        </div>
+        <div
+          className="login-buttons"
+        >
+          <SubmitButton
+            className="login-btn"
+            columnAttribute="login-col"
+            id={null}
+            isRequestSent={false}
+            onClick={[Function]}
+            value="LOGIN"
+          />
+          <withRouter(LinkButton)
+            className="signup-btn"
+            columnAttribute="signup-col"
+            to="/signup"
+            value="SIGNUP"
+          />
+        </div>
+        <div
+          className="social-media-icons"
+        >
+          <span
+            className="facebook"
+          />
+          <span
+            className="twitter"
+          />
+          <span
+            className="google"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render Login Page render Login Page renders the login page component 2`] = `
+<div
+  className="container login-body"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-6"
+    >
+      <span
+        className="login-image-container"
+      />
+    </div>
+    <div
+      className="col-md-6 col-xs-12 right-login"
+    >
+      <h3>
+        WELCOME BACK.....
+      </h3>
+      <h5>
+        LOGIN TO AUTHOR\`S HAVEN
+      </h5>
+      <Connect(FlashMessageList)
+        customAlertClass="custom-alert"
+      />
+      <form
+        autoComplete="off"
+      >
+        <TextFieldGroup
+          error=""
+          errorFeedbackClass="login-invalid-feedback"
+          field="email"
+          id={null}
+          onBlur={null}
+          onInput={null}
+          placeholder="Email Address"
+          type="text"
+          validFeedbackClass="login-valid-feedback"
+        />
+        <TextFieldGroup
+          error=""
+          errorFeedbackClass="login-invalid-feedback"
+          field="password"
+          id={null}
+          onBlur={null}
+          onInput={null}
+          placeholder="Password"
+          type="password"
+          validFeedbackClass="login-valid-feedback"
+        />
+        <div
+          className="forgot-password"
+        >
+          <Link
+            replace={false}
+            to="/reset-password"
+          >
+            <p>
+              FORGOT PASSWORD?
+            </p>
+          </Link>
+        </div>
+        <div
+          className="login-buttons"
+        >
+          <SubmitButton
+            className="login-btn"
+            columnAttribute="login-col"
+            id={null}
+            isRequestSent={false}
+            onClick={[Function]}
+            value="LOGIN"
+          />
+          <withRouter(LinkButton)
+            className="signup-btn"
+            columnAttribute="signup-col"
+            to="/signup"
+            value="SIGNUP"
+          />
+        </div>
+        <div
+          className="social-media-icons"
+        >
+          <span
+            className="facebook"
+          />
+          <span
+            className="twitter"
+          />
+          <span
+            className="google"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

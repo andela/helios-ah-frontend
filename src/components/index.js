@@ -3,9 +3,12 @@ import Button from './Button';
 import FormInput from './FormInput';
 import Links from './Links';
 import SignupForm from './SignupForm';
-import StartPage from './StartPage';
 import SubmitButton from './SubmitButton';
 import ResetPassword from './ResetPasswordForm';
+import FlashMessage from './FlashMessage';
+import FlashMessageList from './FlashMessagesList';
+import TextFieldGroup from './TextFieldGroup';
+import LoginForm from './LoginForm';
 
 export {
   App,
@@ -13,7 +16,10 @@ export {
   FormInput,
   Links,
   SignupForm,
-  StartPage,
   SubmitButton,
-  ResetPassword
+  ResetPassword,
+  FlashMessage,
+  FlashMessageList,
+  LoginForm,
+  TextFieldGroup
 };

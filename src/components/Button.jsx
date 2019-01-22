@@ -12,7 +12,7 @@ const Button = ({
   <div className={columnAttribute}>
     <div className="form-group text-center">
       <button
-        type="submit"
+        type="button"
         className={className}
         id={id}
         onClick={onClick}
