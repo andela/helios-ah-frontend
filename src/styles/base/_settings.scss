@@ -1,8 +1,8 @@
 //Demo Colors
 $gray: #cac8c8;
 $purple: #800080;
-$light-purple: lighten($purple, 30%);
 $white: #ffffff;
+$light-purple: lighten($purple, 30%);
 $placeholderText:#c4c4c4;
 
 //sDemo pacing in pixels
@@ -14,4 +14,6 @@ $small-space: 10px;
 $large-ratio: 100%;
 $reem-kufi: 'Reem Kufi', sans-serif;
 $Xlarge-ratio: 300%;
-$font-Family: 'Reem Kufi', sans-serif;
+
+//font family 
+$font-family: 'Reem Kufi', sans-serif;

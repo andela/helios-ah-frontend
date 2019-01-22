@@ -28,7 +28,7 @@ class CreateArticle extends Component {
     if ((this.props.publish && prevProps.publish === false)
     || (this.props.draft && prevProps.draft === false)) {
       let uploaded = true;
-      const { onSave, createArticle } = this.props;
+      const { onSave, createArticle, publish } = this.props;
       const {
         photo,
         image,
@@ -50,7 +50,11 @@ class CreateArticle extends Component {
           uploaded = ((typeof uploaded) === 'string') ? uploaded : null;
           this.setState({ image: uploaded }, async () => {
             if (id) {
+              onSave();
             // check if article is already created and has ID then update if true.
+            } else if (publish) {
+              onSave();
+              // executes when published
             } else {
               onSave();
               const article = await createArticle(this.state);
@@ -124,7 +128,7 @@ class CreateArticle extends Component {
 
   render() {
     return (
-      <div className="container create-box">
+      <div className="container article-box">
         <FlashMessagesList customAlertClass="article-alert" />
         <div className="row article-row">
           <div className="col-lg-12 create-box">

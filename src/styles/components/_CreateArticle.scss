@@ -39,12 +39,15 @@ textarea::placeholder, input::placeholder {
   color: $purple;
   text-decoration: none;
 }
-.create-box {
+.create-box, .article-box {
   border: 0px;
   border-bottom: 1px solid;
   border-color: rgba(90, 90, 90, 0.22);
   margin-top: 3%;
   max-width: 100%;
+}
+.article-box {
+  border-bottom: 0px;
 }
 .add-image-icon {
   align-items: center;
@@ -162,10 +165,9 @@ h1 {
 
 .article-alert {
   height: 50px;
-  padding-top: 1%;
   font-size: 150%;
   position: fixed;
   right:5px;
-  top:5px;
+  top:66px;
   z-index: 300;
 }

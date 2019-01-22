@@ -8,14 +8,14 @@ const request = axios.create({
   baseURL: baseUrl,
   headers: {
     'Content-Type': 'application/json',
-    'x-access-token': window.localStorage.getItem('token-key')
+    'x-access-token': window.localStorage.getItem('token')
   },
   credentials: 'omit'
 });
 
 request.interceptors.request.use(
   (config) => {
-    config.headers['x-access-token'] = localStorage.getItem('token-key');
+    config.headers['x-access-token'] = localStorage.getItem('token');
     return config;
   },
   error => Promise.reject(error)
