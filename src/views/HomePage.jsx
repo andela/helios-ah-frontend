@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarAuth from '../components/NavBarNoAuth';
-import { Card } from '../components';
+import { Card, Card2 } from '../components';
 
 const bookmark = (event) => {
   event.target.classList.add('bookmark-clicked');
@@ -25,6 +25,7 @@ const rate = (event, value) => {
 const HomePage = () => (
   <div>
     <NavBarAuth />
+    <Card2 />
     <div className="row card-row">
       <Card
         id="1"
