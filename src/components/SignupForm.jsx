@@ -78,20 +78,20 @@ const SignupForm = ({
 
             <div className="row">
 
-              <SubmitButton
-                onClick={submitDetails}
-                isRequestSent={isRequestSent}
-                id="signup-page-button"
-                value="Signup"
-                className="btn"
-                columnAttribute="col-sm-6 col-xs-12"
-              />
-
               <Button
                 onClick={submitDetails}
                 isRequestSent={isRequestSent}
                 value="Login"
                 id="signup-page-login-button"
+                className="btn"
+                columnAttribute="col-sm-6 col-xs-12"
+              />
+
+              <SubmitButton
+                onClick={submitDetails}
+                isRequestSent={isRequestSent}
+                id="signup-page-button"
+                value="Signup"
                 className="btn"
                 columnAttribute="col-sm-6 col-xs-12"
               />

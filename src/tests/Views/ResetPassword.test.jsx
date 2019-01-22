@@ -20,23 +20,6 @@ test('expect the elements to have a single button', () => {
   expect(componentStatusState).toEqual(null);
 });
 
-test('update state.status with "error" when user doesnt exist', () => {
-  const wrapper = mount(<ResetPassword {...propsObject} />);
-  const RequestPasswordResetButton = wrapper.find('input');
-  RequestPasswordResetButton.simulate('change', {
-    preventDefault: () => { }
-  });
-  setTimeout(() => {
-    const componentStatusState = wrapper.state().status;
-    expect(componentStatusState).toEqual('error');
-  }, 500);
-  setTimeout(() => {
-    const span = wrapper.find('span#status');
-    expect(span.text()).toBe('User Not Found');
-  }, 500);
-});
-
-
 test('methods should be valid instances of the class', () => {
   const wrapper = mount(<ResetPassword {...propsObject} />);
   const inst = wrapper.instance();

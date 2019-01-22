@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.81% </span>
+        <span class="strong">42.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/21</span>
+        <span class='fraction'>9/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">20% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>2/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.81% </span>
+        <span class="strong">42.86% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/21</span>
+        <span class='fraction'>9/21</span>
       </div>
     </div>
   </div>
@@ -85,10 +85,28 @@
 40
 41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -97,25 +115,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -133,16 +133,16 @@ export const Get = <span class="fstat-no" title="function not covered" >as</span
     const response = <span class="cstat-no" title="statement not covered" >await axios.get(baseUrl + route);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
+<span class="cstat-no" title="statement not covered" >    return error.response ? error.response.data : error;</span>
   }
 };
 &nbsp;
-export const Post = <span class="fstat-no" title="function not covered" >as</span>ync (route, data) =&gt; {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const response = <span class="cstat-no" title="statement not covered" >await axios.post(`${baseUrl}${route}`, data);</span>
-<span class="cstat-no" title="statement not covered" >    return response.data;</span>
+export const Post = async (route, data) =&gt; {
+  try {
+    const response = await axios.post(`${baseUrl}${route}`, data);
+    return response.data;
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
+    return error.response ? <span class="branch-0 cbranch-no" title="branch not covered" >error.response.data </span>: error;
   }
 };
 &nbsp;
@@ -151,7 +151,7 @@ export const Put = <span class="fstat-no" title="function not covered" >as</span
     const response = <span class="cstat-no" title="statement not covered" >await axios.put(`${baseUrl}${route}`, data);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
+<span class="cstat-no" title="statement not covered" >    return error.response ? error.response.data : error;</span>
   }
 };
 &nbsp;
@@ -160,7 +160,7 @@ export const Delete = <span class="fstat-no" title="function not covered" >as</s
     const response = <span class="cstat-no" title="statement not covered" >await axios.delete(`${baseUrl}${route}`, data);</span>
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    return error.response.data;</span>
+<span class="cstat-no" title="statement not covered" >    return error.response ? error.response.data : error;</span>
   }
 };
 &nbsp;</pre></td></tr>
@@ -169,7 +169,7 @@ export const Delete = <span class="fstat-no" title="function not covered" >as</s
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 22 2019 12:03:45 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 22 2019 13:33:16 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

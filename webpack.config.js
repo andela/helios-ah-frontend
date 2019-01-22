@@ -6,7 +6,6 @@ const webpack = require('webpack');
 module.exports = (env) => {
   const isProduction = env === 'production';
   const envVariable = dotenv.config().parsed;
-  
   const envKeys = Object.keys(envVariable).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(envVariable[next]);
     return prev;
@@ -16,7 +15,8 @@ module.exports = (env) => {
     entry: './src/index.jsx',
     output: {
       path: path.join(__dirname, '/build'),
-      filename: 'index_bundle.js'
+      filename: 'index_bundle.js',
+      publicPath: '/'
     },
     module: {
       rules: [
@@ -46,7 +46,7 @@ module.exports = (env) => {
         }
       ]
     },
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map', //used in testing (alow source mapping on debugging console)
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     plugins: [
       new HtmlwebpackPlugin({
         template: './src/index.html'
@@ -59,5 +59,5 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.jsx', '.js', 'png']
     }
-  }
-}
+  };
+};
