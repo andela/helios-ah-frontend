@@ -1,4 +1,4 @@
-import { Get } from '../utilities/apiRequests'
+import { Get } from '../utilities/apiRequests';
 import {
   BOOKMARK_ARTICLE
 } from '../actionTypes';

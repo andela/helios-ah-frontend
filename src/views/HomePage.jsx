@@ -11,6 +11,7 @@ class HomePage extends Component {
     this.state = {
       articles: []
     };
+    this.getArticles = props.getArticlesAction;
   }
 
   componentWillMount = async () => {
@@ -27,6 +28,19 @@ class HomePage extends Component {
     event.target.classList.add('like-clicked');
   };
 
+  // componentWillMount = async () => {
+  //   const articles = await this.getArticles();
+  //   this.setState({ articles: articles.data });
+  // };
+
+  bookmark = (event) => {
+    event.target.classList.toggle('bookmark-clicked');
+  };
+
+  like = (event) => {
+    event.target.classList.toggle('like-clicked');
+  };
+
   rate = (event, value) => {
     let index = 0, item = 0;
     const element = event.target.parentNode.parentNode.children;
@@ -40,6 +54,7 @@ class HomePage extends Component {
       item += 1;
     }
   };
+
 
   render() {
     const { articles } = this.state;
@@ -81,17 +96,21 @@ class HomePage extends Component {
                   image={articles[2].image}
                 />
               </div>
-            ) : ''}
-        </div>
-        <div className="row">
-          <Card />
-          <Card />
-          <Card />
+            )
+            : (
+              <div id="loading-modal">
+                <div className="ring">
+                  Loading
+                  <span className="spinner" />
+                </div>
+              </div>
+            )}
         </div>
       </div>
     );
   }
 }
+
 HomePage.propTypes = {
   getArticlesAction: PropTypes.func.isRequired,
 };
@@ -100,5 +119,4 @@ const mapDispatchToProps = {
   getArticlesAction: getArticles
 };
 
-export default connect(null,
-  mapDispatchToProps)(HomePage);
+export default connect(null, mapDispatchToProps)(HomePage);

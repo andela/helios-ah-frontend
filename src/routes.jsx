@@ -4,14 +4,15 @@ import {
   BrowserRouter,
   Switch
 } from 'react-router-dom';
+
 import {
   LoginPage,
-  HomePage,
   SignupPage,
-  CompleteRegistration
+  ResetPassword,
+  CompleteRegistration,
+  HomePage,
 } from './views';
 import HomePageRedirect from './utilities/HomePageRedirect';
-
 
 const routes = (
   <BrowserRouter>
@@ -20,9 +21,9 @@ const routes = (
       <Route path="/login" component={HomePageRedirect(LoginPage)} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={HomePageRedirect(SignupPage)} />
+      <Route path="/reset-password" component={ResetPassword} />
     </Switch>
   </BrowserRouter>
 );
-
 
 export default routes;
