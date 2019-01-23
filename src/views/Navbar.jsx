@@ -28,7 +28,7 @@ class Navbar extends Component {
     //   }
     // } = this.props;
 
-    const isUserAuthenticated = true;
+    const isUserAuthenticated = false;
     if (isUserAuthenticated) {
       return <NavBarAuth onClick={this.onClick} />;
     }

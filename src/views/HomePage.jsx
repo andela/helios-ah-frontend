@@ -49,7 +49,10 @@ render() {
       <div className="row mr-4 ml-4">
         <BuzzSection />
       </div>
-      <div className="container-fluid">
+      <div className="text-center">
+        <h3>More Articles For You</h3>
+      </div>
+      <div className="container-fluid mt-5">
         {(articles.length > 0)
           ? (
             <div className="row card-row">
