@@ -8,6 +8,7 @@ import {
 import {
   LoginPage,
   SignupPage,
+  ChangePasswordPage,
   CompleteRegistration,
   Article,
   ResetPassword,
@@ -21,6 +22,7 @@ const routes = (
       <Route path="/signup" component={SignupPage} />
       <Route path="/article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
+      <Route path="/change/password" component={ChangePasswordPage} />
     </Switch>
   </BrowserRouter>
 );
