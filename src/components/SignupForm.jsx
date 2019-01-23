@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SubmitButton from './SubmitButton';
 import LinkButton from './LinkButton';
 import TextFieldGroup from './TextFieldGroup';
+import FlashMessageList from './FlashMessagesList';
 
 const SignupForm = ({
   onChange,
@@ -29,6 +30,9 @@ const SignupForm = ({
       </div>
       <div className="col-sm-6 col-xs-12">
         <div id="form-container">
+
+          <FlashMessageList />
+
           <form className="form-horizontal" autoComplete="off">
             <TextFieldGroup
               id="username"

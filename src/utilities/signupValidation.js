@@ -48,7 +48,9 @@ const signupValidation = (data) => {
   if (!data.email.trim()) {
     errors.email = 'Email field is required';
   }
-  if (data.email.trim() && !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(data.email)) {
+  if (data.email
+    .trim() && !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/
+    .test(data.email)) {
     errors.email = 'Invalid email';
   }
   if (!data.password.trim()) {

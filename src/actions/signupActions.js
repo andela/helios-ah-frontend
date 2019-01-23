@@ -7,7 +7,7 @@ export const signupSuccess = userInfo => ({
 });
 export const signupUser = userDetails => async () => {
   try {
-    const response = await Post('/auth/signup', userDetails);
+    const response = await Post('/signup', userDetails);
     return response;
   } catch (error) {
     if (error.message === 'Network Error') {

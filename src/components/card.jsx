@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const handleError = (event) => {
-  event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/No_free_image_%28camera%29_nap.svg/240px-No_free_image_%28camera%29_nap.svg.png';
+  event
+    .target
+    .src = `${
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/No_free_image_%28camera%29_nap.svg/240px-No_free_image_%28camera%29_nap.svg.png'
+    }`;
 };
 
 const Card = ({
@@ -18,7 +22,10 @@ const Card = ({
     <div className="card w-30" id="card">
       <img
         className="card-img-top"
-        src={image || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'}
+        src={
+          image
+          || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'
+        }
         alt="card"
         onError={event => handleError(event)}
       />
