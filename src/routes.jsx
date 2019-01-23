@@ -8,8 +8,9 @@ import {
 import {
   LoginPage,
   SignupPage,
+  CompleteRegistration,
+  Article,
   ResetPassword,
-  CompleteRegistration
 } from './views';
 
 const routes = (
@@ -18,6 +19,7 @@ const routes = (
       <Route path="/login" component={LoginPage} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
+      <Route path="/article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
     </Switch>
   </BrowserRouter>
