@@ -25,8 +25,8 @@ const SubmitButton = ({
 );
 
 SubmitButton.propTypes = {
+  isRequestSent: PropTypes.bool,
   onClick: PropTypes.func,
-  isRequestSent: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,
   id: PropTypes.string,
   className: PropTypes.string.isRequired,
@@ -34,6 +34,7 @@ SubmitButton.propTypes = {
 };
 
 SubmitButton.defaultProps = {
+  isRequestSent: false,
   id: null,
   columnAttribute: null,
   onClick: () => {}
