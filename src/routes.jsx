@@ -10,15 +10,16 @@ import {
   SignupPage,
   CompleteRegistration
 } from './views';
+import HomePageRedirect from './utilities/HomePageRedirect';
 
 
 const routes = (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route path="/login" component={LoginPage} />
+      <Route path="/login" component={HomePageRedirect(LoginPage)} />
       <Route path="/signup/verify" component={CompleteRegistration} />
-      <Route path="/signup" component={SignupPage} />
+      <Route path="/signup" component={HomePageRedirect(SignupPage)} />
     </Switch>
   </BrowserRouter>
 );
