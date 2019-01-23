@@ -8,6 +8,14 @@ body {
 .hide {
   display: none;
 }
+
+*:focus, *:active, .btn:focus {
+  outline: 0 !important;
+}
+
+button.btn:focus {
+  outline: 0;
+}
 #app, #app > div{
   height:100%;
   width: 100%;

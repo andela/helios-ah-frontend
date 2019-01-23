@@ -28,11 +28,6 @@ class HomePage extends Component {
     event.target.classList.add('like-clicked');
   };
 
-  // componentWillMount = async () => {
-  //   const articles = await this.getArticles();
-  //   this.setState({ articles: articles.data });
-  // };
-
   bookmark = (event) => {
     event.target.classList.toggle('bookmark-clicked');
   };
@@ -54,7 +49,6 @@ class HomePage extends Component {
       item += 1;
     }
   };
-
 
   render() {
     const { articles } = this.state;
@@ -104,7 +98,8 @@ class HomePage extends Component {
                   <span className="spinner" />
                 </div>
               </div>
-            )}
+            )
+          }
         </div>
       </div>
     );

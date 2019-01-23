@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionsBar from './SectionsBar';
+import Search from './Search';
 
 const NavBarNoAuth = () => (
   <div>
@@ -11,10 +12,7 @@ const NavBarNoAuth = () => (
 
 
       <div className="navbar-collapse collapse" id="navb">
-        <form className="form-inline ml-auto">
-          <input className="search-input hide" type="text" placeholder="Search" />
-          <i className="fa fa-search mr-sm-5 mr-5" />
-        </form>
+        <Search />
         <ul className="navbar-nav">
           <li className="nav-item">
             <div className="mr-5 ml-5">
