@@ -41,7 +41,6 @@ module.exports = () => {
               loader: 'image-webpack-loader',
               options: {
                 disable: true,
-                name: 'images/[name].[ext]'
               },
             },
           ],
