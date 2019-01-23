@@ -27,7 +27,6 @@ class FlashMessage extends React.Component {
     } else if (type === 'warning') {
       alertType = `alert alert-warning ${customAlertClass}`;
     }
-
     return (
       <div className={`${alertType}  alert-dismissible`} role="alert">
         {text}
