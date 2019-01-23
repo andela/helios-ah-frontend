@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import SubmitButton from './SubmitButton';
 import FormInput from './FormInput';
 
-const ChangePw = ({
+const ChangePassword = ({
   onChange,
   password,
   isRequestSent,
@@ -54,7 +54,7 @@ const ChangePw = ({
   </div>
 );
 
-ChangePw.propTypes = {
+ChangePassword.propTypes = {
   onChange: PropTypes.func.isRequired,
   password: PropTypes.string.isRequired,
   confirmPassword: PropTypes.string.isRequired,
@@ -62,4 +62,4 @@ ChangePw.propTypes = {
   isRequestSent: PropTypes.bool.isRequired,
 };
 
-export default ChangePw;
+export default ChangePassword;

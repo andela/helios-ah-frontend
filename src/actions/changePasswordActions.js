@@ -1,8 +1,8 @@
 import { Put } from '../utilities/apiRequests';
 
-const changePw = pwDetails => async () => {
+const changePassword = passwordDetails => async () => {
   try {
-    const { password, token } = pwDetails;
+    const { password, token } = passwordDetails;
     const response = await Put(`/change/password?token=${token}`,
       { password });
     return response;
@@ -11,4 +11,4 @@ const changePw = pwDetails => async () => {
   }
 };
 
-export default changePw;
+export default changePassword;

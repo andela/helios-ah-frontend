@@ -3,12 +3,12 @@ import SignupPage from './SignupPage';
 import Article from './Article';
 import ResetPassword from './ResetPassword';
 import CompleteRegistration from './CompleteRegistration';
-import ChangePwPage from './ChangePwPage';
+import ChangePasswordPage from './ChangePasswordPage';
 
 export {
   LoginPage,
   SignupPage,
-  ChangePwPage,
+  ChangePasswordPage,
   Article,
   ResetPassword,
   CompleteRegistration

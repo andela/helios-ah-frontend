@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ChangePw from '../../components/ChangePw';
+import ChangePassword from '../../components/ChangePassword';
 
 describe('Unit test for Change Password Form component', () => {
   const propsObject = {
@@ -10,8 +10,8 @@ describe('Unit test for Change Password Form component', () => {
     confirmPassword: 'password',
     submitDetails: () => {},
   };
-  it('should render a form with 2 form input fields and 1 submit buttons', () => {
-    const wrapper = shallow(<ChangePw {...propsObject} />);
+  it('should render a form with 2 input fields and 1 submit buttons', () => {
+    const wrapper = shallow(<ChangePassword {...propsObject} />);
     const formFields = wrapper.find('FormInput');
     expect(formFields.length).toEqual(2);
     const buttons = wrapper.find('SubmitButton');

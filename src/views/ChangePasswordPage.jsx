@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toastr } from '../utilities';
-import ChangePw from '../components/ChangePw';
-import changePw from '../actions/changePwActions';
+import ChangePassword from '../components/ChangePassword';
+import changePassword from '../actions/changePasswordActions';
 
-class ChangePwPage extends Component {
+class ChangePasswordPage extends Component {
   constructor(props) {
     super(props);
     this.initialState = {
@@ -25,13 +25,13 @@ class ChangePwPage extends Component {
     const {
       password, confirmPassword
     } = this.state;
-    const { userChangePw } = this.props;
+    const { userChangePassword } = this.props;
     if (confirmPassword !== password) {
       return toastr('error', 'Passwords must match', 3000);
     }
     this.setState({ isRequestSent: true });
     const token = (new URL(document.location)).searchParams.get('token');
-    userChangePw({ password, token }).then((response) => {
+    userChangePassword({ password, token }).then((response) => {
       if (response.success) {
         toastr('success', response.message, 4000);
         return this.setState({ ...this.initialState, isRequestSent: false });
@@ -46,7 +46,7 @@ class ChangePwPage extends Component {
 
   render() {
     return (
-      <ChangePw
+      <ChangePassword
         onChange={this.handleOnChange}
         {...this.state}
         submitDetails={this.handleOnSubmit}
@@ -55,12 +55,12 @@ class ChangePwPage extends Component {
   }
 }
 
-ChangePwPage.propTypes = {
-  userChangePw: PropTypes.func.isRequired,
+ChangePasswordPage.propTypes = {
+  userChangePassword: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
-  userChangePw: pwDetails => dispatch(changePw(pwDetails)),
+  userChangePassword: PasswordDetails => dispatch(changePassword(PasswordDetails)),
 });
 
-export default connect(null, mapDispatchToProps)(ChangePwPage);
+export default connect(null, mapDispatchToProps)(ChangePasswordPage);
