@@ -1,19 +1,13 @@
 const loginValidation = (data) => {
   const errors = {};
-  if (data.password) {
-    data.password = data.password.trim();
-  }
-  if (data.email) {
-    data.email = data.email.trim();
-  }
 
-  if (!data.email) {
+  if (!data.email.trim()) {
     errors.email = 'Email field is required';
   }
-  if (data.email && !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(data.email)) {
+  if (data.email.trim() && !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(data.email)) {
     errors.email = 'Invalid email';
   }
-  if (!data.password) {
+  if (!data.password.trim()) {
     errors.password = 'Password field is required';
   }
   return errors;

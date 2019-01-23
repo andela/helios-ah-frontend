@@ -183,22 +183,25 @@
    text-align: left;
  }
  
- ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-   color: #c4c4c4;
-   font-size: 70%;
- }
- ::-moz-placeholder { /* Firefox 19+ */
-   color: #c4c4c4;
-   font-size: 70%;
- }
- :-ms-input-placeholder { /* IE 10+ */
-   color: #c4c4c4;
-   font-size: 70%;
- }
- :-moz-placeholder { /* Firefox 18- */
-   color: #c4c4c4;
-   font-size: 70%;
- }
+  .right-login {
+
+    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #c4c4c4;
+    font-size: 90%;
+    }
+    input::-moz-placeholder { /* Firefox 19+ */
+    color: #c4c4c4;
+    font-size: 90%;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+    color: #c4c4c4;
+    font-size: 90%;
+    }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #c4c4c4;
+    font-size: 90%;
+    }
+  }
 
  
 @media (min-width: 734px) and (max-width: 768px) {
@@ -293,7 +296,7 @@
          padding-left: 10%;
          position: relative;
          width: 20em;
-       }
+      }
      
        input:focus {
          outline: none;
@@ -417,19 +420,15 @@
      }
      
      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-       color: #c4c4c4;
        font-size: 90%;
      }
      ::-moz-placeholder { /* Firefox 19+ */
-       color: #c4c4c4;
        font-size: 90%;
      }
      :-ms-input-placeholder { /* IE 10+ */
-       color: #c4c4c4;
        font-size: 90%;
      }
      :-moz-placeholder { /* Firefox 18- */
-       color: #c4c4c4;
        font-size: 90%;
      }
 }
@@ -612,19 +611,15 @@
    }
   
    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-     color: #c4c4c4;
      font-size: 1em;
    }
    ::-moz-placeholder { /* Firefox 19+ */
-     color: #c4c4c4;
      font-size: 1em;
    }
    :-ms-input-placeholder { /* IE 10+ */
-     color: #c4c4c4;
      font-size: 1em;
    }
    :-moz-placeholder { /* Firefox 18- */
-     color: #c4c4c4;
      font-size: 1em;
    }
 }

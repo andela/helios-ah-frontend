@@ -11,20 +11,20 @@ class HomePage extends Component {
     this.state = {
       articles: []
     };
+    this.getArticles = props.getArticlesAction;
   }
 
 componentWillMount = async () => {
-  const { getArticlesAction } = this.props;
-  const articles = await getArticlesAction();
+  const articles = await this.getArticles();
   this.setState({ articles: articles.data });
 };
 
 bookmark = (event) => {
-  event.target.classList.add('bookmark-clicked');
+  event.target.classList.toggle('bookmark-clicked');
 };
 
 like = (event) => {
-  event.target.classList.add('like-clicked');
+  event.target.classList.toggle('like-clicked');
 };
 
 rate = (event, value) => {
@@ -81,7 +81,15 @@ render() {
                 image={articles[2].image}
               />
             </div>
-          ) : ''}
+          )
+          : (
+            <div id="loading-modal">
+              <div className="ring">
+                Loading
+                <span className="spinner" />
+              </div>
+            </div>
+          )}
       </div>
     </div>
   );

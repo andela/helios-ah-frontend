@@ -20,10 +20,39 @@ class SignupPage extends Component {
     };
     this.state = { ...this.initialState, isRequestSent: false };
     this.isRequestSent = false;
+    this.onBlurError = {};
+    this.onInputError = {};
   }
 
   handleOnChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
+  }
+
+  handleOnInput = (e) => {
+    const field = e.target.name;
+    const { value } = e.target;
+    this.setState({ [field]: value }, () => {
+      const errors = signupValidation(this.state);
+      if (errors[field]) {
+        this.onInputError[field] = errors[field];
+        this.setState({ errors: this.onInputError[field] });
+      } else {
+        delete (this.onInputError[field]);
+      }
+      this.setState({ errors: this.onInputError });
+    });
+  }
+
+  handleOnBlur = (e) => {
+    const field = e.target.name;
+    const errors = signupValidation(this.state);
+    if (errors[field]) {
+      this.onBlurError[field] = errors[field];
+      this.setState({ errors: this.onBlurError[field] });
+    } else {
+      delete (this.onBlurError[field]);
+    }
+    this.setState({ errors: this.onBlurError });
   }
 
   handleOnSubmit = (event) => {
@@ -66,6 +95,8 @@ class SignupPage extends Component {
         {...this.state}
         submitDetails={this.handleOnSubmit}
         errors={errors}
+        onInput={this.handleOnInput}
+        onBlur={this.handleOnBlur}
       />
     );
   }
