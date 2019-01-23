@@ -3,9 +3,8 @@ const HtmlwebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 
-module.exports = (env) => {
-  const isProduction = env === 'production';
-  const envVariable = dotenv.config().parsed;
+module.exports = () => {
+  const envVariable = dotenv.config();
   const envKeys = Object.keys(envVariable).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(envVariable[next]);
     return prev;
@@ -31,22 +30,24 @@ module.exports = (env) => {
           use: [
             'style-loader',
             'css-loader',
-            'sass-loader'
+            'sass-loader',
           ]
         },
         {
-          test: /\.(png|jp(e*)g|svg)$/,
-          use: [{
-            loader: 'url-loader',
-            options: {
-              limit: 25000, // Convert images < 8kb to base64 strings
-              name: 'images/[name].[ext]'
-            }
-          }]
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          use: [
+            'file-loader?name=styles/images/[name].[ext]',
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                disable: true,
+                name: 'images/[name].[ext]'
+              },
+            },
+          ],
         }
       ]
     },
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     plugins: [
       new HtmlwebpackPlugin({
         template: './src/index.html'

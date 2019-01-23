@@ -1,6 +1,5 @@
 node_modules/
 build/
-.env
 .vscode/
 __snapshots__/
 bootstrap/

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const baseUrl = (process.env.NODE_ENV === 'development')
-  ? 'http://localhost:4001/api/v1' : process.env.PRODUCTION_URL;
+  ? process.env.TEST_URL : process.env.PRODUCTION_URL;
 
 export const Get = async (route) => {
   try {
