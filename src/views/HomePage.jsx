@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import NavBarAuth from '../components/NavBarNoAuth';
+import NavBar from './Navbar';
 import { Card, BuzzSection } from '../components';
 import { getArticles } from '../actions/homeActions';
 
@@ -11,7 +11,7 @@ class HomePage extends Component {
     this.state = {
       articles: []
     };
-    this.getArticles = props.getArticles;
+    this.getArticles = props.getArticlesAction;
   }
 
 componentWillMount = async () => {
@@ -45,7 +45,7 @@ render() {
   const { articles } = this.state;
   return (
     <div>
-      <NavBarAuth />
+      <NavBar />
       <div className="row mr-4 ml-4">
         <BuzzSection />
       </div>
@@ -88,8 +88,12 @@ render() {
 }
 }
 HomePage.propTypes = {
-  getArticles: PropTypes.func.isRequired,
+  getArticlesAction: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = {
+  getArticlesAction: getArticles
 };
 
 export default connect(null,
-  { getArticles })(HomePage);
+  mapDispatchToProps)(HomePage);
