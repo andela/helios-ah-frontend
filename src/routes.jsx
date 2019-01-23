@@ -9,8 +9,9 @@ import {
   LoginPage,
   SignupPage,
   ChangePwPage,
+  CompleteRegistration,
+  Article,
   ResetPassword,
-  CompleteRegistration
 } from './views';
 
 const routes = (
@@ -19,6 +20,7 @@ const routes = (
       <Route path="/login" component={LoginPage} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
+      <Route path="/article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/change/password" component={ChangePwPage} />
     </Switch>
