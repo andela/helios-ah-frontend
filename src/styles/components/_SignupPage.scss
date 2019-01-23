@@ -50,7 +50,7 @@ h2 {
   color: $purple;
   font-size: 1em;
   height: 2.5em;
-  margin: 0.4em auto;
+  margin: 2em auto;
   padding: 1em;
 }
 
@@ -79,4 +79,16 @@ h2 {
   padding: 0.4em;
   text-transform: uppercase;
   width: 90%;
+}
+
+.signup-div-class {
+  position: relative;
+}
+
+.signup-invalid-feedback, .signup-valid-feedback {
+  position: absolute;
+  bottom: -50%;
+  padding-left: 5%;
+  font-size: 80%;
+  width: 100%;
 }

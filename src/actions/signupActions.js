@@ -1,8 +1,8 @@
 import { Post } from '../utilities/apiRequests';
-import { USER_SIGNUP_SUCCESS } from '../actionTypes';
+import { SET_CURRENT_USER } from '../actionTypes';
 
 export const signupSuccess = userInfo => ({
-  type: USER_SIGNUP_SUCCESS,
+  type: SET_CURRENT_USER,
   userInfo,
 });
 export const signupUser = userDetails => async () => {

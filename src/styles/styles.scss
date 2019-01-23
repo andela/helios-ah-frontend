@@ -1,9 +1,7 @@
 // Demo Index SCSS File
 @import './base/settings';
 @import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
-
 @import './base/base';
-@import './components/App';
 @import './components/SignupPage';
 @import './components/NavBarAuth';
 @import './components/landingPage';
@@ -11,3 +9,6 @@
 @import './components/NavBarNoAuth';
 @import './components/BuzzSection';
 @import './components/Footer';
+@import './components/ResetPassword';
+@import './components/Login';
+
