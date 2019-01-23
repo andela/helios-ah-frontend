@@ -11,13 +11,12 @@ class HomePage extends Component {
     this.state = {
       articles: []
     };
+    this.getArticles = props.getArticles;
   }
 
 componentWillMount = async () => {
-  const { props } = this;
-  const articles = await props.getArticles();
+  const articles = await this.getArticles();
   this.setState({ articles: articles.data });
-  console.log(articles);
 };
 
 bookmark = (event) => {
