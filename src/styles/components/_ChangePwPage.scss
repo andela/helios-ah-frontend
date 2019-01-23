@@ -1,0 +1,69 @@
+body {
+  background-color: $white;
+  margin: auto;
+  margin-top: 0;
+}
+#welcome-text-container {
+  color: $purple;
+  margin: 0.5em auto;
+  margin-top: 6em;
+}
+#welcome-container{
+  max-width: 400px;
+}
+
+.signup-form-input::placeholder { /* Chrome/Opera/Safari */
+  color: $placeholderText;
+}
+.signup-form-input::-moz-placeholder { /* Firefox 19+ */
+  color: $placeholderText;
+}
+.signup-form-input:-ms-input-placeholder { /* IE 10+ */
+  color: $placeholderText;
+}
+.signup-form-input:-moz-placeholder { /* Firefox 18- */
+  color: $placeholderText;
+}
+
+#form-container {
+  margin: 2em auto;
+  width: 100%;
+}
+
+.signup-form-input {
+  background: #FFFFFF;
+  border: 1px solid $purple;
+  border-radius: 1.9em;
+  color: $purple;
+  font-size: 1em;
+  height: 2.5em;
+  margin: 0.4em auto;
+  padding: 1em;
+}
+
+#signup-page-button {
+  background-color: $purple;
+  border: 1px solid $purple;
+  border-radius: 2.344em;
+  color: $white;
+  font-size: 1em;
+  margin: 0.4em auto;
+  margin-right: 0;
+  outline: none;
+  padding: 0.4em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.v-flex-page {
+  justify-content: center;
+}
+
+.link-text {
+  color: #000000;
+}
+
+.link-text:hover {
+  color: $purple;
+}
+

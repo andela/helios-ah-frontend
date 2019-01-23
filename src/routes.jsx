@@ -7,7 +7,8 @@ import {
 import {
   LoginPage,
   SignupPage,
-  CompleteRegistration
+  CompleteRegistration,
+  ChangePwPage
 } from './views';
 
 
@@ -17,6 +18,7 @@ const routes = (
       <Route path="/login" component={LoginPage} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
+      <Route path="/change/password" component={ChangePwPage} />
     </Switch>
   </BrowserRouter>
 );
