@@ -2,7 +2,7 @@ import {
   ADD_FLASH_MESSAGE,
   DELETE_FLASH_MESSAGE,
   CLEAR_FLASH_MESSAGES
-} from '../actionTypes/index';
+} from '../actionTypes';
 
 export default (state = [], action = {}) => {
   switch (action.type) {

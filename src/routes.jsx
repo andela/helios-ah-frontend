@@ -4,7 +4,9 @@ import Login from './components/LoginForm';
 import AuthVerify from './components/AuthVerify';
 import {
   SignupPage,
-  CompleteRegistration
+  CompleteRegistration,
+  Article,
+  ResetPassword,
 } from './views';
 
 const socialLoginRe = /^\/api\/v1\/auth\/social_(ggl|tw|fb)/;
@@ -15,9 +17,10 @@ const routes = (
       <Route path={socialLoginRe} component={AuthVerify} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
+      <Route path="/article" component={Article} />
+      <Route path="/reset-password" component={ResetPassword} />
     </Switch>
   </BrowserRouter>
 );
-
 
 export default routes;

@@ -8,7 +8,6 @@ import { baseUrl } from '../utilities/apiRequests';
 import SubmitButton from './SubmitButton';
 import LinkButton from './LinkButton';
 
-
 const LoginForm = ({
   onChange,
   onBlur,
