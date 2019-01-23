@@ -1,7 +1,6 @@
-//Demo Base Settings
+// Demo Base Settings
 body {
-  background-color: $light-purple;
-  font-family: $reem-kufi;
+  font-family: $font-family;
   margin: 0;
   padding: 0;
 }
@@ -10,11 +9,14 @@ body {
   display: none;
 }
 
-
 *:focus, *:active, .btn:focus {
   outline: 0 !important;
 }
 
 button.btn:focus {
   outline: 0;
+}
+#app, #app > div{
+  height:100%;
+  width: 100%;
 }

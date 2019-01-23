@@ -1,8 +1,10 @@
 //Demo Colors
 $bookmarked: rgb(94, 89, 89);
 $yellow: #DAA520;
+$white: #ffffff;
 $purple: #800080;
 $light-purple: lighten($purple, 30%);
+$red: red;
 $white: #ffffff;
 $placeholderText:#c4c4c4;
 
@@ -12,7 +14,9 @@ $medium-Space: 50px;
 $small-space: 10px;
 
 //Demo spacing in percentage
+$small-ratio: 5%;
 $large-ratio: 100%;
-$reem-kufi: 'Reem Kufi', sans-serif;
 $Xlarge-ratio: 300%;
-$font-Family: 'Reem Kufi', sans-serif;
+
+//font family 
+$font-family: 'Reem Kufi', sans-serif;
