@@ -20,11 +20,11 @@ componentWillMount = async () => {
 };
 
 bookmark = (event) => {
-  event.target.classList.add('bookmark-clicked');
+  event.target.classList.toggle('bookmark-clicked');
 };
 
 like = (event) => {
-  event.target.classList.add('like-clicked');
+  event.target.classList.toggle('like-clicked');
 };
 
 rate = (event, value) => {
@@ -81,7 +81,15 @@ render() {
                 image={articles[2].image}
               />
             </div>
-          ) : ''}
+          )
+          : (
+            <div id="loading-modal">
+              <div className="ring">
+                Loading
+                <span className="spinner" />
+              </div>
+            </div>
+          )}
       </div>
     </div>
   );

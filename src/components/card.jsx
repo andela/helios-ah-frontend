@@ -43,6 +43,8 @@ const Card = ({
             onClick={event => like(event)}
           >
             <i className="fas fa-heart" />
+            {' '}
+            <span id="total-likes">{33}</span>
           </span>
         </div>
         <div>
