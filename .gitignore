@@ -7,3 +7,4 @@ bootstrap/
 .vscode
 coverage/
 yarn.lock
+.env
