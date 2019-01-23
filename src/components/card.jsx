@@ -18,7 +18,8 @@ const Card = ({
     <div className="card w-30" id="card">
       <img
         className="card-img-top"
-        src={image || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'}
+        src={image
+          || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'}
         alt="card"
         onError={event => handleError(event)}
       />

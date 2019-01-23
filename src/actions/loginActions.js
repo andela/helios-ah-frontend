@@ -1,12 +1,12 @@
 
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import { SET_CURRENT_USER } from '../actionTypes';
+import { USER_SIGNUP_SUCCESS } from '../actionTypes';
 import setAuthorizationToken from '../utilities/setAuthorizationToken';
 import reverseToken from '../utilities/reverseToken';
 
 export const setCurrentUser = user => ({
-  type: SET_CURRENT_USER,
+  type: USER_SIGNUP_SUCCESS,
   user
 });
 

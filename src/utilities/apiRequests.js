@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = (process.env.NODE_ENV === 'development')
+const baseUrl = (process.env.NODE_ENV !== 'production')
   ? 'http://localhost:4001/api/v1' : process.env.PRODUCTION_URL;
 
 const request = axios.create({
@@ -22,7 +22,7 @@ request.interceptors.request.use(
 
 export const Get = async (route) => {
   try {
-    const response = await axios.get(baseUrl + route);
+    const response = await request.get(baseUrl + route);
     return response.data;
   } catch (error) {
     return error.response ? error.response.data : error;
