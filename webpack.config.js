@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
-  const envVariable = dotenv.config().parsed;
+  const envVariable = dotenv.config();
   const envKeys = Object.keys(envVariable).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(envVariable[next]);
     return prev;

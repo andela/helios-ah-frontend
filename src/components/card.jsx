@@ -26,11 +26,13 @@ const Card = ({
           image
           || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'
         }
+        src={image
+          || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'}
         alt="card"
         onError={event => handleError(event)}
       />
       <div className="card-body text-center">
-        <h5 className="card-title">{title}</h5>
+        <h5 className="article-header-size card-title">{title}</h5>
         <p className="card-text">
           {`${body.substring(0, 125)}...`}
         </p>

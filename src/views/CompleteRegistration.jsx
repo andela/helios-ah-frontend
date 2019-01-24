@@ -28,7 +28,7 @@ class CompleteRegistrationPage extends Component {
       }
       if (userInfo.code === 401) {
         this.setState({
-          pageStatus: 'The link we sent tot you has expired. '
+          pageStatus: 'The link we sent to you has expired. '
         + 'Please start the signup process again.'
         });
         return setTimeout(() => { history.push('/signup'); }, 3000);

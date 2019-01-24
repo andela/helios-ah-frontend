@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LinkButton from './LinkButton';
 import SectionsBar from './SectionsBar';
+import Search from './Search';
 
 const NavBarNoAuth = () => (
   <div>

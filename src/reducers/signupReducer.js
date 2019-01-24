@@ -1,10 +1,10 @@
-import { SET_CURRENT_USER } from '../actionTypes';
+import { USER_SIGNUP_SUCCESS } from '../actionTypes';
 
 export default (state = {
   userInfo: {}, isAuthenticated: false
 }, action) => {
   switch (action.type) {
-    case SET_CURRENT_USER:
+    case USER_SIGNUP_SUCCESS:
       return {
         ...state,
         userInfo: action.userInfo,
