@@ -6,6 +6,18 @@ body {
 .major-color {
   color: $purple;
   font-family: $font-family;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+}
+
+#body {
+  margin-top: 0px;
+}
+
+.major-color {
+  color: $purple;
+  font-family: $font-family;
   margin: 0;
   padding: 0;
 }
