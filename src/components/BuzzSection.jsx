@@ -27,7 +27,7 @@ class BuzzSection extends Component {
                 readTime={`${articles[5].readTime} mins read`}
               />
               <FavoriteArticleList
-                articles={[articles[7], articles[8], articles[9]]}
+                articles={[articles[7], articles[8], articles[9], articles[6]]}
               />
               <MostReadArticleList
                 articles={[articles[13], articles[14], articles[19]]}

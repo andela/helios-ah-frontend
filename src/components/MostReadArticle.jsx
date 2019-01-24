@@ -12,7 +12,7 @@ const MostReadArticle = ({
   <Link className="article-link" to={`/${id}`}>
     <div className="card w-30 text-center">
       <div className="card-body">
-        <h6 className="card-title">{title}</h6>
+        <h6 className="article-header-size card-title">{title}</h6>
         <p className="card-text">{body}</p>
         <p className="card-text">
           <small className="text-muted row">

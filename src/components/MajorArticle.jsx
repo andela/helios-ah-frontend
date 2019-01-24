@@ -13,14 +13,14 @@ const MajorArticle = ({
   <div className="col-md-6">
     <div className="row" id="main-article">
       <div className="col-lg-5 main-article-text">
-        <h5>{title}</h5>
+        <h5 className="article-header-size">{title}</h5>
         <p>
-          {`${body.substring(0, 500)} ...`}
+          {`${body.substring(0, 360)} ...`}
           <Link to={`/article/${id}`}> Read More</Link>
         </p>
-        <div className="article-info">
-          <span>{name}</span>
-          <span className="offset-3">{readTime}</span>
+        <div className="">
+          <small className="text-muted">{name}</small>
+          <small className="text-muted offset-3">{readTime}</small>
         </div>
       </div>
       <div className="col-lg-7 main-article-image">

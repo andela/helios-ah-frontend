@@ -14,7 +14,7 @@ const FavoriteArticleList = ({ articles }) => {
     />
   ));
   return (
-    <div className="col-xl-3 col-md-6">
+    <div className="col-xl-3 col-md-6 article-col-parent">
       {ArticleComponent}
     </div>
   );

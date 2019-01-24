@@ -24,7 +24,7 @@ const Article = ({
           <span>{name}</span>
         </Link>
       </div>
-      <div>{`${readTime} mins read`}</div>
+      <small className="text-muted">{`${readTime} mins read`}</small>
     </div>
   </div>
 );

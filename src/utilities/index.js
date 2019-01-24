@@ -1,3 +1,7 @@
+import toastr from './toastrUtil';
 import attachAuthToken from './attachAuth';
 
-export default attachAuthToken;
+export {
+  toastr,
+  attachAuthToken,
+};

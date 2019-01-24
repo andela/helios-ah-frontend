@@ -24,7 +24,7 @@ const Card = ({
         onError={event => handleError(event)}
       />
       <div className="card-body text-center">
-        <h5 className="card-title">{title}</h5>
+        <h5 className="article-header-size card-title">{title}</h5>
         <p className="card-text">
           {`${body.substring(0, 125)}...`}
         </p>
