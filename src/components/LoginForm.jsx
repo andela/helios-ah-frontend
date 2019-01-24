@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import TextFieldGroup from './TextFieldGroup';
 import FlashMessageList from './FlashMessagesList';
 import SubmitButton from './SubmitButton';
-import LinkButton from './LinkButton';
 
 
 const LoginForm = ({
@@ -27,7 +26,7 @@ const LoginForm = ({
         <h5>LOGIN TO AUTHOR`S HAVEN</h5>
 
         <FlashMessageList
-          customAlertClass="custom-alert"
+          customAlertClass="login-custom-alert"
         />
 
         <form onSubmit={submitDetails} autoComplete="off">
@@ -42,7 +41,7 @@ const LoginForm = ({
             validFeedbackClass="login-valid-feedback"
             onInput={onInput}
             customFormDivClass="login-div-class"
-            className="form-control"
+            className="form-control login-input"
           />
           <TextFieldGroup
             error={errors && errors.password}
@@ -56,7 +55,7 @@ const LoginForm = ({
             validFeedbackClass="login-valid-feedback"
             onInput={onInput}
             customFormDivClass="login-div-class"
-            className="form-control"
+            className="form-control login-input"
           />
           <div className="forgot-password">
             <Link to="/reset-password"><p>FORGOT PASSWORD?</p></Link>
@@ -69,15 +68,12 @@ const LoginForm = ({
               value="LOGIN"
               columnAttribute="login-col"
             />
-            <LinkButton
-              onClick={submitDetails}
-              isRequestSent={isRequestSent}
-              className="signup-btn"
-              value="SIGNUP"
-              columnAttribute="signup-col"
-              to="/signup"
-            />
           </div>
+
+          <Link to="/signup" className="signup-link-container">
+            <div className="signup-link">Unregistered? Sign up here</div>
+          </Link>
+
           <div className="social-media-icons">
             <span className="facebook" />
             <span className="twitter" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import SubmitButton from './SubmitButton';
-import LinkButton from './LinkButton';
 import TextFieldGroup from './TextFieldGroup';
 import FlashMessageList from './FlashMessagesList';
 
@@ -24,14 +24,16 @@ const SignupForm = ({
       <div className="col-sm-6 col-xs-12" id="welcome-container">
         <div id="welcome-text-container" className="text-center">
           <h2>Writing is an art.</h2>
-          <h3>Explore your creative side at authors haven.</h3>
+          <h3>Explore your creative side at Author`s Haven.</h3>
         </div>
         <span id="signup-image" />
       </div>
       <div className="col-sm-6 col-xs-12">
         <div id="form-container">
 
-          <FlashMessageList />
+          <FlashMessageList
+            customAlertClass="signup-custom-alert"
+          />
 
           <form className="form-horizontal" autoComplete="off">
             <TextFieldGroup
@@ -126,18 +128,7 @@ const SignupForm = ({
               type="password"
             />
 
-            <div className="row">
-
-              <LinkButton
-                onClick={submitDetails}
-                isRequestSent={isRequestSent}
-                value="Login"
-                id="signup-page-login-button"
-                className="btn"
-                columnAttribute="col-sm-6 col-xs-12"
-                to="/login"
-              />
-
+            <div className="row signup-button-container">
               <SubmitButton
                 onClick={submitDetails}
                 isRequestSent={isRequestSent}
@@ -146,8 +137,12 @@ const SignupForm = ({
                 className="btn"
                 columnAttribute="col-sm-6 col-xs-12"
               />
-
             </div>
+
+            <Link to="/login" className="login-link-container">
+              <div className="login-link">Registered? Login instead</div>
+            </Link>
+
           </form>
         </div>
       </div>
@@ -158,7 +153,7 @@ const SignupForm = ({
 SignupForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
-  errors: PropTypes.oneOf([
+  errors: PropTypes.oneOfType([
     PropTypes.string, PropTypes.objectOf(PropTypes.string)]).isRequired,
   password: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,

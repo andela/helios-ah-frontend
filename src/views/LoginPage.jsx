@@ -23,6 +23,11 @@ export class LoginPage extends Component {
     this.onInputError = {};
   }
 
+  componentDidMount() {
+    const { clearBannerMessages } = this.props;
+    clearBannerMessages();
+  }
+
   handleOnChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value

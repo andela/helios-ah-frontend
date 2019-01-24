@@ -38,7 +38,7 @@ h2 {
 }
 
 #form-container {
-  margin: 2em auto;
+  margin: 3.4em auto;
   width: 70%;
 }
 
@@ -52,42 +52,69 @@ h2 {
   margin: 2em auto;
   padding: 1em;
 }
-
 #signup-page-button {
   background-color: $purple;
   border: 1px solid $purple;
   border-radius: 2.344em;
   color: $white;
   font-size: 1em;
-  margin: 0.4em auto;
-  margin-right: 0;
   outline: none;
   padding: 0.4em;
   text-transform: uppercase;
   width: 90%;
 }
 
-#signup-page-login-button {
-  background-color: $white;
-  border: 1px solid $purple;
-  border-radius: 2.344em;
+.login-link-container {
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  text-decoration: none;
+}
+
+.login-link{ 
+  text-align: center;
   color: $purple;
-  font-size: 1em;
-  margin: 0.4em auto;
-  outline: none;
-  padding: 0.4em;
-  text-transform: uppercase;
-  width: 90%;
+  text-decoration: none;
 }
 
+.signup-invalid-feedback, .signup-valid-feedback {
+  bottom: -50%;
+  font-size: 180%;
+  padding-left: 5%;
+  position: absolute;
+  width: 100%;
+}
+
+.signup-custom-alert {
+  position: absolute;
+  top: -19%;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
 .signup-div-class {
   position: relative;
 }
 
-.signup-invalid-feedback, .signup-valid-feedback {
-  position: absolute;
-  bottom: -50%;
-  padding-left: 5%;
-  font-size: 80%;
-  width: 100%;
+.signup-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media(min-width: 992px) {
+  .signup-invalid-feedback, .signup-valid-feedback {
+    bottom: -50%;
+    font-size: 80%;
+    padding-left: 5%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .signup-custom-alert {
+    position: absolute;
+    top: -5%;
+    width: 100%;
+  }
 }

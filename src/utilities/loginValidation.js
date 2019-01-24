@@ -5,7 +5,7 @@ const loginValidation = (data) => {
     errors.email = 'Email field is required';
   }
   if (data.email.trim() && !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/
-    .test(data.email)) {
+    .test(data.email.trim())) {
     errors.email = 'Invalid email';
   }
   if (!data.password.trim()) {

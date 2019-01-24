@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SignupForm from '../components/SignupForm';
 import signupValidation from '../utilities/signupValidation';
-import { addFlashMessage } from '../actions/flashActions';
+import { addFlashMessage, clearFlashMessages } from '../actions/flashActions';
 import { signupUser } from '../actions/signupActions';
 
 class SignupPage extends Component {
@@ -22,6 +22,11 @@ class SignupPage extends Component {
     this.isRequestSent = false;
     this.onBlurError = {};
     this.onInputError = {};
+  }
+
+  componentDidMount() {
+    const { clearBannerMessages } = this.props;
+    clearBannerMessages();
   }
 
   handleOnChange = (event) => {
@@ -57,6 +62,8 @@ class SignupPage extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
+    const { clearBannerMessages } = this.props;
+    clearBannerMessages();
     if (this.isValid()) {
       const {
         username, email, firstName, lastName, password, errors
@@ -67,13 +74,15 @@ class SignupPage extends Component {
         username, email, firstName, lastName, password
       }).then((response) => {
         if (response.success) {
-          return this.setState({ ...this.initialState, isRequestSent: false });
+          this.setState({ isRequestSent: false });
+          addBannerMessage({ type: 'warning', text: response.message });
+        } else {
+          this.setState({ isRequestSent: false, errors });
+          addBannerMessage({ type: 'error', text: response.message });
         }
-        this.setState({ isRequestSent: false, errors });
-        addBannerMessage({ type: 'error', message: response.message });
       }).catch((error) => {
         this.setState({ isRequestSent: false });
-        return addBannerMessage({ type: 'error', message: error.message });
+        return addBannerMessage({ type: 'error', text: error.message });
       });
     }
   }
@@ -104,16 +113,14 @@ class SignupPage extends Component {
 
 SignupPage.propTypes = {
   userSignup: PropTypes.func.isRequired,
-  addBannerMessage: PropTypes.func
-};
-
-SignupPage.defaultProps = {
-  addBannerMessage: () => null
+  addBannerMessage: PropTypes.func.isRequired,
+  clearBannerMessages: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({
   userSignup: userDetails => dispatch(signupUser(userDetails)),
-  addBannerMessage: message => dispatch(addFlashMessage(message))
+  addBannerMessage: message => dispatch(addFlashMessage(message)),
+  clearBannerMessages: id => dispatch(clearFlashMessages(id))
 });
 
 export default connect(null, mapDispatchToProps)(SignupPage);
