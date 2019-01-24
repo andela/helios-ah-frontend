@@ -12,13 +12,13 @@ const ChangePassword = ({
   submitDetails,
 }) => (
   <div className="row v-flex-page">
-    <div className="col-12" id="welcome-container">
+    <div className="col-12" id="change-password-container">
       <div id="welcome-text-container" className="text-center">
         <h2>Change Password</h2>
         <br />
         <h4>Enter your new password below</h4>
       </div>
-      <div id="form-container">
+      <div id="change-password-form-container">
         <form className="form-horizontal">
           <FormInput
             id="password"
@@ -42,7 +42,6 @@ const ChangePassword = ({
             id="signup-page-button"
             value="Submit"
             className="btn"
-            columnAttribute=""
           />
 
           <div className="text-center">

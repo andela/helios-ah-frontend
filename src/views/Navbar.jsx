@@ -51,7 +51,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  currentUser: state.currentUser
 });
 
 Navbar.propTypes = {

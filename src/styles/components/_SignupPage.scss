@@ -2,7 +2,6 @@
 body {
   background-color: $white;
   margin: auto;
-  margin-top: 4em;
 }
 
 h2 {
@@ -102,6 +101,9 @@ h2 {
   justify-content: center;
 }
 
+.signup-page-container {
+  margin-top: 4em;
+}
 
 @media(min-width: 992px) {
   .signup-invalid-feedback, .signup-valid-feedback {
@@ -118,3 +120,4 @@ h2 {
     width: 100%;
   }
 }
+

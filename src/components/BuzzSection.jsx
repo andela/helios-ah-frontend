@@ -19,18 +19,18 @@ class BuzzSection extends Component {
           (articles.length > 0) ? (
             <div className="row buzz-section">
               <MajorArticle
-                id={articles[5].id}
-                title={articles[5].title}
-                body={articles[5].body}
-                image={articles[5].image}
-                name={`${articles[5].User.firstName} ${articles[5].User.lastName}`}
-                readTime={`${articles[5].readTime} mins read`}
+                id={articles[articles.length-1].id}
+                title={articles[articles.length-1].title}
+                body={articles[articles.length-1].body}
+                image={articles[articles.length-1].image}
+                name={`${articles[articles.length-1].User.firstName} ${articles[articles.length-1].User.lastName}`}
+                readTime={`${articles[articles.length-1].readTime} mins read`}
               />
               <FavoriteArticleList
-                articles={[articles[7], articles[8], articles[9], articles[6]]}
+                articles={[articles[0], articles[1], articles[2]]}
               />
               <MostReadArticleList
-                articles={[articles[13], articles[14], articles[19]]}
+                articles={[articles[0], articles[1], articles[2]]}
               />
             </div>
           ) : null

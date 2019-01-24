@@ -9,7 +9,7 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: []
+      articles: null,
     };
     this.getArticles = props.getArticlesAction;
   }
@@ -59,7 +59,7 @@ class HomePage extends Component {
           <BuzzSection />
         </div>
         <div className="container-fluid">
-          {(articles.length > 0)
+          {(articles)
             ? (
               <div className="row card-row">
                 <Card

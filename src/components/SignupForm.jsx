@@ -19,7 +19,7 @@ const SignupForm = ({
   lastName,
   submitDetails,
 }) => (
-  <div className="container">
+  <div className="container signup-page-container">
     <div className="row">
       <div className="col-sm-6 col-xs-12" id="welcome-container">
         <div id="welcome-text-container" className="text-center">

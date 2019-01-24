@@ -38,24 +38,17 @@ const NavBarNoAuth = () => (
             <div className="mr-5 ml-5">
               <LinkButton
                 value="Login"
-                className="btn login-btn mr-4"
+                className="btn home-login-btn mr-4"
                 columnAttribute="col-sm-6 col-xs-12"
                 to="/login"
               />
               <LinkButton
                 value="Signup"
-                className="btn signup-btn"
+                id="home-signup-btn" 
+                className="home-login-btn btn"
                 columnAttribute="col-sm-6 col-xs-12"
-                to="/login"
+                to="/signup"
               />
-              <button
-                className="btn login-btn mr-4"
-                type="button"
-              >
-                  Login
-
-              </button>
-              <button className="signup-btn btn" type="button">Signup</button>
             </div>
           </li>
         </ul>
