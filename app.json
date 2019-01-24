@@ -8,9 +8,7 @@
     }
   ],
   "env": {
-    "baseUrl": {
-      "required": true
-    }
+    "PRODUCTION_URL" : "http://helios-ah-backend-stagging/api/v1"
   },
   "formation": {
   },
