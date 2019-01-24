@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NavBar from './Navbar';
 import { Card, BuzzSection } from '../components';
 import { getArticles } from '../actions/homeActions';
+import Footer from '../components/Footer';
 
 class HomePage extends Component {
   constructor(props) {
@@ -101,6 +102,7 @@ class HomePage extends Component {
             )
           }
         </div>
+        <Footer />
       </div>
     );
   }

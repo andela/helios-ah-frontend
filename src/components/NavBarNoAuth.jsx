@@ -35,18 +35,18 @@ const NavBarNoAuth = () => (
         </form>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <div className="mr-5 ml-5">
+            <div className="mr-5 ml-5 row">
               <LinkButton
                 value="Login"
                 className="btn home-login-btn mr-4"
-                columnAttribute="col-sm-6 col-xs-12"
+                columnAttribute="col-xs-12"
                 to="/login"
               />
               <LinkButton
                 value="Signup"
                 id="home-signup-btn" 
                 className="home-login-btn btn"
-                columnAttribute="col-sm-6 col-xs-12"
+                columnAttribute="col-xs-12"
                 to="/signup"
               />
             </div>

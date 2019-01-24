@@ -36,6 +36,7 @@ class ResetPassword extends Component {
         : this.statusHandler('Password reset link has been sent to your mail');
   }
 
+
   onChange = (e) => {
     this.clearStatus();
     const value = e.target.value.trim();
