@@ -1,6 +1,5 @@
 node_modules/
 build/
-.env
 .vscode/
 __snapshots__/
 bootstrap/
@@ -8,3 +7,4 @@ bootstrap/
 .vscode
 coverage/
 yarn.lock
+.env

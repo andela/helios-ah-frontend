@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const baseUrl = (process.env.NODE_ENV !== 'production')
+const baseUrl = (process.env.NODE_ENV === 'production')
   ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1' : process.env.PRODUCTION_URL;
 
 const request = axios.create({
@@ -16,14 +16,6 @@ const request = axios.create({
 request.interceptors.request.use(
   (config) => {
     config.headers['x-access-token'] = localStorage.getItem('token');
-    return config;
-  },
-  error => Promise.reject(error)
-);
-
-request.interceptors.request.use(
-  (config) => {
-    config.headers['x-access-token'] = localStorage.getItem('token-key');
     return config;
   },
   error => Promise.reject(error)
