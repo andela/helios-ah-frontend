@@ -2,19 +2,19 @@ import { SET_CURRENT_USER } from '../actionTypes';
 import checkUserExists from '../utilities/checkUserExists';
 
 const initialState = {
-  isUserAuthenticated: false,
-  user: {}
+  isAuthenticated: false,
+  userInfo: {}
 };
 
-const auth = (state = initialState, action = {}) => {
+const authReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {
-        isUserAuthenticated: checkUserExists(action),
-        user: action.user
+        isAuthenticated: action.userInfo && Object.keys(action.userInfo).length > 0,
+        userInfo: action.userInfo
       };
     default: return state;
   }
 };
 
-export default auth;
+export default authReducer

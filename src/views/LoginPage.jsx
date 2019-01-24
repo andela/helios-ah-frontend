@@ -23,10 +23,10 @@ export class LoginPage extends Component {
     this.onInputError = {};
   }
 
-  componentDidMount() {
-    const { clearBannerMessages } = this.props;
-    clearBannerMessages();
-  }
+  // componentDidMount() {
+  //   const { clearBannerMessages } = this.props;
+  //   clearBannerMessages();
+  // }
 
   handleOnChange = (e) => {
     this.setState({
@@ -63,18 +63,28 @@ export class LoginPage extends Component {
 
   handleOnSubmit = async (e) => {
     e.preventDefault();
-    const { addBannerMessage, clearBannerMessages, userLogin } = this.props;
+    
+    const { addBannerMessage, clearBannerMessages, userLogin, history } = this.props;
     clearBannerMessages();
+    <div id="loading-modal">
+    <div className="ring">
+      Loading
+      <span className="spinner" />
+    </div>
+  </div>
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       const loginResponse = await userLogin(this.state);
       if (loginResponse) {
+        <div id="loading-modal hide">
+        <div className="ring">
+          Loading
+          <span className="spinner" />
+        </div>
+      </div>
         this.setState({ isLoading: false });
         if (loginResponse.status === 200) {
-          addBannerMessage({
-            type: 'success',
-            text: `${loginResponse.data.message}`
-          });
+          history.push('/')
         } else if (
           loginResponse.data.message === 'Email or password does not exist'
         ) {
@@ -83,6 +93,7 @@ export class LoginPage extends Component {
             text: 'Incorrect email or password'
           });
         } else {
+
           addBannerMessage({
             type: 'warning',
             text: `${loginResponse.data.message}`

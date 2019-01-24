@@ -24,7 +24,7 @@
   left: 0%;
   position: absolute;
   right: 0%;
-  top: -34%;
+  top: -15%;
   width: 100%;
  }
 
@@ -49,7 +49,7 @@
   left: 0%;
   position: absolute;
   right: 0%;
-  top: -45%;
+  top: -19%;
   width: 100%;
  }
  
@@ -202,13 +202,16 @@
  }
 
  
-@media (min-width: 734px) and (max-width: 768px) {
+@media (min-width: 734px) and (max-width: 800px) {
   .login-image-container {
     background: url("./images/undraw_directions_x53j.svg") no-repeat ;
     background-size: contain;
     display: block;
     height: 50vh;
-    margin: 40% auto;
+    margin: 0% auto;
+   }
+   .login-custom-alert{
+     top: 10%;
    }
    .login-img {
     display: block;
@@ -217,6 +220,7 @@
   }
   .right-login {
     text-align: center;
+    margin-top: 2em;
 
     h3, h5{
       color: $purple;
@@ -420,6 +424,7 @@
    
    .login-body {
      font-family: $font-family;
+     margin-top: 4em;
    }
    
    .right-login {
@@ -560,7 +565,7 @@
    left: 0%;
    position: absolute;
    right: 0%;
-   top: -20%;
+   top: -15%;
    width: 100%;
   }
 

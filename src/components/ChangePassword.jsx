@@ -39,7 +39,7 @@ const ChangePassword = ({
           <SubmitButton
             onClick={submitDetails}
             isRequestSent={isRequestSent}
-            id="signup-page-button"
+            id="change-password-page-button"
             value="Submit"
             className="btn"
           />
