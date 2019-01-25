@@ -5,7 +5,7 @@ import { addFlashMessage, clearFlashMessages } from '../actions/flashActions';
 import { loginRequest } from '../actions/loginActions';
 import { LoginForm } from '../components';
 import loginValidation from '../utilities/loginValidation';
-
+import Spinner from '../components/Spinner';
 
 /**
  *  Input sign in body form component
@@ -22,11 +22,6 @@ export class LoginPage extends Component {
     this.onBlurError = {};
     this.onInputError = {};
   }
-
-  // componentDidMount() {
-  //   const { clearBannerMessages } = this.props;
-  //   clearBannerMessages();
-  // }
 
   handleOnChange = (e) => {
     this.setState({
@@ -66,22 +61,11 @@ export class LoginPage extends Component {
     
     const { addBannerMessage, clearBannerMessages, userLogin, history } = this.props;
     clearBannerMessages();
-    <div id="loading-modal">
-    <div className="ring">
-      Loading
-      <span className="spinner" />
-    </div>
-  </div>
+    <Spinner/>
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       const loginResponse = await userLogin(this.state);
       if (loginResponse) {
-        <div id="loading-modal hide">
-        <div className="ring">
-          Loading
-          <span className="spinner" />
-        </div>
-      </div>
         this.setState({ isLoading: false });
         if (loginResponse.status === 200) {
           history.push('/')

@@ -70,7 +70,7 @@ const NavBarAuth = ({ signout }) => (
               <Link className="dropdown-item" to="/">Favorites</Link>
               <div className="dropdown-divider" />
               <Link className="dropdown-item" to="/">Profile</Link>
-              <Link className="dropdown-item" to="/" onClick={signout()}>
+              <Link className="dropdown-item" to="/" onClick={signout}>
                 Sign out&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-sign-out-alt" />
 

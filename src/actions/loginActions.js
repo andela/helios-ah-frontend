@@ -5,10 +5,12 @@ import { SET_CURRENT_USER } from '../actionTypes';
 import setAuthorizationToken from '../utilities/setAuthorizationToken';
 import reverseToken from '../utilities/reverseToken';
 
-export const setCurrentUser = userInfo => ({
-  type: SET_CURRENT_USER,
-  userInfo
-});
+export const setCurrentUser = (userInfo) => {
+  return {
+    type: SET_CURRENT_USER,
+    userInfo
+  };
+}
 
 export const loginRequest = (userData) => {
   const sentData = {
@@ -28,7 +30,6 @@ export const loginRequest = (userData) => {
       const decodedToken = jwt.decode(reverseToken(token));
       localStorage.setItem('token', token);
       setAuthorizationToken(token);
-      
       dispatch(setCurrentUser(decodedToken));
       return loginResponse;
     } catch (error) {

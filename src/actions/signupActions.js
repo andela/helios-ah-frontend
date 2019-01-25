@@ -2,7 +2,7 @@ import { Post } from '../utilities/apiRequests';
 import { SET_CURRENT_USER } from '../actionTypes';
 
 export const signupSuccess = userInfo => ({
-  type: SET_CURRENT_USER,
+  type: SIGN_UP_SUCCESS,
   userInfo,
 });
 export const signupUser = userDetails => async () => {
