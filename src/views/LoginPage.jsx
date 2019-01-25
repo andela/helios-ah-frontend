@@ -5,7 +5,7 @@ import { addFlashMessage, clearFlashMessages } from '../actions/flashActions';
 import { loginRequest } from '../actions/loginActions';
 import { LoginForm } from '../components';
 import loginValidation from '../utilities/loginValidation';
-
+import Spinner from '../components/Spinner';
 
 /**
  *  Input sign in body form component
@@ -21,11 +21,6 @@ export class LoginPage extends Component {
     };
     this.onBlurError = {};
     this.onInputError = {};
-  }
-
-  componentDidMount() {
-    const { clearBannerMessages } = this.props;
-    clearBannerMessages();
   }
 
   handleOnChange = (e) => {
@@ -63,18 +58,17 @@ export class LoginPage extends Component {
 
   handleOnSubmit = async (e) => {
     e.preventDefault();
-    const { addBannerMessage, clearBannerMessages, userLogin } = this.props;
+    
+    const { addBannerMessage, clearBannerMessages, userLogin, history } = this.props;
     clearBannerMessages();
+    <Spinner/>
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       const loginResponse = await userLogin(this.state);
       if (loginResponse) {
         this.setState({ isLoading: false });
         if (loginResponse.status === 200) {
-          addBannerMessage({
-            type: 'success',
-            text: `${loginResponse.data.message}`
-          });
+          history.push('/')
         } else if (
           loginResponse.data.message === 'Email or password does not exist'
         ) {
@@ -83,6 +77,7 @@ export class LoginPage extends Component {
             text: 'Incorrect email or password'
           });
         } else {
+
           addBannerMessage({
             type: 'warning',
             text: `${loginResponse.data.message}`

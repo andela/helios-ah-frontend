@@ -29,7 +29,7 @@ const LoginForm = ({
           customAlertClass="login-custom-alert"
         />
 
-        <form onSubmit={submitDetails} autoComplete="off">
+        <form  autoComplete="off">
           <TextFieldGroup
             error={errors && errors.email}
             placeholder="Email"

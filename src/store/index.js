@@ -9,7 +9,7 @@ import setAuthorizationToken from '../utilities/setAuthorizationToken';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
   && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
 
-export const store = createStore(
+const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk),
@@ -17,9 +17,5 @@ export const store = createStore(
   )
 );
 
-if (localStorage.jwtToken) {
-  setAuthorizationToken(localStorage.jwtToken);
-  store.dispatch(setCurrentUser(jwt.decode(localStorage.jwtToken)));
-}
 
 export default store;
