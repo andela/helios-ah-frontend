@@ -1,7 +1,7 @@
 node_modules/
 build/
 .vscode/
-__snapshots__/
+src/tests/components/__snapshots__/
 bootstrap/
 .DS_Store
 .vscode
