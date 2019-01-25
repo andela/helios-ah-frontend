@@ -10,12 +10,14 @@ const LinkButton = (props) => {
     match,
     staticContext,
     to,
+    id,
     onClick,
     ...rest
   } = props;
   return (
     <Button
       {...rest}
+      id={id}
       onClick={(event) => {
         if (onClick && onClick(event));
         history.push(to);
@@ -26,6 +28,7 @@ const LinkButton = (props) => {
 
 LinkButton.propTypes = {
   to: PropTypes.string.isRequired,
+  id: PropTypes.string,
   history: PropTypes.objectOf(PropTypes.string).isRequired,
   location: PropTypes.objectOf(PropTypes.string).isRequired,
   match: PropTypes.objectOf(PropTypes.string).isRequired,
@@ -34,7 +37,8 @@ LinkButton.propTypes = {
 };
 
 LinkButton.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
+  id: null
 };
 
 export default withRouter(LinkButton);

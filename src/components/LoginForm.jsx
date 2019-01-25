@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import TextFieldGroup from './TextFieldGroup';
 import FlashMessageList from './FlashMessagesList';
 import SubmitButton from './SubmitButton';
-import LinkButton from './LinkButton';
 
 
 const LoginForm = ({
@@ -27,13 +26,13 @@ const LoginForm = ({
         <h5>LOGIN TO AUTHOR`S HAVEN</h5>
 
         <FlashMessageList
-          customAlertClass="custom-alert"
+          customAlertClass="login-custom-alert"
         />
 
-        <form onSubmit={submitDetails} autoComplete="off">
+        <form  autoComplete="off">
           <TextFieldGroup
             error={errors && errors.email}
-            placeholder="Email Address"
+            placeholder="Email"
             field="email"
             value={email}
             onChange={onChange}
@@ -41,6 +40,8 @@ const LoginForm = ({
             errorFeedbackClass="login-invalid-feedback"
             validFeedbackClass="login-valid-feedback"
             onInput={onInput}
+            customFormDivClass="login-div-class"
+            className="form-control login-input"
           />
           <TextFieldGroup
             error={errors && errors.password}
@@ -53,6 +54,8 @@ const LoginForm = ({
             errorFeedbackClass="login-invalid-feedback"
             validFeedbackClass="login-valid-feedback"
             onInput={onInput}
+            customFormDivClass="login-div-class"
+            className="form-control login-input"
           />
           <div className="forgot-password">
             <Link to="/reset-password"><p>FORGOT PASSWORD?</p></Link>
@@ -65,15 +68,12 @@ const LoginForm = ({
               value="LOGIN"
               columnAttribute="login-col"
             />
-            <LinkButton
-              onClick={submitDetails}
-              isRequestSent={isRequestSent}
-              className="signup-btn"
-              value="SIGNUP"
-              columnAttribute="signup-col"
-              to="/signup"
-            />
           </div>
+
+          <Link to="/signup" className="signup-link-container">
+            <div className="signup-link">Unregistered? Sign up here</div>
+          </Link>
+
           <div className="social-media-icons">
             <span className="facebook" />
             <span className="twitter" />
@@ -87,14 +87,19 @@ const LoginForm = ({
 
 LoginForm.propTypes = {
   onChange: PropTypes.func.isRequired,
-  onInput: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
-  errors: PropTypes.oneOf([
+  onInput: PropTypes.func,
+  onBlur: PropTypes.func,
+  errors: PropTypes.oneOfType([
     PropTypes.string, PropTypes.objectOf(PropTypes.string)]).isRequired,
   submitDetails: PropTypes.func.isRequired,
   isRequestSent: PropTypes.bool.isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired
+};
+
+LoginForm.defaultProps = {
+  onInput: () => null,
+  onBlur: () => null
 };
 
 

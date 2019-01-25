@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { addFlashMessage, clearFlashMessages } from '../actions/flashActions';
 import { loginRequest } from '../actions/loginActions';
 import { LoginForm } from '../components';
-import frontendValidation from '../utilities/frontendValidation';
-
+import loginValidation from '../utilities/loginValidation';
+import Spinner from '../components/Spinner';
 
 /**
  *  Input sign in body form component
@@ -33,7 +33,7 @@ export class LoginPage extends Component {
     const field = e.target.name;
     const { value } = e.target;
     this.setState({ [field]: value }, () => {
-      const errors = frontendValidation(this.state);
+      const errors = loginValidation(this.state);
       if (errors[field]) {
         this.onInputError[field] = errors[field];
         this.setState({ errors: this.onInputError[field] });
@@ -46,7 +46,7 @@ export class LoginPage extends Component {
 
   handleOnBlur = (e) => {
     const field = e.target.name;
-    const errors = frontendValidation(this.state);
+    const errors = loginValidation(this.state);
     if (errors[field]) {
       this.onBlurError[field] = errors[field];
       this.setState({ errors: this.onBlurError[field] });
@@ -58,18 +58,17 @@ export class LoginPage extends Component {
 
   handleOnSubmit = async (e) => {
     e.preventDefault();
-    const { addBannerMessage, clearBannerMessages, userLogin } = this.props;
+    
+    const { addBannerMessage, clearBannerMessages, userLogin, history } = this.props;
     clearBannerMessages();
+    <Spinner/>
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       const loginResponse = await userLogin(this.state);
       if (loginResponse) {
         this.setState({ isLoading: false });
         if (loginResponse.status === 200) {
-          addBannerMessage({
-            type: 'success',
-            text: `${loginResponse.data.message}`
-          });
+          history.push('/')
         } else if (
           loginResponse.data.message === 'Email or password does not exist'
         ) {
@@ -78,6 +77,7 @@ export class LoginPage extends Component {
             text: 'Incorrect email or password'
           });
         } else {
+
           addBannerMessage({
             type: 'warning',
             text: `${loginResponse.data.message}`
@@ -88,7 +88,7 @@ export class LoginPage extends Component {
   }
 
   isValid() {
-    const errors = frontendValidation(this.state);
+    const errors = loginValidation(this.state);
     if (Object.keys(errors).length > 0) {
       this.setState({ errors });
       return false;

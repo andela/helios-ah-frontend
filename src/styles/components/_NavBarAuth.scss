@@ -1,0 +1,76 @@
+nav {
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.navbar a{
+    color: black;
+}
+
+.navbar .navbar-toggler {
+    color: purple;
+    border-color: purple;
+}
+
+.fa-search {
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    color: purple;
+}
+
+.nav-item .add-article-btn, .nav-item .add-article-btn:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+     color: white;
+     background-color: purple;
+}
+
+.major-color {
+    color: purple;
+}
+
+.fa-bell {
+    font-style: normal;
+    font-weight: normal;
+    line-height: 54px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    box-sizing: border-box;
+}
+
+.nav-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.search-input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    display: none;
+}
+
+.navbar .brand-name {
+    font-size: 28px;
+}
+
+.navbar .dropdown-menu-left{ 
+    right: 0; 
+    left: auto; 
+}
+.dropdown-menu {
+    margin-top: 15px;
+}
+
+.dropdown-menu {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.nav-item button, .nav-item i, .nav-item img, .fa-search{
+    cursor: pointer;
+}
+
+.dropdown-menu .dropdown-item:active {
+    background-color: purple;
+}
+.dropdown-item {
+    padding: 20px;
+}

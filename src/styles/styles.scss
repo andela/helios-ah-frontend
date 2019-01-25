@@ -3,8 +3,15 @@
 @import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
 @import './base/base';
 @import './components/SignupPage';
-@import './components/CreateArticle';
-@import './components/Header';
+@import './components/NavBarAuth';
+@import './components/landingPage';
+@import './components/SectionsBar';
+@import './components/NavBarNoAuth';
+@import './components/BuzzSection';
+@import './components/Footer';
 @import './components/ResetPassword';
 @import './components/Login';
+@import './components/Loader';
+@import './components/Header';
+@import './components/CreateArticle';
 @import './components/ChangePasswordPage';

@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import SubmitButton from './SubmitButton';
-import LinkButton from './LinkButton';
-import FormInput from './FormInput';
+import TextFieldGroup from './TextFieldGroup';
+import FlashMessageList from './FlashMessagesList';
 
 const SignupForm = ({
   onChange,
+  errors,
+  onBlur,
+  onInput,
   username,
   password,
   email,
@@ -15,79 +19,116 @@ const SignupForm = ({
   lastName,
   submitDetails,
 }) => (
-  <div className="container">
+  <div className="container signup-page-container">
     <div className="row">
       <div className="col-sm-6 col-xs-12" id="welcome-container">
         <div id="welcome-text-container" className="text-center">
           <h2>Writing is an art.</h2>
-          <h3>Explore your creative side at authors haven.</h3>
+          <h3>Explore your creative side at Authors Haven.</h3>
         </div>
         <span id="signup-image" />
       </div>
       <div className="col-sm-6 col-xs-12">
         <div id="form-container">
-          <form className="form-horizontal">
-            <FormInput
+
+          <FlashMessageList
+            customAlertClass="signup-custom-alert"
+          />
+
+          <form className="form-horizontal" autoComplete="off">
+            <TextFieldGroup
               id="username"
+              error={errors && errors.username}
+              placeholder="Username"
+              field="username"
               value={username}
-              placeHolder="Username"
               onChange={onChange}
-              type="text"
+              onBlur={onBlur}
+              errorFeedbackClass="signup-invalid-feedback"
+              validFeedbackClass="signup-valid-feedback"
               className="form-control signup-form-input"
+              customFormDivClass="signup-div-class"
+              onInput={onInput}
             />
-            <FormInput
+
+            <TextFieldGroup
               id="firstName"
+              error={errors && errors.firstName}
+              placeholder="First Name"
+              field="firstName"
               value={firstName}
-              placeHolder="First Name"
               onChange={onChange}
-              type="text"
+              onBlur={onBlur}
+              errorFeedbackClass="signup-invalid-feedback"
+              validFeedbackClass="signup-valid-feedback"
               className="form-control signup-form-input"
+              customFormDivClass="signup-div-class"
+              onInput={onInput}
             />
-            <FormInput
+
+            <TextFieldGroup
               id="lastName"
+              error={errors && errors.lastName}
+              placeholder="Last Name"
+              field="lastName"
               value={lastName}
-              placeHolder="Last Name"
               onChange={onChange}
-              type="text"
+              onBlur={onBlur}
+              errorFeedbackClass="signup-invalid-feedback"
+              validFeedbackClass="signup-valid-feedback"
               className="form-control signup-form-input"
+              customFormDivClass="signup-div-class"
+              onInput={onInput}
             />
-            <FormInput
+
+            <TextFieldGroup
               id="email"
+              error={errors && errors.email}
+              placeholder="Email"
+              field="email"
               value={email}
-              placeHolder="Email"
               onChange={onChange}
-              type="text"
+              onBlur={onBlur}
+              errorFeedbackClass="signup-invalid-feedback"
+              validFeedbackClass="signup-valid-feedback"
               className="form-control signup-form-input"
+              customFormDivClass="signup-div-class"
+              onInput={onInput}
             />
-            <FormInput
+
+            <TextFieldGroup
               id="password"
+              error={errors && errors.password}
+              placeholder="Password"
+              field="password"
               value={password}
-              placeHolder="Password"
               onChange={onChange}
-              type="password"
+              onBlur={onBlur}
+              errorFeedbackClass="signup-invalid-feedback"
+              validFeedbackClass="signup-valid-feedback"
               className="form-control signup-form-input"
+              customFormDivClass="signup-div-class"
+              type="password"
+              onInput={onInput}
             />
-            <FormInput
+
+            <TextFieldGroup
               id="confirmPassword"
+              error={errors && errors.confirmPassword}
+              placeholder="Confirm Password"
+              field="confirmPassword"
               value={confirmPassword}
-              placeHolder="Confirm Password"
               onChange={onChange}
-              type="password"
+              onBlur={onBlur}
+              errorFeedbackClass="signup-invalid-feedback"
+              validFeedbackClass="signup-valid-feedback"
               className="form-control signup-form-input"
+              customFormDivClass="signup-div-class"
+              onInput={onInput}
+              type="password"
             />
 
-            <div className="row">
-
-              <LinkButton
-                onClick={submitDetails}
-                isRequestSent={isRequestSent}
-                value="Login"
-                id="signup-page-login-button"
-                className="btn"
-                columnAttribute="col-sm-6 col-xs-12"
-                to="/login"
-              />
-
+            <div className="row signup-button-container">
               <SubmitButton
                 onClick={submitDetails}
                 isRequestSent={isRequestSent}
@@ -96,8 +137,12 @@ const SignupForm = ({
                 className="btn"
                 columnAttribute="col-sm-6 col-xs-12"
               />
-
             </div>
+
+            <Link to="/login" className="login-link-container">
+              <div className="login-link">Registered? Login instead</div>
+            </Link>
+
           </form>
         </div>
       </div>
@@ -108,6 +153,8 @@ const SignupForm = ({
 SignupForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
+  errors: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.objectOf(PropTypes.string)]).isRequired,
   password: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   confirmPassword: PropTypes.string.isRequired,
@@ -115,6 +162,13 @@ SignupForm.propTypes = {
   lastName: PropTypes.string.isRequired,
   submitDetails: PropTypes.func.isRequired,
   isRequestSent: PropTypes.bool.isRequired,
+  onInput: PropTypes.func,
+  onBlur: PropTypes.func
+};
+
+SignupForm.defaultProps = {
+  onInput: () => null,
+  onBlur: () => null
 };
 
 export default SignupForm;
