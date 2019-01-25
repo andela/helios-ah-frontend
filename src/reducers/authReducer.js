@@ -1,5 +1,4 @@
 import { SET_CURRENT_USER } from '../actionTypes';
-import checkUserExists from '../utilities/checkUserExists';
 
 const initialState = {
   isAuthenticated: false,
@@ -7,7 +6,6 @@ const initialState = {
 };
 
 const authReducer = (state = initialState, action = {}) => {
-  console.log(action, "ACTION")
   switch (action.type) {
     case SET_CURRENT_USER:
       return {

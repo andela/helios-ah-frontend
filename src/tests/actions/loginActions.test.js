@@ -35,7 +35,7 @@ describe('async actions', () => {
 
 
     const expectedActions = [
-      { type: types.SET_CURRENT_USER, user: null },
+      { type: types.SET_CURRENT_USER, userInfo: null },
     ];
     const store = mockStore({});
     return store.dispatch(actions.loginRequest(userDetails)).then(() => {
