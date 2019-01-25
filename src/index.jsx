@@ -12,7 +12,6 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 if (localStorage.token) {
-  console.log(localStorage.token)
   setAuthorizationToken(localStorage.token);
   store.dispatch(setCurrentUser(jwt.decode(reverseToken(localStorage.token))));
 }

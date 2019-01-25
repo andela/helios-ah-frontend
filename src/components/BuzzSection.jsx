@@ -24,13 +24,13 @@ class BuzzSection extends Component {
                 body={articles[articles.length-1].body}
                 image={articles[articles.length-1].image}
                 name={`${articles[articles.length-1].User.firstName} ${articles[articles.length-1].User.lastName}`}
-                readTime={`${articles[articles.length-1].readTime} mins read`}
+                readTime={`${articles[articles.length-1].readTime} read`}
               />
               <FavoriteArticleList
-                articles={[articles[0], articles[1], articles[2]]}
+                articles={[articles[0], articles[1], articles[2], articles[3]]}
               />
               <MostReadArticleList
-                articles={[articles[0], articles[1], articles[2]]}
+                articles={[articles[8], articles[5], articles[7]]}
               />
             </div>
           ) : null
