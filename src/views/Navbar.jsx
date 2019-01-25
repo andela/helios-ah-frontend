@@ -30,7 +30,6 @@ class Navbar extends Component {
     } = this.props;
 
     if (isAuthenticated) {
-      console.log("YESSS", isAuthenticated)
       return (
         <NavBarAuth
           signout={signout}
