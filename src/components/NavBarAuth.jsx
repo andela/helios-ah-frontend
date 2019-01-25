@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SectionsBar from './SectionsBar';
+import LinkButton from './LinkButton';
 import Search from './Search';
 
 const NavBarAuth = ({ signout }) => (
@@ -36,27 +37,25 @@ const NavBarAuth = ({ signout }) => (
         </form>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <button
+            <LinkButton
+              value="Add new Article"
               className="btn add-article-btn mr-5 ml-5 mt-2"
-              type="button"
-            >
-             Add new Article
-
-            </button>
+              columnAttribute="col-xs-12"
+              to="/create-article"
+            />
           </li>
           <li className="nav-item">
-            <i
-              className="fas fa-bell major-color mr-5 ml-5"
+            <span className="major-color mr-5 ml-5"><i
+              className="fas fa-bell"
               data-toggle="modal"
               data-target="#exampleModalLong"
-            />
+            /></span>
           </li>
           <li className="nav-item dropdown">
             <img
               alt="user-avatar"
               id="img"
-              src="https://www.gravatar.com/
-              avatar/205e460b479e2e5b48aec07710c08d50?s=200"
+              src="https://emblemsbf.com/img/11864.jpg"
               className="mr-4 dropdown-toggle"
               data-toggle="dropdown"
             />
@@ -70,7 +69,7 @@ const NavBarAuth = ({ signout }) => (
               <Link className="dropdown-item" to="/">Favorites</Link>
               <div className="dropdown-divider" />
               <Link className="dropdown-item" to="/">Profile</Link>
-              <Link className="dropdown-item" to="/" onClick={signout()}>
+              <Link className="dropdown-item" to="/" onClick={signout}>
                 Sign out&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-sign-out-alt" />
 

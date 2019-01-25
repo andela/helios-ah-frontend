@@ -17,7 +17,7 @@ const MostReadArticle = ({
         <p className="card-text">
           <small className="text-muted row">
             <span className="col">{name}</span>
-            <span className="col">{`${readTime} mins read`}</span>
+            <span className="col">{`${readTime} read`}</span>
           </small>
         </p>
       </div>

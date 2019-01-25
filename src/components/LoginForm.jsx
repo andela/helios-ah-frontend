@@ -29,7 +29,7 @@ const LoginForm = ({
           customAlertClass="login-custom-alert"
         />
 
-        <form onSubmit={submitDetails} autoComplete="off">
+        <form  autoComplete="off">
           <TextFieldGroup
             error={errors && errors.email}
             placeholder="Email"
@@ -89,7 +89,7 @@ LoginForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   onInput: PropTypes.func,
   onBlur: PropTypes.func,
-  errors: PropTypes.oneOf([
+  errors: PropTypes.oneOfType([
     PropTypes.string, PropTypes.objectOf(PropTypes.string)]).isRequired,
   submitDetails: PropTypes.func.isRequired,
   isRequestSent: PropTypes.bool.isRequired,

@@ -1,14 +1,16 @@
 
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import { USER_SIGNUP_SUCCESS } from '../actionTypes';
+import { SET_CURRENT_USER } from '../actionTypes';
 import setAuthorizationToken from '../utilities/setAuthorizationToken';
 import reverseToken from '../utilities/reverseToken';
 
-export const setCurrentUser = user => ({
-  type: USER_SIGNUP_SUCCESS,
-  user
-});
+export const setCurrentUser = (userInfo) => {
+  return {
+    type: SET_CURRENT_USER,
+    userInfo
+  };
+}
 
 export const loginRequest = (userData) => {
   const sentData = {
@@ -26,7 +28,7 @@ export const loginRequest = (userData) => {
       });
       const { token } = loginResponse.data.userDetails;
       const decodedToken = jwt.decode(reverseToken(token));
-      localStorage.setItem('jwtToken', token);
+      localStorage.setItem('token', token);
       setAuthorizationToken(token);
       dispatch(setCurrentUser(decodedToken));
       return loginResponse;

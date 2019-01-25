@@ -24,32 +24,40 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         LOGIN TO AUTHOR\`S HAVEN
       </h5>
       <Connect(FlashMessageList)
-        customAlertClass="custom-alert"
+        customAlertClass="login-custom-alert"
       />
       <form
         autoComplete="off"
       >
         <TextFieldGroup
+          className="form-control login-input"
+          customFormDivClass="login-div-class"
           error=""
           errorFeedbackClass="login-invalid-feedback"
           field="email"
           id={null}
-          onBlur={null}
-          onInput={null}
-          placeholder="Email Address"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onInput={[Function]}
+          placeholder="Email"
           type="text"
           validFeedbackClass="login-valid-feedback"
+          value="some@email.com"
         />
         <TextFieldGroup
+          className="form-control login-input"
+          customFormDivClass="login-div-class"
           error=""
           errorFeedbackClass="login-invalid-feedback"
           field="password"
           id={null}
-          onBlur={null}
-          onInput={null}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onInput={[Function]}
           placeholder="Password"
           type="password"
           validFeedbackClass="login-valid-feedback"
+          value="password"
         />
         <div
           className="forgot-password"
@@ -70,17 +78,22 @@ exports[`Render Login Page render Login Page renders the login page component 1`
             className="login-btn"
             columnAttribute="login-col"
             id={null}
-            isRequestSent={false}
+            isRequestSent={true}
             onClick={[Function]}
             value="LOGIN"
           />
-          <withRouter(LinkButton)
-            className="signup-btn"
-            columnAttribute="signup-col"
-            to="/signup"
-            value="SIGNUP"
-          />
         </div>
+        <Link
+          className="signup-link-container"
+          replace={false}
+          to="/signup"
+        >
+          <div
+            className="signup-link"
+          >
+            Unregistered? Sign up here
+          </div>
+        </Link>
         <div
           className="social-media-icons"
         >
@@ -124,32 +137,40 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         LOGIN TO AUTHOR\`S HAVEN
       </h5>
       <Connect(FlashMessageList)
-        customAlertClass="custom-alert"
+        customAlertClass="login-custom-alert"
       />
       <form
         autoComplete="off"
       >
         <TextFieldGroup
+          className="form-control login-input"
+          customFormDivClass="login-div-class"
           error=""
           errorFeedbackClass="login-invalid-feedback"
           field="email"
           id={null}
-          onBlur={null}
-          onInput={null}
-          placeholder="Email Address"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onInput={[Function]}
+          placeholder="Email"
           type="text"
           validFeedbackClass="login-valid-feedback"
+          value="some@email.com"
         />
         <TextFieldGroup
+          className="form-control login-input"
+          customFormDivClass="login-div-class"
           error=""
           errorFeedbackClass="login-invalid-feedback"
           field="password"
           id={null}
-          onBlur={null}
-          onInput={null}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onInput={[Function]}
           placeholder="Password"
           type="password"
           validFeedbackClass="login-valid-feedback"
+          value="password"
         />
         <div
           className="forgot-password"
@@ -170,17 +191,22 @@ exports[`Render Login Page render Login Page renders the login page component 2`
             className="login-btn"
             columnAttribute="login-col"
             id={null}
-            isRequestSent={false}
+            isRequestSent={true}
             onClick={[Function]}
             value="LOGIN"
           />
-          <withRouter(LinkButton)
-            className="signup-btn"
-            columnAttribute="signup-col"
-            to="/signup"
-            value="SIGNUP"
-          />
         </div>
+        <Link
+          className="signup-link-container"
+          replace={false}
+          to="/signup"
+        >
+          <div
+            className="signup-link"
+          >
+            Unregistered? Sign up here
+          </div>
+        </Link>
         <div
           className="social-media-icons"
         >

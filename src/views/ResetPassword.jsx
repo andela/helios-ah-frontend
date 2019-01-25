@@ -8,8 +8,8 @@ class ResetPassword extends Component {
     this.spanRef = React.createRef();
     this.emailRef = React.createRef();
     this.state = {
-      email: null,
-      status: null,
+      email: "null",
+      status: "null",
     };
   }
 
@@ -21,19 +21,21 @@ class ResetPassword extends Component {
       email
     };
 
-    const currentStatus = status !== 'success'
+    const currentStatus = (status !== 'success' || status !== undefined)
       ? await axios.Post('/user/requests/password/reset', data)
       : null;
 
     this.setState({ status: currentStatus.status });
     const newStatus = this.state;
+
     // eslint-disable-next-line no-nested-ternary
-    return (newStatus.status === null || newStatus.status === undefined)
+    return (newStatus.status === "null" || newStatus.status === undefined)
       ? this.statusHandler('Connection Error, Please try again Later')
-      : (newStatus.status === 'error' || newStatus.status === 'success')
+      : (newStatus.status === 'error' || newStatus.status === undefined)
         ? this.statusHandler('User Not Found')
         : this.statusHandler('Password reset link has been sent to your mail');
   }
+
 
   onChange = (e) => {
     this.clearStatus();

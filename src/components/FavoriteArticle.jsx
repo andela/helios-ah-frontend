@@ -17,14 +17,14 @@ const Article = ({
     </div>
     <div className="col" style={{ textAlign: 'left' }}>
       <Link to="/article/44626-asfg" className="article-link">
-        <h5>{`${title.substring(0, 80)}...`}</h5>
+        <h5 className="fav-article-header">{`${title.substring(0, 80)}...`}</h5>
       </Link>
       <div>
         <Link to="/profile" className="profile-link">
-          <span>{name}</span>
+          <small className="text-muted"><span>{name}</span></small>
         </Link>
       </div>
-      <small className="text-muted">{`${readTime} mins read`}</small>
+      <small className="text-muted">{`${readTime} read`}</small>
     </div>
   </div>
 );

@@ -24,10 +24,10 @@ class SignupPage extends Component {
     this.onInputError = {};
   }
 
-  componentDidMount() {
-    const { clearBannerMessages } = this.props;
-    clearBannerMessages();
-  }
+  // componentDidMount() {
+  //   const { clearBannerMessages } = this.props;
+  //   clearBannerMessages();
+  // }
 
   handleOnChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
@@ -68,7 +68,7 @@ class SignupPage extends Component {
       const {
         username, email, firstName, lastName, password, errors
       } = this.state;
-      const { userSignup, addBannerMessage } = this.props;
+      const { userSignup, addBannerMessage, history } = this.props;
       this.setState({ isRequestSent: true });
       userSignup({
         username, email, firstName, lastName, password
