@@ -1,5 +1,4 @@
 import { SET_CURRENT_USER } from '../actionTypes';
-import checkUserExists from '../utilities/checkUserExists';
 
 const initialState = {
   isAuthenticated: false,
