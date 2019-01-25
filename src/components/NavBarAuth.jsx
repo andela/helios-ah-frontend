@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SectionsBar from './SectionsBar';
+import LinkButton from './LinkButton';
 import Search from './Search';
 
 const NavBarAuth = ({ signout }) => (
@@ -36,13 +37,12 @@ const NavBarAuth = ({ signout }) => (
         </form>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <button
+            <LinkButton
+              value="Add new Article"
               className="btn add-article-btn mr-5 ml-5 mt-2"
-              type="button"
-            >
-             Add new Article
-
-            </button>
+              columnAttribute="col-xs-12"
+              to="/create-article"
+            />
           </li>
           <li className="nav-item">
             <i
