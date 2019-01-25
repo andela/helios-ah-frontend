@@ -24,7 +24,7 @@ const SignupForm = ({
       <div className="col-sm-6 col-xs-12" id="welcome-container">
         <div id="welcome-text-container" className="text-center">
           <h2>Writing is an art.</h2>
-          <h3>Explore your creative side at Author`s Haven.</h3>
+          <h3>Explore your creative side at Authors Haven.</h3>
         </div>
         <span id="signup-image" />
       </div>

@@ -17,3 +17,5 @@ Spinner.propTypes = {
 Spinner.defaultProps = {
   customSpinnerClass: ''
 }
+
+export default Spinner;
