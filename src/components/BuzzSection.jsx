@@ -19,12 +19,13 @@ class BuzzSection extends Component {
           (articles.length > 0) ? (
             <div className="row buzz-section">
               <MajorArticle
-                id={articles[articles.length-1].id}
-                title={articles[articles.length-1].title}
-                body={articles[articles.length-1].body}
-                image={articles[articles.length-1].image}
-                name={`${articles[articles.length-1].User.firstName} ${articles[articles.length-1].User.lastName}`}
-                readTime={`${articles[articles.length-1].readTime} read`}
+                id={articles[articles.length - 1].id}
+                title={articles[articles.length - 1].title}
+                body={articles[articles.length - 1].body}
+                image={articles[articles.length - 1].image}
+                name={`${articles[articles.length - 1].User.firstName}
+                ${articles[articles.length - 1].User.lastName}`}
+                readTime={`${articles[articles.length - 1].readTime} read`}
               />
               <FavoriteArticleList
                 articles={[articles[0], articles[1], articles[2], articles[3]]}

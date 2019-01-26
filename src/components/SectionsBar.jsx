@@ -7,25 +7,25 @@ const SectionsBar = () => (
         <a className="nav-link active" href="/">HOME</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">TECH</a>
+        <a className="nav-link" href="/articles/tech">TECH</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">EDUCATION</a>
+        <a className="nav-link" href="/articles/education">EDUCATION</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">POLITICS</a>
+        <a className="nav-link" href="/articles/politics">POLITICS</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">LIFESTYLE</a>
+        <a className="nav-link" href="/articles/lifestyle">LIFESTYLE</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">SCIENCE</a>
+        <a className="nav-link" href="/articles/science">SCIENCE</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">POPULAR</a>
+        <a className="nav-link" href="/aritcles/popular">POPULAR</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">OTHERS</a>
+        <a className="nav-link" href="/articles/others">OTHERS</a>
       </li>
     </ul>
   </div>

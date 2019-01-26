@@ -58,17 +58,20 @@ export class LoginPage extends Component {
 
   handleOnSubmit = async (e) => {
     e.preventDefault();
-    
-    const { addBannerMessage, clearBannerMessages, userLogin, history } = this.props;
+    const {
+      addBannerMessage,
+      clearBannerMessages,
+      userLogin,
+      history
+    } = this.props;
     clearBannerMessages();
-    <Spinner/>
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       const loginResponse = await userLogin(this.state);
       if (loginResponse) {
         this.setState({ isLoading: false });
         if (loginResponse.status === 200) {
-          history.push('/')
+          history.push('/');
         } else if (
           loginResponse.data.message === 'Email or password does not exist'
         ) {
@@ -77,7 +80,6 @@ export class LoginPage extends Component {
             text: 'Incorrect email or password'
           });
         } else {
-
           addBannerMessage({
             type: 'warning',
             text: `${loginResponse.data.message}`
@@ -112,6 +114,11 @@ export class LoginPage extends Component {
           email={email}
           password={password}
         />
+        <Spinner
+          customSpinnerClass={
+            (this.state.isLoading === false) ? 'hide' : ''
+          }
+        />
       </div>
     );
   }
@@ -120,7 +127,8 @@ export class LoginPage extends Component {
 LoginPage.propTypes = {
   userLogin: PropTypes.func.isRequired,
   addBannerMessage: PropTypes.func.isRequired,
-  clearBannerMessages: PropTypes.func
+  clearBannerMessages: PropTypes.func,
+  history: PropTypes.func
 };
 
 LoginPage.defaultProps = {

@@ -28,7 +28,7 @@ class Search extends Component {
           placeholder="Search.."
         />
         <i
-          className="fa fa-search mr-sm-5 mr-5"
+          className="fa fa-search mb-2"
           onClick={this.onSearchClick}
           onKeyDown={this.onSearchClick}
           role="presentation"

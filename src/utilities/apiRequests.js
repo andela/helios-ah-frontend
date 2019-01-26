@@ -1,7 +1,14 @@
+/* eslint-env browser */
+
+/* global
+  fetch
+*/
+
 import axios from 'axios';
 
 const baseUrl = (process.env.NODE_ENV === 'production')
-  ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1' : process.env.PRODUCTION_URL;
+  ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1'
+  : process.env.PRODUCTION_URL;
 
 const request = axios.create({
   baseURL: baseUrl,

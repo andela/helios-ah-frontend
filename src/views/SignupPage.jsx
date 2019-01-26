@@ -5,6 +5,7 @@ import SignupForm from '../components/SignupForm';
 import signupValidation from '../utilities/signupValidation';
 import { addFlashMessage, clearFlashMessages } from '../actions/flashActions';
 import { signupUser } from '../actions/signupActions';
+import Spinner from '../components/Spinner';
 
 class SignupPage extends Component {
   constructor(props) {
@@ -23,11 +24,6 @@ class SignupPage extends Component {
     this.onBlurError = {};
     this.onInputError = {};
   }
-
-  // componentDidMount() {
-  //   const { clearBannerMessages } = this.props;
-  //   clearBannerMessages();
-  // }
 
   handleOnChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
@@ -68,7 +64,7 @@ class SignupPage extends Component {
       const {
         username, email, firstName, lastName, password, errors
       } = this.state;
-      const { userSignup, addBannerMessage, history } = this.props;
+      const { userSignup, addBannerMessage } = this.props;
       this.setState({ isRequestSent: true });
       userSignup({
         username, email, firstName, lastName, password
@@ -99,14 +95,21 @@ class SignupPage extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <SignupForm
-        onChange={this.handleOnChange}
-        {...this.state}
-        submitDetails={this.handleOnSubmit}
-        errors={errors}
-        onInput={this.handleOnInput}
-        onBlur={this.handleOnBlur}
-      />
+      <React.Fragment>
+        <SignupForm
+          onChange={this.handleOnChange}
+          {...this.state}
+          submitDetails={this.handleOnSubmit}
+          errors={errors}
+          onInput={this.handleOnInput}
+          onBlur={this.handleOnBlur}
+        />
+        <Spinner
+          customSpinnerClass={
+        (this.state.isRequestSent === false) ? 'hide' : ''
+      }
+        />
+      </React.Fragment>
     );
   }
 }

@@ -13,7 +13,7 @@ class ChangePasswordPage extends Component {
       password: '',
       confirmPassword: '',
       errors: {},
-      isRequestSent: false 
+      isRequestSent: false
     };
     this.onInputError = {};
   }
@@ -54,9 +54,8 @@ class ChangePasswordPage extends Component {
         const { userChangePassword, addBannerMessage } = this.props;
         this.setState({ isRequestSent: true });
         const token = (new URL(document.location)).searchParams.get('token');
-        const { password } = this.state
-        userChangePassword({password, token}).then((response) => {
-          console.log('response', response);
+        const { password } = this.state;
+        userChangePassword({ password, token }).then((response) => {
           if (response.success) {
             this.setState({ isRequestSent: false });
             addBannerMessage({ type: 'success', text: response.message });

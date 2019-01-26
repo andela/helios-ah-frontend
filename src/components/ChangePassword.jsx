@@ -64,7 +64,12 @@ const ChangePassword = ({
           />
 
           <div className="text-center">
-            <Link className="text-center link-text" to="/login">Go back to login page</Link>
+            <Link
+              className="text-center link-text"
+              to="/login"
+            >
+            Go back to login page
+            </Link>
           </div>
         </form>
       </div>

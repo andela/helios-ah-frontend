@@ -5,6 +5,7 @@ import NavBar from './Navbar';
 import { Card, BuzzSection } from '../components';
 import { getArticles } from '../actions/homeActions';
 import Footer from '../components/Footer';
+import Spinner from '../components/Spinner';
 
 class HomePage extends Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class HomePage extends Component {
         <div className="row mr-4 ml-4">
           <BuzzSection />
         </div>
-        <div className="container-fluid">
+        <div id="homepageWrapper" className="container-fluid ">
           {(articles)
             ? (
               <div className="row card-row">
@@ -93,12 +94,7 @@ class HomePage extends Component {
               </div>
             )
             : (
-              <div id="loading-modal">
-                <div className="ring">
-                  Loading
-                  <span className="spinner" />
-                </div>
-              </div>
+              <Spinner />
             )
           }
         </div>

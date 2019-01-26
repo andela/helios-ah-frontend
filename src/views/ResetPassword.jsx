@@ -8,8 +8,8 @@ class ResetPassword extends Component {
     this.spanRef = React.createRef();
     this.emailRef = React.createRef();
     this.state = {
-      email: "null",
-      status: "null",
+      email: 'null',
+      status: 'null',
     };
   }
 
@@ -29,7 +29,7 @@ class ResetPassword extends Component {
     const newStatus = this.state;
 
     // eslint-disable-next-line no-nested-ternary
-    return (newStatus.status === "null" || newStatus.status === undefined)
+    return (newStatus.status === 'null' || newStatus.status === undefined)
       ? this.statusHandler('Connection Error, Please try again Later')
       : (newStatus.status === 'error' || newStatus.status === undefined)
         ? this.statusHandler('User Not Found')

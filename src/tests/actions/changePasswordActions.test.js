@@ -1,8 +1,7 @@
 import sinon from 'sinon';
-import axios from 'axios';
+import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import * as apiRequests from '../../utilities/apiRequests';
-import thunk from 'redux-thunk';
 import changePassword from '../../actions/changePasswordActions';
 
 const middleware = [thunk];

@@ -25,16 +25,9 @@ const NavBarNoAuth = () => (
       </button>
 
       <div className="navbar-collapse collapse" id="navb">
-        <form className="form-inline ml-auto">
-          <input
-            className="search-input hide"
-            type="text"
-            placeholder="Search"
-          />
-          <i className="fa fa-search mr-sm-5 mr-5" />
-        </form>
+        <Search />
         <ul className="navbar-nav">
-          <li className="nav-item">
+          <li className="mt-2 nav-item">
             <div className="mr-5 ml-5 row">
               <LinkButton
                 value="Login"
@@ -44,7 +37,7 @@ const NavBarNoAuth = () => (
               />
               <LinkButton
                 value="Signup"
-                id="home-signup-btn" 
+                id="home-signup-btn"
                 className="home-login-btn btn"
                 columnAttribute="col-xs-12"
                 to="/signup"

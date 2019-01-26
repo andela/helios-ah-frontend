@@ -27,14 +27,7 @@ const NavBarAuth = ({ signout }) => (
 
 
       <div className="navbar-collapse collapse" id="navb">
-        <form className="form-inline ml-auto">
-          <input
-            className="search-input hide"
-            type="text"
-            placeholder="Search"
-          />
-          <i className="fa fa-search mr-sm-5 mr-5" />
-        </form>
+        <Search />
         <ul className="navbar-nav">
           <li className="nav-item">
             <LinkButton
@@ -45,18 +38,20 @@ const NavBarAuth = ({ signout }) => (
             />
           </li>
           <li className="nav-item">
-            <span className="major-color mr-5 ml-5"><i
-              className="fas fa-bell"
-              data-toggle="modal"
-              data-target="#exampleModalLong"
-            /></span>
+            <span className="major-color mr-5 ml-5">
+              <i
+                className="fas fa-bell"
+                data-toggle="modal"
+                data-target="#exampleModalLong"
+              />
+            </span>
           </li>
           <li className="nav-item dropdown">
             <img
               alt="user-avatar"
               id="img"
               src="https://emblemsbf.com/img/11864.jpg"
-              className="mr-4 dropdown-toggle"
+              className="mr-4 mt-2 dropdown-toggle"
               data-toggle="dropdown"
             />
             <div
@@ -96,7 +91,6 @@ const NavBarAuth = ({ signout }) => (
               id="exampleModalLongTitle"
             >
               Notifications
-
             </h5>
             <button
               type="button"

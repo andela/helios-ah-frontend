@@ -9,11 +9,12 @@ const authReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {
-        isAuthenticated: action.userInfo && Object.keys(action.userInfo).length > 0,
+        isAuthenticated: action.userInfo
+        && Object.keys(action.userInfo).length > 0,
         userInfo: action.userInfo
       };
     default: return state;
   }
 };
 
-export default authReducer
+export default authReducer;

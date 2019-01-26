@@ -20,9 +20,9 @@ const Article = ({
         <h5 className="fav-article-header">{`${title.substring(0, 80)}...`}</h5>
       </Link>
       <div>
-        <Link to="/profile" className="profile-link">
+        <span to="/profile" className="profile-link">
           <small className="text-muted"><span>{name}</span></small>
-        </Link>
+        </span>
       </div>
       <small className="text-muted">{`${readTime} read`}</small>
     </div>

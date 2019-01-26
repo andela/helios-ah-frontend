@@ -16,8 +16,8 @@ test('expect the elements to have a single button', () => {
   const wrapper = shallow(<ResetPassword {...propsObject} />);
   const componentEmailState = wrapper.state().email;
   const componentStatusState = wrapper.state().status;
-  expect(componentEmailState).toEqual("null");
-  expect(componentStatusState).toEqual("null");
+  expect(componentEmailState).toEqual('null');
+  expect(componentStatusState).toEqual('null');
 });
 
 test('methods should be valid instances of the class', () => {

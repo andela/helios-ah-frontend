@@ -26,8 +26,6 @@ const Card = ({
           image
           || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'
         }
-        src={image
-          || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'}
         alt="card"
         onError={event => handleError(event)}
       />
