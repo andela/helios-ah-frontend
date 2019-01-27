@@ -30,14 +30,6 @@ class HomePage extends Component {
     event.target.classList.add('like-clicked');
   };
 
-  bookmark = (event) => {
-    event.target.classList.toggle('bookmark-clicked');
-  };
-
-  like = (event) => {
-    event.target.classList.toggle('like-clicked');
-  };
-
   rate = (event, value) => {
     let index = 0, item = 0;
     const element = event.target.parentNode.parentNode.children;
