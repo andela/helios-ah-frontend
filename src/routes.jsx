@@ -13,6 +13,7 @@ import {
   Article,
   ResetPassword,
 } from './views';
+import PrivateRoute from './privateRoute';
 
 const routes = (
   <BrowserRouter>
@@ -20,7 +21,7 @@ const routes = (
       <Route path="/login" component={LoginPage} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={SignupPage} />
-      <Route path="/article" component={Article} />
+      <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/change/password" component={ChangePasswordPage} />
     </Switch>
