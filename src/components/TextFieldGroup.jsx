@@ -6,27 +6,29 @@ const TextFieldGroup = ({
   value,
   error,
   type,
+  className,
   onChange,
   onBlur,
   onInput,
   id,
   placeholder,
   errorFeedbackClass,
-  validFeedbackClass
+  validFeedbackClass,
+  customFormDivClass
 }) => {
   let checkValidity;
   let feedbackClass;
   if (error) feedbackClass = `${errorFeedbackClass} invalid-feedback`;
   else feedbackClass = `${validFeedbackClass}  valid-feedback`;
-  if (error) checkValidity = 'form-control is-invalid';
-  else if (value && !error) checkValidity = 'form-control is-valid';
+  if (error) checkValidity = 'is-invalid';
+  else if (value && !error) checkValidity = 'is-valid';
   return (
-    <div className="form-group">
+    <div className={`form-group ${customFormDivClass}`}>
       <input
         type={type}
         name={field}
         onInput={onInput}
-        className={checkValidity}
+        className={`${checkValidity} ${className}`}
         id={id}
         placeholder={placeholder}
         value={value}
@@ -55,6 +57,8 @@ TextFieldGroup.propTypes = {
   placeholder: propTypes.string,
   errorFeedbackClass: propTypes.string,
   validFeedbackClass: propTypes.string,
+  className: propTypes.string,
+  customFormDivClass: propTypes.string
 };
 
 TextFieldGroup.defaultProps = {
@@ -65,7 +69,9 @@ TextFieldGroup.defaultProps = {
   validFeedbackClass: null,
   onInput: null,
   onBlur: null,
-  placeholder: ''
+  placeholder: '',
+  className: '',
+  customFormDivClass: ''
 };
 
 export default TextFieldGroup;

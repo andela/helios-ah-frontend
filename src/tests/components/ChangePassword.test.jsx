@@ -12,7 +12,7 @@ describe('Unit test for Change Password Form component', () => {
   };
   it('should render a form with 2 input fields and 1 submit buttons', () => {
     const wrapper = shallow(<ChangePassword {...propsObject} />);
-    const formFields = wrapper.find('FormInput');
+    const formFields = wrapper.find('TextFieldGroup');
     expect(formFields.length).toEqual(2);
     const buttons = wrapper.find('SubmitButton');
     expect(buttons.length).toEqual(1);
