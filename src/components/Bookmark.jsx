@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ImgBgStyle from './ImgBgStyle';
+import imgBgStyle from '../utilities/imgBgStyle';
 
 const Bookmark = ({ bookmark, onDeleteBookmark }) => (
   <div className="bookmarkCard row my-3">
@@ -28,7 +28,6 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
           <span
             className="d-none d-md-block"
             onClick={() => onDeleteBookmark(bookmark.id)}
-            role="button"
             aria-hidden
           >
             Remove
@@ -36,7 +35,6 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
           <span
             className="d-md-none"
             onClick={() => onDeleteBookmark(bookmark.id)}
-            role="button"
             aria-hidden
           >
             <i
@@ -46,9 +44,9 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
         </div>
       </div>
     </div>
-    <div
+    <span
       className="image col-3 d-none d-sm-block"
-      style={ImgBgStyle(bookmark.bookmark.image)}
+      style={imgBgStyle(bookmark.bookmark.image)}
     />
   </div>
 );
