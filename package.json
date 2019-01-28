@@ -12,6 +12,7 @@
     "heroku-postbuild": "webpack --mode production && npm run build:server",
     "build:server": "babel server.js -d build",
     "start": "webpack-dev-server --mode production --hot --open",
+    "start:dev": "webpack-dev-server --mode development --hot --open",
     "build": "webpack --mode production",
     "test": "jest  --detectOpenHandles --coverage",
     "test:watch": "jest --watch --coverage",
