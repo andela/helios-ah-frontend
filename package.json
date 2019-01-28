@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode production --hot --open",
+    "start:dev": "webpack-dev-server --mode development --hot --open",
     "build": "webpack --mode production",
     "test": "jest  --detectOpenHandles --coverage",
     "heroku-postbuild": "npm run build",
