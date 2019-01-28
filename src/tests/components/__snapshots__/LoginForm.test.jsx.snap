@@ -99,12 +99,15 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         >
           <span
             className="facebook"
+            onClick={[Function]}
           />
           <span
             className="twitter"
+            onClick={[Function]}
           />
           <span
             className="google"
+            onClick={[Function]}
           />
         </div>
       </form>
@@ -212,12 +215,15 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         >
           <span
             className="facebook"
+            onClick={[Function]}
           />
           <span
             className="twitter"
+            onClick={[Function]}
           />
           <span
             className="google"
+            onClick={[Function]}
           />
         </div>
       </form>

@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import TextFieldGroup from './TextFieldGroup';
 import FlashMessageList from './FlashMessagesList';
 import SubmitButton from './SubmitButton';
+import { baseUrl } from '../utilities/apiRequests';
 
-
+const openLink = (url) => {
+  window.location.href = url;
+};
 const LoginForm = ({
   onChange,
   onBlur,
@@ -75,9 +78,18 @@ const LoginForm = ({
           </Link>
 
           <div className="social-media-icons">
-            <span className="facebook" />
-            <span className="twitter" />
-            <span className="google" />
+            <span
+              className="facebook"
+              onClick={() => openLink(`${baseUrl}/auth/social_fb`)}
+            />
+            <span
+              className="twitter"
+              onClick={() => openLink(`${baseUrl}/auth/social_tw`)}
+            />
+            <span
+              className="google"
+              onClick={() => openLink(`${baseUrl}/auth/social_ggl`)}
+            />
           </div>
         </form>
       </div>
