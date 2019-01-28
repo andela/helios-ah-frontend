@@ -1,0 +1,90 @@
+.ring {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%); 
+	width: 150px;
+	height: 150px;
+	background: transparent;
+	border: 3px solid #3c3c3c;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 150px;
+	font-family: sans-serif;
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+	letter-spacing:4px;
+	text-transform: uppercase;
+	text-shadow:0 0 10px $light-purple;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+.ring:before {
+	content: '';
+	animation: animateCircle 2s linear infinite;
+	border: 3px solid transparent;
+	border-radius: 50%;
+	border-right: 3px solid $light-purple;
+	border-top: 3px solid $light-purple;
+	height: 100%;
+	left: -3px;
+	position: absolute;
+	top: -3px;
+	width: 100%;
+}
+.spinner {
+	animation: animate 2s linear infinite;
+	background: transparent;
+	display: block;
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	top: calc(50% - 2px);
+	transform-origin:left;
+	width: 50%;
+}
+.spinner:before {
+	content:'';
+	background-color: $light-purple;
+	border-radius: 50%;
+	box-shadow: 0 0 20px $light-purple;
+	height: 16px;
+	position: absolute;
+	right: -8px;
+	top: -6px;
+	width: 16px;
+}
+
+ @keyframes animateCircle
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
+@keyframes animate
+{
+	0%
+	{
+		transform: rotate(45deg);
+	}
+	100%
+	{
+		transform: rotate(405deg);
+	}
+}
+.loading-modal {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}

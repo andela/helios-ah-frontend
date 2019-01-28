@@ -7,10 +7,6 @@ import {
   CLEAR_EDIT
 } from '../actionTypes';
 
-const token = 'QZ52YkdkSiSbvexK_ncaXTGBRdXBekVeGX_7P0ii2oo.9JTOwkzN5cDN1EjOiAHelJCLykjNykDO3QTNxojI0FWaiwiIplXYqFWZklmaiojIl1WYuJXZzVnIsIjOiUGbvJnIsISY1IGOjJGZjNmM4QWL4MWM40iMxcDNtEDZhZWL2UjYkNWNxMjI6ICZpJye.9JCVXpkI6ICc5RnIsIiN1IzUIJiOicGbhJye';
-const userId = '315cdb56-fad1-4712-81c8-d82ccdbc8b5a';
-
-
 const fetchAUser = user => ({
   type: GET_A_USER,
   user
@@ -31,7 +27,7 @@ export const clearEdit = status => ({
   status
 });
 
-const getFollowDetails = async () => {
+const getFollowDetails = async (userId) => {
   try {
     const followDetails = await Get(`/users/${userId}/follow`);
     const followingCount = followDetails.followingDetails.count;
@@ -42,11 +38,11 @@ const getFollowDetails = async () => {
   }
 };
 
-export const getUserInfo = () => async (dispatch) => {
+export const getUserInfo = userId => async (dispatch) => {
   try {
     const user = await Get(`/users/${userId}`);
     const { userDetails } = user;
-    const follow = await getFollowDetails();
+    const follow = await getFollowDetails(userId);
     userDetails.following = follow.followingCount;
     userDetails.followers = follow.followersCount;
     dispatch(fetchAUser(userDetails));
@@ -65,7 +61,7 @@ export const updateProfile = editedFields => async (dispatch) => {
     } = editedFields;
     const user = await Put('/users', {
       image, bio, firstname, lastname
-    }, token);
+    });
     const { userDetails } = user;
     const follow = await getFollowDetails();
     userDetails.following = follow.followingCount;

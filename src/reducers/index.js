@@ -1,12 +1,22 @@
 import { combineReducers } from 'redux';
-import reducers from './reducers';
-import { userReducer, buttonReducer, editFieldsReducer } from './profile';
+import articles from './articleReducer';
+import flashMessages from './flashReducer';
+import authReducer from './authReducer';
+import homeReducer from './homeReducer';
+import {
+  userReducer,
+  buttonReducer,
+  editFieldsReducer
+} from './profileReducer';
 
 const rootReducers = combineReducers({
-  reducers,
   users: userReducer,
   buttonValue: buttonReducer,
-  editFieldsReducer
+  editFieldsReducer,
+  articles,
+  flashMessages,
+  currentUser: authReducer,
+  home: homeReducer,
 });
 
 export default rootReducers;

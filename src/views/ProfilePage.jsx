@@ -20,8 +20,8 @@ class ProfilePage extends Component {
   }
 
   componentDidMount() {
-    const { getUserInfoAction } = this.props;
-    getUserInfoAction();
+    const { getUserInfoAction, userId } = this.props;
+    getUserInfoAction(userId);
   }
 
   setStateImage = (url) => {
@@ -46,7 +46,7 @@ class ProfilePage extends Component {
       editedFields,
       toggleButtonAction,
       updateProfileAction,
-      clearEditAction
+      clearEditAction,
     } = this.props;
     if (buttonValue === 'Save') {
       updateProfileAction(editedFields);
@@ -98,26 +98,6 @@ class ProfilePage extends Component {
           displayFileHandler={this.displayFile}
           handleInputChange={this.handleInputChange}
         />
-        <div className="row main-section" align="center">
-          <div className="col-md-8 card">
-            <div className="container">
-              <ul className="nav nav-tabs">
-                <li className="active"><a data-toggle="tab" href="#published">Published</a></li>
-                <li><a data-toggle="tab" href="#drafts">Drafts</a></li>
-              </ul>
-              <div className="tab-content">
-                <div id="published" className="tab-pane fade in active">
-                  <h3>Published</h3>
-                  <p>List of Published Articles</p>
-                </div>
-                <div id="drafts" className="tab-pane fade">
-                  <h3>Drafts</h3>
-                  <p>List of Drafted Articles</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
@@ -132,6 +112,7 @@ ProfilePage.propTypes = {
   editFieldsAction: PropTypes.func.isRequired,
   clearEditAction: PropTypes.func.isRequired,
   updateProfileAction: PropTypes.func.isRequired,
+  userId: PropTypes.string.isRequired,
 };
 
 
@@ -139,10 +120,11 @@ const mapStateToProps = state => ({
   user: state.users.user,
   buttonValue: state.buttonValue.buttonValue,
   editedFields: state.editFieldsReducer,
+  userId: state.currentUser.userInfo.id,
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUserInfoAction: () => dispatch(getUserInfo()),
+  getUserInfoAction: userId => dispatch(getUserInfo(userId)),
   toggleButtonAction: () => dispatch(toggleButton()),
   editFieldsAction: (name, value) => dispatch(editFields(name, value)),
   updateProfileAction: editField => dispatch(updateProfile(editField)),

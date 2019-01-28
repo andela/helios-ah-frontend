@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for the submit button component.  Render Submit button it should render submit button 1`] = `
+<div
+  className="signup-col"
+>
+  <div
+    className="form-group text-center"
+  >
+    <button
+      className="btn"
+      disabled={true}
+      id={null}
+      onClick={[Function]}
+      type="submit"
+    >
+      SIGNUP
+    </button>
+  </div>
+</div>
+`;

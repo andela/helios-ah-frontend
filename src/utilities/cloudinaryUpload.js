@@ -1,19 +1,19 @@
-import axios from 'axios';
+/* eslint-env browser */
 
+/* global
+  FormData
+*/
+import { CloudImage } from './apiRequests';
 
 const uploadImageCloudinary = async (value) => {
   try {
     const formData = new FormData();
     formData.append('upload_preset', 'zeooiv7x');
     formData.append('file', value);
-    const response = await axios.post(
-      'https://api.cloudinary.com/v1_1/ah-med/image/upload',
-      formData
-    );
-    return response.data.secure_url;
+    const response = await CloudImage(formData);
+    return response.secure_url;
   } catch (error) {
-    throw (error);
-    // console.log('clodinary error ==>', error.response);
+    return null;
   }
 };
 
