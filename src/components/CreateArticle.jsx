@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createArticle } from '../actions/articleAction';
+import { createArticle, updateArticle } from '../actions/articleAction';
 import { addFlashMessage } from '../actions/flashActions';
 import FlashMessagesList from './FlashMessagesList';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
@@ -19,78 +19,119 @@ class CreateArticle extends Component {
       photo,
       title,
       body,
-      image,
+      image
     };
+    this.track = 0;
     this.imageRef = React.createRef();
   }
 
-  async componentDidUpdate(prevProps, prevState) {
-    if ((this.props.publish && prevProps.publish === false)
-    || (this.props.draft && prevProps.draft === false)) {
-      let uploaded = true;
-      const { onSave, createArticle, publish } = this.props;
-      const {
-        photo,
-        image,
-        id,
-        title,
-        body
-      } = prevState;
-      if (title.trim().length < 3 || body.trim().length < 3) {
-        onSave();
+  async componentDidUpdate(prevProps) {
+    if (
+      (this.props.publish && prevProps.publish === false)
+      || (this.props.draft && prevProps.draft === false)
+    ) {
+      if (
+        this.state.title.trim().length < 3
+        || this.state.body.trim().length < 3
+      ) {
+        this.props.onSave();
         this.props.addFlashMessage({
           type: 'error',
           text: 'title and body must not be less than 3 characters'
         });
       } else {
-        if (photo && image) {
-          uploaded = await uploadImageCloudinary(photo);
-        }
-        if (uploaded) {
-          uploaded = ((typeof uploaded) === 'string') ? uploaded : null;
-          this.setState({ image: uploaded }, async () => {
-            if (id) {
-              onSave();
-            // check if article is already created and has ID then update if true.
-            } else if (publish) {
-              onSave();
-              // executes when published
-            } else {
-              onSave();
-              const article = await createArticle(this.state);
-              if (!image) {
-                this.onClose();
-              }
-              if (article.success) {
-                this.setState({
-                  id: article.data.id,
-                  title: article.data.title,
-                  description: article.data.description,
-                  body: article.data.body,
-                  readTime: article.data.readTime,
-                  image: article.data.image
-                });
-                this.props.addFlashMessage({
-                  type: 'success',
-                  text: 'Article saved to draft'
-                });
-              } else {
-                this.props.addFlashMessage({
-                  type: 'error',
-                  text: article.message
-                });
-              }
-            }
-          });
-        } else {
-          this.props.addFlashMessage({
-            type: 'error',
-            text: 'failed to upload image'
-          });
-        }
+        await this.sendData();
       }
+    } else {
+      this.props.onSave();
     }
   }
+
+  sendData = async () => {
+    const { photo, image, id } = this.state;
+    let uploaded = false, upload = image;
+    const {
+      onSave, createArticle, updateArticle, publish
+    } = this.props;
+    if (photo && image && this.track === 1) {
+      upload = await uploadImageCloudinary(photo);
+      uploaded = true;
+    }
+    if ((uploaded && upload !== null) || !uploaded) {
+      this.track = 0;
+      this.setState({ image: upload }, async () => {
+        if (id) {
+          if (publish) {
+            onSave();
+            // executes when published
+          } else if (this.compare()) {
+            this.props.addFlashMessage({
+              type: 'warning',
+              text: 'Nothing to update'
+            });
+          } else {
+            const updated = await updateArticle(this.state);
+            onSave();
+            if (updated.success) {
+              this.updateState(updated.data[0], 'Article saved successfully');
+            } else {
+              this.props.addFlashMessage({
+                type: 'error',
+                text: updated.message
+              });
+            }
+          }
+        } else if (publish) {
+          onSave();
+          // publish article
+        } else {
+          onSave();
+          const article = await createArticle(this.state);
+          if (!image) {
+            this.onClose();
+          }
+          if (article.success) {
+            this.updateState(article.data, 'Article saved to draft');
+          } else {
+            this.props.addFlashMessage({
+              type: 'error',
+              text: article.message
+            });
+          }
+        }
+      });
+    } else {
+      this.props.addFlashMessage({
+        type: 'error',
+        text: 'failed to upload image'
+      });
+    }
+  };
+
+  updateState = (data, message) => {
+    this.setState({
+      id: data.id,
+      title: data.title,
+      description: data.description,
+      body: data.body,
+      readTime: data.readTime,
+      image: data.image
+    });
+    this.props.addFlashMessage({
+      type: 'success',
+      text: message
+    });
+  };
+
+  compare = () => {
+    const { state, props } = this;
+    // eslint-disable-next-line no-nested-ternary
+    return state.title !== props.cache.title
+      ? false
+      : state.body !== props.cache.body
+        ? false
+        : state.image === props.cache.image;
+  };
 
   onChange = (event) => {
     this.setState({
@@ -98,33 +139,32 @@ class CreateArticle extends Component {
     });
     const scroll = event.target.scrollHeight;
     event.target.style.height = `${scroll}px`;
-  }
+  };
 
   inputChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
-  }
+  };
 
   fileChange = (event) => {
     const file = event.target.files[0];
     this.setState({
-      [event.target.name]: event.target.files[0]
-    });
-    this.setState({
+      [event.target.name]: event.target.files[0],
       image: URL.createObjectURL(file)
     });
-  }
+    this.track = 1;
+  };
 
   onImageClick = () => {
     this.imageRef.current.click();
-  }
+  };
 
   onClose = () => {
     this.setState({
       image: null
     });
-  }
+  };
 
   render() {
     return (
@@ -142,7 +182,6 @@ class CreateArticle extends Component {
                 type="text"
                 placeholder="Article title"
               />
-
             </h1>
           </div>
         </div>
@@ -150,16 +189,16 @@ class CreateArticle extends Component {
           <div className="col-lg-11" id="article-column">
             <div id="img-wraper">
               <img src={this.state.image} id="image-holder" />
-              {(this.state.image)
-                ? (
-                  <a
-                    href="#"
-                    onClick={this.onClose}
-                    className="close-thik"
-                    id="close-image"
-                  />
-                )
-                : ''}
+              {this.state.image ? (
+                <a
+                  href="#"
+                  onClick={this.onClose}
+                  className="close-thik"
+                  id="close-image"
+                />
+              ) : (
+                ''
+              )}
             </div>
             <textarea
               id="article-body"
@@ -195,12 +234,15 @@ CreateArticle.propTypes = {
   onSave: PropTypes.func.isRequired,
   cache: PropTypes.object.isRequired,
   createArticle: PropTypes.func.isRequired,
-  addFlashMessage: PropTypes.func.isRequired,
+  updateArticle: PropTypes.func.isRequired,
+  addFlashMessage: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  cache: state.articles.cache,
+  cache: state.articles.cache
 });
 
-export default connect(mapStateToProps,
-  { createArticle, addFlashMessage })(CreateArticle);
+export default connect(
+  mapStateToProps,
+  { createArticle, updateArticle, addFlashMessage }
+)(CreateArticle);
