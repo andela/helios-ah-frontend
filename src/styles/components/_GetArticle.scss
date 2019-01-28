@@ -1,0 +1,96 @@
+.image-container {
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position:center;
+  margin: 0 auto;
+  height: 50vh;
+}
+
+.article-container {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.article-title {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.profile-image {
+  width: 110px;
+  background: no-repeat center;
+  background-size: cover;
+  display: block;
+  height: 13vh;
+}
+
+.user-profile {
+  display: flex;
+  max-width: 80%;
+  margin: 1rem auto;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.follow-btn {
+  background-color: $white;
+  border: 1px solid $purple;
+  font-size: 120%;
+  position: absolute;
+  bottom: -8%;
+  left: 1.5rem;
+  cursor: pointer;
+}
+
+.article-body {
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 130%;
+  font-weight: 100;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-details {
+  padding-left: 2%;
+}
+
+.article-icons {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.rating > i, .like > i, .report > i {
+  color: #ccc;
+  font-size: 150%;
+}
+
+.rating, .like, .report {
+  display: inline-block;
+}
+
+.rating {
+  position: absolute;
+  right: 0
+}
+
+@media only screen and (min-width: 900px) {
+  .image-container {
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    max-width: 80%;
+    margin: 0 auto;
+    height: 50vh;
+  }
+  .rating > i, .like > i, .report > i {
+    font-size: 200%;
+  }
+  .article-body {
+    margin: 3rem auto;
+  }
+  .user-profile {
+    margin: 1.5rem auto;
+    padding: 1.5rem 0rem;
+  }
+}

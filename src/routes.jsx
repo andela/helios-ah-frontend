@@ -13,6 +13,7 @@ import {
   Article,
   ResetPassword,
   HomePage,
+  GetArticlePage
 } from './views';
 import HomePageRedirect from './utilities/HomePageRedirect';
 import PrivateRoute from './privateRoute';
@@ -28,6 +29,7 @@ const routes = (
       <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/change/password" component={ChangePasswordPage} />
+      <Route path="/article/:id" component={GetArticlePage} />
     </Switch>
   </BrowserRouter>
 );
