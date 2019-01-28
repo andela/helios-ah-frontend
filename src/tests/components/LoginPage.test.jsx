@@ -9,13 +9,13 @@ describe('Render Login Page', () => {
   let instance;
 
   beforeEach(() => {
-    wrapper = shallow(<LoginPage {...props} />);
-    instance = wrapper.instance();
     props = {
       clearBannerMessages: jest.fn(),
       userLogin: jest.fn(),
       addBannerMessage: jest.fn()
     };
+    wrapper = shallow(<LoginPage {...props} />);
+    instance = wrapper.instance();
   });
   describe('calling methods directly from login page', () => {
     it('it should setstate of email when input email value is changed', () => {

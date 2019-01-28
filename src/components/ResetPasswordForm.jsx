@@ -12,13 +12,19 @@ const ResetPasswordForm = ({
 }) => (
   <div className="container passwordResetBody">
     <div className="row passwordResetBody">
-      <div className="d-none d-sm-block col-sm-4 col-md-6 passwordResetImageDiv">
+      <div
+        className="d-none d-sm-block col-sm-4 col-md-6 passwordResetImageDiv"
+      >
         <span className="passwordResetImage" />
       </div>
       <div className="col-sm-8 col-md-6 text-center textWithInput">
         <div className="resetPasswordText">
           <h1 className="passwordResetH1">FORGOT YOUR PASSWORD?</h1>
-          <h3 className="passwordResetH3">ENTER YOUR EMAIL ADDRESS BELOW AND REQUEST A RESET LINK</h3>
+          <h3
+            className="passwordResetH3"
+          >
+          ENTER YOUR EMAIL ADDRESS BELOW AND REQUEST A RESET LINK
+          </h3>
         </div>
         <div>
           <form onSubmit={onSubmit} className="resetPasswordForm">

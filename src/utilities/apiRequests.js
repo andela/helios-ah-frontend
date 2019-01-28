@@ -1,7 +1,14 @@
+/* eslint-env browser */
+
+/* global
+  fetch
+*/
+
 import axios from 'axios';
 
-const baseUrl = (process.env.NODE_ENV === 'development')
-  ? process.env.DEVELOPMENT_URL : process.env.PRODUCTION_URL;
+const baseUrl = (process.env.NODE_ENV === 'production')
+  ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1'
+  : process.env.PRODUCTION_URL;
 
 const request = axios.create({
   baseURL: baseUrl,
@@ -57,13 +64,14 @@ export const Delete = async (route, data) => {
 };
 
 export const CloudImage = async (formData) => {
+  const postData = {
+    method: 'POST',
+    body: formData
+  };
   try {
-    const response = await axios.post(
-      'https://api.cloudinary.com/v1_1/ah-med/image/upload',
-      formData
-    );
-    return response.data;
+    const response = await fetch('https://api.cloudinary.com/v1_1/ah-med/image/upload', postData);
+    return response.json();
   } catch (error) {
-    return error.response ? error.response.data : error;
+    return error.response ? error.message : error;
   }
 };

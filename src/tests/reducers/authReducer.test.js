@@ -1,4 +1,4 @@
-import signupReducer from '../../reducers/signupReducer';
+import signupReducer from '../../reducers/authReducer';
 import * as actionTypes from '../../actionTypes';
 
 describe('Unit test for the signup reducer', () => {
@@ -17,7 +17,7 @@ describe('Unit test for the signup reducer', () => {
       token: 'wer434re445.4543wer543wer445tr.56765^543'
     };
     const signupActionCreator = {
-      type: actionTypes.USER_SIGNUP_SUCCESS,
+      type: actionTypes.SET_CURRENT_USER,
       userInfo,
     };
     expect(signupReducer({}, signupActionCreator))

@@ -2,9 +2,42 @@
   display: none;
  }
  
- .login-body {
-   font-family: $font-family;
+ .login-input {
+   margin: 0.5em auto;
  }
+
+ .login-input:focus {
+  outline: none
+}
+ 
+ .right-login {
+   margin-top: 15%;
+   text-align: center;
+   position: relative;
+ }
+
+ .forgot-password {
+   margin-top: 3%;
+ }
+ 
+ .login-custom-alert {
+  left: 0%;
+  position: absolute;
+  right: 0%;
+  top: -15%;
+  width: 100%;
+ }
+
+ .login-div-class {
+  position: relative;
+}
+
+.login-invalid-feedback, .login-valid-feedback {
+  position: absolute;
+  bottom: -20%;
+  padding-left: 0%;
+  font-size: 90%;
+}
  
  .right-login {
    margin-top: 40%;
@@ -12,11 +45,11 @@
    position: relative;
  }
  
- .custom-alert {
+ .login-custom-alert {
   left: 0%;
   position: absolute;
   right: 0%;
-  top: -45%;
+  top: -19%;
   width: 100%;
  }
  
@@ -64,11 +97,24 @@
  
  .forgot-password {
    display: inline-block;
-   font-size: 80%;
+   font-size: 70%;
+   margin-top: 1%;
    margin-bottom: 5%;
    text-align: right;
    width: 70%;
  }
+
+ .signup-link {
+   text-align: center;
+   color: $purple;
+ }
+
+.signup-link-container {
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
  
  .social-media-icons {
    .twitter, .google, .facebook{
@@ -107,17 +153,11 @@
  
  .login-buttons {
    display: inline-block;
+   width: 100%;
  
-   .login-col,
-   .signup-col {
+   .login-col {
      display: inline-block;
-     width: 48%;
-   }
-   .login-col{
-     margin-right: 2%;
-   }
-   .signup-col {
-     margin-left: 2%;
+     width: 100%;
    }
  }
  
@@ -128,19 +168,6 @@
    height: 2em;
    outline: none;
    width: 6em;
- }
- 
- .signup-btn {
-    border: 1px solid $purple;
-    border-radius: 2.34375em;
-    cursor: pointer; 
-    height: 2em;
-    outline: none;
-    width: 6em;
- }
- 
- .signup-btn:hover {
-   color: $purple
  }
  
  .login-btn:focus, .signup-btn:focus {
@@ -154,11 +181,6 @@
  
  .login-btn:disabled{
    cursor: not-allowed;
- }
- 
- .signup-btn {
-   background-color: $white;
-   color: $purple
  }
  
  .login-valid-feedback, .login-invalid-feedback {
@@ -180,13 +202,16 @@
  }
 
  
-@media (min-width: 734px) and (max-width: 768px) {
+@media (min-width: 734px) and (max-width: 800px) {
   .login-image-container {
     background: url('images/signupImage.svg') no-repeat ;
     background-size: contain;
     display: block;
     height: 50vh;
-    margin: 40% auto;
+    margin: 0% auto;
+   }
+   .login-custom-alert{
+     top: 10%;
    }
    .login-img {
     display: block;
@@ -195,6 +220,7 @@
   }
   .right-login {
     text-align: center;
+    margin-top: 2em;
 
     h3, h5{
       color: $purple;
@@ -224,15 +250,6 @@
     outline: none;
     width: 10.625em;
   }
-  
-  .signup-btn {
-    border: 1px solid $purple;
-    border-radius: 2.34375em;
-    cursor: pointer; 
-    height: 3.125em;
-    outline: none;
-    width: 10.625em;
-  }
 }
 
 
@@ -247,7 +264,7 @@
        text-align: center;
      }
      
-     .custom-alert {
+     .login-custom-alert {
        position: absolute;
        right: 2%;
        top: -15%;
@@ -337,17 +354,11 @@
      
      .login-buttons {
        display: inline-block;
+       text-align: center;
      
-       .login-col,
-       .signup-col {
+       .login-col {
         display: inline-block;
-        width: 48%;
-       }
-       .login-col{
-         margin-right: 2%;
-       }
-       .signup-col {
-         margin-left: 2%;
+        width: 100%;
        }
      }
      
@@ -360,20 +371,7 @@
        cursor: pointer; 
      }
      
-     .signup-btn {
-       border: 1px solid $purple;
-       border-radius: 2.34375em;
-       width: 10.625em;
-       height: 3.125em;
-       outline: none;
-       cursor: pointer; 
-     }
-     
-     .signup-btn:hover {
-       color: $purple
-     }
-     
-     .login-btn:focus, .signup-btn:focus {
+     .login-btn:focus {
        outline: none;
      }
      
@@ -384,11 +382,6 @@
      
      .login-btn:disabled{
        cursor: not-allowed;
-     }
-     
-     .signup-btn {
-       background-color: $white;
-       color: $purple
      }
      
      .login-valid-feedback, .login-invalid-feedback {
@@ -431,6 +424,7 @@
    
    .login-body {
      font-family: $font-family;
+     margin-top: 4em;
    }
    
    .right-login {
@@ -438,7 +432,7 @@
      text-align: center;
    }
    
-   .custom-alert {
+   .login-custom-alert {
      position: absolute;
      right: 2%;
      top: -15%;
@@ -532,16 +526,12 @@
    .login-buttons {
      display: inline-block;
    
-     .login-col,
-     .signup-col {
+     .login-col {
       display: inline-block;
        width: 47%;
      }
-     .login-col{
+     .login-col {
        margin-right: 2%;
-     }
-     .signup-col {
-       margin-left: 2%;
      }
    }
    
@@ -553,21 +543,8 @@
       outline: none;
       width: 10.625em;
    }
-   
-   .signup-btn {
-      border: 1px solid $purple;
-      border-radius: 2.34375em;
-      cursor: pointer; 
-      height: 2.5em;
-      outline: none;
-      width: 10.625em;
-   }
-   
-   .signup-btn:hover {
-     color: $purple
-   }
-   
-   .login-btn:focus, .signup-btn:focus {
+
+   .login-btn:focus {
      outline: none;
    }
    
@@ -575,9 +552,25 @@
      background-color: $purple;
      color: $white
    }
-   
-   .login-btn:disabled{
-     cursor: not-allowed;
+
+   .login-input {
+    margin: 0.5em auto;
+  }
+ 
+  .login-input:focus {
+   outline: none
+ }
+  
+  .login-custom-alert {
+   left: 0%;
+   position: absolute;
+   right: 0%;
+   top: -15%;
+   width: 100%;
+  }
+
+   .login-input:focus {
+     outline: none
    }
    
    .signup-btn {
@@ -589,16 +582,17 @@
      padding-right: 55%;
    }
   
-   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   .login-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+     color: #c4c4c4;
+     font-size: 0.8em;
+   }
+   .login-input::-moz-placeholder { /* Firefox 19+ */
      font-size: 1em;
    }
-   ::-moz-placeholder { /* Firefox 19+ */
+   .login-input:-ms-input-placeholder { /* IE 10+ */
      font-size: 1em;
    }
-   :-ms-input-placeholder { /* IE 10+ */
-     font-size: 1em;
-   }
-   :-moz-placeholder { /* Firefox 18- */
+   .login-input:-moz-placeholder { /* Firefox 18- */
      font-size: 1em;
    }
 }

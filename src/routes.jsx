@@ -11,15 +11,21 @@ import {
   ResetPassword,
   CompleteRegistration,
   ChangePasswordPage,
-  Article
+  Article,
+  HomePage,
 } from './views';
+import HomePageRedirect from './utilities/HomePageRedirect';
+import PrivateRoute from './privateRoute';
 
 const routes = (
   <BrowserRouter>
     <Switch>
-      <Route path="/login" component={LoginPage} />
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/home" component={HomePage} />
+      <Route path="/login" component={HomePageRedirect(LoginPage)} />
       <Route path="/signup/verify" component={CompleteRegistration} />
-      <Route path="/signup" component={SignupPage} />
+      <Route path="/signup" component={HomePageRedirect(SignupPage)} />
+      <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/article" component={Article} />
       <Route path="/change/password" component={ChangePasswordPage} />

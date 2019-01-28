@@ -12,6 +12,7 @@
     "heroku-postbuild": "webpack --mode production && npm run build:server",
     "build:server": "babel server.js -d build",
     "start": "webpack-dev-server --mode production --hot --open",
+    "start:dev": "webpack-dev-server --mode development --hot --open",
     "build": "webpack --mode production",
     "test": "jest  --detectOpenHandles --coverage",
     "test:watch": "jest --watch --coverage",
@@ -62,7 +63,8 @@
     "reactstrap": "7.0.2",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
-    "style-loader": "0.23.1"
+    "style-loader": "0.23.1",
+    "toastr": "2.1.4"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -98,7 +100,6 @@
     "sass-loader": "7.1.0",
     "sinon": "7.2.3",
     "stylelint": "9.10.0",
-    "toastr": "2.1.4",
     "url-loader": "1.1.2",
     "webpack": "4.28.1",
     "webpack-cli": "3.2.1",
