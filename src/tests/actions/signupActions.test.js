@@ -19,7 +19,7 @@ describe('Unit tests fro the signup actions', () => {
   describe('Unit test for the signup action creator', () => {
     it('should return user-info on successful signup', () => {
       const expectedAction = {
-        type: actionTypes.SIGN_UP_SUCCESS,
+        type: actionTypes.SET_CURRENT_USER,
         userInfo,
       };
       expect(actions.signupSuccess(userInfo)).toEqual(expectedAction);
