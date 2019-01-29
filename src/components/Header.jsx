@@ -59,7 +59,7 @@ class Header extends Component {
             type="button"
             name="draft"
             onClick={this.props.onDraft}
-            value="Draft"
+            value="Save as Draft"
           />
         </div>
         <div className="col-lg-1" id="notify-col">

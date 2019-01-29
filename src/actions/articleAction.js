@@ -27,6 +27,7 @@ export const updateArticle = data => async (dispatch) => {
   const { id } = data;
   delete data.id;
   delete data.photo;
+  data.isDraft = true;
   const response = await Put(`/articles/${id}`, data);
   if (response.success) {
     dispatch(setArticle(response.articleUpdated[0]));
@@ -34,6 +35,19 @@ export const updateArticle = data => async (dispatch) => {
       success: true,
       message: response.message,
       data: response.articleUpdated
+    });
+  }
+  return ({ success: false, message: response.message });
+};
+
+export const publishArticle = id => async (dispatch) => {
+  const response = await Put(`/articles/${id}/status/publish`);
+  if (response.success) {
+    dispatch(setArticle(response.articlePublished[0]));
+    return ({
+      success: true,
+      message: response.message,
+      data: response.articlePublished
     });
   }
   return ({ success: false, message: response.message });

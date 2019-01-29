@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createArticle, updateArticle, addFlashMessage } from '../actions';
 import FlashMessagesList from './FlashMessagesList';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
+import {
+  createArticle,
+  updateArticle,
+  publishArticle,
+  addFlashMessage
+} from '../actions';
 
 class CreateArticle extends Component {
   constructor(props) {
@@ -63,7 +68,11 @@ class CreateArticle extends Component {
         if (id) {
           if (publish) {
             onSave();
-            // executes when published
+            if (this.compare()) {
+              await this.publishArticle(false);
+            } else {
+              await this.publishArticle();
+            }
           } else if (this.compare()) {
             this.props.addFlashMessage({
               type: 'warning',
@@ -83,7 +92,10 @@ class CreateArticle extends Component {
           }
         } else if (publish) {
           onSave();
-          // publish article
+          await this.publishArticle();
+          if (!image) {
+            this.onClose();
+          }
         } else {
           onSave();
           const article = await createArticle(this.state);
@@ -107,6 +119,33 @@ class CreateArticle extends Component {
       });
     }
   };
+
+  publishArticle = async (changed = true) => {
+    const { id } = this.state;
+    const { createArticle, publishArticle } = this.props;
+    if (!changed) {
+      if (this.props.cache.isDraft) {
+        const published = await publishArticle(id);
+        this.updateState(published.data[0], 'Article has been published');
+      } else {
+        this.props.addFlashMessage({
+          type: 'warning',
+          text: 'Already published'
+        });
+      }
+    } else {
+      try {
+        const article = await createArticle(this.state);
+        const published = await publishArticle(article.data.id);
+        this.updateState(published.data[0], 'Article has been published');
+      } catch (error) {
+        this.props.addFlashMessage({
+          type: 'error',
+          text: error.message
+        });
+      }
+    }
+  }
 
   updateState = (data, message) => {
     this.setState({
@@ -235,6 +274,7 @@ CreateArticle.propTypes = {
   cache: PropTypes.object.isRequired,
   createArticle: PropTypes.func.isRequired,
   updateArticle: PropTypes.func.isRequired,
+  publishArticle: PropTypes.func.isRequired,
   addFlashMessage: PropTypes.func.isRequired
 };
 
@@ -244,5 +284,10 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { createArticle, updateArticle, addFlashMessage }
+  {
+    createArticle,
+    updateArticle,
+    publishArticle,
+    addFlashMessage
+  }
 )(CreateArticle);
