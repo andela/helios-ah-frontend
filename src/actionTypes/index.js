@@ -3,7 +3,6 @@ export const GET_A_USER = 'GET_A_USER';
 export const TOGGLE_BUTTON = 'TOGGLE_BUTTON';
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 export const CLEAR_EDIT = 'CLEAR_EDIT';
-export const EXAMPLE_TWO = 'EXAMPLE_TWO';
 export const CREATE_ARTICLE = 'CREATE_ARTICLE';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const ADD_FLASH_MESSAGE = 'ADD_FLASH_MESSAGE';

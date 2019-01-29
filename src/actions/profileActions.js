@@ -30,9 +30,10 @@ export const clearEdit = status => ({
 const getFollowDetails = async (userId) => {
   try {
     const followDetails = await Get(`/users/${userId}/follow`);
-    const followingCount = followDetails.followingDetails.count;
-    const followersCount = followDetails.followersDetails.count;
-    return { followingCount, followersCount };
+    return {
+      followingCount: followDetails.followingDetails.count,
+      followersCount: followDetails.followersDetails.count
+    };
   } catch (error) {
     return error;
   }
