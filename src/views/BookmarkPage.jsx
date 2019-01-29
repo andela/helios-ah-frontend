@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getbookmarks, deleteBookmark } from '../actions/bookmarkActions';
-import NavBar from './NavBar';
+import Navbar from './Navbar';
 import Bookmark from '../components/Bookmark';
 
 class Bookmarks extends Component {
@@ -18,10 +18,9 @@ class Bookmarks extends Component {
 
   render() {
     const { bookmarks } = this.props;
-    console.log(bookmarks);
     return (
       <div>
-        <NavBar />
+        <Navbar />
         <div className="container">
           <div className="row">
             <h3>Bookmarks</h3>

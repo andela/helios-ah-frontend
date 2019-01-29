@@ -32,7 +32,7 @@ const routes = (
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/article" component={Article} />
       <Route path="/change/password" component={ChangePasswordPage} />
-      <Route path="/bookmark" component={BookmarkPage} />
+      <PrivateRoute path="/bookmark" component={BookmarkPage} />
     </Switch>
   </BrowserRouter>
 );
