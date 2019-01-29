@@ -1,0 +1,2863 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Login Page render Login Page renders the login page component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginForm
+    email="some@email.com"
+    errors="some error"
+    isRequestSent={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onInput={[Function]}
+    password="password"
+    submitDetails={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row"
+      >
+        <div
+          className="col-md-6"
+        >
+          <span
+            className="login-image-container"
+          />
+        </div>
+        <div
+          className="col-md-6 col-xs-12 right-login"
+        >
+          <h3>
+            WELCOME BACK.....
+          </h3>
+          <h5>
+            LOGIN TO AUTHOR\`S HAVEN
+          </h5>
+          <Connect(FlashMessageList)
+            customAlertClass="login-custom-alert"
+          />
+          <form
+            autoComplete="off"
+          >
+            <TextFieldGroup
+              className="form-control login-input"
+              customFormDivClass="login-div-class"
+              error=""
+              errorFeedbackClass="login-invalid-feedback"
+              field="email"
+              id={null}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onInput={[Function]}
+              placeholder="Email"
+              type="text"
+              validFeedbackClass="login-valid-feedback"
+              value="some@email.com"
+            />
+            <TextFieldGroup
+              className="form-control login-input"
+              customFormDivClass="login-div-class"
+              error=""
+              errorFeedbackClass="login-invalid-feedback"
+              field="password"
+              id={null}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onInput={[Function]}
+              placeholder="Password"
+              type="password"
+              validFeedbackClass="login-valid-feedback"
+              value="password"
+            />
+            <div
+              className="forgot-password"
+            >
+              <Link
+                replace={false}
+                to="/reset-password"
+              >
+                <p>
+                  FORGOT PASSWORD?
+                </p>
+              </Link>
+            </div>
+            <div
+              className="login-buttons"
+            >
+              <SubmitButton
+                className="login-btn"
+                columnAttribute="login-col"
+                id={null}
+                isRequestSent={true}
+                onClick={[Function]}
+                value="LOGIN"
+              />
+            </div>
+            <Link
+              className="signup-link-container"
+              replace={false}
+              to="/signup"
+            >
+              <div
+                className="signup-link"
+              >
+                Unregistered? Sign up here
+              </div>
+            </Link>
+            <div
+              className="social-media-icons"
+            >
+              <span
+                className="facebook"
+              />
+              <span
+                className="twitter"
+              />
+              <span
+                className="google"
+              />
+            </div>
+          </form>
+        </div>
+      </div>,
+      "className": "container login-body",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col-md-6"
+          >
+            <span
+              className="login-image-container"
+            />
+          </div>,
+          <div
+            className="col-md-6 col-xs-12 right-login"
+          >
+            <h3>
+              WELCOME BACK.....
+            </h3>
+            <h5>
+              LOGIN TO AUTHOR\`S HAVEN
+            </h5>
+            <Connect(FlashMessageList)
+              customAlertClass="login-custom-alert"
+            />
+            <form
+              autoComplete="off"
+            >
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="email"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Email"
+                type="text"
+                validFeedbackClass="login-valid-feedback"
+                value="some@email.com"
+              />
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="password"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Password"
+                type="password"
+                validFeedbackClass="login-valid-feedback"
+                value="password"
+              />
+              <div
+                className="forgot-password"
+              >
+                <Link
+                  replace={false}
+                  to="/reset-password"
+                >
+                  <p>
+                    FORGOT PASSWORD?
+                  </p>
+                </Link>
+              </div>
+              <div
+                className="login-buttons"
+              >
+                <SubmitButton
+                  className="login-btn"
+                  columnAttribute="login-col"
+                  id={null}
+                  isRequestSent={true}
+                  onClick={[Function]}
+                  value="LOGIN"
+                />
+              </div>
+              <Link
+                className="signup-link-container"
+                replace={false}
+                to="/signup"
+              >
+                <div
+                  className="signup-link"
+                >
+                  Unregistered? Sign up here
+                </div>
+              </Link>
+              <div
+                className="social-media-icons"
+              >
+                <span
+                  className="facebook"
+                />
+                <span
+                  className="twitter"
+                />
+                <span
+                  className="google"
+                />
+              </div>
+            </form>
+          </div>,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <span
+              className="login-image-container"
+            />,
+            "className": "col-md-6",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "login-image-container",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "span",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                WELCOME BACK.....
+              </h3>,
+              <h5>
+                LOGIN TO AUTHOR\`S HAVEN
+              </h5>,
+              <Connect(FlashMessageList)
+                customAlertClass="login-custom-alert"
+              />,
+              <form
+                autoComplete="off"
+              >
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="email"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Email"
+                  type="text"
+                  validFeedbackClass="login-valid-feedback"
+                  value="some@email.com"
+                />
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="password"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  validFeedbackClass="login-valid-feedback"
+                  value="password"
+                />
+                <div
+                  className="forgot-password"
+                >
+                  <Link
+                    replace={false}
+                    to="/reset-password"
+                  >
+                    <p>
+                      FORGOT PASSWORD?
+                    </p>
+                  </Link>
+                </div>
+                <div
+                  className="login-buttons"
+                >
+                  <SubmitButton
+                    className="login-btn"
+                    columnAttribute="login-col"
+                    id={null}
+                    isRequestSent={true}
+                    onClick={[Function]}
+                    value="LOGIN"
+                  />
+                </div>
+                <Link
+                  className="signup-link-container"
+                  replace={false}
+                  to="/signup"
+                >
+                  <div
+                    className="signup-link"
+                  >
+                    Unregistered? Sign up here
+                  </div>
+                </Link>
+                <div
+                  className="social-media-icons"
+                >
+                  <span
+                    className="facebook"
+                  />
+                  <span
+                    className="twitter"
+                  />
+                  <span
+                    className="google"
+                  />
+                </div>
+              </form>,
+            ],
+            "className": "col-md-6 col-xs-12 right-login",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "WELCOME BACK.....",
+              },
+              "ref": null,
+              "rendered": "WELCOME BACK.....",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "LOGIN TO AUTHOR\`S HAVEN",
+              },
+              "ref": null,
+              "rendered": "LOGIN TO AUTHOR\`S HAVEN",
+              "type": "h5",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "customAlertClass": "login-custom-alert",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "autoComplete": "off",
+                "children": Array [
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="email"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Email"
+                    type="text"
+                    validFeedbackClass="login-valid-feedback"
+                    value="some@email.com"
+                  />,
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="password"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    validFeedbackClass="login-valid-feedback"
+                    value="password"
+                  />,
+                  <div
+                    className="forgot-password"
+                  >
+                    <Link
+                      replace={false}
+                      to="/reset-password"
+                    >
+                      <p>
+                        FORGOT PASSWORD?
+                      </p>
+                    </Link>
+                  </div>,
+                  <div
+                    className="login-buttons"
+                  >
+                    <SubmitButton
+                      className="login-btn"
+                      columnAttribute="login-col"
+                      id={null}
+                      isRequestSent={true}
+                      onClick={[Function]}
+                      value="LOGIN"
+                    />
+                  </div>,
+                  <Link
+                    className="signup-link-container"
+                    replace={false}
+                    to="/signup"
+                  >
+                    <div
+                      className="signup-link"
+                    >
+                      Unregistered? Sign up here
+                    </div>
+                  </Link>,
+                  <div
+                    className="social-media-icons"
+                  >
+                    <span
+                      className="facebook"
+                    />
+                    <span
+                      className="twitter"
+                    />
+                    <span
+                      className="google"
+                    />
+                  </div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "form-control login-input",
+                    "customFormDivClass": "login-div-class",
+                    "error": "",
+                    "errorFeedbackClass": "login-invalid-feedback",
+                    "field": "email",
+                    "id": null,
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onInput": [Function],
+                    "placeholder": "Email",
+                    "type": "text",
+                    "validFeedbackClass": "login-valid-feedback",
+                    "value": "some@email.com",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "form-control login-input",
+                    "customFormDivClass": "login-div-class",
+                    "error": "",
+                    "errorFeedbackClass": "login-invalid-feedback",
+                    "field": "password",
+                    "id": null,
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onInput": [Function],
+                    "placeholder": "Password",
+                    "type": "password",
+                    "validFeedbackClass": "login-valid-feedback",
+                    "value": "password",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/reset-password"
+                    >
+                      <p>
+                        FORGOT PASSWORD?
+                      </p>
+                    </Link>,
+                    "className": "forgot-password",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <p>
+                        FORGOT PASSWORD?
+                      </p>,
+                      "replace": false,
+                      "to": "/reset-password",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "FORGOT PASSWORD?",
+                      },
+                      "ref": null,
+                      "rendered": "FORGOT PASSWORD?",
+                      "type": "p",
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <SubmitButton
+                      className="login-btn"
+                      columnAttribute="login-col"
+                      id={null}
+                      isRequestSent={true}
+                      onClick={[Function]}
+                      value="LOGIN"
+                    />,
+                    "className": "login-buttons",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "className": "login-btn",
+                      "columnAttribute": "login-col",
+                      "id": null,
+                      "isRequestSent": true,
+                      "onClick": [Function],
+                      "value": "LOGIN",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <div
+                      className="signup-link"
+                    >
+                      Unregistered? Sign up here
+                    </div>,
+                    "className": "signup-link-container",
+                    "replace": false,
+                    "to": "/signup",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Unregistered? Sign up here",
+                      "className": "signup-link",
+                    },
+                    "ref": null,
+                    "rendered": "Unregistered? Sign up here",
+                    "type": "div",
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <span
+                        className="facebook"
+                      />,
+                      <span
+                        className="twitter"
+                      />,
+                      <span
+                        className="google"
+                      />,
+                    ],
+                    "className": "social-media-icons",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "facebook",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "twitter",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "google",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <div
+            className="col-md-6"
+          >
+            <span
+              className="login-image-container"
+            />
+          </div>
+          <div
+            className="col-md-6 col-xs-12 right-login"
+          >
+            <h3>
+              WELCOME BACK.....
+            </h3>
+            <h5>
+              LOGIN TO AUTHOR\`S HAVEN
+            </h5>
+            <Connect(FlashMessageList)
+              customAlertClass="login-custom-alert"
+            />
+            <form
+              autoComplete="off"
+            >
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="email"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Email"
+                type="text"
+                validFeedbackClass="login-valid-feedback"
+                value="some@email.com"
+              />
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="password"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Password"
+                type="password"
+                validFeedbackClass="login-valid-feedback"
+                value="password"
+              />
+              <div
+                className="forgot-password"
+              >
+                <Link
+                  replace={false}
+                  to="/reset-password"
+                >
+                  <p>
+                    FORGOT PASSWORD?
+                  </p>
+                </Link>
+              </div>
+              <div
+                className="login-buttons"
+              >
+                <SubmitButton
+                  className="login-btn"
+                  columnAttribute="login-col"
+                  id={null}
+                  isRequestSent={true}
+                  onClick={[Function]}
+                  value="LOGIN"
+                />
+              </div>
+              <Link
+                className="signup-link-container"
+                replace={false}
+                to="/signup"
+              >
+                <div
+                  className="signup-link"
+                >
+                  Unregistered? Sign up here
+                </div>
+              </Link>
+              <div
+                className="social-media-icons"
+              >
+                <span
+                  className="facebook"
+                />
+                <span
+                  className="twitter"
+                />
+                <span
+                  className="google"
+                />
+              </div>
+            </form>
+          </div>
+        </div>,
+        "className": "container login-body",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-md-6"
+            >
+              <span
+                className="login-image-container"
+              />
+            </div>,
+            <div
+              className="col-md-6 col-xs-12 right-login"
+            >
+              <h3>
+                WELCOME BACK.....
+              </h3>
+              <h5>
+                LOGIN TO AUTHOR\`S HAVEN
+              </h5>
+              <Connect(FlashMessageList)
+                customAlertClass="login-custom-alert"
+              />
+              <form
+                autoComplete="off"
+              >
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="email"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Email"
+                  type="text"
+                  validFeedbackClass="login-valid-feedback"
+                  value="some@email.com"
+                />
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="password"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  validFeedbackClass="login-valid-feedback"
+                  value="password"
+                />
+                <div
+                  className="forgot-password"
+                >
+                  <Link
+                    replace={false}
+                    to="/reset-password"
+                  >
+                    <p>
+                      FORGOT PASSWORD?
+                    </p>
+                  </Link>
+                </div>
+                <div
+                  className="login-buttons"
+                >
+                  <SubmitButton
+                    className="login-btn"
+                    columnAttribute="login-col"
+                    id={null}
+                    isRequestSent={true}
+                    onClick={[Function]}
+                    value="LOGIN"
+                  />
+                </div>
+                <Link
+                  className="signup-link-container"
+                  replace={false}
+                  to="/signup"
+                >
+                  <div
+                    className="signup-link"
+                  >
+                    Unregistered? Sign up here
+                  </div>
+                </Link>
+                <div
+                  className="social-media-icons"
+                >
+                  <span
+                    className="facebook"
+                  />
+                  <span
+                    className="twitter"
+                  />
+                  <span
+                    className="google"
+                  />
+                </div>
+              </form>
+            </div>,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <span
+                className="login-image-container"
+              />,
+              "className": "col-md-6",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "login-image-container",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "span",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  WELCOME BACK.....
+                </h3>,
+                <h5>
+                  LOGIN TO AUTHOR\`S HAVEN
+                </h5>,
+                <Connect(FlashMessageList)
+                  customAlertClass="login-custom-alert"
+                />,
+                <form
+                  autoComplete="off"
+                >
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="email"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Email"
+                    type="text"
+                    validFeedbackClass="login-valid-feedback"
+                    value="some@email.com"
+                  />
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="password"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    validFeedbackClass="login-valid-feedback"
+                    value="password"
+                  />
+                  <div
+                    className="forgot-password"
+                  >
+                    <Link
+                      replace={false}
+                      to="/reset-password"
+                    >
+                      <p>
+                        FORGOT PASSWORD?
+                      </p>
+                    </Link>
+                  </div>
+                  <div
+                    className="login-buttons"
+                  >
+                    <SubmitButton
+                      className="login-btn"
+                      columnAttribute="login-col"
+                      id={null}
+                      isRequestSent={true}
+                      onClick={[Function]}
+                      value="LOGIN"
+                    />
+                  </div>
+                  <Link
+                    className="signup-link-container"
+                    replace={false}
+                    to="/signup"
+                  >
+                    <div
+                      className="signup-link"
+                    >
+                      Unregistered? Sign up here
+                    </div>
+                  </Link>
+                  <div
+                    className="social-media-icons"
+                  >
+                    <span
+                      className="facebook"
+                    />
+                    <span
+                      className="twitter"
+                    />
+                    <span
+                      className="google"
+                    />
+                  </div>
+                </form>,
+              ],
+              "className": "col-md-6 col-xs-12 right-login",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "WELCOME BACK.....",
+                },
+                "ref": null,
+                "rendered": "WELCOME BACK.....",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "LOGIN TO AUTHOR\`S HAVEN",
+                },
+                "ref": null,
+                "rendered": "LOGIN TO AUTHOR\`S HAVEN",
+                "type": "h5",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "customAlertClass": "login-custom-alert",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "autoComplete": "off",
+                  "children": Array [
+                    <TextFieldGroup
+                      className="form-control login-input"
+                      customFormDivClass="login-div-class"
+                      error=""
+                      errorFeedbackClass="login-invalid-feedback"
+                      field="email"
+                      id={null}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onInput={[Function]}
+                      placeholder="Email"
+                      type="text"
+                      validFeedbackClass="login-valid-feedback"
+                      value="some@email.com"
+                    />,
+                    <TextFieldGroup
+                      className="form-control login-input"
+                      customFormDivClass="login-div-class"
+                      error=""
+                      errorFeedbackClass="login-invalid-feedback"
+                      field="password"
+                      id={null}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onInput={[Function]}
+                      placeholder="Password"
+                      type="password"
+                      validFeedbackClass="login-valid-feedback"
+                      value="password"
+                    />,
+                    <div
+                      className="forgot-password"
+                    >
+                      <Link
+                        replace={false}
+                        to="/reset-password"
+                      >
+                        <p>
+                          FORGOT PASSWORD?
+                        </p>
+                      </Link>
+                    </div>,
+                    <div
+                      className="login-buttons"
+                    >
+                      <SubmitButton
+                        className="login-btn"
+                        columnAttribute="login-col"
+                        id={null}
+                        isRequestSent={true}
+                        onClick={[Function]}
+                        value="LOGIN"
+                      />
+                    </div>,
+                    <Link
+                      className="signup-link-container"
+                      replace={false}
+                      to="/signup"
+                    >
+                      <div
+                        className="signup-link"
+                      >
+                        Unregistered? Sign up here
+                      </div>
+                    </Link>,
+                    <div
+                      className="social-media-icons"
+                    >
+                      <span
+                        className="facebook"
+                      />
+                      <span
+                        className="twitter"
+                      />
+                      <span
+                        className="google"
+                      />
+                    </div>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "className": "form-control login-input",
+                      "customFormDivClass": "login-div-class",
+                      "error": "",
+                      "errorFeedbackClass": "login-invalid-feedback",
+                      "field": "email",
+                      "id": null,
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onInput": [Function],
+                      "placeholder": "Email",
+                      "type": "text",
+                      "validFeedbackClass": "login-valid-feedback",
+                      "value": "some@email.com",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "className": "form-control login-input",
+                      "customFormDivClass": "login-div-class",
+                      "error": "",
+                      "errorFeedbackClass": "login-invalid-feedback",
+                      "field": "password",
+                      "id": null,
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onInput": [Function],
+                      "placeholder": "Password",
+                      "type": "password",
+                      "validFeedbackClass": "login-valid-feedback",
+                      "value": "password",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/reset-password"
+                      >
+                        <p>
+                          FORGOT PASSWORD?
+                        </p>
+                      </Link>,
+                      "className": "forgot-password",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <p>
+                          FORGOT PASSWORD?
+                        </p>,
+                        "replace": false,
+                        "to": "/reset-password",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "FORGOT PASSWORD?",
+                        },
+                        "ref": null,
+                        "rendered": "FORGOT PASSWORD?",
+                        "type": "p",
+                      },
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <SubmitButton
+                        className="login-btn"
+                        columnAttribute="login-col"
+                        id={null}
+                        isRequestSent={true}
+                        onClick={[Function]}
+                        value="LOGIN"
+                      />,
+                      "className": "login-buttons",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "className": "login-btn",
+                        "columnAttribute": "login-col",
+                        "id": null,
+                        "isRequestSent": true,
+                        "onClick": [Function],
+                        "value": "LOGIN",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <div
+                        className="signup-link"
+                      >
+                        Unregistered? Sign up here
+                      </div>,
+                      "className": "signup-link-container",
+                      "replace": false,
+                      "to": "/signup",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Unregistered? Sign up here",
+                        "className": "signup-link",
+                      },
+                      "ref": null,
+                      "rendered": "Unregistered? Sign up here",
+                      "type": "div",
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="facebook"
+                        />,
+                        <span
+                          className="twitter"
+                        />,
+                        <span
+                          className="google"
+                        />,
+                      ],
+                      "className": "social-media-icons",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "facebook",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "twitter",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "google",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "form",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Render Login Page render Login Page renders the login page component 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginForm
+    email="some@email.com"
+    errors="some error"
+    isRequestSent={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onInput={[Function]}
+    password="password"
+    submitDetails={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row"
+      >
+        <div
+          className="col-md-6"
+        >
+          <span
+            className="login-image-container"
+          />
+        </div>
+        <div
+          className="col-md-6 col-xs-12 right-login"
+        >
+          <h3>
+            WELCOME BACK.....
+          </h3>
+          <h5>
+            LOGIN TO AUTHOR\`S HAVEN
+          </h5>
+          <Connect(FlashMessageList)
+            customAlertClass="login-custom-alert"
+          />
+          <form
+            autoComplete="off"
+          >
+            <TextFieldGroup
+              className="form-control login-input"
+              customFormDivClass="login-div-class"
+              error=""
+              errorFeedbackClass="login-invalid-feedback"
+              field="email"
+              id={null}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onInput={[Function]}
+              placeholder="Email"
+              type="text"
+              validFeedbackClass="login-valid-feedback"
+              value="some@email.com"
+            />
+            <TextFieldGroup
+              className="form-control login-input"
+              customFormDivClass="login-div-class"
+              error=""
+              errorFeedbackClass="login-invalid-feedback"
+              field="password"
+              id={null}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onInput={[Function]}
+              placeholder="Password"
+              type="password"
+              validFeedbackClass="login-valid-feedback"
+              value="password"
+            />
+            <div
+              className="forgot-password"
+            >
+              <Link
+                replace={false}
+                to="/reset-password"
+              >
+                <p>
+                  FORGOT PASSWORD?
+                </p>
+              </Link>
+            </div>
+            <div
+              className="login-buttons"
+            >
+              <SubmitButton
+                className="login-btn"
+                columnAttribute="login-col"
+                id={null}
+                isRequestSent={true}
+                onClick={[Function]}
+                value="LOGIN"
+              />
+            </div>
+            <Link
+              className="signup-link-container"
+              replace={false}
+              to="/signup"
+            >
+              <div
+                className="signup-link"
+              >
+                Unregistered? Sign up here
+              </div>
+            </Link>
+            <div
+              className="social-media-icons"
+            >
+              <span
+                className="facebook"
+              />
+              <span
+                className="twitter"
+              />
+              <span
+                className="google"
+              />
+            </div>
+          </form>
+        </div>
+      </div>,
+      "className": "container login-body",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col-md-6"
+          >
+            <span
+              className="login-image-container"
+            />
+          </div>,
+          <div
+            className="col-md-6 col-xs-12 right-login"
+          >
+            <h3>
+              WELCOME BACK.....
+            </h3>
+            <h5>
+              LOGIN TO AUTHOR\`S HAVEN
+            </h5>
+            <Connect(FlashMessageList)
+              customAlertClass="login-custom-alert"
+            />
+            <form
+              autoComplete="off"
+            >
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="email"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Email"
+                type="text"
+                validFeedbackClass="login-valid-feedback"
+                value="some@email.com"
+              />
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="password"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Password"
+                type="password"
+                validFeedbackClass="login-valid-feedback"
+                value="password"
+              />
+              <div
+                className="forgot-password"
+              >
+                <Link
+                  replace={false}
+                  to="/reset-password"
+                >
+                  <p>
+                    FORGOT PASSWORD?
+                  </p>
+                </Link>
+              </div>
+              <div
+                className="login-buttons"
+              >
+                <SubmitButton
+                  className="login-btn"
+                  columnAttribute="login-col"
+                  id={null}
+                  isRequestSent={true}
+                  onClick={[Function]}
+                  value="LOGIN"
+                />
+              </div>
+              <Link
+                className="signup-link-container"
+                replace={false}
+                to="/signup"
+              >
+                <div
+                  className="signup-link"
+                >
+                  Unregistered? Sign up here
+                </div>
+              </Link>
+              <div
+                className="social-media-icons"
+              >
+                <span
+                  className="facebook"
+                />
+                <span
+                  className="twitter"
+                />
+                <span
+                  className="google"
+                />
+              </div>
+            </form>
+          </div>,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <span
+              className="login-image-container"
+            />,
+            "className": "col-md-6",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "login-image-container",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "span",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                WELCOME BACK.....
+              </h3>,
+              <h5>
+                LOGIN TO AUTHOR\`S HAVEN
+              </h5>,
+              <Connect(FlashMessageList)
+                customAlertClass="login-custom-alert"
+              />,
+              <form
+                autoComplete="off"
+              >
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="email"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Email"
+                  type="text"
+                  validFeedbackClass="login-valid-feedback"
+                  value="some@email.com"
+                />
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="password"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  validFeedbackClass="login-valid-feedback"
+                  value="password"
+                />
+                <div
+                  className="forgot-password"
+                >
+                  <Link
+                    replace={false}
+                    to="/reset-password"
+                  >
+                    <p>
+                      FORGOT PASSWORD?
+                    </p>
+                  </Link>
+                </div>
+                <div
+                  className="login-buttons"
+                >
+                  <SubmitButton
+                    className="login-btn"
+                    columnAttribute="login-col"
+                    id={null}
+                    isRequestSent={true}
+                    onClick={[Function]}
+                    value="LOGIN"
+                  />
+                </div>
+                <Link
+                  className="signup-link-container"
+                  replace={false}
+                  to="/signup"
+                >
+                  <div
+                    className="signup-link"
+                  >
+                    Unregistered? Sign up here
+                  </div>
+                </Link>
+                <div
+                  className="social-media-icons"
+                >
+                  <span
+                    className="facebook"
+                  />
+                  <span
+                    className="twitter"
+                  />
+                  <span
+                    className="google"
+                  />
+                </div>
+              </form>,
+            ],
+            "className": "col-md-6 col-xs-12 right-login",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "WELCOME BACK.....",
+              },
+              "ref": null,
+              "rendered": "WELCOME BACK.....",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "LOGIN TO AUTHOR\`S HAVEN",
+              },
+              "ref": null,
+              "rendered": "LOGIN TO AUTHOR\`S HAVEN",
+              "type": "h5",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "customAlertClass": "login-custom-alert",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "autoComplete": "off",
+                "children": Array [
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="email"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Email"
+                    type="text"
+                    validFeedbackClass="login-valid-feedback"
+                    value="some@email.com"
+                  />,
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="password"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    validFeedbackClass="login-valid-feedback"
+                    value="password"
+                  />,
+                  <div
+                    className="forgot-password"
+                  >
+                    <Link
+                      replace={false}
+                      to="/reset-password"
+                    >
+                      <p>
+                        FORGOT PASSWORD?
+                      </p>
+                    </Link>
+                  </div>,
+                  <div
+                    className="login-buttons"
+                  >
+                    <SubmitButton
+                      className="login-btn"
+                      columnAttribute="login-col"
+                      id={null}
+                      isRequestSent={true}
+                      onClick={[Function]}
+                      value="LOGIN"
+                    />
+                  </div>,
+                  <Link
+                    className="signup-link-container"
+                    replace={false}
+                    to="/signup"
+                  >
+                    <div
+                      className="signup-link"
+                    >
+                      Unregistered? Sign up here
+                    </div>
+                  </Link>,
+                  <div
+                    className="social-media-icons"
+                  >
+                    <span
+                      className="facebook"
+                    />
+                    <span
+                      className="twitter"
+                    />
+                    <span
+                      className="google"
+                    />
+                  </div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "form-control login-input",
+                    "customFormDivClass": "login-div-class",
+                    "error": "",
+                    "errorFeedbackClass": "login-invalid-feedback",
+                    "field": "email",
+                    "id": null,
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onInput": [Function],
+                    "placeholder": "Email",
+                    "type": "text",
+                    "validFeedbackClass": "login-valid-feedback",
+                    "value": "some@email.com",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "form-control login-input",
+                    "customFormDivClass": "login-div-class",
+                    "error": "",
+                    "errorFeedbackClass": "login-invalid-feedback",
+                    "field": "password",
+                    "id": null,
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onInput": [Function],
+                    "placeholder": "Password",
+                    "type": "password",
+                    "validFeedbackClass": "login-valid-feedback",
+                    "value": "password",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/reset-password"
+                    >
+                      <p>
+                        FORGOT PASSWORD?
+                      </p>
+                    </Link>,
+                    "className": "forgot-password",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <p>
+                        FORGOT PASSWORD?
+                      </p>,
+                      "replace": false,
+                      "to": "/reset-password",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "FORGOT PASSWORD?",
+                      },
+                      "ref": null,
+                      "rendered": "FORGOT PASSWORD?",
+                      "type": "p",
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <SubmitButton
+                      className="login-btn"
+                      columnAttribute="login-col"
+                      id={null}
+                      isRequestSent={true}
+                      onClick={[Function]}
+                      value="LOGIN"
+                    />,
+                    "className": "login-buttons",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "className": "login-btn",
+                      "columnAttribute": "login-col",
+                      "id": null,
+                      "isRequestSent": true,
+                      "onClick": [Function],
+                      "value": "LOGIN",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <div
+                      className="signup-link"
+                    >
+                      Unregistered? Sign up here
+                    </div>,
+                    "className": "signup-link-container",
+                    "replace": false,
+                    "to": "/signup",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Unregistered? Sign up here",
+                      "className": "signup-link",
+                    },
+                    "ref": null,
+                    "rendered": "Unregistered? Sign up here",
+                    "type": "div",
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <span
+                        className="facebook"
+                      />,
+                      <span
+                        className="twitter"
+                      />,
+                      <span
+                        className="google"
+                      />,
+                    ],
+                    "className": "social-media-icons",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "facebook",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "twitter",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "google",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <div
+            className="col-md-6"
+          >
+            <span
+              className="login-image-container"
+            />
+          </div>
+          <div
+            className="col-md-6 col-xs-12 right-login"
+          >
+            <h3>
+              WELCOME BACK.....
+            </h3>
+            <h5>
+              LOGIN TO AUTHOR\`S HAVEN
+            </h5>
+            <Connect(FlashMessageList)
+              customAlertClass="login-custom-alert"
+            />
+            <form
+              autoComplete="off"
+            >
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="email"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Email"
+                type="text"
+                validFeedbackClass="login-valid-feedback"
+                value="some@email.com"
+              />
+              <TextFieldGroup
+                className="form-control login-input"
+                customFormDivClass="login-div-class"
+                error=""
+                errorFeedbackClass="login-invalid-feedback"
+                field="password"
+                id={null}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onInput={[Function]}
+                placeholder="Password"
+                type="password"
+                validFeedbackClass="login-valid-feedback"
+                value="password"
+              />
+              <div
+                className="forgot-password"
+              >
+                <Link
+                  replace={false}
+                  to="/reset-password"
+                >
+                  <p>
+                    FORGOT PASSWORD?
+                  </p>
+                </Link>
+              </div>
+              <div
+                className="login-buttons"
+              >
+                <SubmitButton
+                  className="login-btn"
+                  columnAttribute="login-col"
+                  id={null}
+                  isRequestSent={true}
+                  onClick={[Function]}
+                  value="LOGIN"
+                />
+              </div>
+              <Link
+                className="signup-link-container"
+                replace={false}
+                to="/signup"
+              >
+                <div
+                  className="signup-link"
+                >
+                  Unregistered? Sign up here
+                </div>
+              </Link>
+              <div
+                className="social-media-icons"
+              >
+                <span
+                  className="facebook"
+                />
+                <span
+                  className="twitter"
+                />
+                <span
+                  className="google"
+                />
+              </div>
+            </form>
+          </div>
+        </div>,
+        "className": "container login-body",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-md-6"
+            >
+              <span
+                className="login-image-container"
+              />
+            </div>,
+            <div
+              className="col-md-6 col-xs-12 right-login"
+            >
+              <h3>
+                WELCOME BACK.....
+              </h3>
+              <h5>
+                LOGIN TO AUTHOR\`S HAVEN
+              </h5>
+              <Connect(FlashMessageList)
+                customAlertClass="login-custom-alert"
+              />
+              <form
+                autoComplete="off"
+              >
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="email"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Email"
+                  type="text"
+                  validFeedbackClass="login-valid-feedback"
+                  value="some@email.com"
+                />
+                <TextFieldGroup
+                  className="form-control login-input"
+                  customFormDivClass="login-div-class"
+                  error=""
+                  errorFeedbackClass="login-invalid-feedback"
+                  field="password"
+                  id={null}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onInput={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  validFeedbackClass="login-valid-feedback"
+                  value="password"
+                />
+                <div
+                  className="forgot-password"
+                >
+                  <Link
+                    replace={false}
+                    to="/reset-password"
+                  >
+                    <p>
+                      FORGOT PASSWORD?
+                    </p>
+                  </Link>
+                </div>
+                <div
+                  className="login-buttons"
+                >
+                  <SubmitButton
+                    className="login-btn"
+                    columnAttribute="login-col"
+                    id={null}
+                    isRequestSent={true}
+                    onClick={[Function]}
+                    value="LOGIN"
+                  />
+                </div>
+                <Link
+                  className="signup-link-container"
+                  replace={false}
+                  to="/signup"
+                >
+                  <div
+                    className="signup-link"
+                  >
+                    Unregistered? Sign up here
+                  </div>
+                </Link>
+                <div
+                  className="social-media-icons"
+                >
+                  <span
+                    className="facebook"
+                  />
+                  <span
+                    className="twitter"
+                  />
+                  <span
+                    className="google"
+                  />
+                </div>
+              </form>
+            </div>,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <span
+                className="login-image-container"
+              />,
+              "className": "col-md-6",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "login-image-container",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "span",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  WELCOME BACK.....
+                </h3>,
+                <h5>
+                  LOGIN TO AUTHOR\`S HAVEN
+                </h5>,
+                <Connect(FlashMessageList)
+                  customAlertClass="login-custom-alert"
+                />,
+                <form
+                  autoComplete="off"
+                >
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="email"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Email"
+                    type="text"
+                    validFeedbackClass="login-valid-feedback"
+                    value="some@email.com"
+                  />
+                  <TextFieldGroup
+                    className="form-control login-input"
+                    customFormDivClass="login-div-class"
+                    error=""
+                    errorFeedbackClass="login-invalid-feedback"
+                    field="password"
+                    id={null}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onInput={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    validFeedbackClass="login-valid-feedback"
+                    value="password"
+                  />
+                  <div
+                    className="forgot-password"
+                  >
+                    <Link
+                      replace={false}
+                      to="/reset-password"
+                    >
+                      <p>
+                        FORGOT PASSWORD?
+                      </p>
+                    </Link>
+                  </div>
+                  <div
+                    className="login-buttons"
+                  >
+                    <SubmitButton
+                      className="login-btn"
+                      columnAttribute="login-col"
+                      id={null}
+                      isRequestSent={true}
+                      onClick={[Function]}
+                      value="LOGIN"
+                    />
+                  </div>
+                  <Link
+                    className="signup-link-container"
+                    replace={false}
+                    to="/signup"
+                  >
+                    <div
+                      className="signup-link"
+                    >
+                      Unregistered? Sign up here
+                    </div>
+                  </Link>
+                  <div
+                    className="social-media-icons"
+                  >
+                    <span
+                      className="facebook"
+                    />
+                    <span
+                      className="twitter"
+                    />
+                    <span
+                      className="google"
+                    />
+                  </div>
+                </form>,
+              ],
+              "className": "col-md-6 col-xs-12 right-login",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "WELCOME BACK.....",
+                },
+                "ref": null,
+                "rendered": "WELCOME BACK.....",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "LOGIN TO AUTHOR\`S HAVEN",
+                },
+                "ref": null,
+                "rendered": "LOGIN TO AUTHOR\`S HAVEN",
+                "type": "h5",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "customAlertClass": "login-custom-alert",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "autoComplete": "off",
+                  "children": Array [
+                    <TextFieldGroup
+                      className="form-control login-input"
+                      customFormDivClass="login-div-class"
+                      error=""
+                      errorFeedbackClass="login-invalid-feedback"
+                      field="email"
+                      id={null}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onInput={[Function]}
+                      placeholder="Email"
+                      type="text"
+                      validFeedbackClass="login-valid-feedback"
+                      value="some@email.com"
+                    />,
+                    <TextFieldGroup
+                      className="form-control login-input"
+                      customFormDivClass="login-div-class"
+                      error=""
+                      errorFeedbackClass="login-invalid-feedback"
+                      field="password"
+                      id={null}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onInput={[Function]}
+                      placeholder="Password"
+                      type="password"
+                      validFeedbackClass="login-valid-feedback"
+                      value="password"
+                    />,
+                    <div
+                      className="forgot-password"
+                    >
+                      <Link
+                        replace={false}
+                        to="/reset-password"
+                      >
+                        <p>
+                          FORGOT PASSWORD?
+                        </p>
+                      </Link>
+                    </div>,
+                    <div
+                      className="login-buttons"
+                    >
+                      <SubmitButton
+                        className="login-btn"
+                        columnAttribute="login-col"
+                        id={null}
+                        isRequestSent={true}
+                        onClick={[Function]}
+                        value="LOGIN"
+                      />
+                    </div>,
+                    <Link
+                      className="signup-link-container"
+                      replace={false}
+                      to="/signup"
+                    >
+                      <div
+                        className="signup-link"
+                      >
+                        Unregistered? Sign up here
+                      </div>
+                    </Link>,
+                    <div
+                      className="social-media-icons"
+                    >
+                      <span
+                        className="facebook"
+                      />
+                      <span
+                        className="twitter"
+                      />
+                      <span
+                        className="google"
+                      />
+                    </div>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "className": "form-control login-input",
+                      "customFormDivClass": "login-div-class",
+                      "error": "",
+                      "errorFeedbackClass": "login-invalid-feedback",
+                      "field": "email",
+                      "id": null,
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onInput": [Function],
+                      "placeholder": "Email",
+                      "type": "text",
+                      "validFeedbackClass": "login-valid-feedback",
+                      "value": "some@email.com",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "className": "form-control login-input",
+                      "customFormDivClass": "login-div-class",
+                      "error": "",
+                      "errorFeedbackClass": "login-invalid-feedback",
+                      "field": "password",
+                      "id": null,
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onInput": [Function],
+                      "placeholder": "Password",
+                      "type": "password",
+                      "validFeedbackClass": "login-valid-feedback",
+                      "value": "password",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/reset-password"
+                      >
+                        <p>
+                          FORGOT PASSWORD?
+                        </p>
+                      </Link>,
+                      "className": "forgot-password",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <p>
+                          FORGOT PASSWORD?
+                        </p>,
+                        "replace": false,
+                        "to": "/reset-password",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "FORGOT PASSWORD?",
+                        },
+                        "ref": null,
+                        "rendered": "FORGOT PASSWORD?",
+                        "type": "p",
+                      },
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <SubmitButton
+                        className="login-btn"
+                        columnAttribute="login-col"
+                        id={null}
+                        isRequestSent={true}
+                        onClick={[Function]}
+                        value="LOGIN"
+                      />,
+                      "className": "login-buttons",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "className": "login-btn",
+                        "columnAttribute": "login-col",
+                        "id": null,
+                        "isRequestSent": true,
+                        "onClick": [Function],
+                        "value": "LOGIN",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <div
+                        className="signup-link"
+                      >
+                        Unregistered? Sign up here
+                      </div>,
+                      "className": "signup-link-container",
+                      "replace": false,
+                      "to": "/signup",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Unregistered? Sign up here",
+                        "className": "signup-link",
+                      },
+                      "ref": null,
+                      "rendered": "Unregistered? Sign up here",
+                      "type": "div",
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="facebook"
+                        />,
+                        <span
+                          className="twitter"
+                        />,
+                        <span
+                          className="google"
+                        />,
+                      ],
+                      "className": "social-media-icons",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "facebook",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "twitter",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "google",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "form",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

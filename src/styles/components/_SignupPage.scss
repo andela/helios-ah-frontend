@@ -2,8 +2,6 @@
 body {
   background-color: $white;
   margin: auto;
-  margin-top: 4em;
-  width: 90%;
 }
 
 h2 {
@@ -18,7 +16,7 @@ h2 {
   margin-top: 2em;
 }
 #signup-image {
-  background: url('./images/signupImage.svg') no-repeat;
+  background: url('images/signupImage.svg') no-repeat;
   background-size: contain;
   display: block;
   height: 100vh;
@@ -39,7 +37,7 @@ h2 {
 }
 
 #form-container {
-  margin: 2em auto;
+  margin: 3.4em auto;
   width: 70%;
 }
 
@@ -50,33 +48,76 @@ h2 {
   color: $purple;
   font-size: 1em;
   height: 2.5em;
-  margin: 0.4em auto;
+  margin: 2em auto;
   padding: 1em;
 }
-
 #signup-page-button {
   background-color: $purple;
   border: 1px solid $purple;
   border-radius: 2.344em;
   color: $white;
   font-size: 1em;
-  margin: 0.4em auto;
-  margin-right: 0;
   outline: none;
   padding: 0.4em;
   text-transform: uppercase;
   width: 90%;
 }
 
-#signup-page-login-button {
-  background-color: $white;
-  border: 1px solid $purple;
-  border-radius: 2.344em;
-  color: $purple;
-  font-size: 1em;
-  margin: 0.4em auto;
-  outline: none;
-  padding: 0.4em;
-  text-transform: uppercase;
-  width: 90%;
+.login-link-container {
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  text-decoration: none;
 }
+
+.login-link{ 
+  text-align: center;
+  color: $purple;
+  text-decoration: none;
+}
+
+.signup-invalid-feedback, .signup-valid-feedback {
+  bottom: -50%;
+  font-size: 180%;
+  padding-left: 5%;
+  position: absolute;
+  width: 100%;
+}
+
+.signup-custom-alert {
+  position: absolute;
+  top: -19%;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.signup-div-class {
+  position: relative;
+}
+
+.signup-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-page-container {
+  margin-top: 4em;
+}
+
+@media(min-width: 992px) {
+  .signup-invalid-feedback, .signup-valid-feedback {
+    bottom: -50%;
+    font-size: 80%;
+    padding-left: 5%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .signup-custom-alert {
+    position: absolute;
+    top: -5%;
+    width: 100%;
+  }
+}
+

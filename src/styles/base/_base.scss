@@ -1,7 +1,37 @@
-//Demo Base Settings
+// Demo Base Settings
 body {
-  background-color: $light-purple;
-  font-family: $reem-kufi;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.major-color {
+  color: $purple;
+  font-family: $font-family;
+  background-color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
+}
+
+#body {
+  margin-top: 0px;
+}
+
+.hide {
+  display: none;
+}
+
+*:focus, *:active, .btn:focus {
+  outline: 0 !important;
+}
+
+button.btn:focus {
+  outline: 0;
+}
+#app, #app > div{
+  height:100%;
+  width: 100%;
+}
+
+.article-header-size {
+  font-weight: bold;
+  font-size: 20px;
 }

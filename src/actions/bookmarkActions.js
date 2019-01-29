@@ -14,16 +14,20 @@ export const deleteBookmarkCreator = bookmarkId => ({
   payload: bookmarkId,
 });
 
-export const getbookmarks = () => (dispatch) => {
-  Get('/users/bookmarks')
-    .then(res => res.bookmarks)
-    .then(bookmarks => dispatch(getbookmarksCreator(bookmarks)))
-    .catch(error => error);
+export const getbookmarks = () => async (dispatch) => {
+  try {
+    const response = await Get('/users/bookmarks');
+    return dispatch(getbookmarksCreator(response.bookmarks));
+  } catch (error) {
+    return error;
+  }
 };
 
-export const deleteBookmark = id => (dispatch) => {
-  Delete(`/users/bookmarks/${id}`, '')
-    .then(res => res.bookmarkDeleted[0])
-    .then(bookmarkId => dispatch(deleteBookmarkCreator(bookmarkId)))
-    .catch(error => error);
+export const deleteBookmark = id => async (dispatch) => {
+  try {
+    const response = await Delete(`/users/bookmarks/${id}`, '');
+    return dispatch(deleteBookmarkCreator(response.bookmarkDeleted[0]));
+  } catch (error) {
+    return error;
+  }
 };

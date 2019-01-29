@@ -1,11 +1,15 @@
 import { combineReducers } from 'redux';
-import reducers from './reducers';
+import articles from './articleReducer';
+import flashMessages from './flashReducer';
+import authReducer from './authReducer';
+import homeReducer from './homeReducer';
 import bookmarkReducer from './bookmarkReducer';
-import signupReducer from './signupReducer';
 
 const rootReducers = combineReducers({
-  reducers,
-  currentUser: signupReducer,
+  articles,
+  flashMessages,
+  currentUser: authReducer,
+  home: homeReducer,
   bookmarks: bookmarkReducer,
 });
 
