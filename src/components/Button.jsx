@@ -7,10 +7,11 @@ const Button = ({
   value,
   id,
   className,
-  columnAttribute
+  columnAttribute,
+  textCenter = 'text-center',
 }) => (
   <div className={columnAttribute}>
-    <div className="form-group text-center">
+    <div className={`form-group ${textCenter}`}>
       <button
         type="button"
         className={className}
@@ -31,6 +32,7 @@ Button.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   columnAttribute: PropTypes.string.isRequired,
+  textCenter: PropTypes.string,
 };
 
 Button.defaultProps = {

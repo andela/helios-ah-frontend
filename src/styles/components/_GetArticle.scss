@@ -12,8 +12,105 @@
 }
 
 .article-title {
-  max-width: 80%;
+  width: 80%;
+}
+
+.article-heading-container {
   margin: 0 auto;
+  max-width: 80%;
+}
+
+.tool-tip {
+  width: 10%;
+  display: inline-block;
+  position: relative;
+  bottom: 50%;
+  top: 50%
+}
+
+.article-title, .tool-tip {
+  display: inline-block;
+}
+
+.ellipsis-container {
+  display: inline-block;
+}
+
+.article-date-time {
+  width: 100%;
+}
+
+.fa-ellipsis-h {
+  font-size: 140%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.tooltip-text {
+  width: 10rem;
+  background-color: $purple;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  border: 1px solid purple;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 21.5%;
+}
+
+.not-visible {
+  display: none;
+}
+
+.is-visible {
+  display: block;
+}
+
+
+.tooltip-text li:first-child {
+  border-bottom: 1px solid #ffffff
+}
+
+.tooltip-text li a{
+  text-decoration: none;
+  list-style-type: none;
+  color: #fff;
+}
+
+.icons {
+  font-size: 200%;
+  margin-top: 2%;
+  display: block;
+  position: fixed;
+}
+
+.icons i {
+  display: block;
+  margin-top: 1%;
+}
+
+.fa-facebook-f {
+  color: #3b5998;
+  cursor: pointer;
+}
+.fa-twitter {
+  color: #38A1F3;
+  cursor: pointer;
+
+}
+.fa-bookmark{
+  color: #ccc;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: #ccc
+}
+
+.fa-flag {
+  color: #ccc;
 }
 
 .profile-image {
@@ -22,6 +119,7 @@
   background-size: cover;
   display: block;
   height: 13vh;
+  border-radius: 50%;
 }
 
 .user-profile {
@@ -36,10 +134,8 @@
   background-color: $white;
   border: 1px solid $purple;
   font-size: 120%;
-  position: absolute;
-  bottom: -8%;
-  left: 1.5rem;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .article-body {
