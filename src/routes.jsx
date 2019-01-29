@@ -14,6 +14,7 @@ import {
   Article,
   HomePage,
   BookmarkPage,
+  ProfilePage
 } from './views';
 import HomePageRedirect from './utilities/HomePageRedirect';
 import PrivateRoute from './privateRoute';
@@ -22,6 +23,7 @@ const routes = (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <PrivateRoute path="/profile" component={ProfilePage} />
       <Route exact path="/home" component={HomePage} />
       <Route path="/login" component={HomePageRedirect(LoginPage)} />
       <Route path="/signup/verify" component={CompleteRegistration} />

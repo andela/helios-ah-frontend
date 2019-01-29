@@ -1,0 +1,105 @@
+.action-button {
+    border: 1px solid $purple;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    width: 80px;
+    margin-left:20px; 
+}
+
+.container-fluid > .row {
+    padding: 0 40px;
+}
+
+.card {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.follow-number {
+    color: $purple;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ffffff;
+}
+
+.following-details span {
+    display: block;
+}
+
+.following-details, .name-and-bio div {
+    margin: 22px 0;
+}
+
+.hide {
+    display: none;
+}
+
+.main-section {
+    margin-top: 60px;
+}
+
+.navbar-bg {
+    background-color: lighten(#000000, 80%);
+}
+
+.name-and-bio textarea, .name-and-bio input {
+    width: 100%;
+    height: auto;
+    border: none;
+    overflow: auto;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    text-align: center;
+}
+.name-and-bio .edit-border {
+    border-bottom: 1px solid $purple;
+    background-color: rgb(248, 246, 246);
+}
+.name-and-bio .form-control {
+    background-color: #ffffff;
+}
+
+.no-of-publish {
+    margin-bottom: 44px;
+}
+
+.profile-image {
+    width: 230px;
+    padding-top: 6px;
+}
+.profile-image img {
+    border-radius: 50%;
+    width:230px;
+    height: 230px;
+}
+
+.profile-image .dim-image {
+    opacity: 0.3;
+}
+
+.profile-image .change-image {
+    opacity: 1;
+    position: absolute;
+    top: 35%;
+    left: 43%;
+    font-size:48px;
+    color: #C4C4C4;
+    cursor: pointer;
+}
+
+.section-bg {
+    background-color: $hash;
+}
+
+.title-header {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.1em;
+}
+
+.user-info {
+    margin-top: 37px;
+}
