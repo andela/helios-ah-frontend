@@ -1,0 +1,26 @@
+.pagination {
+    margin: 0 auto;
+}
+
+.pagination-item {
+    border: 1px solid $purple;
+    margin-right: 20px;
+    padding: 10px;    
+    width: 49px;
+    text-align: center;
+}
+
+.pagination-link {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: #000000;
+    margin-top: 50%;
+}
+
+.pagination .active {
+    background-color: $purple;
+}
+
+.pagination-item.active a {
+    color: #ffffff;
+}
