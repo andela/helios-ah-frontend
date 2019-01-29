@@ -13,6 +13,7 @@ import {
   ChangePasswordPage,
   Article,
   HomePage,
+  BookmarkPage,
   ProfilePage
 } from './views';
 import HomePageRedirect from './utilities/HomePageRedirect';
@@ -31,6 +32,7 @@ const routes = (
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/article" component={Article} />
       <Route path="/change/password" component={ChangePasswordPage} />
+      <PrivateRoute path="/bookmark" component={BookmarkPage} />
     </Switch>
   </BrowserRouter>
 );

@@ -6,6 +6,7 @@ import ResetPassword from './ResetPassword';
 import CompleteRegistration from './CompleteRegistration';
 import HomePage from './HomePage';
 import ChangePasswordPage from './ChangePasswordPage';
+import BookmarkPage from './BookmarkPage';
 
 export {
   LoginPage,
@@ -16,4 +17,5 @@ export {
   ResetPassword,
   CompleteRegistration,
   HomePage,
+  BookmarkPage,
 };
