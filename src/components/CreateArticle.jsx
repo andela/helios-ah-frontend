@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createArticle, updateArticle } from '../actions/articleAction';
-import { addFlashMessage } from '../actions/flashActions';
+import { createArticle, updateArticle, addFlashMessage } from '../actions';
 import FlashMessagesList from './FlashMessagesList';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
 
@@ -30,9 +29,10 @@ class CreateArticle extends Component {
       (this.props.publish && prevProps.publish === false)
       || (this.props.draft && prevProps.draft === false)
     ) {
+      const { title, body } = this.state;
       if (
-        this.state.title.trim().length < 3
-        || this.state.body.trim().length < 3
+        title.trim().length < 3
+        || body.trim().length < 3
       ) {
         this.props.onSave();
         this.props.addFlashMessage({
