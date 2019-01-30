@@ -10,9 +10,14 @@ import { socialLogin } from '../actions/socialLoginAction';
  */
 
 class AuthVerify extends Component {
-  async componentDidMount() {
+  componentDidMount() {
+    this.verifyUser();
+  }
+
+  verifyUser = async () => {
     const { socialLogin: socialAction } = this.props;
-    if (window.location.pathname.includes('social_ggl')) {
+    console.log('SHOW THIS ====> ', this.props.location);
+    if (this.props.location.pathname.includes('social_ggl')) {
       await socialAction('social_ggl');
     } else if (window.location.pathname.includes('social_tw')) {
       await socialAction('social_tw');
@@ -39,6 +44,7 @@ const mapStateToProps = state => ({
 });
 AuthVerify.propTypes = {
   socialLogin: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default connect(

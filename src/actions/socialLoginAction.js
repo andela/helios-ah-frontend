@@ -45,16 +45,20 @@ export const socialLogin = platform => async (dispatch) => {
     );
     localStorage.setItem('x-access-token', res.data.token);
     const authenticated = res.data.token ? true : false;
-    if (platform === 'social_ggl' && res.data.token) {
-      return dispatch(googleLogin(res.data.token, authenticated));
+    if (res.data.token) {
+      switch (platform) {
+        case 'social_ggl':
+          return dispatch(googleLogin(res.data.token, authenticated));
+        case 'social_tw':
+          return dispatch(twitterLogin(res.data.token, authenticated));
+        case 'social_fb':
+          return dispatch(facebookLogin(res.data.token, authenticated));
+        default:
+          return dispatch(loginFail());
+      }
+    } else {
+      return dispatch(loginFail());
     }
-    if (platform === 'social_tw' && res.data.token) {
-      return dispatch(twitterLogin(res.data.token, authenticated));
-    }
-    if (platform === 'social_fb' && res.data.token) {
-      return dispatch(facebookLogin(res.data.token, authenticated));
-    }
-    return dispatch(loginFail());
   } catch (error) {
     return dispatch(loginFail());
   }
