@@ -80,15 +80,20 @@
 }
 
 .icons {
-  font-size: 200%;
+  font-size: 160%;
   margin-top: 2%;
   display: block;
   position: fixed;
 }
 
+.icons i:first-child {
+  display: block;
+  margin-top: 0%;
+}
+
 .icons i {
   display: block;
-  margin-top: 1%;
+  margin-top: 90%;
 }
 
 .fa-facebook-f {
@@ -106,7 +111,7 @@
 }
 
 .fa-heart {
-  color: #ccc
+  color: #ccc;
 }
 
 .fa-flag {
@@ -148,6 +153,15 @@
 
 .profile-details {
   padding-left: 2%;
+  width: 100%
+}
+
+.profile-details p:first-child {
+  margin-top: 0%;
+}
+
+.profile-details p {
+  margin-top: 0.2%;
 }
 
 .article-icons {
@@ -167,7 +181,17 @@
 
 .rating {
   position: absolute;
-  right: 0
+  right: 0;
+  font-size: 70%;
+}
+
+.report {
+  margin-left: 3%;
+  font-size: 75%;
+}
+
+.like {
+  font-size: 75%
 }
 
 @media only screen and (min-width: 900px) {

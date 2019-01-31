@@ -31,7 +31,6 @@ const routes = (
       <Route path="/signup" component={HomePageRedirect(SignupPage)} />
       <PrivateRoute exact path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
-      <Route path="/article" component={Article} />
       <Route path="/change/password" component={ChangePasswordPage} />
       <Route path="/article/:id" component={GetArticlePage} />
       <PrivateRoute path="/bookmark" component={BookmarkPage} />

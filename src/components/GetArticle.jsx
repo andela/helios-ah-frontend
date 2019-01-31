@@ -74,7 +74,6 @@ const GetArticle = ({
             <i className="fa fa-bookmark" />
             <i className="fab fa-facebook-f" />
             <i className="fab fa-twitter" />
-            <i className="fa fa-flag" />
           </span>
           <div
             className="image-container"
