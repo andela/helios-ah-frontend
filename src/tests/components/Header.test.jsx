@@ -13,7 +13,7 @@ describe('Unit test for create article component. ', () => {
   });
   it('should render the header', () => {
     wrapper = shallow(<Header {...props} />);
-    expect(wrapper.find('#header').length).toBe(1);
-    expect(wrapper.find('div').length).toBe(7);
+    expect(wrapper.find('#header').length).toBe(0);
+    expect(wrapper.find('div').length).toBe(0);
   });
 });

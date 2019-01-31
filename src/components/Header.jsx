@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import SideBar from '../components/SideBar';
+import { hideSideBar, showSideBar } from '../actions/sideBarAction';
 
 
 class Header extends Component {
@@ -23,9 +26,13 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="row fixed-top" id="header">
+      <div className={this.props.isOpen ? "row fixed-top shift-body-right" : "row fixed-top shift-body-left"}id="header">
+        <SideBar/>
         <div className="col-lg-1" id="hamburger">
-          <span className="major-color"><i className="fa fa-bars" /></span>
+          <span
+            className="major-color"
+            onClick={this.props.isOpen ? this.props.hideSideBar : this.props.showSideBar}
+          ><i className="fa fa-bars" /></span>
         </div>
         <div className="col-lg-3" id="head-title">
           <span id="header-title">{this.state.title}</span>
@@ -80,5 +87,9 @@ Header.propTypes = {
   onDraft: PropTypes.func
 
 };
+const mapStateToProps = state => ({
+  isOpen: state.sideBar.isOpen
+});
 
-export default Header;
+export default connect(
+  mapStateToProps, { showSideBar, hideSideBar })(Header);

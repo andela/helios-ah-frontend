@@ -1,4 +1,4 @@
-import { CREATE_ARTICLE } from '../actionTypes';
+import { CREATE_ARTICLE, GET_MY_ARTICLES } from '../actionTypes';
 
 const defaultState = {
   cache: {
@@ -17,6 +17,11 @@ const reducers = (state = defaultState, action) => {
         ...state,
         cache: action.payload
       };
+    case GET_MY_ARTICLES:
+      return {
+        ...state,
+        myArticles: action.articles
+      }
     default: return state;
   }
 };

@@ -1,10 +1,15 @@
-import { Post, Put } from '../utilities/apiRequests';
-import { CREATE_ARTICLE } from '../actionTypes';
+import { Post, Get } from '../utilities/apiRequests';
+import { CREATE_ARTICLE, GET_MY_ARTICLES } from '../actionTypes';
 
 export const setArticle = article => ({
   type: CREATE_ARTICLE,
   payload: article
 });
+
+export const getMyArticles = articles => ({
+  type: GET_MY_ARTICLES,
+  articles
+})
 
 export const createArticle = data => async (dispatch) => {
   data.description = 'No Description';
@@ -23,18 +28,12 @@ export const createArticle = data => async (dispatch) => {
   return ({ success: false, message: response.message });
 };
 
-export const updateArticle = data => async (dispatch) => {
-  const { id } = data;
-  delete data.id;
-  delete data.photo;
-  const response = await Put(`/articles/${id}`, data);
-  if (response.success) {
-    dispatch(setArticle(response.articleUpdated[0]));
-    return ({
-      success: true,
-      message: response.message,
-      data: response.articleUpdated
-    });
-  }
-  return ({ success: false, message: response.message });
-};
+export const getUserArticles = () => async dispatch => {
+  const response = await Get('/articles/user');
+  dispatch(getMyArticles(response.articles));
+  return ({
+    success: true,
+    message: response.message,
+    articles: response.articles
+  })
+}
