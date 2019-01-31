@@ -55,7 +55,9 @@ const GetArticle = ({
                 {`${fetchedArticle.User.firstName} 
               ${fetchedArticle.User.lastName}`}
               </p>
-              <p className="article-date-time">{`${dateFormat(fetchedArticle.createdAt).dateTime}`}</p>
+              <p className="article-date-time">
+                {`${dateFormat(fetchedArticle.createdAt).dateTime}`}
+              </p>
               {!isWriter
                 && (
                 <Button

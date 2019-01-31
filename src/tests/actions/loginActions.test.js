@@ -29,10 +29,9 @@ describe('async actions', () => {
           response: {
             message: 'login successful',
             userDetails: { token: 'eyJhbGciOiJ' },
-          }
+          },
         }
       );
-
 
     const expectedActions = [
       { type: types.SET_CURRENT_USER, userInfo: null },

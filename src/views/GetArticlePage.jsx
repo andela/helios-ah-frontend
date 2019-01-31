@@ -5,7 +5,7 @@ import Spinner from '../components/Spinner';
 import GetArticle from '../components/GetArticle';
 import { fetchArticle } from '../actions/articleAction';
 
-class GetArticlePage extends Component {
+export class GetArticlePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ const mapDispatchToProps = {
   getArticle: fetchArticle
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   fetchedArticle: state.articles.article,
   isWriter: state.articles.isWriter
 });
