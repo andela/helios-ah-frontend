@@ -1,4 +1,4 @@
-import { Post, Get } from '../utilities/apiRequests';
+import { Post, Put, Get } from '../utilities/apiRequests';
 import { CREATE_ARTICLE, GET_ARTICLE } from '../actionTypes';
 
 export const setArticle = article => ({
@@ -40,4 +40,20 @@ export const fetchArticle = id => async (dispatch) => {
     });
   }
   return ({ success: false, message: fetchArticleResponse.message });
+};
+
+export const updateArticle = data => async (dispatch) => {
+  const { id } = data;
+  delete data.id;
+  delete data.photo;
+  const response = await Put(`/articles/${id}`, data);
+  if (response.success) {
+    dispatch(setArticle(response.articleUpdated[0]));
+    return ({
+      success: true,
+      message: response.message,
+      data: response.articleUpdated
+    });
+  }
+  return ({ success: false, message: response.message });
 };
