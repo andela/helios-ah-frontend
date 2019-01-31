@@ -2,6 +2,14 @@
     margin: 0 auto;
 }
 
+.pagination .active {
+    background-color: $purple;
+}
+
+.pagination-item.active a {
+    color: $white;
+}
+
 .pagination-item {
     border: 1px solid $purple;
     margin-right: 20px;
@@ -13,14 +21,9 @@
 .pagination-link {
     font-size: 14px;
     letter-spacing: 0.1em;
-    color: #000000;
+    color: $black;
     margin-top: 50%;
 }
 
-.pagination .active {
-    background-color: $purple;
-}
 
-.pagination-item.active a {
-    color: #ffffff;
-}
+

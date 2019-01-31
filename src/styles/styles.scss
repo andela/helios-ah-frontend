@@ -2,7 +2,12 @@
 @import './base/settings';
 @import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
 @import './base/base';
+@import './components/Profile';
+@import './components/ResetPassword';
 @import './components/SignupPage';
+@import './components/Login';
+@import './components/CreateArticle';
+@import './components/Header';
 @import './components/NavBarAuth';
 @import './components/landingPage';
 @import './components/SectionsBar';
@@ -10,9 +15,7 @@
 @import './components/BuzzSection';
 @import './components/Footer';
 @import './components/ResetPassword';
-@import './components/Login';
 @import './components/Loader';
-@import './components/Header';
-@import './components/CreateArticle';
 @import './components/ChangePasswordPage';
 @import './components/Pagination';
+@import './components/BookmarkPage';
