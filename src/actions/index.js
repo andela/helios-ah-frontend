@@ -8,6 +8,7 @@ import {
 import { setArticles, getArticles } from './homeActions';
 import { setCurrentUser, loginRequest } from './loginActions';
 import { signupSuccess, signupUser } from './signupActions';
+import { createComment } from './commentAction';
 
 export {
   createArticle,
@@ -21,5 +22,6 @@ export {
   setCurrentUser,
   loginRequest,
   signupSuccess,
-  signupUser
+  signupUser,
+  createComment,
 };

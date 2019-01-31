@@ -7,6 +7,7 @@ import CompleteRegistration from './CompleteRegistration';
 import HomePage from './HomePage';
 import ChangePasswordPage from './ChangePasswordPage';
 import BookmarkPage from './BookmarkPage';
+import CommentsView from './CommentsView';
 
 export {
   LoginPage,
@@ -18,4 +19,5 @@ export {
   CompleteRegistration,
   HomePage,
   BookmarkPage,
+  CommentsView
 };

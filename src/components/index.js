@@ -11,6 +11,9 @@ import FlashMessage from './FlashMessage';
 import FlashMessageList from './FlashMessagesList';
 import TextFieldGroup from './TextFieldGroup';
 import LoginForm from './LoginForm';
+import Comment from './Comment';
+import AddComment from './AddComment';
+import Conversation from './Conversation';
 
 export {
   App,
@@ -25,5 +28,8 @@ export {
   FlashMessage,
   FlashMessageList,
   LoginForm,
-  TextFieldGroup
+  TextFieldGroup,
+  Comment,
+  AddComment,
+  Conversation
 };
