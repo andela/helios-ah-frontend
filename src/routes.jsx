@@ -28,7 +28,6 @@ const routes = (
       <Route path="/api/v1/auth/social_(ggl|tw|fb)/" component={AuthVerify} />
       <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
-      <Route path="/article" component={Article} />
       <Route path="/change/password" component={ChangePasswordPage} />
       <PrivateRoute path="/bookmark" component={BookmarkPage} />
     </Switch>
