@@ -11,6 +11,7 @@ import FlashMessage from './FlashMessage';
 import FlashMessageList from './FlashMessagesList';
 import TextFieldGroup from './TextFieldGroup';
 import LoginForm from './LoginForm';
+import SideBar from './Sidebar';
 
 export {
   App,
@@ -25,5 +26,6 @@ export {
   FlashMessage,
   FlashMessageList,
   LoginForm,
-  TextFieldGroup
+  TextFieldGroup,
+  SideBar,
 };

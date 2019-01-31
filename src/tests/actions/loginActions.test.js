@@ -22,7 +22,7 @@ describe('async actions', () => {
       password: 'myPassword'
     };
 
-    moxios
+    await moxios
       .stubRequest(
         'https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/login', {
           status: 200,

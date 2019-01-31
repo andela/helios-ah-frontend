@@ -9,6 +9,7 @@ import {
   buttonReducer,
   editFieldsReducer
 } from './profileReducer';
+import sideBarReducer from './sideBarReducer';
 
 const rootReducers = combineReducers({
   users: userReducer,
@@ -19,6 +20,7 @@ const rootReducers = combineReducers({
   currentUser: authReducer,
   home: homeReducer,
   bookmarks: bookmarkReducer,
+  sideBar: sideBarReducer
 });
 
 export default rootReducers;
