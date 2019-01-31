@@ -1,3 +1,7 @@
+export const GOOGLE_LOGIN = 'GOOGLE_LOGIN';
+export const FACEBOOK_LOGIN = 'FACEBOOK_LOGIN';
+export const TWITTER_LOGIN = 'TWITTER_LOGIN';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const GET_A_USER = 'GET_A_USER';
 export const TOGGLE_BUTTON = 'TOGGLE_BUTTON';
 export const UPDATE_FIELD = 'UPDATE_FIELD';

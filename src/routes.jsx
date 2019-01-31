@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Route,
-  BrowserRouter,
-  Switch
-} from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import {
   LoginPage,
@@ -17,6 +13,7 @@ import {
   ProfilePage
 } from './views';
 import HomePageRedirect from './utilities/HomePageRedirect';
+import AuthVerify from './components/AuthVerify';
 import PrivateRoute from './privateRoute';
 
 const routes = (
@@ -28,6 +25,7 @@ const routes = (
       <Route path="/login" component={HomePageRedirect(LoginPage)} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={HomePageRedirect(SignupPage)} />
+      <Route path="/api/v1/auth/social_(ggl|tw|fb)/" component={AuthVerify} />
       <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/article" component={Article} />
