@@ -16,7 +16,6 @@ class AuthVerify extends Component {
 
   verifyUser = async () => {
     const { socialLogin: socialAction } = this.props;
-    console.log('SHOW THIS ====> ', this.props.location);
     if (this.props.location.pathname.includes('social_ggl')) {
       await socialAction('social_ggl');
     } else if (window.location.pathname.includes('social_tw')) {

@@ -4,7 +4,7 @@ import {
   GOOGLE_LOGIN,
   TWITTER_LOGIN,
   LOGIN_FAIL
-} from '../actionTypes/index';
+} from '../actionTypes';
 
 export const googleLogin = (token, authenticated = false) => ({
   type: GOOGLE_LOGIN,
