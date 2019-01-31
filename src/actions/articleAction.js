@@ -30,7 +30,7 @@ export const updateArticle = data => async (dispatch) => {
   data.isDraft = true;
   const response = await Put(`/articles/${id}`, data);
   if (response.success) {
-    dispatch(setArticle(response.articleUpdated[0]));
+    dispatch(setArticle(response.articleUpdated));
     return ({
       success: true,
       message: response.message,
@@ -43,7 +43,7 @@ export const updateArticle = data => async (dispatch) => {
 export const publishArticle = id => async (dispatch) => {
   const response = await Put(`/articles/${id}/status/publish`);
   if (response.success) {
-    dispatch(setArticle(response.articlePublished[0]));
+    dispatch(setArticle(response.articlePublished));
     return ({
       success: true,
       message: response.message,

@@ -82,7 +82,7 @@ class CreateArticle extends Component {
             const updated = await updateArticle(this.state);
             onSave();
             if (updated.success) {
-              this.updateState(updated.data[0], 'Article saved successfully');
+              this.updateState(updated.data, 'Article saved successfully');
             } else {
               this.props.addFlashMessage({
                 type: 'error',
@@ -126,7 +126,7 @@ class CreateArticle extends Component {
     if (!changed) {
       if (this.props.cache.isDraft) {
         const published = await publishArticle(id);
-        this.updateState(published.data[0], 'Article has been published');
+        this.updateState(published.data, 'Article has been published');
       } else {
         this.props.addFlashMessage({
           type: 'warning',
@@ -137,7 +137,7 @@ class CreateArticle extends Component {
       try {
         const article = await createArticle(this.state);
         const published = await publishArticle(article.data.id);
-        this.updateState(published.data[0], 'Article has been published');
+        this.updateState(published.data, 'Article has been published');
       } catch (error) {
         this.props.addFlashMessage({
           type: 'error',
