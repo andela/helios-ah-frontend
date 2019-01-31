@@ -1,4 +1,4 @@
-import { createArticle, updateArticle } from './articleAction';
+import { createArticle, updateArticle, publishArticle } from './articleAction';
 import changePassword from './changePasswordActions';
 import {
   addFlashMessage,
@@ -13,6 +13,7 @@ import { createComment } from './commentAction';
 export {
   createArticle,
   updateArticle,
+  publishArticle,
   changePassword,
   addFlashMessage,
   deleteFlashMessage,
