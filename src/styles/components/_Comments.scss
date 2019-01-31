@@ -1,0 +1,65 @@
+#conversation-container{
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+#conversation-container p {
+  margin: 0;
+}
+
+#comment{
+  margin: 0.5em auto;
+  padding-bottom: 1em;
+}
+
+#comment img, #add-comment img{
+  height: 80px;
+  width: 80px;
+}
+
+#comment-date {
+  color: $placeholderText;
+}
+
+#comment #username{
+  color: #373e44;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 18px;
+  outline: none;
+}
+
+#username-history-container span {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+#add-comment {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 1em;
+}
+#add-comment .form-group {
+  margin: 0;
+}
+.media-body{
+  margin-left: 1em;
+}
+#add-comment-text-area{
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  height: 5em;
+  margin-left: 1em;
+  padding: 0.6em;
+  width: 90%;
+}
+.add-comment-container{
+ width: 100%;
+}
+#add-comment-button{
+  background: $purple;
+  color: $white;
+  outline: none;
+}

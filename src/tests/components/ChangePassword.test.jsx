@@ -9,6 +9,7 @@ describe('Unit test for Change Password Form component', () => {
     isRequestSent: true,
     confirmPassword: 'password',
     submitDetails: () => {},
+    errors: 'some string'
   };
   it('should render a form with 2 input fields and 1 submit buttons', () => {
     const wrapper = shallow(<ChangePassword {...propsObject} />);

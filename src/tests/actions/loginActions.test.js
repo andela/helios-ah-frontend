@@ -4,8 +4,8 @@ import thunk from 'redux-thunk';
 import * as actions from '../../actions/loginActions';
 import * as types from '../../actionTypes';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+const middleware = [thunk];
+const mockStore = configureMockStore(middleware);
 
 describe('async actions', () => {
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('async actions', () => {
 
     moxios
       .stubRequest(
-        'https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/login', {
+        'http://localhost:4001/api/v1/auth/login', {
           status: 200,
           response: {
             message: 'login successful',
