@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const baseUrl = (process.env.NODE_ENV === 'production')
   ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1'
-  : 'http://localhost:4001/api/v1';
+    : 'https://helios-ah-backend-staging.herokuapp.com/api/v1';
 
 const request = axios.create({
   baseURL: baseUrl,

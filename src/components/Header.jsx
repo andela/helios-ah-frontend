@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { SideBar } from '../components/SideBar';
+import { SideBar } from '../components';
 import { hideSideBar, showSideBar } from '../actions/sideBarAction';
 
 

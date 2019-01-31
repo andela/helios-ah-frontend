@@ -55,6 +55,10 @@ export class SideBar extends Component {
   }
 }
 
+SideBar.propTypes = {
+  getUserArticles: PropTypes.func
+};
+
 const mapStateToProps = state => ({
   status: state.sideBar.isOpen,
   myArticles: state.articles.myArticles
