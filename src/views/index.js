@@ -8,6 +8,7 @@ import HomePage from './HomePage';
 import ChangePasswordPage from './ChangePasswordPage';
 import GetArticlePage from './GetArticlePage';
 import BookmarkPage from './BookmarkPage';
+import CommentsView from './CommentsView';
 
 export {
   LoginPage,
@@ -20,4 +21,5 @@ export {
   HomePage,
   GetArticlePage,
   BookmarkPage,
+  CommentsView
 };

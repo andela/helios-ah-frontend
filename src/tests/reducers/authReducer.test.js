@@ -4,7 +4,12 @@ import * as actionTypes from '../../actionTypes';
 describe('Unit test for the signup reducer', () => {
   it('should return the initial state', () => {
     const initialState = {
-      userInfo: {}, isAuthenticated: false,
+      userInfo: {},
+      isAuthenticated: null,
+      platform: '',
+      token: '',
+      authenticated: false
+
     };
     expect(signupReducer(undefined, {})).toEqual(initialState);
   });
