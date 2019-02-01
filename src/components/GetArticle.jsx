@@ -10,7 +10,9 @@ const GetArticle = ({
   fetchedArticle,
   showEllipsisDropdown,
   handleEllipsisClick,
-  isWriter
+  isWriter,
+  likeHandler,
+  likeRef
 }) => (
   <div>
     <Navbar />
@@ -86,7 +88,7 @@ const GetArticle = ({
           </div>
           <div className="article-icons">
             <div className="like">
-              <i className="fa fa-heart" />
+              <i className="fa fa-heart" onClick={likeHandler} ref={likeRef} />
             </div>
             <div className="report">
               <i className="fa fa-flag" />
@@ -109,7 +111,9 @@ GetArticle.propTypes = {
   fetchedArticle: PropTypes.string.isRequired,
   showEllipsisDropdown: PropTypes.string.isRequired,
   handleEllipsisClick: PropTypes.func.isRequired,
-  isWriter: PropTypes.func.isRequired
+  isWriter: PropTypes.func.isRequired,
+  likeHandler: PropTypes.func.isRequired,
+  likeRef: PropTypes.objectOf(PropTypes.any).isRequired
 };
 
 export default GetArticle;

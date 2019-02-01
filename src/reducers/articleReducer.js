@@ -1,4 +1,7 @@
-import { CREATE_ARTICLE, GET_ARTICLE } from '../actionTypes';
+import {
+  CREATE_ARTICLE,
+  GET_ARTICLE,
+} from '../actionTypes';
 import isWriter from '../utilities/isWriter';
 
 const defaultState = {
@@ -10,7 +13,8 @@ const defaultState = {
     image: null
   },
   article: {},
-  isWriter: false
+  isWriter: false,
+  isLiked: false
 };
 
 const reducers = (state = defaultState, action) => {

@@ -30,7 +30,7 @@ const routes = (
       <Route path="/api/v1/auth/social_(ggl|tw|fb)/" component={AuthVerify} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/change/password" component={ChangePasswordPage} />
-      <Route path="/article/:id" component={GetArticlePage} />
+      <Route exact path="/article/:id" component={GetArticlePage} />
       <PrivateRoute path="/bookmark" component={BookmarkPage} />
     </Switch>
   </BrowserRouter>
