@@ -97,15 +97,27 @@ exports[`Render Login Page render Login Page renders the login page component 1`
         <div
           className="social-media-icons"
         >
-          <span
-            className="facebook"
-          />
-          <span
-            className="twitter"
-          />
-          <span
-            className="google"
-          />
+          <a
+            href="http://localhost:4001/api/v1/auth/social_fb"
+          >
+            <span
+              className="facebook"
+            />
+          </a>
+          <a
+            href="http://localhost:4001/api/v1/auth/social_ggl"
+          >
+            <span
+              className="google"
+            />
+          </a>
+          <a
+            href="http://localhost:4001/api/v1/auth/social_tw"
+          >
+            <span
+              className="twitter"
+            />
+          </a>
         </div>
       </form>
     </div>
@@ -210,15 +222,27 @@ exports[`Render Login Page render Login Page renders the login page component 2`
         <div
           className="social-media-icons"
         >
-          <span
-            className="facebook"
-          />
-          <span
-            className="twitter"
-          />
-          <span
-            className="google"
-          />
+          <a
+            href="http://localhost:4001/api/v1/auth/social_fb"
+          >
+            <span
+              className="facebook"
+            />
+          </a>
+          <a
+            href="http://localhost:4001/api/v1/auth/social_ggl"
+          >
+            <span
+              className="google"
+            />
+          </a>
+          <a
+            href="http://localhost:4001/api/v1/auth/social_tw"
+          >
+            <span
+              className="twitter"
+            />
+          </a>
         </div>
       </form>
     </div>

@@ -5,6 +5,10 @@ import { SET_CURRENT_USER } from '../actionTypes';
 import setAuthorizationToken from '../utilities/setAuthorizationToken';
 import reverseToken from '../utilities/reverseToken';
 
+const baseUrl = (process.env.NODE_ENV === 'production')
+  ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/login'
+  : 'http://localhost:4001/api/v1/auth/login';
+
 export const setCurrentUser = userInfo => ({
   type: SET_CURRENT_USER,
   userInfo
@@ -20,8 +24,7 @@ export const loginRequest = (userData) => {
     try {
       loginResponse = await axios({
         method: 'post',
-        url:
-        'https://helios-ah-backend-staging.herokuapp.com/api/v1/auth/login',
+        url: baseUrl,
         data: sentData
       });
       const { token } = loginResponse.data.userDetails;

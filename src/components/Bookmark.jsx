@@ -52,7 +52,9 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
 );
 
 Bookmark.propTypes = {
-  bookmark: PropTypes.objectOf(PropTypes.string).isRequired,
+  bookmark: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string, PropTypes.object
+  ])).isRequired,
   onDeleteBookmark: PropTypes.func.isRequired
 };
 

@@ -6,9 +6,9 @@
 
 import axios from 'axios';
 
-const baseUrl = (process.env.NODE_ENV === 'production')
+export const baseUrl = (process.env.NODE_ENV === 'production')
   ? 'https://helios-ah-backend-staging.herokuapp.com/api/v1'
-  : process.env.PRODUCTION_URL;
+  : 'http://localhost:4001/api/v1';
 
 const request = axios.create({
   baseURL: baseUrl,
@@ -69,8 +69,10 @@ export const CloudImage = async (formData) => {
     body: formData
   };
   try {
-    const response = await
-    fetch('https://api.cloudinary.com/v1_1/ah-med/image/upload', postData);
+    const response = await fetch(
+      'https://api.cloudinary.com/v1_1/ah-med/image/upload',
+      postData
+    );
     return response.json();
   } catch (error) {
     return error.response ? error.message : error;

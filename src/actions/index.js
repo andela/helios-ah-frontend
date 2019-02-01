@@ -1,4 +1,4 @@
-import { createArticle, updateArticle } from './articleAction';
+import { createArticle, updateArticle, publishArticle } from './articleAction';
 import changePassword from './changePasswordActions';
 import {
   addFlashMessage,
@@ -8,10 +8,12 @@ import {
 import { setArticles, getArticles } from './homeActions';
 import { setCurrentUser, loginRequest } from './loginActions';
 import { signupSuccess, signupUser } from './signupActions';
+import { createComment } from './commentAction';
 
 export {
   createArticle,
   updateArticle,
+  publishArticle,
   changePassword,
   addFlashMessage,
   deleteFlashMessage,
@@ -21,5 +23,6 @@ export {
   setCurrentUser,
   loginRequest,
   signupSuccess,
-  signupUser
+  signupUser,
+  createComment,
 };

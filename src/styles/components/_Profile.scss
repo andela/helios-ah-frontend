@@ -19,7 +19,7 @@
 }
 
 .form-control:disabled, .form-control[readonly] {
-    background-color: #ffffff;
+    background-color: $white;
 }
 
 .following-details span {
@@ -57,7 +57,7 @@
     background-color: rgb(248, 246, 246);
 }
 .name-and-bio .form-control {
-    background-color: #ffffff;
+    background-color: $white;
 }
 
 .no-of-publish {

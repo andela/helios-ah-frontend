@@ -102,9 +102,11 @@ export class LoginPage extends Component {
     const {
       errors, isLoading, email, password
     } = this.state;
+
     return (
       <div>
         <LoginForm
+          {...this.props}
           onInput={this.handleOnInput}
           onChange={this.handleOnChange}
           onBlur={this.handleOnBlur}
