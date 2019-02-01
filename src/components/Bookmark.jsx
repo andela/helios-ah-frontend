@@ -27,14 +27,14 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
         <div className="col-2 cursor-pointer text-hover">
           <span
             className="d-none d-md-block"
-            onClick={() => onDeleteBookmark(bookmark.id)}
+            onClick={() => onDeleteBookmark(bookmark.bookmark.id)}
             aria-hidden
           >
             Remove
           </span>
           <span
             className="d-md-none"
-            onClick={() => onDeleteBookmark(bookmark.id)}
+            onClick={() => onDeleteBookmark(bookmark.bookmark.id)}
             aria-hidden
           >
             <i

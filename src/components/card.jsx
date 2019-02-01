@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BookmarkIcon from './BookmarkIcon';
 
 const handleError = (event) => {
   event
@@ -11,7 +12,6 @@ const handleError = (event) => {
 
 const Card = ({
   id,
-  bookmark,
   like,
   title,
   body,
@@ -37,13 +37,9 @@ const Card = ({
       </div>
       <div className="card-footer footer-container">
         <div>
-          <span
-            className="card-icons"
-            role="presentation"
-            onClick={event => bookmark(event)}
-          >
-            <i className="fas fa-bookmark" />
-          </span>
+          <BookmarkIcon
+            id={id}
+          />
           <span
             className="card-icons"
             role="presentation"
@@ -101,7 +97,6 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  bookmark: PropTypes.func.isRequired,
   like: PropTypes.func.isRequired,
   rate: PropTypes.func.isRequired,
 };

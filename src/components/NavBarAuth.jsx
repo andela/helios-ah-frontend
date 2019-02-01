@@ -59,7 +59,7 @@ const NavBarAuth = ({ signout }) => (
               aria-labelledby="img"
             >
               <span className="caret" />
-              <Link className="dropdown-item" to="/">Bookmarks</Link>
+              <Link className="dropdown-item" to="/bookmark">Bookmarks</Link>
               <Link className="dropdown-item" to="/">Read Stats</Link>
               <Link className="dropdown-item" to="/">Favorites</Link>
               <div className="dropdown-divider" />
