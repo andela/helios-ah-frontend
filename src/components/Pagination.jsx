@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Pagination from 'react-js-pagination';
 
-
 const Paginate = (props) => {
   const {
     activePage,

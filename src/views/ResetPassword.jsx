@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as axios from '../utilities/apiRequests';
 import ResetPasswordForm from '../components/ResetPasswordForm';
+import { addFlashMessage, clearFlashMessages } from '../actions/flashActions';
 
 class ResetPassword extends Component {
   constructor(props) {
@@ -11,6 +14,11 @@ class ResetPassword extends Component {
       email: 'null',
       status: 'null',
     };
+  }
+
+  componentDidMount() {
+    const { clearBannerMessages } = this.props;
+    clearBannerMessages();
   }
 
   onSubmit = async (e) => {
@@ -30,26 +38,24 @@ class ResetPassword extends Component {
 
     // eslint-disable-next-line no-nested-ternary
     return (newStatus.status === 'null' || newStatus.status === undefined)
-      ? this.statusHandler('Connection Error, Please try again Later')
+      ? this.props.addBannerMessage({
+        type: 'error',
+        text: 'Connection Error, Please try again Later'
+      })
       : (newStatus.status === 'error' || newStatus.status === undefined)
-        ? this.statusHandler('User Not Found')
-        : this.statusHandler('Password reset link has been sent to your mail');
+        ? this.props.addBannerMessage({
+          type: 'error',
+          text: 'User Not Found'
+        })
+        : this.props.addBannerMessage({
+          type: 'success',
+          text: 'Password reset link has been sent to your mail'
+        });
   }
-
 
   onChange = (e) => {
-    this.clearStatus();
     const value = e.target.value.trim();
     this.setState({ email: value });
-  }
-
-  statusHandler = (message = '') => {
-    this.spanRef.current.innerHTML = message;
-    this.clearEmail();
-  }
-
-  clearStatus() {
-    this.spanRef.current.innerHTML = '';
   }
 
   clearEmail() {
@@ -67,5 +73,13 @@ class ResetPassword extends Component {
     );
   }
 }
+ResetPassword.propTypes = {
+  addBannerMessage: PropTypes.func.isRequired,
+  clearBannerMessages: PropTypes.func.isRequired
+};
+const mapDispatchToProps = dispatch => ({
+  addBannerMessage: message => dispatch(addFlashMessage(message)),
+  clearBannerMessages: id => dispatch(clearFlashMessages(id))
+});
 
-export default ResetPassword;
+export default connect(null, mapDispatchToProps)(ResetPassword);
