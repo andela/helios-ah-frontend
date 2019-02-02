@@ -35,6 +35,7 @@ export class GetArticlePage extends Component {
 
     getArticle(id);
     const likeStatus = await this.props.getLike(id);
+    console.log(likeStatus);
     this.setState({
       isLiked: likeStatus.isLiked
     });

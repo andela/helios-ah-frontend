@@ -19,3 +19,14 @@ export const getArticles = () => async (dispatch) => {
   }
   return ({ success: false, message: response.message });
 };
+
+export const getTotalLike = async (articleId) => {
+  const response = await Get(`/articles/likes/${articleId}`);
+  if (response.success === true) {
+    return response;
+  }
+  return ({
+    success: false,
+    message: response.message
+  });
+};
