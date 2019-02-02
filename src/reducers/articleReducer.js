@@ -1,4 +1,8 @@
-import { CREATE_ARTICLE } from '../actionTypes';
+import {
+  CREATE_ARTICLE,
+  GET_ARTICLE,
+} from '../actionTypes';
+import isWriter from '../utilities/isWriter';
 
 const defaultState = {
   cache: {
@@ -8,6 +12,9 @@ const defaultState = {
     description: '',
     image: null
   },
+  article: {},
+  isWriter: false,
+  isLiked: false
 };
 
 const reducers = (state = defaultState, action) => {
@@ -16,6 +23,11 @@ const reducers = (state = defaultState, action) => {
       return {
         ...state,
         cache: action.payload
+      };
+    case GET_ARTICLE:
+      return {
+        article: action.article,
+        isWriter: isWriter(action.article)
       };
     default: return state;
   }

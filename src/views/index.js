@@ -6,6 +6,7 @@ import ResetPassword from './ResetPassword';
 import CompleteRegistration from './CompleteRegistration';
 import HomePage from './HomePage';
 import ChangePasswordPage from './ChangePasswordPage';
+import GetArticlePage from './GetArticlePage';
 import BookmarkPage from './BookmarkPage';
 import CommentsView from './CommentsView';
 
@@ -18,6 +19,7 @@ export {
   ResetPassword,
   CompleteRegistration,
   HomePage,
+  GetArticlePage,
   BookmarkPage,
   CommentsView
 };

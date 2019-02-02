@@ -1,9 +1,17 @@
-import { Post, Put } from '../utilities/apiRequests';
-import { CREATE_ARTICLE } from '../actionTypes';
+import { Post, Put, Get } from '../utilities/apiRequests';
+import {
+  CREATE_ARTICLE,
+  GET_ARTICLE
+} from '../actionTypes';
 
 export const setArticle = article => ({
   type: CREATE_ARTICLE,
   payload: article
+});
+
+export const fetchArticleDispatch = article => ({
+  type: GET_ARTICLE,
+  article
 });
 
 export const createArticle = data => async (dispatch) => {
@@ -21,6 +29,20 @@ export const createArticle = data => async (dispatch) => {
     });
   }
   return ({ success: false, message: response.message });
+};
+
+
+export const fetchArticle = id => async (dispatch) => {
+  const fetchArticleResponse = await Get(`/articles/${id}`);
+  if (fetchArticleResponse.success) {
+    dispatch(fetchArticleDispatch(fetchArticleResponse.article));
+    return ({
+      success: true,
+      message: fetchArticleResponse.message,
+      data: fetchArticleResponse.article
+    });
+  }
+  return ({ success: false, message: fetchArticleResponse.message });
 };
 
 export const updateArticle = data => async (dispatch) => {
@@ -51,4 +73,39 @@ export const publishArticle = id => async (dispatch) => {
     });
   }
   return ({ success: false, message: response.message });
+};
+
+export const articleLike = data => async () => {
+  const { articleId } = data;
+  const response = await Post(`/articles/${articleId}/likes`);
+  if (response.success === true) {
+    return response;
+  }
+  return ({
+    success: false,
+    message: response.message
+  });
+};
+
+export const updateArticleLike = data => async () => {
+  const { articleId, isLiked } = data;
+  const response = await Put(`/articles/${articleId}/likes`, { isLiked });
+  if (response.success === true) {
+    return response;
+  }
+  return ({
+    success: false,
+    message: response.message
+  });
+};
+
+export const getLike = async (articleId) => {
+  const response = await Get(`/articles/${articleId}/likes`);
+  if (response.success === true) {
+    return response;
+  }
+  return ({
+    success: false,
+    message: response.message
+  });
 };

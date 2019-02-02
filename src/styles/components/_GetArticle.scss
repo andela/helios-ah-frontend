@@ -1,0 +1,216 @@
+.image-container {
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position:center;
+  margin: 0 auto;
+  height: 50vh;
+}
+
+.article-container {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.article-title {
+  width: 80%;
+}
+
+.article-heading-container {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.tool-tip {
+  width: 10%;
+  display: inline-block;
+  position: relative;
+  bottom: 50%;
+  top: 50%
+}
+
+.article-title, .tool-tip {
+  display: inline-block;
+}
+
+.ellipsis-container {
+  display: inline-block;
+}
+
+.article-date-time {
+  width: 100%;
+}
+
+.fa-ellipsis-h {
+  font-size: 140%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.tooltip-text {
+  width: 10rem;
+  background-color: $purple;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  border: 1px solid purple;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 21.5%;
+}
+
+.not-visible {
+  display: none;
+}
+
+.is-visible {
+  display: block;
+}
+
+
+.tooltip-text li:first-child {
+  border-bottom: 1px solid #ffffff
+}
+
+.tooltip-text li a{
+  text-decoration: none;
+  list-style-type: none;
+  color: #fff;
+}
+
+.icons {
+  font-size: 160%;
+  margin-top: 2%;
+  display: block;
+  position: fixed;
+}
+
+.icons i:first-child {
+  display: block;
+  margin-top: 0%;
+}
+
+.icons i {
+  display: block;
+  margin-top: 90%;
+}
+
+.fa-facebook-f {
+  color: #3b5998;
+  cursor: pointer;
+}
+.fa-twitter {
+  color: #38A1F3;
+  cursor: pointer;
+
+}
+.fa-bookmark{
+  color: #ccc;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: #ccc;
+}
+
+.fa-flag {
+  color: #ccc;
+}
+
+.profile-image {
+  width: 110px;
+  background: no-repeat center;
+  background-size: cover;
+  display: block;
+  height: 13vh;
+  border-radius: 50%;
+}
+
+.user-profile {
+  display: flex;
+  max-width: 80%;
+  margin: 1rem auto;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.follow-btn {
+  background-color: $white;
+  border: 1px solid $purple;
+  font-size: 120%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.article-body {
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 130%;
+  font-weight: 100;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-details {
+  padding-left: 2%;
+  width: 100%
+}
+
+.profile-details p:first-child {
+  margin-top: 0%;
+}
+
+.profile-details p {
+  margin-top: 0.2%;
+}
+
+.article-icons {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.rating > i, .like > i, .report > i {
+  color: #ccc;
+  font-size: 150%;
+}
+
+.rating, .like, .report {
+  display: inline-block;
+}
+
+.rating {
+  position: absolute;
+  right: 0;
+  font-size: 70%;
+}
+
+.report {
+  margin-left: 3%;
+  font-size: 75%;
+}
+
+.like {
+  font-size: 75%
+}
+
+@media only screen and (min-width: 900px) {
+  .image-container {
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    max-width: 80%;
+    margin: 0 auto;
+    height: 50vh;
+  }
+  .rating > i, .like > i, .report > i {
+    font-size: 200%;
+  }
+  .article-body {
+    margin: 3rem auto;
+  }
+  .user-profile {
+    margin: 1.5rem auto;
+    padding: 1.5rem 0rem;
+  }
+}

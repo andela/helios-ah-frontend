@@ -53,6 +53,7 @@ module.exports = () => {
       }),
       new webpack.DefinePlugin(envKeys)
     ],
+    devtool: 'cheap-eval-source-map',
     devServer: {
       historyApiFallback: true
     },
