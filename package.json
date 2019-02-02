@@ -14,7 +14,7 @@
     "start": "webpack-dev-server --mode production --hot --open",
     "start:dev": "webpack-dev-server --mode development --hot --open",
     "build": "webpack --mode production",
-    "test": "jest  --detectOpenHandles --coverage",
+    "test": "jest  --detectOpenHandles -u --coverage",
     "test:watch": "jest --watch --coverage",
     "stylelint": "stylelint 'src/styles/**/*.scss'"
   },
