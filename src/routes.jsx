@@ -13,6 +13,7 @@ import {
   ProfilePage
 } from './views';
 import HomePageRedirect from './utilities/HomePageRedirect';
+import BookmarkIcon from './components/BookmarkIcon';
 import AuthVerify from './components/AuthVerify';
 import PrivateRoute from './privateRoute';
 
@@ -29,6 +30,7 @@ const routes = (
       <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/change/password" component={ChangePasswordPage} />
+      <Route path="/bookmark/icon" component={BookmarkIcon} />
       <PrivateRoute path="/bookmark" component={BookmarkPage} />
     </Switch>
   </BrowserRouter>
