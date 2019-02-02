@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SubmitButton from './SubmitButton';
 import FormInput from './FormInput';
+import FlashMessageList from './FlashMessagesList';
 
 const ResetPasswordForm = ({
   onChange,
@@ -19,6 +20,7 @@ const ResetPasswordForm = ({
       </div>
       <div className="col-sm-8 col-md-6 text-center textWithInput">
         <div className="resetPasswordText">
+          <FlashMessageList customAlertClass="change-password-custom-alert col-12 resetFlash" />
           <h1 className="passwordResetH1">FORGOT YOUR PASSWORD?</h1>
           <h3
             className="passwordResetH3"
