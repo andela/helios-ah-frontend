@@ -76,7 +76,7 @@ class HomePage extends Component {
           <BuzzSection />
         </div>
         <div id="homepageWrapper" className="container-fluid ">
-          {(pageItems.length > 1)
+          {(pageItems.length > 0)
             ? (
               <div className="row card-row">
                 {cards}
