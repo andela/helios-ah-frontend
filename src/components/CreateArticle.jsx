@@ -7,6 +7,7 @@ import {
   createArticle,
   updateArticle,
   publishArticle,
+  createTags,
   addFlashMessage
 } from '../actions';
 
@@ -122,10 +123,17 @@ class CreateArticle extends Component {
 
   publishArticle = async (changed = true) => {
     const { id } = this.state;
-    const { createArticle, publishArticle } = this.props;
+    const {
+      createArticle,
+      publishArticle,
+      tags
+    } = this.props;
+    const mappedTag = tags.map(element => element.text);
     if (!changed) {
       if (this.props.cache.isDraft) {
         const published = await publishArticle(id);
+        const tagSuccess = await createTags(mappedTag, published.data.id);
+        if (!tagSuccess.success) throw (tagSuccess.message);
         this.updateState(published.data, 'Article has been published');
       } else {
         this.props.addFlashMessage({
@@ -137,6 +145,8 @@ class CreateArticle extends Component {
       try {
         const article = await createArticle(this.state);
         const published = await publishArticle(article.data.id);
+        const tagSuccess = await createTags(mappedTag, published.data.id);
+        if (!tagSuccess.success) throw (tagSuccess.message);
         this.updateState(published.data, 'Article has been published');
       } catch (error) {
         this.props.addFlashMessage({
@@ -269,6 +279,7 @@ class CreateArticle extends Component {
 }
 CreateArticle.propTypes = {
   draft: PropTypes.bool,
+  tags: PropTypes.array,
   publish: PropTypes.bool,
   onSave: PropTypes.func.isRequired,
   cache: PropTypes.object.isRequired,
@@ -288,6 +299,6 @@ export default connect(
     createArticle,
     updateArticle,
     publishArticle,
-    addFlashMessage
+    addFlashMessage,
   }
 )(CreateArticle);

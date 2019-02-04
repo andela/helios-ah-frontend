@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +50,8 @@ class Header extends Component {
             id="publish"
             type="button"
             name="publish"
-            onClick={this.props.onPublish}
+            data-toggle="modal"
+            data-target="#modal-trigger"
             value="Publish"
           />
           <input
@@ -76,7 +76,6 @@ class Header extends Component {
   }
 }
 Header.propTypes = {
-  onPublish: PropTypes.func,
   onDraft: PropTypes.func
 
 };

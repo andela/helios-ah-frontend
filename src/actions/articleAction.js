@@ -71,3 +71,15 @@ export const publishArticle = id => async (dispatch) => {
   }
   return ({ success: false, message: response.message });
 };
+
+export const createTags = async (tags, articleId) => {
+  const tagName = { tagName: tags };
+  const response = await Post(`/articles/tag/${articleId}`, tagName);
+  if (response.success) {
+    return ({
+      success: true,
+      message: response.message,
+    });
+  }
+  return ({ success: false, message: response.message });
+};
