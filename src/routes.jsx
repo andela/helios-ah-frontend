@@ -9,6 +9,7 @@ import {
   ChangePasswordPage,
   Article,
   HomePage,
+  GetArticlePage,
   BookmarkPage,
   ProfilePage
 } from './views';
@@ -26,10 +27,11 @@ const routes = (
       <Route path="/login" component={HomePageRedirect(LoginPage)} />
       <Route path="/signup/verify" component={CompleteRegistration} />
       <Route path="/signup" component={HomePageRedirect(SignupPage)} />
+      <PrivateRoute exact path="/create-article" component={Article} />
       <Route path="/api/v1/auth/social_(ggl|tw|fb)/" component={AuthVerify} />
-      <PrivateRoute path="/create-article" component={Article} />
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/change/password" component={ChangePasswordPage} />
+      <Route path="/article/:id" component={GetArticlePage} />
       <Route path="/bookmark/icon" component={BookmarkIcon} />
       <PrivateRoute path="/bookmark" component={BookmarkPage} />
     </Switch>
