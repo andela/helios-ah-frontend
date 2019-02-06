@@ -26,10 +26,6 @@ class HomePage extends Component {
     this.handlePageChange(1);
   };
 
-  bookmark = (event) => {
-    event.target.classList.add('bookmark-clicked');
-  };
-
   like = (event) => {
     event.target.classList.add('like-clicked');
   };

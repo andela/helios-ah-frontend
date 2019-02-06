@@ -38,7 +38,7 @@ const Bookmark = ({ bookmark, onDeleteBookmark }) => (
             aria-hidden
           >
             <i
-              className="fa fa-trash-o"
+              className="fas fa-trash-alt"
             />
           </span>
         </div>
