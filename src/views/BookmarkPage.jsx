@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getbookmarks, deleteBookmark } from '../actions/bookmarkActions';
 import Navbar from './Navbar';
+import Footer from '../components/Footer';
 import Bookmark from '../components/Bookmark';
 
 class Bookmarks extends Component {
@@ -23,17 +24,20 @@ class Bookmarks extends Component {
         <div>
           <Navbar />
           <div className="container">
-            <div className="row">
-              <h3>Bookmarks</h3>
+            <div className="bookmark-body">
+              <div className="row">
+                <h3>Bookmarks</h3>
+              </div>
+              {bookmarks.map(bookmark => (
+                <Bookmark
+                  key={bookmark.id}
+                  bookmark={bookmark}
+                  onDeleteBookmark={this.onDeleteBookmark}
+                />
+              ))}
             </div>
-            {bookmarks.map(bookmark => (
-              <Bookmark
-                key={bookmark.id}
-                bookmark={bookmark}
-                onDeleteBookmark={this.onDeleteBookmark}
-              />
-            ))}
           </div>
+          <Footer />
         </div>
       );
     }
@@ -41,13 +45,16 @@ class Bookmarks extends Component {
       <div>
         <Navbar />
         <div className="container">
-          <div className="row">
-            <h3>
-              Bookmarks
-              <span className="major-color"> (empty)</span>
-            </h3>
+          <div className="bookmark-body">
+            <div className="row">
+              <h3>
+                Bookmarks
+                <span className="major-color"> (empty)</span>
+              </h3>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

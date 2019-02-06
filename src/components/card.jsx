@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import BookmarkIcon from './BookmarkIcon';
 
@@ -20,21 +21,23 @@ const Card = ({
 }) => (
   <div className="col-sm-12 col-lg-4 card-container" id={id}>
     <div className="card w-30" id="card">
-      <img
-        className="card-img-top"
-        src={
-          image
-          || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'
-        }
-        alt="card"
-        onError={event => handleError(event)}
-      />
-      <div className="card-body text-center">
-        <h5 className="article-header-size card-title">{title}</h5>
-        <p className="card-text">
-          {`${body.substring(0, 125)}...`}
-        </p>
-      </div>
+      <Link className="article-link" to={`/article/${id}`}>
+        <img
+          className="card-img-top"
+          src={
+            image
+            || 'https://via.placeholder.com/150/c4c4c4/808080 ?Text=Digital.com'
+          }
+          alt="card"
+          onError={event => handleError(event)}
+        />
+        <div className="card-body text-center">
+          <h5 className="article-header-size card-title">{title}</h5>
+          <p className="card-text">
+            {`${body.substring(0, 125)}...`}
+          </p>
+        </div>
+      </Link>
       <div className="card-footer footer-container">
         <div>
           <BookmarkIcon

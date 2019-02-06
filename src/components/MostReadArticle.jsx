@@ -9,7 +9,7 @@ const MostReadArticle = ({
   readTime,
   name
 }) => (
-  <Link className="article-link" to={`/${id}`}>
+  <Link className="article-link" to={`/article/${id}`}>
     <div className="card w-30 text-center">
       <div className="card-body">
         <h6 className="article-header-size card-title">{title}</h6>

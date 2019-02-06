@@ -1,5 +1,10 @@
 $card-radius: 5px;
 
+.bookmark-body {
+  margin-left: 10px;
+  margin-right: 10px;
+  min-height: calc(100vh - 250px);
+}
 .bookmarkCard {
   background-color: $white;
   border-radius: $card-radius;
@@ -22,7 +27,7 @@ $card-radius: 5px;
 .bookmarkCard .image {
   background-color: $white;
   background-repeat: no-repeat;
-  background-position: contain;
+  background-position: center;
   background-color: #c4c4c4;
   border-radius: 0 $card-radius $card-radius 0;
 }
